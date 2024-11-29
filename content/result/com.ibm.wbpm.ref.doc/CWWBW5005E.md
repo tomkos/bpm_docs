@@ -1,0 +1,5 @@
+# CWWBW5005E The XML Path Language (XPath) end expression is not syntactically valid (1 forEach activity). The error is 0
+
+## Explanation
+
+## User response

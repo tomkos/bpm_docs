@@ -1,0 +1,1 @@
+# Enabling favorites and sync

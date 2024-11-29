@@ -1,0 +1,20 @@
+# TASKS view
+
+The TASKS view includes the following columns:
+
+| Column                    | Description                                                                                                                                                                                                      |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TASK\_ID                   | The primary key of this task in the Business Performance Data Warehouse.                                                                                                                                         |
+| FUNCTIONAL\_TASK\_ID        | The primary key in the Business Performance Data Warehouse of the process to which this entry corresponds. In the case where this row corresponds to the beginning of a process instance, it will equal TASK\_ID. |
+| CREATION\_TIME             | The date and time that the task was created.                                                                                                                                                                     |
+| START\_TIME                | The date and time that the task was started. If CREATION\_TIME and START\_TIME are not equal, the lag indicates that the task was not immediately started by the user.                                             |
+| END\_TIME                  | The date and time that the task was finished.                                                                                                                                                                    |
+| SYSTEM\_USER\_ID            | The primary key of the user in the Process Data Warehouse that ran this task.                                                                                                                                    |
+| USERNAME                  | The name of the user who ran this task.                                                                                                                                                                          |
+| BPDNAME                   | The name of the process that triggered this task.                                                                                                                                                                |
+| STARTING\_PROCESS\_ID       | The primary key in the Process Data Warehouse of the process instance that created this task.                                                                                                                    |
+| ACTIVITY\_NAME             | The name of the Activity that triggered this task.                                                                                                                                                               |
+| SYSTEM\_TASK\_ID            | The primary key in the Process Data Warehouse of the task. This entry includes a trailing a if the task is an activity.                                                                                          |
+| SYSTEM\_FUNCTIONAL\_TASK\_ID | The primary key in the Process Data Warehouse of the process instance.                                                                                                                                           |
+| SNAPSHOT                  | The snapshot (version) of the process application or toolkit that triggered this task. If no snapshots exist, a Null value is stored in this column.                                                             |
+| ACRONYM                   | The acronym of the process application or toolkit that triggered this task.                                                                                                                                      |

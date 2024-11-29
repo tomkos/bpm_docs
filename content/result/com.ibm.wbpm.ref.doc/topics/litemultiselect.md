@@ -1,0 +1,49 @@
+# Multiple Select (deprecated)
+
+To provide a list to a select control, you can
+bind a list variable to the Selection list configuration
+option or you can use an Ajax service (by way of the Selection
+service configuration option). If both configuration options
+are specified simultaneously, the Selection list configuration
+option takes precedence.
+
+The values that are selected by default at run time are the
+values provided by the binding that are also present in the list,
+regardless of which configuration option provides the list.
+
+## Data binding
+
+| Binding description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Data type   |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| Contains the objects that represent items selected in the control at run time, if specified.When the variable associated with the binding is initialized with values that are valid in the selection list, those values are selected by default at run time. This is true regardless of whether the list is provided by the Selection list option or the Selection service option. If the variable is initialized to values that are not valid in the selection list, there is no default selection and the variable values are cleared accordingly. | ANY (List)  |
+
+## Theme definitions
+
+The design mode of the theme editor contains a simulation of this control. If you hover over the
+simulation, it lists the theme definitions that determine the appearance of the control. For
+information on the theme editor, see Creating themes.
+
+## Configuration properties
+
+| Configuration properties     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Data type                                              |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| Selection list               | Contains the list of selection options, if specified. This option overrides the Selection service option. If the selection list is not specified here, then it must be specified using the Selection service option. Selection lists are made up of Strings, NameValuePairs, or user-defined objects.  Note that the use of user-defined objects requires display name and value properties. You can specify values for these properties with the Display name property and Value property options.                                                                                                                                                                                                                                                                  | ANY (List)                                             |
+| Selection service            | An Ajax service that provides the selection list based on input text. Use this option as an alternative to binding the Selection list option to a list object.The resulting selection list generated by the service is made up of Strings, NameValuePairs, or user-defined objects.   Note that the use of user-defined objects requires display name and value properties. You can specify values for these properties with the Display name property and Value property options.                                                                                                                                                                                                                                                                                   | ServiceInput: text(String)  Output: results(ANY)(List) |
+| Selection service input text | Text that the selection service uses to determine which selection list to provide.The text specified here is passed as the text input argument of the selection service and the selection service subsequently uses this information to determine the output values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | String                                                 |
+| Display name property        | The property used as the display name for data objects in the selection list that are not Strings or NameValuePairs. The name of the property specified here is used when the selection list is being populated. For example, say that the selection list is an array of data objects with properties title (String) and author (String).  If title is specified as the display name property, the selection list would be populated with the value of title property for each array member.This option is ignored if the selection list is made up of Strings and NameValuePairs. For Strings, the string itself is used as the display name. For NameValuePairs, the "name" property of each NameValuePair is used as the display name. The default value is name. | String                                                 |
+| Value property               | The property used as the value for user-defined objects in the selection list that are not Strings or NameValuePairs. This option is ignored when the selection list is made up of Strings or NameValuePairs. When the selection list consists of Strings, the string itself is used as the value. When the selection list consists of NameValuePairs, "value" property of each NameValuePair is used as the value. The default value is value.                                                                                                                                                                                                                                                                                                                      | String                                                 |
+| Disable sorting              | Disable sorting to use the list order instead of alphabetical order. Items on the list are sorted in alphabetical order by default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Boolean                                                |
+
+## Selection list method
+
+- When the selection list is of type String, the string value in
+the binding is sought.
+- When the selection list is of type NameValuePair, the value property
+of the NameValuePair in the binding is sought.
+- When the selection list is a user-defined object...
+    - - the value specified for the Value property configuration
+option in the binding is sought.
+    - - if the value specified for the Value property configuration
+option is not found or if no Value property configuration
+option is specified, then the Display name property is
+sought.

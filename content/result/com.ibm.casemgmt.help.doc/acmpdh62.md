@@ -1,0 +1,7 @@
+# createNewDependentObject operation
+
+| Parameter         | Type     | Description                                                                                                                                                                                                                                                                  |
+|-------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requiredClassName | String   | The name of the dependent object class from which this instance is to be created.                                                                                                                                                                                            |
+| propertyNames     | String[] | The names of the properties in the new dependent object instance.                                                                                                                                                                                                            |
+| propertyValues    | String[] | The new values that are to be assigned to the properties in the new dependent object instance. You must specify a value for every property that is listed in the propertyNames parameter.For a multiple value property, the property value format is {'value1','value2'...}. |

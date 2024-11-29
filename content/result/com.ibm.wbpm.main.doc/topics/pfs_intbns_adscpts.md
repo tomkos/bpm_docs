@@ -1,0 +1,117 @@
+# Using the Administration scripts to access the indexers MBeans
+
+## Accessing the Administration scripts
+
+These administration scripts are located in the
+PFS\_INSTALL\_DIR/ibmProcessFederationServer/wlp-ext/adminScripts
+directory.
+
+## Preparing your environment for the Administration scripts
+
+- JAVA\_HOME : A directory where the Java runtime environment is installed. If
+this environment variable is not defined then the PATH is checked for a java
+executable.
+- WLP\_HOME : The Liberty wlp directory. This variable is
+used to locate the restConnector.jar file in
+WLP\_HOME/clients. If this environment variable is not defined, then it is
+assumed that the restConnector.jar file is located in
+./clients.
+- PFS\_ADMIN\_HOME : The directory that contains the
+PFS\_Admin\_Command.jar file. If this environment variable is not defined, then
+it is assumed that this file is located in the current directory.
+- PFS\_JAVA\_OPTS: Java options to use when running the Admin script. If the CN
+of the certificate exposed by Process Federation Server does
+not  match the hostname defined in the options file, you can define:
+PFS\_JAVA\_OPTS="-Dcom.ibm.ws.jmx.connector.client.disableURLHostnameVerification=true".
+If
+you get a Read timed out exception when you run a script, you can specify a custom
+timeout (in milliseconds) with:
+PFS\_JAVA\_OPTS="-Dcom.ibm.ws.jmx.connector.client.rest.readTimeout=<timeout>".
+The following example is for a 3 minutes (180 seconds) timeout:
+PFS\_JAVA\_OPTS="-Dcom.ibm.ws.jmx.connector.client.rest.readTimeout=180000"
+You
+can combine more than one Java option, as in the following example:
+PFS\_JAVA\_OPTS="-Dcom.ibm.ws.jmx.connector.client.disableURLHostnameVerification=true
+-Dcom.ibm.ws.jmx.connector.client.rest.readTimeout=180000"
+
+## Using the Administration scripts
+
+- Linux/Unix: listBpdIndexerUniqueIDs.sh -file optionsFile
+[-verbose]
+- Windows: listBpdIndexerUniqueIDs.bat -file optionsFile
+[-verbose]
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                  | Required   |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                         | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name>  port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>  trustStoreType=<truststore type>  trustStorePassword=<truststore password> | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                      | No         |
+
+- Linux/Unix: listBpelIndexerUniqueIDs.sh -file optionsFile
+[-verbose]
+- Windows: listBpelIndexerUniqueIDs.bat -file optionsFile
+[-verbose]
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                 | Required   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                        | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name> port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>  trustStoreType=<truststore type>  trustStorePassword=<truststore password> | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                     | No         |
+
+- Linux/Unix: monitorBpdIndexer.sh -file optionsFile -id
+BPD\_uniqueIndexerID -attribute attributeName
+[-verbose]
+- Windows: monitorBpdIndexer.bat -file optionsFile -id
+BPD\_uniqueIndexerID -attribute attributeName
+[-verbose]
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Required   |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name>  port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>   trustStoreType=<truststore type>  trustStorePassword=<truststore password>                                                                                                                                                                                                                                                                                                              | Yes        |
+| -id            | Specifies the unique indexer ID of the BPD indexer MBean that this script accesses remotely.  This unique indexer ID can be retrieved with script listBpdIndexerUniqueIDs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Yes        |
+| -attribute     | One attribute among:  status  currentDatabaseTime  scheduledChangeLogCompaction  scheduledSyncTasks  scheduledSyncInstances  scheduledSyncTaskDeletes  scheduledIndexLogTrim  nextScheduledChangeLogCompactionTime  nextScheduledSyncTasksTime  nextScheduledSyncInstancesTime  nextScheduledSyncTaskDeletesTime  nextScheduledIndexLogTrimTime  lastCyclesIndexerResults  numberIndexerFailures  lastKnownIndexerException  lastCycleIndexingRate  averageLastCyclesIndexingRates  federatedSystemInfo  federatedSystemDatabaseInfo indexName columnName lastIndexedDocumentsRate averageLastCyclesIndexedDocumentsRate averageClaimedChangeLogEntriesDurations averageFetchDataToIndexDurations averageConsumedChangeLogEntriesDurations | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No         |
+
+- Linux/Unix: monitorBpelIndexer.sh -file optionsFile -id
+BPEL\_uniqueIndexerID -attribute attributeName
+[-verbose]
+- Windows: monitorBpelIndexer.bat -file optionsFile -id
+BPEL\_uniqueIndexerID -attribute attributeName
+[-verbose]
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Required   |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                                                                                                                                       | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name>  port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>  trustStoreType=<truststore type>  trustStorePassword=<truststore password>                                                                                                               | Yes        |
+| -id            | Specifies the unique indexer ID of the BPEL indexer MBean that this script accesses remotely.  This unique indexer ID can be retrieved with script listBpellIndexerUniqueIDs.                                                                                                                                                                                                                                                                                                                                                              | Yes        |
+| -attribute     | One attribute among:  status  currentDatabaseTime  scheduledSyncTasks  scheduledIndexLogTrim  nextScheduledSyncTasksTime  nextScheduledIndexLogTrimTime  lastCyclesIndexerResults  numberIndexerFailures  lastKnownIndexerException  lastCycleIndexingRate  averageLastCyclesIndexingRates  federatedSystemInfo  federatedSystemDatabaseInfo indexName columnName lastIndexedTasksRate averageLastCyclesIndexedTasksRate averageClaimedChangeLogEntriesDurations averageFetchDataToIndexDurations averageConsumedChangeLogEntriesDurations | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No         |
+
+- Linux/Unix: controlBpdIndexer.sh -file optionsFile -id
+BPD\_uniqueIndexerID -action actionName
+[-verbose]
+- Windows: controlBpdIndexer.bat -file optionsFile -id
+BPD\_uniqueIndexerID -action actionName
+[-verbose]
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required   |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                                                                                         | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name>  port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>   trustStoreType=<truststore type>  trustStorePassword=<truststore password>                                                                | Yes        |
+| -id            | Specifies the unique indexer ID of the BPD indexer MBean that this script accesses remotely.  This unique indexer ID can be retrieved with script listBpdIndexerUniqueIDs.                                                                                                                                                                                                                                                                                                                   | Yes        |
+| -action        | One action among:  runUnscheduledChangeLogCompaction  runUnscheduledSyncTasks  runUnscheduledSyncInstances  runUnscheduledSyncTaskDeletes  runUnscheduledIndexLogTrim  enableScheduledChangeLogCompaction  enableScheduledSyncTasks  enableScheduledSyncInstances  enableScheduledSyncTaskDeletes  enableScheduledIndexLogTrim  disableScheduledChangeLogCompaction  disableScheduledSyncTasks  disableScheduledSyncInstances  disableScheduledSyncTaskDeletes  disableScheduledIndexLogTrim | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                                                                                      | No         |
+
+- Linux/Unix: controlBpelIndexer.sh -file optionsFile -id
+BPEL\_uniqueIndexerID -attribute attributeName
+- Windows: controlBpelIndexer.bat -file optionsFile -id
+BPEL\_uniqueIndexerID -attribute attributeName
+
+| Option         | Description                                                                                                                                                                                                                                                                                                                                                                                                                  | Required   |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| -help          | Displays information about the options, the attributes that can be queried, and the properties that must be set in the options file.                                                                                                                                                                                                                                                                                         | No         |
+| -file filename | Specifies the absolute path name of the option file that must contain the following properties:  host=<Process Federation Server host name> port=<HTTPS server port>  user=<user with administrative role defined on the server>  password=<user password>  trustStoreFile=<name and path of the truststore for SSL connection with the server>   trustStoreType=<truststore type>  trustStorePassword=<truststore password> | Yes        |
+| -id            | Specifies the unique indexer ID of the BPEL indexer MBean that this script accesses remotely.  This unique indexer ID can be retrieved with script listBpellIndexerUniqueIDs.                                                                                                                                                                                                                                                | Yes        |
+| -action        | One action among:  runUnscheduledSyncTasks  runUnscheduledIndexLogTrim  enableScheduledSyncTasks  enableScheduledIndexLogTrim  disableScheduledSyncTasks  disableScheduledIndexLogTrim                                                                                                                                                                                                                                       | Yes        |
+| -verbose       | Verbose output of the script execution.                                                                                                                                                                                                                                                                                                                                                                                      | No         |

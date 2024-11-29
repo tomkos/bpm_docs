@@ -1,0 +1,8 @@
+# setDependentObjectProperties operation
+
+| Parameter      | Type     | Description                                                                                                                                                                                                                                                      |
+|----------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boPropValue    | String   | The value of the case property in which the dependent object is to be updated.Use the getCasePropertyValues operation to obtain the value of the business object property.                                                                                       |
+| index          | Integer  | The index of the dependent object that is to be updated.Use the findDependentObjects operation to get the index of the dependent object.                                                                                                                         |
+| propertyNames  | String[] | The names of the properties in the dependent object that are to be updated. You can specify a subset of the dependent object properties.                                                                                                                         |
+| propertyValues | String[] | The new values to be assigned to the specified properties in the dependent object. You must specify a value for every property that is listed in the propertyNames parameter.For a multiple value property, the property value format is {'value1','value2'...}. |

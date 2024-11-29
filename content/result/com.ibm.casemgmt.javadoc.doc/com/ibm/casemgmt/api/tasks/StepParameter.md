@@ -1,0 +1,85 @@
+- Overview
+- Package
+- Class
+- Tree
+- Deprecated
+- Index
+- Help
+
+- Prev Class
+- Next Class
+
+- Frames
+- No Frames
+
+- All Classes
+
+- Summary:
+- Nested |
+- Field |
+- Constr |
+- Method
+
+- Detail:
+- Field |
+- Constr |
+- Method
+
+## Class StepParameter
+
+- java.lang.Object
+    - com.ibm.casemgmt.api.tasks.StepParameter
+
+- public final class StepParameter
+extends java.lang.Object
+Represents a parameter of a launch step or work item.
+
+ID status:
+ID review by David Newhall 15 May 2012
+
+- ========== METHOD SUMMARY ===========
+    - Method Summary All Methods Instance Methods Concrete Methods Deprecated Methods Modifier and Type Method and Description java.lang.String getAuthoredName () Returns the authored name of this parameter. CaseMgmtChoiceList getChoiceList () If this parameter maps to a Content Engine property, returns the choice list associated with that property, if any. java.util.List<java.lang.Integer> getCustomInvalidItems () If an external data service performs custom validation of a property value and the property is a multivalue property, it can also indicate the individual items of the multivalue list that are invalid. java.lang.String getCustomValidationError () An external data service can perform any validation of its choosing on the current property values. java.lang.Object getDefaultValue () If this parameter maps to a Content Engine property, returns the default value of that property. java.lang.String getDescription () Returns the textual description. DisplayMode getDisplayMode () An external data service can determine what the value for a property must be. java.lang.String getDisplayName () Returns a display name for this step parameter. ExternalDataModifications getExternalDataModifications () Returns an object that indicates what attributes of this parameter object have been modified by an external data service, if any. java.lang.Integer getMaximumLength () If this parameter maps to a Content Engine property, returns the maximum length of that property. java.lang.Object getMaximumValue () If this parameter maps to a Content Engine property, returns the maximum value of that property. java.lang.Object getMinimumValue () If this parameter maps to a Content Engine property, returns the minimum value of that property. int getMode () Returns the mode of this parameter. java.lang.String getName () Returns the name of this parameter. java.lang.Object getOriginalValue () Indicates the original persisted value even if the current or working value has been modified. java.lang.String getPropertyProvider () If this parameter maps to a Content Engine property, returns the property provider (case or task). java.lang.String getPropertySymbolicName () If this parameter maps to a Content Engine property, returns the property symbolic name. java.lang.Boolean getRequired () If this parameter maps to a Content Engine property, returns the IsValueRequired setting of that property, Boolean.TRUE or Boolean.FALSE. com.filenet.api.constants.PropertySettability getSettability () If this parameter maps to a Content Engine property, returns the settability of that property. int getType () Returns the field type of the step parameter. java.lang.Object getValue () Returns the current value of this parameter. boolean hasDependentProperties () Indicates that one or more other properties depend on the value of this property. boolean isArray () Indicates whether this parameter is an array type. boolean isDirty () Indicates if the value of this parameter is dirty. boolean isHidden () If this parameter maps to a Content Engine property, returns the IsHidden setting of that property. boolean isInherited () If this parameter maps to a Content Engine property, returns whether the property is inherited from its base class. boolean isOrderable () If this parameter maps to a Content Engine property, returns the IsOrderable setting of that property. boolean isQueryable () If this parameter maps to a Content Engine property, returns the IsSearchable setting of that property. boolean isRequiresUniqueElements () If this parameter maps to a Content Engine property, returns the RequiresUniqueElements setting of that property. boolean isSelectable () If this parameter maps to a Content Engine property, returns the IsSelectable setting of that property. boolean isSystemOwned () If this parameter maps to a Content Engine property, returns whether the property is system owned. boolean mapsToCaseProperty () Deprecated. call getPropertyProvider() to check if a step parameter maps to a Content Engine property. void setAuthoredAndSymbolicNames (java.lang.String authName, java.lang.String provider, java.lang.String symbolicName) Specifies the authored name of the parameter and optionally the provider and symbolic name. void setAuthoredName (java.lang.String authName) Deprecated. Call setAuthoredAndSymbolicNames() void setReferenceValue (java.lang.Object value) Sets the parameter value for reference purposes. void setValue (java.lang.Object value) Specifies a new value for this parameter.
+
+### Method Summary
+
+| Modifier and Type                             | Method and Description                                                                                                                                                                                                                                              |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| java.lang.String                              | getAuthoredName() Returns the authored name of this parameter.                                                                                                                                                                                                      |
+| CaseMgmtChoiceList                            | getChoiceList() If this parameter maps to a Content Engine property, returns the choice list  associated with that property, if any.                                                                                                                                |
+| java.util.List<java.lang.Integer>             | getCustomInvalidItems() If an external data service performs custom validation of a property value   and the property is a multivalue property, it can also indicate the   individual items of the multivalue list that are invalid.                                |
+| java.lang.String                              | getCustomValidationError() An external data service can perform any validation of its choosing on the current   property values.                                                                                                                                    |
+| java.lang.Object                              | getDefaultValue() If this parameter maps to a Content Engine property, returns the default value  of that property.                                                                                                                                                 |
+| java.lang.String                              | getDescription() Returns the textual description.                                                                                                                                                                                                                   |
+| DisplayMode                                   | getDisplayMode() An external data service can determine what the value for a property must be.                                                                                                                                                                      |
+| java.lang.String                              | getDisplayName() Returns a display name for this step parameter.                                                                                                                                                                                                    |
+| ExternalDataModifications                     | getExternalDataModifications() Returns an object that indicates what attributes of this parameter object have been  modified by an external data service, if any.                                                                                                   |
+| java.lang.Integer                             | getMaximumLength() If this parameter maps to a Content Engine property, returns the maximum length  of that property.                                                                                                                                               |
+| java.lang.Object                              | getMaximumValue() If this parameter maps to a Content Engine property, returns the maximum value  of that property.                                                                                                                                                 |
+| java.lang.Object                              | getMinimumValue() If this parameter maps to a Content Engine property, returns the minimum value  of that property.                                                                                                                                                 |
+| int                                           | getMode() Returns the mode of this parameter.                                                                                                                                                                                                                       |
+| java.lang.String                              | getName() Returns the name of this parameter.                                                                                                                                                                                                                       |
+| java.lang.Object                              | getOriginalValue() Indicates the original persisted value even if the current or working value  has been modified.                                                                                                                                                  |
+| java.lang.String                              | getPropertyProvider() If this parameter maps to a Content Engine property, returns the property provider (case or task).                                                                                                                                            |
+| java.lang.String                              | getPropertySymbolicName() If this parameter maps to a Content Engine property, returns the property symbolic name.                                                                                                                                                  |
+| java.lang.Boolean                             | getRequired() If this parameter maps to a Content Engine property, returns the IsValueRequired setting of that  property, Boolean.TRUE or Boolean.FALSE.                                                                                                            |
+| com.filenet.api.constants.PropertySettability | getSettability() If this parameter maps to a Content Engine property, returns the settability  of that property.                                                                                                                                                    |
+| int                                           | getType() Returns the field type of the step parameter.                                                                                                                                                                                                             |
+| java.lang.Object                              | getValue() Returns the current value of this parameter.                                                                                                                                                                                                             |
+| boolean                                       | hasDependentProperties() Indicates that one or more other properties depend on the value of this property.                                                                                                                                                          |
+| boolean                                       | isArray() Indicates whether this parameter is an array type.                                                                                                                                                                                                        |
+| boolean                                       | isDirty() Indicates if the value of this parameter is dirty.                                                                                                                                                                                                        |
+| boolean                                       | isHidden() If this parameter maps to a Content Engine property, returns the IsHidden  setting of that property.                                                                                                                                                     |
+| boolean                                       | isInherited() If this parameter maps to a Content Engine property, returns whether the property  is inherited from its base class.                                                                                                                                  |
+| boolean                                       | isOrderable() If this parameter maps to a Content Engine property, returns the IsOrderable  setting of that property.                                                                                                                                               |
+| boolean                                       | isQueryable() If this parameter maps to a Content Engine property, returns the IsSearchable  setting of that property.                                                                                                                                              |
+| boolean                                       | isRequiresUniqueElements() If this parameter maps to a Content Engine property, returns the RequiresUniqueElements  setting of that property.                                                                                                                       |
+| boolean                                       | isSelectable() If this parameter maps to a Content Engine property, returns the IsSelectable  setting of that property.                                                                                                                                             |
+| boolean                                       | isSystemOwned() If this parameter maps to a Content Engine property, returns whether the property  is system owned.                                                                                                                                                 |
+| boolean                                       | mapsToCaseProperty() Deprecated.  call getPropertyProvider() to check if a step parameter maps to  a Content Engine property.                                                                                                                                       |
+| void                                          | setAuthoredAndSymbolicNames(java.lang.String authName,                            java.lang.String provider,                            java.lang.String symbolicName) Specifies the authored name of the parameter and optionally the  provider and symbolic name. |
+| void                                          | setAuthoredName(java.lang.String authName) Deprecated.  Call setAuthoredAndSymbolicNames()                                                                                                                                                                          |
+| void                                          | setReferenceValue(java.lang.Object value) Sets the parameter value for reference purposes.                                                                                                                                                                          |
+| void                                          | setValue(java.lang.Object value) Specifies a new value for this parameter.                                                                                                                                                                                          |
+
+- Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait

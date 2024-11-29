@@ -1,0 +1,1484 @@
+- Overview
+- Package
+- Class
+- Tree
+- Deprecated
+- Index
+- Help
+
+- Prev
+- Next
+
+- Frames
+- No Frames
+
+- All Classes
+
+# Hierarchy For All Packages
+
+- com.ibm.bpc.clientcore,
+- com.ibm.bpc.clientcore.converter,
+- com.ibm.bpc.clientcore.exception,
+- com.ibm.bpe.api,
+- com.ibm.bpe.clientmodel,
+- com.ibm.bpe.clientmodel.bean,
+- com.ibm.bpe.formrenderer.util,
+- com.ibm.bpe.interop,
+- com.ibm.bpe.jsf.component.taglib,
+- com.ibm.bpe.jsf.handler,
+- com.ibm.bpe.jsf.util,
+- com.ibm.bpe.query.api,
+- com.ibm.bpm.context,
+- com.ibm.bpm.context.cobo,
+- com.ibm.mq.data,
+- com.ibm.task.api,
+- com.ibm.task.clientmodel,
+- com.ibm.task.clientmodel.bean,
+- com.ibm.task.plugins,
+- com.ibm.task.query.api,
+- com.ibm.task.spi,
+- com.ibm.task.spi.ppp,
+- com.ibm.wbiserver.brules.mgmt,
+- com.ibm.wbiserver.brules.mgmt.dtable,
+- com.ibm.wbiserver.brules.mgmt.problem,
+- com.ibm.wbiserver.brules.mgmt.query,
+- com.ibm.wbiserver.brules.mgmt.ruleset,
+- com.ibm.wbiserver.manualrecovery,
+- com.ibm.wbiserver.manualrecovery.exceptions,
+- com.ibm.wbiserver.manualrecovery.impl,
+- com.ibm.wbiserver.map,
+- com.ibm.wbiserver.rel,
+- com.ibm.wbiserver.storeandfwd.management,
+- com.ibm.wbiserverspi.mediation,
+- com.ibm.wbit.tel,
+- com.ibm.websphere.ant.tasks,
+- com.ibm.websphere.bo,
+- com.ibm.websphere.cem,
+- com.ibm.websphere.CorrelationSphere,
+- com.ibm.websphere.dhframework.faults,
+- com.ibm.websphere.http.data.bindings,
+- com.ibm.websphere.http.data.streams,
+- com.ibm.websphere.http.data.util,
+- com.ibm.websphere.http.headers,
+- com.ibm.websphere.http.selectors,
+- com.ibm.websphere.sca,
+- com.ibm.websphere.sca.addressing,
+- com.ibm.websphere.sca.bindingcore,
+- com.ibm.websphere.sca.jms.data,
+- com.ibm.websphere.sca.jms.data.impl,
+- com.ibm.websphere.sca.mq.data,
+- com.ibm.websphere.sca.mq.selector,
+- com.ibm.websphere.sca.mq.structures,
+- com.ibm.websphere.sca.scdl,
+- com.ibm.websphere.sca.sdo,
+- com.ibm.websphere.sibx.smobo,
+- com.ibm.websphere.wsaddr10,
+- com.ibm.wsspi.bpm.monitor,
+- com.ibm.wsspi.bpm.monitor.listener,
+- com.ibm.wsspi.recovery.data,
+- com.ibm.wsspi.recovery.exception,
+- com.ibm.wsspi.recovery.handler,
+- teamworks
+
+## Class Hierarchy
+
+- java.lang.Object
+    - org.eclipse.emf.common.util.AbstractEnumerator (implements org.eclipse.emf.common.util.Enumerator)
+        - com.ibm.websphere.http.headers.HTTPAuthenticationType
+        - com.ibm.websphere.http.headers.HTTPProxyType
+        - com.ibm.websphere.http.headers.HTTPVersion
+        - com.ibm.wbit.tel.TActivationStates
+        - com.ibm.wbit.tel.TAtLeastExpectedStates
+        - com.ibm.wbit.tel.TAutoDeletionMode
+        - com.ibm.wbit.tel.TAutonomy
+        - com.ibm.wbit.tel.TBoolean
+        - com.ibm.wbit.tel.TContextAuthorizationForOwner
+        - com.ibm.wbit.tel.TDurationConstants
+        - com.ibm.wbit.tel.TEscalationActions
+        - com.ibm.wbit.tel.TIncreasePriority
+        - com.ibm.wbit.tel.TInheritedAuthorization
+        - com.ibm.wbit.tel.TInterfaceKinds
+        - com.ibm.wbit.tel.TJspApplicableRole
+        - com.ibm.wbit.tel.TJspUsagePattern
+        - com.ibm.wbit.tel.TSubstitutionKinds
+        - com.ibm.wbit.tel.TTaskKinds
+- com.ibm.bpe.clientmodel.bean.ActivityInstanceBean (implements com.ibm.bpe.api.ActivityInstanceData)
+- com.ibm.bpe.clientmodel.bean.ActivityServiceTemplateBean (implements com.ibm.bpe.api.ActivityServiceTemplateData)
+- com.ibm.task.spi.APIEventHandler (implements com.ibm.task.spi.APIEventHandlerPlugin6)
+- com.ibm.task.clientmodel.bean.ApplicationComponentBean (implements com.ibm.task.api.ApplicationComponent)
+- com.ibm.bpe.api.AttributeType (implements java.io.Serializable)
+- com.ibm.task.api.AttributeType (implements java.io.Serializable)
+- com.ibm.bpe.api.AuthorizationOptions (implements java.io.Serializable)
+    - com.ibm.bpe.api.AdminAuthorizationOptions (implements java.io.Serializable)
+- com.ibm.task.api.AuthorizationOptions (implements java.io.Serializable)
+
+- com.ibm.task.api.AdminAuthorizationOptions (implements java.io.Serializable)
+- com.ibm.bpe.api.AuthorizationType (implements java.io.Serializable)
+- com.ibm.task.api.AuthorizationType (implements java.io.Serializable)
+- com.ibm.bpe.clientmodel.BFMConnection
+- com.ibm.bpe.api.BinaryCustomProperty (implements java.io.Serializable)
+- com.ibm.task.api.BinaryCustomProperty (implements java.io.Serializable)
+- com.ibm.websphere.sca.bindingcore.BindingRegistryFactory
+- com.ibm.bpe.jsf.handler.BPCDetailsHandler (implements com.ibm.bpe.jsf.handler.ItemListener, com.ibm.bpe.jsf.handler.ItemProvider)
+- com.ibm.bpe.jsf.handler.BPCListHandler (implements com.ibm.bpe.jsf.handler.ErrorHandler, com.ibm.bpe.jsf.handler.ItemProvider)
+- com.ibm.task.api.BusinessCategoryDefinitionFactory
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleManager
+- com.ibm.bpe.api.ClientObjectWrapper (implements java.lang.Cloneable, java.io.Serializable)
+- com.ibm.task.api.ClientObjectWrapper (implements java.lang.Cloneable, java.io.Serializable)
+- com.ibm.task.api.ClientTaskFactory
+- com.ibm.websphere.CorrelationSphere.CorrelationControler
+- com.ibm.bpe.api.CustomPropertyFactory
+- com.ibm.task.api.CustomPropertyFactory
+- com.ibm.ws.sca.databinding.impl.DataBindingImplJava (implements commonj.connector.runtime.DataBinding)
+
+- com.ibm.websphere.sca.jms.data.impl.JMSDataBindingImplJava (implements com.ibm.websphere.sca.jms.data.JMSObjectBinding)
+- com.ibm.ws.sca.databinding.impl.DataBindingImplXML (implements commonj.connector.runtime.DataBinding)
+
+- com.ibm.websphere.sca.jms.data.impl.JMSDataBindingImplXML (implements commonj.connector.runtime.BindingContext, com.ibm.websphere.sca.jms.data.JMSDataBinding, com.ibm.wsspi.sca.jms.data.JMSDataBindingNativeBytes, com.ibm.websphere.sca.jms.data.JMSDataBindingXML)
+- com.ibm.bpc.clientcore.DataObjectUtils
+- com.ibm.mq.data.DecimalEncoding
+- com.ibm.websphere.cem.ECSEmitter (implements com.ibm.events.emitter.Emitter)
+- com.ibm.bpe.api.ErrorTypeEnum (implements java.io.Serializable)
+- com.ibm.task.api.ErrorTypeEnum (implements java.io.Serializable)
+- com.ibm.task.clientmodel.bean.EscalationBean (implements com.ibm.task.api.Escalation)
+- com.ibm.bpe.clientmodel.bean.EventActivityBean
+- com.ibm.wbiserver.manualrecovery.FailedEventImpl (implements com.ibm.wbiserver.manualrecovery.FailedEvent , java.io.Serializable)
+
+- com.ibm.wbiserver.manualrecovery.FailedEventWithParametersImpl (implements com.ibm.wbiserver.manualrecovery.FailedEventWithParameters , com.ibm.wbiserver.manualrecovery.SCAEvent )
+    - com.ibm.wbiserver.manualrecovery.impl.FailedEventDetail
+- com.ibm.bpe.api.FilterOptions (implements java.io.Serializable)
+- com.ibm.task.api.FilterOptions (implements java.io.Serializable)
+- com.ibm.mq.data.FloatEncoding
+- com.ibm.bpc.clientcore.GenericBPCQuery (implements com.ibm.bpc.clientcore.Query)
+- com.ibm.bpe.formrenderer.util.HTMConnection
+- com.ibm.task.clientmodel.HTMConnection
+- com.ibm.websphere.http.data.util.HTTPBindingUtil
+- com.ibm.websphere.http.selectors.HTTPFunctionSelector (implements commonj.connector.runtime.BindingContext, commonj.connector.runtime.FunctionSelector)
+- com.ibm.task.api.HumanTaskManagerDelegateFactory
+- java.io.InputStream (implements java.io.Closeable)
+
+- java.io.FilterInputStream
+    - com.ibm.mq.data.MQDataInputStream (implements com.ibm.mq.data.MQDataInput)
+- com.ibm.mq.data.IntegerEncoding
+- com.ibm.wbiserverspi.mediation.JavaMediation
+- com.ibm.wbiserverspi.mediation.JavaMediationDataObject
+- teamworks.JMSMessage
+- com.ibm.bpe.api.JspApplicableRoleEnum (implements java.io.Serializable)
+- com.ibm.task.api.JspApplicableRoleEnum (implements java.io.Serializable)
+- com.ibm.bpe.api.JspUsageEnum (implements java.io.Serializable)
+- com.ibm.task.api.JspUsageEnum (implements java.io.Serializable)
+- com.ibm.bpe.api.MetaDataOptions (implements java.io.Serializable)
+- com.ibm.task.api.MetaDataOptions (implements java.io.Serializable)
+- com.ibm.websphere.sca.mq.selector.MQFunctionSelector (implements commonj.connector.runtime.FunctionSelector)
+- teamworks.MQMessages
+- com.ibm.task.spi.NotificationEventHandler (implements com.ibm.task.spi.NotificationEventHandlerPlugin)
+- java.io.OutputStream (implements java.io.Closeable, java.io.Flushable)
+
+- java.io.FilterOutputStream
+    - com.ibm.mq.data.MQDataOutputStream (implements com.ibm.mq.data.MQDataOutput)
+- com.ibm.websphere.sca.mq.structures.PackageInitializationMethods
+- com.ibm.bpe.api.Parameter (implements java.io.Serializable)
+- com.ibm.task.api.Parameter (implements java.io.Serializable)
+- com.ibm.task.api.PeopleAssignmentFactory
+- com.ibm.wbiserver.brules.mgmt.problem.Problem (implements java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemBusRuleNotInAvailTargetList (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemCaseEdgeChildNodeMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemCaseEdgesAreMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemCaseEdgeValueDefinitionMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemDuplicatePropertyName (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemInvalidActionValueTemplate (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemInvalidAttemptToSetValueTemplateInstance (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemInvalidBooleanValue (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemInvalidConditionValueTemplate (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemNoTemplatesAvailableForNewActionNodes (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemOperationContainsNoTargets (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemOverlappingRanges (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemParmNotDefinedInTemplate (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemParmValueListContainsUnexpectedValue (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemRootNodeIsMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemRuleBlockContainsNoRules (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemRuleNameAlreadyInUse (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemStartDateAfterEndDate (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTargetBusRuleNotSet (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTemplateNotAssociatedWithRuleSet (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTemplateParameterNotSpecified (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTNSAndNameAlreadyInUse (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTreeActionTermIsMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTreeConditionIsMissing
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemTypeConversionError (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemValueTemplateInstanceIsMissing (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemValueViolatesParmConstraints (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemWrongNumberOfParameterValues (implements java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.problem.ProblemWrongOperationForOpSelectionRecord (implements java.io.Serializable)
+- com.ibm.bpe.clientmodel.bean.ProcessInstanceBean (implements com.ibm.bpe.api.ProcessInstanceData)
+- com.ibm.bpe.api.ProcessResponseWrapper (implements java.io.Serializable)
+- com.ibm.bpe.clientmodel.bean.ProcessTemplateBean (implements com.ibm.bpe.api.ProcessTemplateData)
+- com.ibm.bpe.api.QueryColumnInfo (implements java.io.Serializable)
+- com.ibm.task.api.QueryHelper
+- com.ibm.wbiserver.brules.mgmt.query.QueryNodeFactory
+- com.ibm.bpe.api.QueryTableKind (implements java.io.Serializable)
+- com.ibm.task.api.QueryTableKind (implements java.io.Serializable)
+- com.ibm.wsspi.recovery.handler.RecoveryHandler
+- com.ibm.bpe.api.ReplyContextWrapper (implements java.lang.Cloneable, java.io.Serializable)
+- com.ibm.task.api.ReplyHandlerWrapper (implements java.lang.Cloneable, java.io.Serializable)
+- com.ibm.websphere.sca.ServiceManager
+- com.ibm.task.spi.StaffQueryResultFactory
+- com.ibm.bpe.api.StoredQueryProperty (implements java.io.Serializable)
+- com.ibm.task.api.StoredQueryProperty (implements java.io.Serializable)
+- javax.servlet.jsp.tagext.TagSupport (implements javax.servlet.jsp.tagext.IterationTag, java.io.Serializable)
+
+- com.ibm.bpe.jsf.component.taglib.ColumnTag
+- com.ibm.bpe.jsf.component.taglib.CommandTag
+- com.ibm.bpe.jsf.component.taglib.PropertyTag
+- Task
+
+- com.ibm.websphere.ant.tasks.ServiceDeployTask
+- com.ibm.task.clientmodel.bean.TaskInstanceBean (implements com.ibm.task.api.Task)
+- com.ibm.task.clientmodel.bean.TaskTemplateBean (implements com.ibm.task.api.TaskTemplate)
+- java.lang.Throwable (implements java.io.Serializable)
+
+- java.lang.Exception
+    - com.ibm.wbiserver.brules.mgmt.BusinessRuleManagementException
+        - com.ibm.wbiserver.brules.mgmt.ChangeConflictException
+        - com.ibm.wbiserver.brules.mgmt.ValidationException
+- com.ibm.wbiserver.manualrecovery.exceptions.DiscardFailedException
+- com.ibm.wbiserver.manualrecovery.exceptions.FailedEventDataException
+- com.ibm.wbiserver.manualrecovery.exceptions.FailedEventReadException
+- com.ibm.wbiserver.manualrecovery.exceptions.InvalidMessageException
+- com.ibm.bpe.api.ProcessException
+    - com.ibm.bpe.api.ActivityNameNotUniqueException
+    - com.ibm.bpe.api.ApplicationNotStartedException
+    - com.ibm.bpe.api.ApplicationVetoException
+    - com.ibm.bpe.api.ArchiveUnsupportedOperationException
+    - com.ibm.bpe.api.BpelException
+        - com.ibm.bpe.api.ApplicationFaultException
+            - com.ibm.bpe.api.ApplicationFaultException2
+    - com.ibm.bpe.api.FaultReplyException
+        - com.ibm.bpe.api.FaultReplyException2
+        - com.ibm.bpe.api.SpecificFaultReplyException (implements org.apache.wsif.WSIFMessage)
+- com.ibm.bpe.api.RuntimeFaultException
+- com.ibm.bpe.api.StandardFaultException
+- com.ibm.bpe.api.UnhandledFaultException
+    - com.ibm.bpe.api.EngineConditionEvaluationFailedException
+    - com.ibm.bpe.api.EngineExitConditionExpressionEvaluationFailedException
+    - com.ibm.bpe.api.EngineJavaExecutionFailedException
+    - com.ibm.bpe.api.EngineJoinConditionFailedException
+    - com.ibm.bpe.api.EngineTimeoutExpressionEvaluationFailedException
+    - com.ibm.bpe.api.EngineTransitionConditionFailedException
+- com.ibm.bpe.api.CannotAccessObjectException
+- com.ibm.bpe.api.CannotDeleteNamespaceException
+- com.ibm.bpc.clientcore.ClientException
+
+- com.ibm.bpc.clientcore.exception.ErrorsInCommandException
+- com.ibm.bpe.api.CouldNotCreateWSIFPort\_ProcessException
+- com.ibm.bpe.api.CreateFailedException
+- com.ibm.bpe.api.CreateRejectedException
+- com.ibm.bpe.api.DatabaseException
+- com.ibm.bpe.api.DataHandlingException
+- com.ibm.bpe.api.EngineActivityCorrelationHandlingFailureException
+- com.ibm.bpe.api.EngineActivityStoppedException
+- com.ibm.bpe.api.EngineAmbiguousActivityException
+- com.ibm.bpe.api.EngineAmbiguousPropertyDefinitionException
+- com.ibm.bpe.api.EngineAssignmentFailureExceptionException
+- com.ibm.bpe.api.EngineAuthorizationPluginException
+- com.ibm.bpe.api.EngineBaseClassNotFoundException
+- com.ibm.bpe.api.EngineCannotDeleteProcessException
+- com.ibm.bpe.api.EngineCannotDeserializeReplyContextException
+- com.ibm.bpe.api.EngineCannotOpenCompensationSphereException
+- com.ibm.bpe.api.EngineCannotResolveEndpointException
+- com.ibm.bpe.api.EngineCannotResolveReplacementStringException
+- com.ibm.bpe.api.EngineCannotUnwrapReplyContextException
+- com.ibm.bpe.api.EngineCompensateActivityFailedExceptionException
+- com.ibm.bpe.api.EngineCompensationNotSupportedException
+- com.ibm.bpe.api.EngineConditionEvaluationException
+- com.ibm.bpe.api.EngineConflictingProcessException
+- com.ibm.bpe.api.EngineCorrelationSetAlreadyInitializedException
+- com.ibm.bpe.api.EngineCorrelationSetDoesNotExistException
+- com.ibm.bpe.api.EngineCreateServiceReferenceException
+- com.ibm.bpe.api.EngineCustomAttributeAccessViolationException
+- com.ibm.bpe.api.EngineDataAssociationFailureException
+
+- com.ibm.bpe.api.EngineActivityInputCreationFailureException
+- com.ibm.bpe.api.EngineInvalidFromExpressionException
+- com.ibm.bpe.api.EngineInvalidToExpressionException
+- com.ibm.bpe.api.EngineDuplicateAwaitedEventException
+- com.ibm.bpe.api.EngineEndlessLoopException
+- com.ibm.bpe.api.EngineErrorInActivityCustomPropertyResolutionException
+- com.ibm.bpe.api.EngineErrorInDescriptionResolutionException
+- com.ibm.bpe.api.EngineEventHandlerCorrelationHandlingFailureException
+- com.ibm.bpe.api.EngineEventNotKnownException
+
+- com.ibm.bpe.api.EngineRequestRejectedException
+- com.ibm.bpe.api.EngineUnknownInboundOperationException
+- com.ibm.bpe.api.EngineUnknownNamespaceURIException
+- com.ibm.bpe.api.EngineUnknownOperationException
+- com.ibm.bpe.api.EngineEverybodyWorkItemException
+- com.ibm.bpe.api.EngineExitConditionFailedException
+- com.ibm.bpe.api.EngineImplQualTranMustBeGlobalException
+- com.ibm.bpe.api.EngineIncompatibleTypesException
+- com.ibm.bpe.api.EngineIncompleteUserInputException
+- com.ibm.bpe.api.EngineInstanceLocationFailureException
+- com.ibm.bpe.api.EngineInvalidCompensationSphereDescriptorException
+- com.ibm.bpe.api.EngineInvalidNamespaceURIException
+- com.ibm.bpe.api.EngineInvalidReplacementVariableException
+- com.ibm.bpe.api.EngineJmsApiContextException
+- com.ibm.bpe.api.EngineLastAdminWorkItemException
+- com.ibm.bpe.api.EngineLateBindingInfoException
+- com.ibm.bpe.api.EngineMessageAndCorrelationSetMismatchException
+- com.ibm.bpe.api.EngineNoInitialReceiveException
+- com.ibm.bpe.api.EngineNoServiceRefTypeException
+- com.ibm.bpe.api.EngineNotAuthorizedException
+
+- com.ibm.bpe.api.EngineActivityNotAuthorizedException
+- com.ibm.bpe.api.EngineProcessNotAuthorizedException
+- com.ibm.bpe.api.EngineServiceNotAuthorizedException
+- com.ibm.bpe.api.EngineNullMessageException
+- com.ibm.bpe.api.EngineParameterNullException
+- com.ibm.bpe.api.EngineParentProcessContextException
+- com.ibm.bpe.api.EngineProcessCannotBeMigratedException
+- com.ibm.bpe.api.EngineProcessInstanceNameNotUniqueException
+- com.ibm.bpe.api.EngineProcessModelDoesNotExistException
+- com.ibm.bpe.api.EngineProcessModelStoppedException
+- com.ibm.bpe.api.EngineProcessReaderWorkItemException
+- com.ibm.bpe.api.EngineProcessStarterDeletedException
+- com.ibm.bpe.api.EngineRefQualDeliverAsyncAtMustBeCommitException
+- com.ibm.bpe.api.EngineRepeatedCompensationExceptionException
+- com.ibm.bpe.api.EngineScopeInitializationFailureException
+- com.ibm.bpe.api.EngineSelectionFailureExceptionException
+- com.ibm.bpe.api.EngineSubProcessHasNoMatchingEventException
+- com.ibm.bpe.api.EngineUnknownActivityException
+- com.ibm.bpe.api.EngineUnsupportedJumpException
+- com.ibm.bpe.api.EngineVariableDoesNotExistException
+- com.ibm.bpe.api.EngineWrongActivityNameException
+- com.ibm.bpe.api.EngineWrongKindException
+
+- com.ibm.bpe.api.EngineActivityWrongKindException
+    - com.ibm.bpe.api.EngineActivityWrongKindForSignatureException
+- com.ibm.bpe.api.EngineAmbiguousOnAlarmBranchException
+- com.ibm.bpe.api.EngineNoExpirationDefinedException
+- com.ibm.bpe.api.EngineProcessWrongBuildVersionException
+- com.ibm.bpe.api.EngineProcessWrongKindException
+- com.ibm.bpe.api.EngineWrongTaskKindException
+- com.ibm.bpe.api.EngineWrongMessageTypeException
+
+- com.ibm.bpe.api.EngineDataCannotBeProcessedException
+- com.ibm.bpe.api.EngineWrongDataTypeException
+- com.ibm.bpe.api.EngineWrongStateException
+
+- com.ibm.bpe.api.EngineActivityExpiringException
+- com.ibm.bpe.api.EngineActivityWrongStateException
+    - com.ibm.bpe.api.EngineActivityMultipleJumpRequestsException
+    - com.ibm.bpe.api.EngineActivityWrongStopReasonException
+- com.ibm.bpe.api.EngineProcessIsMigratedException
+- com.ibm.bpe.api.EngineProcessWrongStateException
+- com.ibm.bpe.api.EngineRequestPendingException
+- com.ibm.bpe.api.EngineWrongTaskStateException
+- com.ibm.bpe.api.EngineWrongTaskTemplateException
+- com.ibm.bpe.api.EngineXPathCannotCreatePathException
+- com.ibm.bpe.api.EngineXPathCannotSetPathException
+- com.ibm.bpe.api.EngineXPathDataTypeMismatchException
+- com.ibm.bpe.api.EngineXPathExtensionFunctionFailedException
+- com.ibm.bpe.api.ExecuteInputOnlyOperation\_NotSupportedException
+- com.ibm.bpe.api.GenericErrorException
+- com.ibm.bpe.api.GroupWorkItemException
+- com.ibm.bpe.api.HumanTaskManagerException
+- com.ibm.bpe.api.IdAndCorrelationSetMismatchException
+- com.ibm.bpe.api.IdWrongFormatException
+- com.ibm.bpe.api.IdWrongTypeException
+- com.ibm.bpe.api.ImplementationNotFoundException
+- com.ibm.bpe.interop.InterOpException
+- com.ibm.bpe.api.InvalidAssignmentReasonException
+- com.ibm.bpe.api.InvalidLengthException
+- com.ibm.bpe.api.InvalidMessagePartTypeException
+- com.ibm.bpe.api.InvalidMessageTypeException
+- com.ibm.bpe.api.InvalidObjectNameException
+- com.ibm.bpe.api.InvalidParameterException
+- com.ibm.bpe.api.InvalidParameterValueException
+
+- com.ibm.bpe.api.EngineInvalidLinkTypeException
+- com.ibm.bpe.api.EngineInvalidMaxCompletedBranchesException
+- com.ibm.bpe.api.EngineInvalidMigrationTargetException
+- com.ibm.bpe.api.EngineInvalidNumberOfLinksException
+- com.ibm.bpe.api.InvalidPropertyAliasTypeException
+- com.ibm.bpe.api.InvalidStoredQueryParametersException
+- com.ibm.bpe.api.MandatoryParameterMissingException
+- com.ibm.bpe.api.MessagePartNotFoundException
+- com.ibm.bpe.api.MessagePartQueryFailedException
+- com.ibm.bpe.api.MethodNotApplicableException
+- com.ibm.bpe.api.MissingPartsException
+- com.ibm.bpe.api.MultipleInstanceException
+- com.ibm.bpe.api.NoMacroFlowException
+- com.ibm.bpe.api.NotSerializableException
+- com.ibm.bpe.api.ObjectDoesNotExistException
+
+- com.ibm.bpe.api.EngineActivityDoesNotExistException
+- com.ibm.bpe.api.EngineInitializingScopeNotReachedException
+- com.ibm.bpe.api.EngineLinkDoesNotExistException
+- com.ibm.bpe.api.EngineProcessDoesNotExistException
+- com.ibm.bpe.api.EngineProcessTemplateDoesNotExistException
+- com.ibm.bpe.api.EngineVariableNotVisibleException
+- com.ibm.bpe.api.UserDoesNotExistException
+- com.ibm.bpe.api.WorkItemDoesNotExistException
+- com.ibm.bpe.api.ProcessBindingMissingFormatTypeException
+- com.ibm.bpe.api.ProcessBindingMissingTypeMappingException
+- com.ibm.bpe.api.ProcessInputTypeNameNullException
+- com.ibm.bpe.api.ProcessInputTypeSystemNullException
+- com.ibm.bpe.api.ProcessInputUnknownTypeSystemException
+- com.ibm.bpe.api.ProcessInstanceNotUniqueException
+- com.ibm.bpe.api.ProcessOperationCannotFindModelException
+- com.ibm.bpe.api.ProcessOperationCannotInvokeException
+- com.ibm.bpe.api.ProcessOperationFailedException
+- com.ibm.bpe.api.ProcessOperationFaultNameNotSetException
+- com.ibm.bpe.api.ProcessOperationMissingFaultMessageException
+- com.ibm.bpe.api.ProcessOperationNoOutputMessageException
+- com.ibm.bpe.api.ProcessOperationNotKnownByPortException
+- com.ibm.bpe.api.ProcessOperationUnknownFaultMessageTypeException
+- com.ibm.bpe.api.ProcessTemplateNotFoundException
+- com.ibm.bpe.api.QueryCannotJoinException
+- com.ibm.bpe.api.QueryException
+
+- com.ibm.bpe.api.QueryHintException
+    - com.ibm.bpe.api.QueryHintInvalidException
+    - com.ibm.bpe.api.QueryHintScopeInvalidException
+    - com.ibm.bpe.api.QueryHintValueInvalidException
+- com.ibm.bpe.api.QueryInvalidOperandException
+- com.ibm.bpe.api.QueryInvalidParameterException
+- com.ibm.bpe.api.QueryInvalidTimestampException
+- com.ibm.bpe.api.QueryNameMissingException
+- com.ibm.bpe.query.api.QueryTableException
+
+- com.ibm.bpe.query.api.QueryTableValidationException
+- com.ibm.task.query.api.QueryTableException
+- com.ibm.bpe.api.QueryUndefinedParameterException
+- com.ibm.bpe.api.QueryUnknownColumnException
+- com.ibm.bpe.api.QueryUnknownOperatorException
+- com.ibm.bpe.api.QueryUnknownTableException
+- com.ibm.bpe.api.SendReplyErrorException
+
+- com.ibm.bpe.api.CannotSendExceptionException
+- com.ibm.bpe.api.CannotSendPIIDException
+- com.ibm.bpe.api.CannotSendProcessResultException
+- com.ibm.bpe.api.CannotSendVoidReplyException
+- com.ibm.bpe.api.ServiceNotUniqueException
+- com.ibm.bpe.api.StoredQueryNameNotUniqueException
+- com.ibm.bpe.api.SystemFaultException
+
+- com.ibm.bpe.api.EngineAdministratorCannotBeResolvedException
+- com.ibm.bpe.api.EngineCalendarNotFoundException
+- com.ibm.bpe.api.EngineCannotCreateWorkItemException
+- com.ibm.bpe.api.EngineCannotInitializePluginException
+- com.ibm.bpe.api.EngineCannotInitializeVariableException
+- com.ibm.bpe.api.EngineCannotInitializeWorkItemManagerException
+- com.ibm.bpe.api.EngineCannotRunInAtomicSphereException
+- com.ibm.bpe.api.EngineCannotRunInterruptibleException
+- com.ibm.bpe.api.EngineCannotRunSynchronousException
+- com.ibm.bpe.api.EngineCompensationSphereRequiredException
+- com.ibm.bpe.api.EngineDataMappingException
+- com.ibm.bpe.api.EngineDataPluginException
+- com.ibm.bpe.api.EngineDurationFormatException
+- com.ibm.bpe.api.EngineExitConditionEvaluationException
+- com.ibm.bpe.api.EngineFaultTerminalMessageIsNullException
+- com.ibm.bpe.api.EngineFaultTerminalNotConnectedException
+- com.ibm.bpe.api.EngineForEachExpressionEvaluationException
+- com.ibm.bpe.api.EngineGenericErrorException
+- com.ibm.bpe.api.EngineImplementationDoesNotExistException
+- com.ibm.bpe.api.EngineImplementationInvocationException
+- com.ibm.bpe.api.EngineInvalidDurationException
+- com.ibm.bpe.api.EngineInvalidDurationInEventHandlerException
+- com.ibm.bpe.api.EngineInvalidFaultTerminalException
+- com.ibm.bpe.api.EngineJoinConditionEvaluationException
+- com.ibm.bpe.api.EngineLinkConditionEvaluationException
+- com.ibm.bpe.api.EngineLoopConditionEvaluationException
+- com.ibm.bpe.api.EngineLoopDefaultMappingException
+- com.ibm.bpe.api.EngineLoopMappingException
+- com.ibm.bpe.api.EngineMaxNumberLoopIterationsExceededException
+- com.ibm.bpe.api.EngineMaxNumberRetryExceededException
+- com.ibm.bpe.api.EngineMissingReceiveException
+- com.ibm.bpe.api.EngineMissingReplyException
+- com.ibm.bpe.api.EngineSchedulerException
+- com.ibm.bpe.api.EngineSchedulerNotFoundException
+- com.ibm.bpe.api.EngineTimeoutExpressionEvaluationException
+- com.ibm.bpe.api.EngineTimeoutExpressionEvaluationInEventHandlerException
+- com.ibm.bpe.api.EngineTransitionConditionEvaluationException
+- com.ibm.bpe.api.EngineUncaughtExceptionInActivityException
+- com.ibm.bpe.api.EngineUncheckedBusinessFaultException
+- com.ibm.bpe.api.TaskManagerNotFoundException
+- com.ibm.bpe.api.TemplateInUseException
+- com.ibm.bpe.api.UnexpectedFailureException
+- com.ibm.bpe.api.UnknownProcessAppException
+- com.ibm.bpe.api.UnsupportedAcceptHeaderException
+- com.ibm.bpe.api.UnsupportedParameterValueException
+- com.ibm.bpe.api.UserRegistryException
+- com.ibm.bpe.api.WorkItemManagerException
+- com.ibm.bpe.api.XMLSchemaValidationException
+- com.ibm.wsspi.recovery.exception.RecoveryException
+- com.ibm.wbiserver.manualrecovery.exceptions.ResubmissionFailedException
+- java.lang.RuntimeException
+
+- com.ibm.wbiserver.brules.mgmt.ChangesNotAllowedException
+- com.ibm.wbiserver.brules.mgmt.DisplayNameNotChangeableException
+- com.ibm.wbiserver.manualrecovery.exceptions.FailedEventRuntimeException
+- com.ibm.bpe.api.ProcessError
+    - com.ibm.bpe.api.EngineCompensationSphereNotCompletedError
+    - com.ibm.bpe.api.EngineCompensationSphereStateUnknownError
+    - com.ibm.bpe.api.EngineContainerAppNotReachableError
+    - com.ibm.bpe.api.EngineCopyDataObjectError
+    - com.ibm.bpe.api.EngineCreateDataObjectError
+    - com.ibm.bpe.api.EngineEnforceRollbackError
+    - com.ibm.bpe.api.EngineGetTypeError
+    - com.ibm.bpe.api.EngineLookupProcessBeanError
+    - com.ibm.bpe.api.EngineRollbackOnlyError
+    - com.ibm.bpe.api.EngineStateObserverEventError
+    - com.ibm.bpe.api.EngineWorkCompletionContractRollbackError
+    - com.ibm.bpe.query.api.QueryTableError
+    - com.ibm.task.query.api.QueryTableError
+- com.ibm.websphere.sca.ServiceBusinessException
+- com.ibm.websphere.sca.ServiceRuntimeException
+
+- com.ibm.wbiserverspi.mediation.MediateException
+- com.ibm.websphere.sca.ServiceExpirationRuntimeException
+- com.ibm.websphere.sca.ServiceTimeoutRuntimeException
+- com.ibm.websphere.sca.ServiceUnavailableException
+- com.ibm.websphere.sca.ServiceUnwiredReferenceRuntimeException
+- com.ibm.wbiserver.brules.mgmt.SystemPropertyNotChangeableException
+- com.ibm.task.api.TaskError
+
+- com.ibm.task.api.StateObserverError
+- com.ibm.task.api.TaskException
+
+- com.ibm.task.api.AdminActionException
+- com.ibm.task.api.AdministratorCannotBeResolvedException
+- com.ibm.task.api.ApplicationVetoException
+- com.ibm.task.api.ArchiveUnsupportedOperationException
+- com.ibm.task.api.BusinessCategoryAlreadyExistsException
+- com.ibm.task.api.BusinessCategoryHasChildrenException
+- com.ibm.task.api.BusinessCategoryInUseException
+- com.ibm.task.api.BusinessCategoryNotEnabledException
+- com.ibm.task.api.BusinessCategoryParentCircularException
+- com.ibm.task.api.CannotAccessVMMServiceException
+- com.ibm.task.api.ChildTaskInstanceActiveException
+- com.ibm.task.api.CommunicationException
+- com.ibm.task.api.ConflictingTypesException
+- com.ibm.task.api.DataHandlingException
+- com.ibm.task.api.EscalationNotificationException
+- com.ibm.task.api.EverybodyWorkItemException
+- com.ibm.task.api.ExpirationNotSupportedException
+- com.ibm.task.api.FaultReplyException
+- com.ibm.task.api.FollowOnTasksNotSupportedException
+- com.ibm.task.api.GenericTaskException
+- com.ibm.task.api.GroupWorkItemException
+- com.ibm.task.api.IdWrongFormatException
+- com.ibm.task.api.IdWrongTypeException
+- com.ibm.task.api.InvalidApplicationStateException
+- com.ibm.task.api.InvalidAssignmentReasonException
+    - com.ibm.task.api.InvalidBusinessCategoryAssignmentReasonException
+    - com.ibm.task.api.InvalidWorkBasketAssignmentReasonException
+- com.ibm.task.api.InvalidDurationException
+- com.ibm.task.api.InvalidLengthException
+- com.ibm.task.api.InvalidParameterException
+- com.ibm.task.api.InvalidPriorityValueException
+- com.ibm.task.api.InvalidPropertyValueException
+
+- com.ibm.task.api.InvalidNCNamePropertyValueException
+- com.ibm.task.api.InvalidProtocolException
+- com.ibm.task.api.InvalidQNameException
+- com.ibm.task.api.InvalidStoredQueryParametersException
+- com.ibm.task.api.IsDistributionTargetException
+- com.ibm.task.api.IsNotDistributionTargetException
+- com.ibm.task.api.IsNotTopLevelTaskException
+- com.ibm.task.api.LastAdminWorkItemException
+- com.ibm.task.api.MandatoryParameterMissingException
+- com.ibm.task.api.MandatoryPropertyMissingException
+- com.ibm.task.api.MessageDefinitionDoesNotMatchException
+
+- com.ibm.task.api.FaultMessageDefinitionDoesNotMatchException
+- com.ibm.task.api.OutputMessageDefinitionDoesNotMatchException
+- com.ibm.task.api.MethodNotApplicableException
+- com.ibm.task.api.NotAuthorizedException
+
+- com.ibm.task.api.BusinessCategoryNotAuthorizedException
+    - com.ibm.task.api.CreateBusinessCategoryNotAuthorizedException
+- com.ibm.task.api.EscalationNotAuthorizedException
+- com.ibm.task.api.EscalationTemplateNotAuthorizedException
+- com.ibm.task.api.InheritedAccessRightException
+- com.ibm.task.api.SubstitutionNotAuthorizedException
+- com.ibm.task.api.TaskModelNotAuthorizedException
+- com.ibm.task.api.TaskNotAuthorizedException
+
+- com.ibm.task.api.TaskTransferTargetNotAuthorizedException
+- com.ibm.task.api.TaskTemplateNotAuthorizedException
+- com.ibm.task.api.WorkBasketNotAuthorizedException
+
+- com.ibm.task.api.CreateWorkBasketNotAuthorizedException
+- com.ibm.task.api.ObjectDoesNotExistException
+
+- com.ibm.task.api.AdministeredObjectDoesNotExistException
+- com.ibm.task.api.ApplicationComponentDoesNotExistException
+- com.ibm.task.api.BusinessCategoryDoesNotExistException
+- com.ibm.task.api.EscalationDoesNotExistException
+- com.ibm.task.api.EscalationTemplateDoesNotExistException
+- com.ibm.task.api.TaskDoesNotExistException
+- com.ibm.task.api.TaskTemplateDoesNotExistException
+- com.ibm.task.api.UserDoesNotExistException
+    - com.ibm.task.api.SubstituteDoesNotExistException
+- com.ibm.task.api.WorkBasketDoesNotExistException
+- com.ibm.task.api.WorkItemDoesNotExistException
+- com.ibm.task.api.WorkItemNotFoundException
+- com.ibm.task.api.ParallelRoutingTaskException
+
+- com.ibm.task.api.ParallelRoutingTaskCompletionFailedException
+- com.ibm.task.api.ParallelRoutingTaskStartFailedException
+- com.ibm.task.api.ParameterNullException
+- com.ibm.task.api.PropertyVetoException
+
+- com.ibm.task.api.ConflictingUpdateException
+- com.ibm.task.api.QueryCannotJoinException
+- com.ibm.task.api.QueryException
+
+- com.ibm.task.api.QueryHintException
+    - com.ibm.task.api.QueryHintInvalidException
+    - com.ibm.task.api.QueryHintScopeInvalidException
+    - com.ibm.task.api.QueryHintValueInvalidException
+- com.ibm.task.api.QueryInteractionFilterWithMissingSourceAttributeException
+- com.ibm.task.api.QueryInvalidOperandException
+- com.ibm.task.api.QueryInvalidTimestampException
+- com.ibm.task.api.QueryNameMissingException
+- com.ibm.task.api.QueryUndefinedParameterException
+- com.ibm.task.api.QueryUnknownColumnException
+- com.ibm.task.api.QueryUnknownOperatorException
+- com.ibm.task.api.QueryUnknownTableException
+- com.ibm.task.api.RefreshTimeoutInvalidException
+- com.ibm.task.api.RunningInstancesException
+- com.ibm.task.api.SCAServiceAccessFailureException
+- com.ibm.task.api.SCAServiceResultErrorException
+
+- com.ibm.task.api.CoreOTaskServiceInvalidResultException
+- com.ibm.task.api.CoreOTaskServiceResultHasInvalidFaultMessageQNameException
+- com.ibm.task.api.CoreOTaskServiceRuntimeExceptionReceivedException
+- com.ibm.task.api.SchedulingFailedException
+
+- com.ibm.task.api.SchedulingEscalationFailedException
+- com.ibm.task.api.SenderAddressInvalidException
+- com.ibm.task.api.ServiceNotUniqueException
+- com.ibm.task.api.SourceAttributeMissingException
+- com.ibm.task.api.StaffServiceNestedGroupResolutionIsNotSupportedException
+- com.ibm.task.api.StaffServiceRuntimeException
+
+- com.ibm.task.api.StaffServiceCannotAccessVMMException
+- com.ibm.task.api.StaffServiceSubstitutionNotEnabledException
+- com.ibm.task.api.StaffServiceVMMEntityAttributeNotAvailableException
+- com.ibm.task.api.StaffServiceVMMEntityNameIsInvalidException
+- com.ibm.task.api.StaffServiceVMMEntityPropertyIsNotInSchemaException
+- com.ibm.task.api.StoredQueryNameNotUniqueException
+- com.ibm.task.api.SubstitutionInvalidParametersException
+
+- com.ibm.task.api.SubstitutionEndDateConflictException
+- com.ibm.task.api.SubstitutionEndDateIsInThePastException
+- com.ibm.task.api.SubstitutionEndDateIsNotAfterStartDateException
+- com.ibm.task.api.SubstitutionStartDateConflictException
+- com.ibm.task.api.SubstitutionStartDateIsInThePastException
+- com.ibm.task.api.SubTasksNotSupportedException
+- com.ibm.task.api.SystemFaultException
+
+- com.ibm.task.api.CannotCreateWorkItemException
+- com.ibm.task.api.TaskBusinessException
+- com.ibm.task.api.TaskDelegationNotSupportedException
+- com.ibm.task.api.TaskDeploymentException
+- com.ibm.task.plugins.TaskDeploymentException
+- com.ibm.task.api.TaskExpiredException
+- com.ibm.task.api.TaskHistoryNotEnabledException
+- com.ibm.task.api.TaskInstanceActiveException
+- com.ibm.task.api.TaskMigrationNotSupportedException
+
+- com.ibm.task.api.TaskMigrationAdhocNotSupportedException
+- com.ibm.task.api.TaskMigrationCriticalChangeNotSupportedException
+- com.ibm.task.api.TaskMigrationNotSupportedForStandaloneException
+- com.ibm.task.api.TaskMigrationNotSupportedIfEndedException
+- com.ibm.task.api.TaskMigrationToAdhocNotSupportedException
+- com.ibm.task.api.TaskMigrationWithCriticalEscalationChangeNotSupportedException
+- com.ibm.task.api.TaskMigrationWithNewEscalationNameNotSupportedException
+- com.ibm.task.api.TaskNotInWorkBasketException
+- com.ibm.task.api.TaskTemplateNotStoppedException
+- com.ibm.task.api.TaskTerminatedException
+- com.ibm.task.plugins.TELValidationException
+- com.ibm.task.api.TimeIntervalInvalidException
+- com.ibm.task.api.UnexpectedFailureException
+- com.ibm.task.api.UnknownAdminOperationException
+- com.ibm.task.api.UnknownProcessAppException
+- com.ibm.task.api.UnsupportedAcceptHeaderException
+- com.ibm.task.api.UnsupportedParameterValueException
+- com.ibm.task.api.URLInvalidException
+- com.ibm.task.api.UserRegistryException
+- com.ibm.task.api.VMMEntityAttributeNotAvailableException
+- com.ibm.task.api.WorkBasketAlreadyExistsException
+- com.ibm.task.api.WorkBasketNotEmptyException
+- com.ibm.task.api.WorkBasketNotEnabledException
+- com.ibm.task.api.WorkItemManagerException
+- com.ibm.task.api.WrongKindException
+
+- com.ibm.task.api.IsAdHocException
+- com.ibm.task.api.IsInlineException
+- com.ibm.task.api.IsNotAdHocException
+- com.ibm.task.api.IsNotInlineException
+- com.ibm.task.api.WrongTaskKindException
+    - com.ibm.task.api.HeadTaskIsInlineException
+    - com.ibm.task.api.IsAdministrativeTaskException
+    - com.ibm.task.api.IsChildException
+    - com.ibm.task.api.IsRoutingTaskException
+    - com.ibm.task.api.KeepOutputForCancelClaimNotSupportedException
+    - com.ibm.task.api.PropertyControlledByHeadTaskException
+- com.ibm.task.api.WrongTaskTemplateKindException
+- com.ibm.task.api.WrongMessageTypeException
+
+- com.ibm.task.api.CoreOTaskServiceResultHasInvalidFaultMessageTypeException
+- com.ibm.task.api.CoreOTaskServiceResultHasInvalidOutputMessageTypeException
+- com.ibm.task.api.WrongFaultMessageTypeException
+- com.ibm.task.api.WrongInputMessageTypeException
+- com.ibm.task.api.WrongOutputMessageTypeException
+- com.ibm.task.api.WrongStateException
+
+- com.ibm.task.api.WrongEscalationStateException
+    - com.ibm.task.api.EscalationIsFinishedException
+- com.ibm.task.api.WrongTaskStateException
+
+- com.ibm.task.api.ChainIsCompletedException
+- com.ibm.task.api.ChainIsNotCompletedException
+- com.ibm.task.api.ParentTaskIsSuspendedException
+- com.ibm.task.api.TaskIsEscalatedException
+- com.ibm.task.api.TaskIsSuspendedException
+- com.ibm.task.api.TaskIsWaitingForSubTaskException
+- com.ibm.task.api.TaskNotSuspendedException
+- com.ibm.task.api.WrongTaskTemplateStateException
+- com.ibm.task.api.XMLSchemaValidationException
+- com.ibm.bpe.api.TimerSpecification (implements java.io.Serializable)
+- javax.faces.webapp.UIComponentTagBase (implements javax.servlet.jsp.tagext.JspTag)
+
+- javax.faces.webapp.UIComponentClassicTagBase (implements javax.servlet.jsp.tagext.BodyTag, javax.servlet.jsp.tagext.JspIdConsumer)
+    - javax.faces.webapp.UIComponentTag
+        - javax.faces.webapp.UIComponentBodyTag
+            - com.ibm.bpe.jsf.component.taglib.BaseTag
+                - com.ibm.bpe.jsf.component.taglib.CommandBarTag
+                - com.ibm.bpe.jsf.component.taglib.DetailsTag
+                - com.ibm.bpe.jsf.component.taglib.ListTag
+                - com.ibm.bpe.jsf.component.taglib.MessageFormTag
+- com.ibm.wbiserver.brules.mgmt.UnmodifiableIterator<E> (implements java.util.Iterator<E>)
+- com.ibm.task.api.UserSubstitutionDetail (implements java.io.Serializable)
+- com.ibm.bpe.interop.WMQWFHelper
+- com.ibm.task.api.WorkBasketDefinitionFactory
+- com.ibm.task.clientmodel.bean.WorkItemBean
+
+## Interface Hierarchy
+
+- com.ibm.bpe.api.ActivityInstanceActionIndex
+- com.ibm.bpe.api.ActivityInstanceActions
+- com.ibm.bpe.api.ActivityServiceTemplateActions
+- com.ibm.task.spi.APIEventHandlerPlugin
+    - com.ibm.task.spi.APIEventHandlerPlugin2
+        - com.ibm.task.spi.APIEventHandlerPlugin3
+            - com.ibm.task.spi.APIEventHandlerPlugin4
+                - com.ibm.task.spi.APIEventHandlerPlugin5
+                    - com.ibm.task.spi.APIEventHandlerPlugin6
+            - com.ibm.task.spi.APIEventHandlerPlugin6
+    - com.ibm.task.spi.APIEventHandlerPlugin5
+        - com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin4
+
+- com.ibm.task.spi.APIEventHandlerPlugin5
+    - com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin5
+
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin3
+
+- com.ibm.task.spi.APIEventHandlerPlugin4
+    - com.ibm.task.spi.APIEventHandlerPlugin5
+        - com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin5
+
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin4
+
+- com.ibm.task.spi.APIEventHandlerPlugin5
+    - com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin5
+
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.task.spi.APIEventHandlerPlugin6
+- com.ibm.websphere.sibx.smobo.AttachmentType
+- com.ibm.bpe.api.AutoDeletionMode
+- com.ibm.task.api.AutoDeletionMode
+- com.ibm.websphere.bo.BOChangeSummary
+- com.ibm.websphere.bo.BOCopy
+- com.ibm.websphere.bo.BODataObject
+- com.ibm.websphere.bo.BOEquality
+- com.ibm.websphere.bo.BOEventSummary
+- com.ibm.websphere.bo.BOEventSummary.ObjectContext
+- com.ibm.websphere.bo.BOFactory
+- com.ibm.websphere.bo.BOInstanceValidator
+- com.ibm.websphere.bo.BOPrinter
+- com.ibm.websphere.bo.BOType
+- com.ibm.websphere.bo.BOTypeMetadata
+- com.ibm.websphere.bo.BOXMLDocument
+- com.ibm.websphere.bo.BOXMLSerializer
+- com.ibm.websphere.bo.BOXSDHelper
+- com.ibm.wbiserver.manualrecovery.BPCActivity
+- com.ibm.task.api.BusinessCategoryActionIndex
+- com.ibm.task.api.BusinessCategoryActions
+- com.ibm.task.api.BusinessCategoryManagerService
+
+- com.ibm.task.api.HumanTaskManager (also extends javax.ejb.EJBObject, com.ibm.task.api.HumanTaskManagerService, com.ibm.task.api.WorkBasketManagerService)
+- com.ibm.task.api.LocalBusinessCategoryManagerService
+    - com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalHumanTaskManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalHumanTaskManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.bpe.api.BusinessFlowManagerService
+
+- com.ibm.bpe.api.BusinessFlowManager (also extends javax.ejb.EJBObject)
+- com.ibm.bpe.api.LocalBusinessFlowManager (also extends javax.ejb.EJBLocalObject, com.ibm.bpe.api.LocalBusinessFlowManagerService)
+- com.ibm.bpe.api.LocalBusinessFlowManagerService
+    - com.ibm.bpe.api.LocalBusinessFlowManager (also extends javax.ejb.EJBLocalObject)
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.wbiserver.brules.mgmt.BusinessRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTable
+    - com.ibm.wbiserver.brules.mgmt.ruleset.RuleSet
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleGroup (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.CaseEdge (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTable
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.Operation (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecord (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecordList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.lang.Iterable<T>, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ParameterValue (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.Property (also extends java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.SystemDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.UserDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.PropertyList (also extends java.lang.Iterable<T>, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.Rule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.lang.Iterable<T>, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSet
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.SystemDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.dtable.TemplateInstanceExpression (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeAction (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeNode (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.UserDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.wbiserver.brules.mgmt.BusinessRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTable
+    - com.ibm.wbiserver.brules.mgmt.ruleset.RuleSet
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleGroup (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.CaseEdge (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTable
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.Operation (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecord (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecordList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.lang.Iterable<T>, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ParameterValue (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.Rule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.lang.Iterable<T>, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSet
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.TemplateInstanceExpression (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.Rule , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeAction (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeNode (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends java.io.Serializable)
+- java.lang.Cloneable
+
+- com.ibm.bpe.api.ClientSetting (also extends java.io.Serializable)
+    - com.ibm.bpe.api.PageflowClientSetting
+    - com.ibm.bpe.api.PortalClientSetting
+    - com.ibm.bpe.api.WebClientSetting
+- com.ibm.task.api.ClientSetting (also extends java.io.Serializable)
+
+- com.ibm.task.api.PageflowClientSetting
+- com.ibm.task.api.PortalClientSetting
+- com.ibm.task.api.WebClientSetting
+- com.ibm.bpe.api.CustomClientSettings (also extends java.io.Serializable)
+- com.ibm.task.api.CustomClientSettings (also extends java.io.Serializable)
+- com.ibm.bpe.api.JspLocation (also extends java.io.Serializable)
+- com.ibm.task.api.JspLocation (also extends java.io.Serializable)
+- com.ibm.bpc.clientcore.Command
+- java.lang.Comparable<T>
+
+- com.ibm.bpe.api.OID (also extends java.io.Serializable)
+    - com.ibm.task.api.ACOID
+    - com.ibm.bpe.api.AIID
+    - com.ibm.bpe.api.ATID
+    - com.ibm.task.api.BCID
+    - com.ibm.bpe.api.EHTID
+    - com.ibm.task.api.ESIID
+    - com.ibm.task.api.ESTID
+    - com.ibm.bpe.api.ICIID
+    - com.ibm.bpe.api.PIID
+    - com.ibm.bpe.api.PTID
+    - com.ibm.task.api.TKIID
+    - com.ibm.task.api.TKTID
+    - com.ibm.bpe.api.VTID
+    - com.ibm.task.api.WBID
+- com.ibm.bpe.api.CompensationBehaviour
+- com.ibm.websphere.sibx.smobo.ComplexPropertyType
+- com.ibm.websphere.sca.scdl.Component
+- com.ibm.bpc.clientcore.ConnectionFactory
+- com.ibm.bpm.context.ContextService
+- com.ibm.websphere.sibx.smobo.ContextType
+
+- com.ibm.bpm.context.cobo.UserDefinedContextType
+- com.ibm.websphere.sca.sdo.DataFactory
+- com.ibm.bpm.context.cobo.DocumentRoot
+- com.ibm.websphere.sca.mq.structures.DocumentRoot
+- com.ibm.websphere.sibx.smobo.DocumentRoot
+- com.ibm.websphere.sibx.smobo.DynamicPropertyContextType
+- com.ibm.websphere.sibx.smobo.DynamicPropertySetType
+- com.ibm.websphere.sibx.smobo.EISHeaderType
+- javax.ejb.EJBLocalHome
+
+- com.ibm.bpe.api.LocalBusinessFlowManagerHome
+- com.ibm.task.api.LocalHumanTaskManagerHome
+- javax.ejb.EJBLocalObject
+
+- com.ibm.bpe.api.LocalBusinessFlowManager (also extends com.ibm.bpe.api.LocalBusinessFlowManagerService)
+- com.ibm.task.api.LocalHumanTaskManager (also extends com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalHumanTaskManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.websphere.sibx.smobo.EndpointLookupContextType
+- com.ibm.websphere.sca.addressing.EndpointReference
+- com.ibm.websphere.sca.addressing.EndpointReferenceFactory
+- com.ibm.task.api.EscalationActionIndex
+- com.ibm.task.api.EscalationActions
+- com.ibm.task.api.EscalationTemplateActionIndex
+- com.ibm.task.api.EscalationTemplateActions
+- com.ibm.bpe.api.EventHandlerTemplateActions
+- com.ibm.task.api.ExecutableQuery
+- com.ibm.bpe.api.ExpirationBehavior
+- com.ibm.wbiserver.manualrecovery.FailedEvent
+
+- com.ibm.wbiserver.manualrecovery.BFMHoldQueueEvent
+- com.ibm.wbiserver.manualrecovery.BPCEvent
+- com.ibm.wbiserver.manualrecovery.FailedEventWithParameters
+- com.ibm.wbiserver.manualrecovery.JMSEvent
+- com.ibm.wbiserver.manualrecovery.MQEvent
+- com.ibm.wbiserver.manualrecovery.SCAEvent
+- com.ibm.wbiserver.manualrecovery.FailedEventExceptionReport
+- com.ibm.wbiserver.manualrecovery.FailedEventManager
+- com.ibm.wbiserver.manualrecovery.FailedEventParameter
+- com.ibm.websphere.sibx.smobo.FailInfoType
+- com.ibm.websphere.sibx.smobo.FanOutContextType
+- com.ibm.websphere.sibx.smobo.FaultType
+- com.ibm.websphere.sibx.smobo.HeadersType
+
+- com.ibm.bpm.context.cobo.HeaderInfoType
+- com.ibm.websphere.http.headers.HTTPAuthentication
+- com.ibm.websphere.http.headers.HTTPControl
+- com.ibm.websphere.http.headers.HTTPCredentials
+- com.ibm.websphere.http.headers.HTTPHeader
+- com.ibm.websphere.http.headers.HTTPHeaders
+- com.ibm.websphere.sibx.smobo.HTTPHeaderType
+- com.ibm.websphere.http.data.streams.HTTPInputStream
+- com.ibm.websphere.http.data.streams.HTTPOutputStream
+- com.ibm.websphere.http.headers.HTTPProxySettings
+- com.ibm.websphere.http.headers.HTTPSSLSettings
+- com.ibm.task.api.HumanTaskManagerDelegate
+- com.ibm.task.api.HumanTaskManagerService
+
+- com.ibm.task.api.HumanTaskManager (also extends com.ibm.task.api.BusinessCategoryManagerService, javax.ejb.EJBObject, com.ibm.task.api.WorkBasketManagerService)
+- com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalHumanTaskManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.task.api.LocalHumanTaskManagerService
+    - com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.websphere.sca.scdl.InterfaceType
+- com.ibm.websphere.sibx.smobo.InvocationPathType
+- com.ibm.bpe.jsf.handler.ItemListener
+- com.ibm.bpe.jsf.handler.ItemProvider
+
+- com.ibm.bpe.jsf.handler.ErrorHandler
+- java.lang.Iterable<T>
+
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecordList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.PropertyList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.io.Serializable)
+- com.ibm.websphere.sca.jms.data.JMSDataBindingXML
+- com.ibm.websphere.sibx.smobo.JMSHeaderType
+- com.ibm.wbiserver.map.MapService
+- com.ibm.bpc.clientcore.MessageWrapper
+- com.ibm.websphere.sca.mq.structures.MQCIH
+- com.ibm.websphere.sca.mq.structures.MQControl
+
+- com.ibm.websphere.sibx.smobo.MQChainedHeaderType
+- com.ibm.websphere.sca.mq.structures.MQHeader
+- com.ibm.mq.data.MQDataInput
+- com.ibm.mq.data.MQDataOutput
+- com.ibm.websphere.sca.mq.structures.MQHeaders
+- com.ibm.websphere.sibx.smobo.MQHeaderType
+- com.ibm.websphere.sca.mq.structures.MQIIH
+- com.ibm.websphere.sca.mq.structures.MQMD
+- com.ibm.websphere.sca.mq.structures.MQOpaqueHeader
+- com.ibm.websphere.sca.mq.structures.MQRFH
+- com.ibm.websphere.sca.mq.structures.MQRFH2
+- com.ibm.websphere.sca.mq.structures.MQRFH2Group
+- com.ibm.websphere.sca.mq.structures.MQRFH2Property
+- com.ibm.websphere.sca.mq.structures.MQRFHProperty
+- com.ibm.task.spi.NotificationEventHandlerPlugin
+- org.eclipse.emf.common.notify.Notifier
+
+- org.eclipse.emf.ecore.EObject
+    - com.ibm.wbit.tel.DocumentRoot
+    - org.eclipse.emf.ecore.EModelElement
+        - org.eclipse.emf.ecore.EFactory
+            - com.ibm.bpm.context.cobo.ContextObjectFactory
+            - com.ibm.websphere.http.headers.HeadersFactory
+            - com.ibm.websphere.sibx.smobo.ServiceMessageObjectFactory
+            - com.ibm.wbit.tel.TaskFactory
+            - com.ibm.websphere.sca.mq.structures.WMQStructuresFactory
+            - com.ibm.websphere.wsaddr10.WSAddr10Factory
+    - org.eclipse.emf.ecore.ENamedElement
+        - org.eclipse.emf.ecore.EPackage
+            - com.ibm.wbit.tel.TaskPackage
+            - com.ibm.websphere.sca.mq.structures.WMQStructuresPackage
+            - com.ibm.websphere.wsaddr10.WSAddr10Package
+- com.ibm.wbit.tel.ParameterType
+- com.ibm.wbit.tel.TAggregate
+- com.ibm.wbit.tel.TApplyTo
+- com.ibm.wbit.tel.TCompletion
+- com.ibm.wbit.tel.TCompletionBehavior
+- com.ibm.wbit.tel.TCriterion
+- com.ibm.wbit.tel.TCustomClientSettings
+
+- com.ibm.wbit.tel.TPortalClientSettings
+- com.ibm.wbit.tel.TWebClientSettings
+- com.ibm.wbit.tel.TCustomProperty
+- com.ibm.wbit.tel.TCustomSetting
+- com.ibm.wbit.tel.TDefaultCompletion
+- com.ibm.wbit.tel.TDescription
+- com.ibm.wbit.tel.TDisplayName
+- com.ibm.wbit.tel.TDocumentation
+- com.ibm.wbit.tel.TEmail
+- com.ibm.wbit.tel.TEscalation
+- com.ibm.wbit.tel.TEscalationChain
+- com.ibm.wbit.tel.TEscalationSettings
+- com.ibm.wbit.tel.TImport
+- com.ibm.wbit.tel.TInterface
+- com.ibm.wbit.tel.TJSP
+- com.ibm.wbit.tel.TLocalizedEmail
+- com.ibm.wbit.tel.TParallel
+- com.ibm.wbit.tel.TResult
+- com.ibm.wbit.tel.TStaffRole
+
+- com.ibm.wbit.tel.TAdministrator
+- com.ibm.wbit.tel.TContactQuery
+- com.ibm.wbit.tel.TEditor
+- com.ibm.wbit.tel.TEMailReceiver
+- com.ibm.wbit.tel.TEscalationReceiver
+- com.ibm.wbit.tel.TPotentialInstanceCreator
+- com.ibm.wbit.tel.TPotentialOwner
+- com.ibm.wbit.tel.TPotentialStarter
+- com.ibm.wbit.tel.TReader
+- com.ibm.wbit.tel.TStaffSettings
+- com.ibm.wbit.tel.TTask
+- com.ibm.wbit.tel.TUISettings
+- com.ibm.wbit.tel.TVerb
+- com.ibm.bpe.api.ObjectType
+- com.ibm.task.api.ObjectType
+- com.ibm.bpe.api.OperationMode
+- com.ibm.task.api.OperationMode
+- com.ibm.websphere.sca.scdl.OperationType
+- com.ibm.task.spi.ppp.PostProcessingContext
+- com.ibm.websphere.sibx.smobo.PrimitiveContextType
+- com.ibm.websphere.sibx.smobo.PrimitiveType
+- com.ibm.bpe.api.ProcessInstanceActionIndex
+- com.ibm.bpe.api.ProcessInstanceActions
+- com.ibm.bpe.api.ProcessTemplateActions
+- com.ibm.websphere.sibx.smobo.PropertyType
+- com.ibm.bpc.clientcore.Query
+- com.ibm.task.api.QueryColumnType
+- com.ibm.wsspi.recovery.handler.RecoveryOperation
+- com.ibm.websphere.sca.scdl.Reference
+- com.ibm.websphere.sibx.smobo.RegistryAnnotationsType
+- com.ibm.websphere.sibx.smobo.RegistryPropertyType
+- com.ibm.websphere.sibx.smobo.RegistryRelationshipType
+- com.ibm.wbiserver.rel.RelationshipService
+- java.rmi.Remote
+
+- javax.ejb.EJBHome
+    - com.ibm.bpe.api.BusinessFlowManagerHome
+    - com.ibm.task.api.HumanTaskManagerHome
+- javax.ejb.EJBObject
+
+- com.ibm.bpe.api.BusinessFlowManager (also extends com.ibm.bpe.api.BusinessFlowManagerService)
+- com.ibm.task.api.HumanTaskManager (also extends com.ibm.task.api.BusinessCategoryManagerService, com.ibm.task.api.HumanTaskManagerService, com.ibm.task.api.WorkBasketManagerService)
+- java.io.Serializable
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.bpe.api.ActivityInstanceData
+- com.ibm.bpe.api.ActivityServiceTemplateData
+- com.ibm.wbiserver.brules.mgmt.query.AndNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode)
+- com.ibm.task.api.ApplicationComponent
+- com.ibm.bpe.api.AttributeInfo
+    - com.ibm.bpe.api.AttributeMetaData
+- com.ibm.task.api.AttributeInfo
+
+- com.ibm.task.api.AttributeMetaData
+- com.ibm.bpe.api.AuthorizationInfo
+- com.ibm.task.api.AuthorizationInfo
+- com.ibm.task.api.AvailableActionsResult
+- com.ibm.bpe.api.BfmConfiguration
+- commonj.connector.runtime.BindingContext
+
+- com.ibm.websphere.dhframework.faults.FaultSelector
+- com.ibm.websphere.sca.bindingcore.WPSBindingContext
+- com.ibm.bpe.api.BranchTemplateData
+- com.ibm.task.api.BusinessCategory
+- com.ibm.task.api.BusinessCategoryDefinition
+- com.ibm.task.api.BusinessCategoryResult
+- com.ibm.wbiserver.brules.mgmt.BusinessRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTable
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSet
+- com.ibm.wbiserver.brules.mgmt.BusinessRuleGroup (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.dtable.CaseEdge (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.task.api.ClaimResult
+- com.ibm.bpe.api.ClientSetting (also extends java.lang.Cloneable)
+
+- com.ibm.bpe.api.PageflowClientSetting
+- com.ibm.bpe.api.PortalClientSetting
+- com.ibm.bpe.api.WebClientSetting
+- com.ibm.task.api.ClientSetting (also extends java.lang.Cloneable)
+
+- com.ibm.task.api.PageflowClientSetting
+- com.ibm.task.api.PortalClientSetting
+- com.ibm.task.api.WebClientSetting
+- com.ibm.bpe.api.CompleteAndClaimSuccessorResult
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends com.ibm.wbiserver.brules.mgmt.dtable.TreeNode)
+- com.ibm.wbiserver.brules.mgmt.Constraint
+
+- com.ibm.wbiserver.brules.mgmt.EnumerationConstraint
+- com.ibm.wbiserver.brules.mgmt.RangeConstraint
+- com.ibm.bpe.api.CorrelationPropertyInstanceData
+- com.ibm.bpe.api.CorrelationSetInstanceData
+- com.ibm.bpe.api.CustomClientSettings (also extends java.lang.Cloneable)
+- com.ibm.task.api.CustomClientSettings (also extends java.lang.Cloneable)
+- com.ibm.bpe.api.CustomProperty
+
+- com.ibm.bpe.api.InlineCustomProperty
+- com.ibm.task.api.CustomProperty
+
+- com.ibm.task.api.InlineCustomProperty
+- com.ibm.bpe.api.CustomPropertyInfo
+- com.ibm.task.api.CustomPropertyInfo
+- commonj.connector.runtime.DataBinding
+
+- com.ibm.websphere.http.data.bindings.HTTPStreamDataBinding
+- com.ibm.websphere.sca.jms.data.JMSDataBinding
+    - com.ibm.websphere.sca.jms.data.JMSObjectBinding
+- com.ibm.websphere.sca.mq.data.MQBodyDataBinding
+
+- com.ibm.websphere.sca.mq.data.MQBodyObjectBinding
+- com.ibm.websphere.sca.mq.data.MQHeaderDataBinding
+- commonj.sdo.DataObject
+
+- com.ibm.websphere.wsaddr10.AttributedQNameType
+- com.ibm.websphere.wsaddr10.AttributedUnsignedLongType
+- com.ibm.websphere.wsaddr10.AttributedURIType
+- com.ibm.bpm.context.cobo.ContextObject
+- com.ibm.websphere.wsaddr10.DocumentRoot
+- com.ibm.websphere.wsaddr10.EndpointReferenceType
+- com.ibm.websphere.wsaddr10.MetadataType
+- com.ibm.websphere.wsaddr10.ProblemActionType
+- com.ibm.websphere.wsaddr10.ReferenceParametersType
+- com.ibm.websphere.wsaddr10.RelatesToType
+- com.ibm.websphere.sibx.smobo.ServiceMessageObject
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends com.ibm.wbiserver.brules.mgmt.Rule )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRuleTemplate (also extends com.ibm.wbiserver.brules.mgmt.RuleTemplate)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.bpe.api.Entity
+- com.ibm.task.api.Entity
+- com.ibm.bpe.api.EntityInfo
+- com.ibm.task.api.EntityInfo
+- com.ibm.bpe.api.EntityResultSet
+- com.ibm.task.api.EntityResultSet
+- com.ibm.wbiserver.brules.mgmt.EnumerationItem
+- com.ibm.task.api.Escalation
+- com.ibm.task.api.EscalationChain
+- com.ibm.task.api.EscalationInfo
+- com.ibm.task.api.EscalationResult
+- com.ibm.task.api.EscalationTemplate
+- com.ibm.wsspi.recovery.data.EventData
+- com.ibm.bpe.api.EventHandlerTemplateData
+- com.ibm.task.api.GroupDetail
+- com.ibm.task.api.HtmConfiguration
+- com.ibm.bpe.api.InitiateAndClaimFirstResult
+- com.ibm.bpe.api.JspLocation (also extends java.lang.Cloneable)
+- com.ibm.task.api.JspLocation (also extends java.lang.Cloneable)
+- com.ibm.bpe.api.KeyAttributes
+- com.ibm.task.api.KeyAttributes
+- com.ibm.bpe.api.LinkTemplateData
+- com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode (also extends com.ibm.wbiserver.brules.mgmt.query.QueryNode )
+
+- com.ibm.wbiserver.brules.mgmt.query.AndNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.NotNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.OrNode (also extends java.io.Serializable)
+- com.ibm.bpe.jsf.util.Message
+- com.ibm.wbiserver.brules.mgmt.query.NotNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode)
+- com.ibm.bpe.api.OID (also extends java.lang.Comparable<T>)
+
+- com.ibm.task.api.ACOID
+- com.ibm.bpe.api.AIID
+- com.ibm.bpe.api.ATID
+- com.ibm.task.api.BCID
+- com.ibm.bpe.api.EHTID
+- com.ibm.task.api.ESIID
+- com.ibm.task.api.ESTID
+- com.ibm.bpe.api.ICIID
+- com.ibm.bpe.api.PIID
+- com.ibm.bpe.api.PTID
+- com.ibm.task.api.TKIID
+- com.ibm.task.api.TKTID
+- com.ibm.bpe.api.VTID
+- com.ibm.task.api.WBID
+- com.ibm.wbiserver.brules.mgmt.Operation (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecord (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.OperationSelectionRecordList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.lang.Iterable<T>)
+- com.ibm.wbiserver.brules.mgmt.query.OrNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode)
+- com.ibm.wbiserver.brules.mgmt.Parameter
+- com.ibm.wbiserver.brules.mgmt.ParameterValue (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.task.api.PeopleAssignment
+
+- com.ibm.task.api.Everybody
+- com.ibm.task.api.GroupMembersAndUsers
+- com.ibm.task.api.OrganizationalEntity
+- com.ibm.bpe.api.ProcessInstanceData
+- com.ibm.bpe.api.ProcessResult
+- com.ibm.bpe.api.ProcessTemplateData
+- com.ibm.wbiserver.brules.mgmt.Property (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector )
+
+- com.ibm.wbiserver.brules.mgmt.SystemDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.UserDefinedProperty
+- com.ibm.wbiserver.brules.mgmt.query.PropertyIsDefinedQueryNode (also extends com.ibm.wbiserver.brules.mgmt.query.QueryNode)
+- com.ibm.wbiserver.brules.mgmt.PropertyList (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, java.lang.Iterable<T>)
+- com.ibm.wbiserver.brules.mgmt.query.PropertyQueryNode (also extends com.ibm.wbiserver.brules.mgmt.query.QueryNode)
+- com.ibm.wbiserver.brules.mgmt.query.QueryNode
+
+- com.ibm.wbiserver.brules.mgmt.query.AndNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.query.AndNode (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.query.NotNode (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.query.OrNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.NotNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.OrNode (also extends com.ibm.wbiserver.brules.mgmt.query.LogicalOperatorNode, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.PropertyIsDefinedQueryNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.query.PropertyQueryNode (also extends java.io.Serializable)
+- com.ibm.bpe.api.QueryProperty
+
+- com.ibm.bpe.api.QueryPropertyExtension
+- com.ibm.bpe.api.QueryResultSet
+- com.ibm.task.api.QueryResultSet
+- com.ibm.bpe.api.QueryTableMetaData
+- com.ibm.task.api.QueryTableMetaData
+- com.ibm.bpe.api.ReplyContext
+- com.ibm.task.api.ReplyHandler
+- com.ibm.bpe.api.RowResultSet
+- com.ibm.task.api.RowResultSet
+- com.ibm.wbiserver.brules.mgmt.Rule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , java.io.Serializable)
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable, java.lang.Iterable<T>)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule (also extends com.ibm.wbiserver.brules.mgmt.Rule )
+
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends java.io.Serializable, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRuleTemplate (also extends com.ibm.wbiserver.brules.mgmt.RuleTemplate)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule)
+- com.ibm.wbiserver.brules.mgmt.RuleTemplate (also extends com.ibm.wbiserver.brules.mgmt.Template )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRuleTemplate (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRuleTemplate (also extends java.io.Serializable)
+- com.ibm.bpe.api.StaffResultSet
+- com.ibm.task.api.StaffResultSet
+- com.ibm.task.api.StoredQuery
+- com.ibm.bpe.api.StoredQueryData
+- com.ibm.task.api.Task
+- com.ibm.task.api.TaskHistoryEvent
+- com.ibm.task.api.TaskModel
+- com.ibm.task.api.TaskResult
+- com.ibm.task.api.TaskTemplate
+- com.ibm.wbiserver.brules.mgmt.Template
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRuleTemplate (also extends com.ibm.wbiserver.brules.mgmt.RuleTemplate, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRuleTemplate (also extends com.ibm.wbiserver.brules.mgmt.RuleTemplate, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.RuleTemplate (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRuleTemplate (also extends java.io.Serializable)
+    - com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRuleTemplate (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeActionValueTemplate (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeConditionValueTemplate (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TemplateInstanceExpression (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.TemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable , com.ibm.wbiserver.brules.mgmt.Rule )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.dtable.DecisionTableRule, java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetTemplateInstanceRule (also extends com.ibm.wbiserver.brules.mgmt.ruleset.RuleSetRule, java.io.Serializable)
+- com.ibm.websphere.sca.Ticket
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeAction (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeActionTermDefinition
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeActionValueTemplate (also extends com.ibm.wbiserver.brules.mgmt.Template)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeBlock (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector, com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeConditionDefinition
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeConditionTermDefinition
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeConditionValueDefinition
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeConditionValueTemplate (also extends com.ibm.wbiserver.brules.mgmt.Template)
+- com.ibm.wbiserver.brules.mgmt.dtable.TreeNode (also extends com.ibm.wbiserver.brules.mgmt.BusinessRuleChangeDetector , com.ibm.wbiserver.brules.mgmt.BusinessRuleValidateable )
+
+- com.ibm.wbiserver.brules.mgmt.dtable.ActionNode (also extends java.io.Serializable)
+- com.ibm.wbiserver.brules.mgmt.dtable.ConditionNode (also extends java.io.Serializable)
+- com.ibm.task.api.UserDetail
+- com.ibm.task.api.WorkBasket
+- com.ibm.task.api.WorkBasketDefinition
+- com.ibm.task.api.WorkBasketResult
+- com.ibm.task.api.WorkItem
+- com.ibm.bpe.api.WorkItemData
+- com.ibm.bpe.api.WorkListData
+- com.ibm.websphere.sca.Service
+- com.ibm.websphere.sca.ServiceCallback
+- com.ibm.websphere.sca.ServiceImplAsync
+- com.ibm.websphere.sca.ServiceImplSync
+- com.ibm.bpc.clientcore.converter.SimpleConverter
+- com.ibm.websphere.sibx.smobo.SMOConstants
+- com.ibm.websphere.sibx.smobo.SMOHeaderType
+
+- com.ibm.bpm.context.cobo.SourceInfoType
+- com.ibm.websphere.sibx.smobo.SOAPFaultInfoType
+- com.ibm.websphere.sibx.smobo.SOAPHeaderType
+- com.ibm.task.spi.StaffQueryResult
+- com.ibm.task.spi.StaffQueryResultPostProcessorPlugin
+- com.ibm.task.spi.ppp.StaffQueryResultPostProcessorPlugin2
+- com.ibm.bpe.api.StateObserverEvent
+- com.ibm.wbiserver.storeandfwd.management.StoreAndForwardManager
+- com.ibm.websphere.sibx.smobo.TargetAddressType
+- com.ibm.task.api.TaskActionIndex
+- com.ibm.task.api.TaskActions
+- com.ibm.wbit.tel.TaskPackage.Literals
+- com.ibm.task.api.TaskTemplateActionIndex
+- com.ibm.task.api.TaskTemplateActions
+- com.ibm.bpe.api.TimerBehavior
+- com.ibm.task.api.TimerSpecification
+- com.ibm.websphere.sibx.smobo.UserContextType
+- com.ibm.task.spi.UserData
+- com.ibm.task.api.ValidationProblem
+- com.ibm.websphere.sibx.smobo.VersionType
+- com.ibm.websphere.sca.mq.structures.WMQStructuresPackage.Literals
+- com.ibm.task.api.WorkBasketActionIndex
+- com.ibm.task.api.WorkBasketActions
+- com.ibm.task.api.WorkBasketManagerService
+
+- com.ibm.task.api.HumanTaskManager (also extends com.ibm.task.api.BusinessCategoryManagerService, javax.ejb.EJBObject, com.ibm.task.api.HumanTaskManagerService)
+- com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalHumanTaskManagerService, com.ibm.task.api.LocalWorkBasketManagerService)
+- com.ibm.task.api.LocalWorkBasketManagerService
+    - com.ibm.task.api.LocalHumanTaskManager (also extends javax.ejb.EJBLocalObject, com.ibm.task.api.LocalBusinessCategoryManagerService, com.ibm.task.api.LocalHumanTaskManagerService)
+- com.ibm.bpe.api.WorkItemActions
+- com.ibm.bpe.api.WorkListActions
+- com.ibm.websphere.wsaddr10.WSAddr10Package.Literals
+- com.ibm.websphere.sibx.smobo.WSAHeaderType
+- com.ibm.websphere.sibx.smobo.WTXContextType
+- com.ibm.websphere.sibx.smobo.WTXMapInstanceType
+
+## Enum Hierarchy
+
+- java.lang.Object
+    - java.lang.Enum<E> (implements java.lang.Comparable<T>, java.io.Serializable)
+        - com.ibm.wbiserver.brules.mgmt.PresentationTimezone
+        - com.ibm.wbiserver.brules.mgmt.ParameterDataType
+        - com.ibm.wbiserver.brules.mgmt.Orientation
+        - com.ibm.wbiserver.brules.mgmt.BusinessRuleType
+        - com.ibm.wbiserver.brules.mgmt.problem.ValidationError
+        - com.ibm.wbiserver.brules.mgmt.query.QueryOperator
+        - com.ibm.websphere.dhframework.faults.FaultSelector.ResponseType
+        - com.ibm.websphere.sibx.smobo.WSASchemaType (implements org.eclipse.emf.common.util.Enumerator)
+        - com.ibm.websphere.sibx.smobo.PersistenceType (implements org.eclipse.emf.common.util.Enumerator)
+        - com.ibm.websphere.sibx.smobo.BindingTypeType (implements org.eclipse.emf.common.util.Enumerator)
+        - com.ibm.websphere.wsaddr10.RelationshipType (implements org.eclipse.emf.common.util.Enumerator)
+        - com.ibm.websphere.wsaddr10.FaultCodesType (implements org.eclipse.emf.common.util.Enumerator)
+
+- Overview
+- Package
+- Class
+- Tree
+- Deprecated
+- Index
+- Help
+
+- Prev
+- Next
+
+- Frames
+- No Frames
+
+- All Classes

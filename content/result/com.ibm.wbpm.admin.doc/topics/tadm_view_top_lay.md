@@ -1,0 +1,36 @@
+# Modifying the deployment topology
+
+## Before you begin
+
+To see the topology in this page, your user ID must be associated with the Operator or Monitor
+user role. To change the topology in this page, your user ID must be associated with either the
+Administrator or Configurator role.
+
+Navigate to the administrative console
+of a deployment manager. In the tree view of the administrative console,
+select Servers > Deployment
+Environments > deployment\_environment\_name > Additional Properties > Deployment
+Topology.
+
+## About this task
+
+By
+adding nodes or cluster members you can increase the overall work
+capacity of the system.
+
+## Procedure
+
+- Select an objective and perform the associated actions. Objective Actions Add a node to the deployment topology In the Add Nodes list, select a node and click Add . Reset the number of clusters assigned to each function If you set the number of clusters assigned to each functionfor a new node, and you now want to reset the parameters to the originalvalue, click Reset . Change the number of cluster members used for each function Type the number of cluster members in the text field of thefollowing function columns: Remember: You must have at least one cluster memberassigned for each function. The specified number in eachof the columns determines how many cluster members on this node mustbe configured for the particular function. By default, this numberis set to 1 , but you can set this higher ifyou require additional processing resources. To add additional clustermembers to a function, increase the number. To remove cluster membersfrom a function, decrease the number. Although the specified numbercan be 0 (zero) or higher, a number must bespecified. The text field cannot be left blank. Remove a node from the deployment topology For the nodes that you want to remove, select the check boxesin the Select column of the table and click Remove .This removes rows for selected nodes from the table, if removing thenodes does not violate any of the constraints you placed on the deploymentenvironment.
+
+| Objective                                                   | Actions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Add a node to the deployment topology                       | In the Add Nodes list, select a node and click Add.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Reset the number of clusters assigned to each function      | If you set the number of clusters assigned to each function for a new node, and you now want to reset the parameters to the original value, click Reset.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Change the number of cluster members used for each function | Type the number of cluster members in the text field of the following function columns: Application Deployment Target Messaging Infrastructure Supporting Infrastructure  Remember: You must have at least one cluster member assigned for each function. The specified number in each of the columns determines how many cluster members on this node must be configured for the particular function. By default, this number is set to 1, but you can set this higher if you require additional processing resources. To add additional cluster members to a function, increase the number. To remove cluster members from a function, decrease the number. Although the specified number can be 0 (zero) or higher, a number must be specified. The text field cannot be left blank. |
+| Remove a node from the deployment topology                  | For the nodes that you want to remove, select the check boxes in the Select column of the table and click Remove. This removes rows for selected nodes from the table, if removing the nodes does not violate any of the constraints you placed on the deployment environment.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+
+- Click Apply to keep the updates
+and remain on the Deployment Topology page. Click OK to
+keep the updates and return to the previous page.
+
+## What to do next

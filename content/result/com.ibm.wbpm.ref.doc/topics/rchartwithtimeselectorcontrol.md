@@ -1,0 +1,29 @@
+# Chart with Time Selector
+
+| Binding          | Description                                                                           |
+|------------------|---------------------------------------------------------------------------------------|
+| data (ChartData) | Contains multiple ChartDataPlot objects that are displayed in the chart (overlapping) |
+
+| Instance configuration label   | Description                                                                                                                         | Definition configuration option                     | Default value                        |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|--------------------------------------|
+| Title                          | The title is displayed above the chart.                                                                                             | title (String)                                      | (empty)                              |
+| Width                          | The width of the chart in pixels                                                                                                    | width (Decimal)                                     | (empty)                              |
+| Height                         | The height of the chart in pixels. The height of the chart title is not accounted for in this value.                                | height (Decimal)                                    | (empty)                              |
+| Theme                          | The style applied to the chart                                                                                                      | theme (ChartThemeSelection)                         | Default                              |
+| Custom theme                   | The custom style applied to the chart when Theme is set to Custom                                                                   | customTheme (String)                                | (empty)                              |
+| Legend                         | Where the legend is displayed on the chart                                                                                          | legendPosition (ChartLegendPositionSelection)       | None                                 |
+| Stack bar plots                | Displays bars and columns in stacks instead of side by side                                                                         | stackBarAndColumnCharts (Boolean)                   | False (not selected)                 |
+| Stack line plots               | Displays line plots in stacks instead of overlapping them                                                                           | stackLineCharts (Boolean)                           | False (not selected)                 |
+| Stack area plots               | Display area plots in stacks instead of overlapping them                                                                            | stackAreaCharts (Boolean)                           | False (not selected)                 |
+| Force categorical data         | In line charts and area charts, displays numeric values as category labels that are evenly distributed across the X-axis or Y-axis. | forceCategoricalData (Boolean)                      | False (not selected)                 |
+| Display options                | The types of plots that are displayed and the configurations                                                                        | displayOptions (ChartDisplayOptions)                | (empty list)                         |
+| Localization service           | The service used to retrieve the localized strings for use with this Coach View                                                     | localizationService (dashboards Localized Messages) | Dashboards Localized Messages Loader |
+| Trend unit                     | The trend unit, such as hours or days, that is presented on the chart                                                               | trendUnit (ChartTrendUnits)                         | Hour                                 |
+| Trend unit service             | The service that retrieves the available trend units                                                                                | trendUnitService (ChartDataUnitService)             | ChartDataUnitService                 |
+| Trend service                  | The service that retrieves trend data                                                                                               | trendService (ChartDataInstanceTrend)               | ChartDataInstanceTrend               |
+| Trend service input            | The input that is sent to the trend service                                                                                         | trendServiceInput (ChartTrendInput)                 | (empty list)                         |
+| Process ID                     | The process ID to retrieve chart trend data for                                                                                     | processId (String)                                  | (empty)                              |
+| Process Application ID         | The process application ID to retrieve chart trend data for.                                                                        | processAppId (String)                               | (empty)                              |
+| Team ID                        | The team ID to retrieve chart trend data for                                                                                        | teamId (String)                                     | (empty)                              |
+
+This view does not use the visibility property.

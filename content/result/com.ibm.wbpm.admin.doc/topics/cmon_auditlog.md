@@ -1,0 +1,30 @@
+<!-- image -->
+
+# Audit logging for business rules and selectors
+
+You can configure your server to automatically detect when changes are made to business rules and
+selectors, and create an entry in a log file detailing the changes.
+
+- name of the person making the change
+- location from where the change request originated
+- old business rule or selector object
+- new business rule or selector replacing the old object
+
+| Scenario                                                                                        | Result   | Log entry contents                                                                                                                                                                                  |
+|-------------------------------------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Publish business rules using the Business Rule Manager                                          | Request  | User ID, Server name (including Cell and Node, if applicable), old business rule ruleset, new ruleset.                                                                                              |
+| Publish business rules using the Business Rule Manager                                          | Failure  | User ID, Server name (including Cell and Node, if applicable), old business rule ruleset, new ruleset.                                                                                              |
+| Repository database update and commit (from attempt to publish using the Business Rule Manager) | Success  | User ID, old ruleset, new ruleset.                                                                                                                                                                  |
+| Repository database update and commit (from attempt to publish using the Business Rule Manager) | Failure  | User ID, new ruleset.                                                                                                                                                                               |
+| Exporting a selector or business rule group                                                     | Request  | User ID, selector, or business rule group name.                                                                                                                                                     |
+| Exporting a selector or business rule group                                                     | Success  | User ID, Server name (including Cell and Node, if applicable), copy of exported selector or business rule group                                                                                     |
+| Exporting a selector or business rule group                                                     | Failure  | User ID, Server name (including Cell and Node, if applicable), selector or business rule group name.                                                                                                |
+| Importing a selector or business rule group                                                     | Request  | User ID, copy of new selector or business rule group.                                                                                                                                               |
+| Importing a selector or business rule group                                                     | Success  | User ID, Server name (including Cell and Node, if applicable), copy of imported selector or business rule group, copy of selector or business rule group that was replaced by the imported version. |
+| Importing a selector or business rule group                                                     | Failure  | User ID, Server name (including Cell and Node, if applicable), copy of selector or business rule group that was to be imported.                                                                     |
+| Application installation                                                                        | Success  | User ID, Server name (including Cell and Node, if applicable), selector or business rule group name.                                                                                                |
+| Application installation                                                                        | Failure  | User ID, Server name (including Cell and Node, if applicable), selector or business rule group name.                                                                                                |
+| Application update (through the administrative console or wsadmin command)                      | Success  | User ID, Server name (including Cell and Node, if applicable), copy of new selector or business rule group, copy of old selector or business rule group.                                            |
+| Application update (through the administrative console or wsadmin command)                      | Failure  | User ID, Server name (including Cell and Node, if applicable), copy of new selector or business rule group                                                                                          |
+| Previously deployed application with existing business rules, selectors or both is started      | Success  | Server name (including Cell and Node, if applicable), copy of selector or business rule group.                                                                                                      |
+| Previously deployed application with existing business rules, selectors or both is started      | Failure  | Server name (including Cell and Node, if applicable), copy of selector or business rule group.                                                                                                      |

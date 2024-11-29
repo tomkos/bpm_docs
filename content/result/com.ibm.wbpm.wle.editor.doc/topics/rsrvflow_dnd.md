@@ -1,0 +1,6 @@
+# Adding a service from the library
+
+| Task type                                                               | Description                                                                                                                                                                                                 |
+|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Service Flow                                                            | A Linked Service Flow activity is created and the implementation is automatically configured.                                                                                                               |
+| External service of type REST service, a web service, or a Java service | A Service Task activity is created and the implementation is automatically configured. On the Implementation tab, you must select the Operation. You must also define the input mapping and output mapping. |

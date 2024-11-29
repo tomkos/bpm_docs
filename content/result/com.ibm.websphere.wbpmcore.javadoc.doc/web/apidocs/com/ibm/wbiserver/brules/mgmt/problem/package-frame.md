@@ -1,0 +1,38 @@
+# com.ibm.wbiserver.brules.mgmt.problem
+
+## Classes
+
+- Problem
+- ProblemBusRuleNotInAvailTargetList
+- ProblemCaseEdgeChildNodeMissing
+- ProblemCaseEdgesAreMissing
+- ProblemCaseEdgeValueDefinitionMissing
+- ProblemDuplicatePropertyName
+- ProblemInvalidActionValueTemplate
+- ProblemInvalidAttemptToSetValueTemplateInstance
+- ProblemInvalidBooleanValue
+- ProblemInvalidConditionValueTemplate
+- ProblemNoTemplatesAvailableForNewActionNodes
+- ProblemOperationContainsNoTargets
+- ProblemOverlappingRanges
+- ProblemParmNotDefinedInTemplate
+- ProblemParmValueListContainsUnexpectedValue
+- ProblemRootNodeIsMissing
+- ProblemRuleBlockContainsNoRules
+- ProblemRuleNameAlreadyInUse
+- ProblemStartDateAfterEndDate
+- ProblemTargetBusRuleNotSet
+- ProblemTemplateNotAssociatedWithRuleSet
+- ProblemTemplateParameterNotSpecified
+- ProblemTNSAndNameAlreadyInUse
+- ProblemTreeActionTermIsMissing
+- ProblemTreeConditionIsMissing
+- ProblemTypeConversionError
+- ProblemValueTemplateInstanceIsMissing
+- ProblemValueViolatesParmConstraints
+- ProblemWrongNumberOfParameterValues
+- ProblemWrongOperationForOpSelectionRecord
+
+## Enums
+
+- ValidationError

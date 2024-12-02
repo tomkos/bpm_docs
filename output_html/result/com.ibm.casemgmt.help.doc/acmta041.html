@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta041</title>
+</head>
+<body>
+<h1>Rule steps do not run if processing timeout value is too low</h1>
+
+<h2>Symptoms</h2>
+
+<p>In Case Client,
+you view the details of the task that contains the rule step and see
+that the task failed with the error Work Performer Exception:null.
+In addition, the following error message is written to the pesvr_system.log file
+during rule execution:</p>
+
+<p>CMExecute[1].int2vm13cmtosuser.FNTARGETDS_1
+.ICM_RuleOperations.P8Admin [ LOAN1_PoorCreditRating: 93A2C03B20B4314BA02B16087B5BFC3C:Workflow:
+executeRule] FAILED.; Exception: java.lang.InterruptedException<br />
+at
+java.lang.Object.wait(Native Method)<br />
+at java.lang.Object.wait(Object.java:485)</p>
+
+<p>at ilog.rules.res.xu.ruleset.internal.IlrRulesetProvider.getRuleset(IlrRulesetProvider.java:213)</p>
+
+<p>at ilog.rules.res.xu.spi.IlrManagedXUConnection.createEngineManager(IlrManagedXUConnection.java:1443)</p>
+
+<p>at ilog.rules.res.xu.spi.IlrManagedXUConnection.getEngineManager(IlrManagedXUConnection.java:1319)</p>
+
+<p>at ilog.rules.res.xu.spi.IlrManagedXUConnection.getXURulesetArchiveInformation(IlrManagedXUConnection.java:1260)</p>
+
+<p>at ilog.rules.res.xu.cci.IlrXUConnection.getXURulesetArchiveInformation(IlrXUConnection.java:466)</p>
+
+<p>at ilog.rules.res.xu.cci.IlrXUInteraction.getRulesetInformation(IlrXUInteraction.java:561)</p>
+
+<p>at ilog.rules.res.xu.cci.IlrXUInteraction.dispatchExecution(IlrXUInteraction.java:129)</p>
+
+<p>at ilog.rules.res.xu.cci.IlrXUInteraction.execute(IlrXUInteraction.java:253)</p>
+
+<h2>Causes</h2>
+
+<h2>Resolving the problem</h2>
+
+<p>To set the
+processing timeout value for the rules component queue:</p>
+
+<ol>
+<li>In Process Configuration Console, select the appropriate connection
+point.</li>
+<li>Click Component Queues &gt; ICM_RuleOperations.</li>
+<li>In the Component Properties window, click
+the Adapter tab and modify the value of the Processing
+Timeout (ms) field.</li>
+</ol>
+
+</body>
+</html>

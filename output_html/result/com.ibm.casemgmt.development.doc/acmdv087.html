@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv087</title>
+</head>
+<body>
+<h1>Getting case data from an external data source</h1>
+
+<h2>About this task</h2>
+
+<p>For example, you might have a database that contains detailed customer records. When a
+case worker enters a customer’s serial number, the external data service can get the name and
+address of the customer from that database. These values are then incorporated into the case data
+and stored in Content Platform Engine.</p>
+
+<p>In addition to getting property
+values, you can use an external data source to modify property attributes such as minimum value or
+maximum value. The external data service must work within any constraints placed on the property
+attributes in Content Platform Engine. For example, if a minimum value is
+specified for the property in Content Platform Engine, the external data
+service cannot make the setting less restrictive. That is, the service can set the minimum only to a
+larger value. It cannot decrease the minimum value.</p>
+
+<h2>Procedure</h2>
+
+<p>To get data from an external data source:</p>
+
+<ol>
+<li>Use the workflow APIs to implement a service to extract case data from the external data
+source.</li>
+<li>Use the Case configuration tool to
+register the external data service for use with your solution.</li>
+</ol>
+
+<p>Restriction: You can register only one external data service for a solution.
+3. Import the certificate of the External Data Services (EDS) server.
+4. Deploy or redeploy the solution and run it.
+5. Optional: If the EDS application is configured with a
+secured login, in the WebSphere® Application
+Server, under Security role to user/group for the EDS application, map the
+All Authenticated role to the special subject All Authenticated in
+Application's Realm.</p>
+
+<h2>Results</h2>
+
+<p>After you register the external data service, Case Client communicates with the service
+to get case data whenever case workers create cases or modify cases. This communication is handled
+automatically through the workflow APIs.</p>
+
+<p>For properties that are associated with an external data service choice list, only
+the value, not the display name, is persisted. The Search widget, which generates a result set for
+the Case List widget, does not call the external data service to retrieve the display names for
+these properties. However, selecting the case from the Case List widget does cause the external data
+service to retrieve the property display names.</p>
+
+<ul>
+<li>Implementing an external data service by using the REST protocol</li>
+</ul>
+
+<p>To use external data with your solution, you must create a service that implements the external data service REST protocol. This protocol provides for the communication between Case Client and the external data source.</p>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta053</title>
+</head>
+<body>
+<h1>Supporting external documents in production environments</h1>
+
+<h2>About this task</h2>
+
+<p>In a production environment, users cannot add external documents into case folders because the
+default instance security settings of the External Document class are removed incorrectly.</p>
+
+<p>To work around this issue, manually configure the default instance security settings of the
+External Document class:</p>
+
+<h2>Procedure</h2>
+
+<ol>
+<li>In the Administration Console for Content Platform Engine, open your
+target object store and click Data Design &gt; Classes &gt; Document &gt; External Document.</li>
+<li>On the Default Instance Security tab, add an entry with the name
+<h1>CREATOR-OWNER and assign it the View properties permission. Also, ensure</h1></li>
+</ol>
+
+<p>that the Default Instance Owner field is set to</p>
+
+<h1>CREATOR-OWNER.</h1>
+
+</body>
+</html>

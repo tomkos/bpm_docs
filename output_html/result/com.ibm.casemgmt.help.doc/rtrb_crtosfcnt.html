@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rtrb_crtosfcnt</title>
+</head>
+<body>
+<h1>createObjectStoreForContent fails to run</h1>
+
+<h2>Procedure</h2>
+
+<p>If the createObjectStoreForContent command fails, perform the
+following steps to clean the design object store and target object store:</p>
+
+<ol>
+<li>Log in to the ACCE to remove the design object store and target object store if they are
+available.</li>
+<li>Drop the design object store and target object store databases.
+3 If your Db2® type is z/OS®, drop the related sequences: DROP SEQUENCE SYSADM.AUDITSEQUENCE;DROP SEQUENCE SYSADM.CISEQUENCE;DROP SEQUENCE SYSADM.CONTENTQUEUESEQUENCE;DROP SEQUENCE SYSADM.REPLSEQUENCE;DROP SEQUENCE SYSADM.SCFSEQUENCE; DROP SEQUENCE DOSCT.AUDITSEQUENCE;DROP SEQUENCE DOSCT.CISEQUENCE;DROP SEQUENCE DOSCT.CONTENTQUEUESEQUENCE;DROP SEQUENCE DOSCT.REPLSEQUENCE;DROP SEQUENCE DOSCT.SCFSEQUENCE; DROP SEQUENCE TOSCT.AUDITSEQUENCE;DROP SEQUENCE TOSCT.CISEQUENCE;DROP SEQUENCE TOSCT.CONTENTQUEUESEQUENCE;DROP SEQUENCE TOSCT.REPLSEQUENCE;DROP SEQUENCE TOSCT.SCFSEQUENCE; where:</li>
+</ol>
+
+<p>```
+DROP SEQUENCE SYSADM.AUDITSEQUENCE;
+DROP SEQUENCE SYSADM.CISEQUENCE;
+DROP SEQUENCE SYSADM.CONTENTQUEUESEQUENCE;
+DROP SEQUENCE SYSADM.REPLSEQUENCE;
+DROP SEQUENCE SYSADM.SCFSEQUENCE;</p>
+
+<p>DROP SEQUENCE DOSCT.AUDITSEQUENCE;
+DROP SEQUENCE DOSCT.CISEQUENCE;
+DROP SEQUENCE DOSCT.CONTENTQUEUESEQUENCE;
+DROP SEQUENCE DOSCT.REPLSEQUENCE;
+DROP SEQUENCE DOSCT.SCFSEQUENCE;</p>
+
+<p>DROP SEQUENCE TOSCT.AUDITSEQUENCE;
+DROP SEQUENCE TOSCT.CISEQUENCE;
+DROP SEQUENCE TOSCT.CONTENTQUEUESEQUENCE;
+DROP SEQUENCE TOSCT.REPLSEQUENCE;
+DROP SEQUENCE TOSCT.SCFSEQUENCE;
+```</p>
+
+<pre><code>- SYSADM is the user that you use to connect to Db2 for z/OS.
+- DOSCT is the database schema of the design object store in your
+</code></pre>
+
+<p>BPMConfig property file.
+    - TOSCT is the database schema of the target object store in your
+BPMConfig property file.
+4. Recreate the design object store and target object store databases.</p>
+
+</body>
+</html>

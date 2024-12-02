@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac053</title>
+</head>
+<body>
+<h1>Creating and enabling a case history store by using the command</h1>
+
+<p>line</p>
+
+<h2>Before you begin</h2>
+
+<h2>About this task</h2>
+
+<p>No code necessary.</p>
+
+<p>You must specify a case management target object store
+to associate with the case history store. You must also specify the
+schema name for the case history store database, and a database connection.
+If a database connection is not specified, the database connection
+for the target object store is used.</p>
+
+<p>https://ibmid.acrolinx.cloud
+https://ibmid.acrolinx.cloud
+https://ibmid.acrolinx.cloud</p>
+
+<h2>Procedure</h2>
+
+<p>To create and enable a case history store:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.
+2 Create and enable a case history store by running the followingcommand. Do not enter any line breaks when you enter the command. configmgr_cl createCaseHistoryStore -profile myprofile -cmtos target_object_store -schemaName schema_name -dbConnName database_connection [-help] -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -cmtos target_object_store Specifies the display name for a case management target object store. -schemaName schema_name Specifies the name of the schema to use for the case history store. -dbConnName database_connection Specifies the display name of the database connection. You can view and define databaseconnections by using the Administration Console for Content PlatformEngine . -help Optional and displays a brief message on the command syntax insteadof running the command.</li>
+</ol>
+
+<p><code>
+configmgr\_cl createCaseHistoryStore
+ -profile myprofile
+ -cmtos target\_object\_store
+ -schemaName schema\_name
+ -dbConnName database\_connection
+  [-help]
+</code></p>
+
+<pre><code>- The name of the profile, such as develop1. The profile is located in the
+</code></pre>
+
+<p>install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM Business Automation
+Workflow is installed.
+    - The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.
+    - The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</p>
+
+</body>
+</html>

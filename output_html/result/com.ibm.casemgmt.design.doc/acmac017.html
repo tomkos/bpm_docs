@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac017</title>
+</head>
+<body>
+<h1>Copying an existing case solution by using the command line</h1>
+
+<h2>About this task</h2>
+
+<p>You can create a copy of an existing solution in the same
+object store. You must specify a new name and solution prefix for
+the new solution because these values must be unique.</p>
+
+<p>You can either reuse the existing properties or document classes from the original solution, or
+you can select the option to create new properties or document classes when you deploy the new
+solution. When you reuse existing properties or document classes in a solution, you cannot redefine
+them in Case Builder. You can remove the property or document class
+from the solution in Case Builder, but you cannot change any of the
+attributes, such as data type.</p>
+
+<h2>Procedure</h2>
+
+<p>To copy a solution:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.</li>
+<li>Generate the text input file by running the following command.
+Do not type any line breaks when you enter the command:</li>
+</ol>
+
+<p>configmgr_cl generate_input_sa -operation copy 
+ -file input_file_name
+[-help]</p>
+
+<p>-file input_file_name
+Specifies the full path to the text input file to create. The
+directory structure in the path must exist. You can use any valid
+file name, but the .txt extension is recommended.
+For example, use -file C:\solutions\copy_input.txt.</p>
+
+<p>-help 
+Optional: Shows a brief message on the command syntax instead of running the command.</p>
+
+<p>For example, the following command creates the C:\solutions\copy_input.txt
+input
+file:configmgr_cl generate_input_sa -operation copy 
+ -file C:\solutions\copy_input.txt
+3 Edit the property values in the input_file_name file.
+    1. Open the input_file_name file
+in a text editor.
+    2. Provide a value for each property in the file.
+For
+example, enter the Content Platform Engine server
+WSI URL value: </p>
+
+<p>CEWS_URI=http://myserver:9080/wsi/FNCEWS40MTOM
+    3. Save and close the input file.
+4. Apply the values in the text input file by running the
+following command. Do not type any line breaks when you enter the
+command:</p>
+
+<p>configmgr_cl execute_sa -operation copy 
+ -file input_file_name</p>
+
+</body>
+</html>

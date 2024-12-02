@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmpdh28</title>
+</head>
+<body>
+<h1>relateCurrentCase operation</h1>
+
+<p>| Parameter            | Type    | Description                                                                                                                                                                                                                                                             |
+|----------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| caseId               | String  | The identifier of the case. You must set the expression for the caseID parameter to the F_CaseFolder business object field in the Expression Builder window.                                                                                                            |
+| relateTargetId       | String  | For this value, use the returned value of the createCase operation that you used.                                                                                                                                                                                       |
+| relateDescription    | String  | The description of this relationship.                                                                                                                                                                                                                                   |
+| relationshipCategory | String  | The relationship category.Optional. For related relationship types only. Relationship categories are user-defined. A category provides additional information to identify the nature of the relationship and to facilitate searches for certain types of relationships. |
+| twoWayRelationship   | Boolean | A Boolean field that indicates whether the relationship is two-way.                                                                                                                                                                                                     |
+| return_value         | String  | The identifier of the new relationship.                                                                                                                                                                                                                                 |</p>
+
+</body>
+</html>

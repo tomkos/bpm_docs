@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CaseMgmtChoiceList</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CaseMgmtChoiceList</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.properties.CaseMgmtChoiceList</li>
+</ul></li>
+<li><p>public final class CaseMgmtChoiceList
+extends java.lang.Object
+Represents a list of choices that control what values can be assigned to
+a property. A choice list has a collection of CaseMgmtChoice
+objects. Each choice object has either a single value or is a group node
+containing a nested collection of choice objects.</p>
+
+<p>There are two types of choice lists: integer and string. All of the choice
+objects in the choice list are choices with single values of the same type, integer
+or string, or are group node collections of choices of that same type.</p>
+
+<p>The type of a choice list is indicated by the getDataType method
+which returns a Content Engine Java API TypeID value.  The only
+TypeID values that can be returned are the values corresponding to 
+integer (LONG) or string (STRING).</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description java.util.List<CaseMgmtChoice &gt; getChoices () Returns the choice objects contained by this choice list. com.filenet.api.constants.TypeID getDataType () Returns the data type of the choice list. java.lang.String getDisplayName () Returns the display name of the choice list. boolean hasHierarchy () Indicates if this choice list is flat, holding only single value choice items, or hierarchical, containing one or more additional levels of group nodes with nested collections of choice items.</li>
+</ul></li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                | Method and Description                                                                                                                                                                                            |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| java.util.List<CaseMgmtChoice>   | getChoices() Returns the choice objects contained by this choice list.                                                                                                                                            |
+| com.filenet.api.constants.TypeID | getDataType() Returns the data type of the choice list.                                                                                                                                                           |
+| java.lang.String                 | getDisplayName() Returns the display name of the choice list.                                                                                                                                                     |
+| boolean                          | hasHierarchy() Indicates if this choice list is flat, holding only single value choice  items, or hierarchical, containing one or more additional levels of group  nodes with nested collections of choice items. |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

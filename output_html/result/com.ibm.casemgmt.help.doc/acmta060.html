@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta060</title>
+</head>
+<body>
+<h1>Case configuration tool does not</h1>
+
+<p>create the baw and bawadmin desktops</p>
+
+<h2>Symptoms</h2>
+
+<h2>Causes</h2>
+
+<h2>Resolving the problem</h2>
+
+<ul>
+<li>Shut down all but one node and then run the Register Project Area or Register Target Environment
+task. After all of the case configuration tasks complete, start up the other nodes.</li>
+<li>Before you run the Configure the Register Project Area or Register Target Environment task,
+change the IBM® HTTP Server (IHS) to redirect all traffic to
+one node instead of evenly distributing work to all nodes. After all of the case configuration tasks
+complete, change the IHS to evenly redistribute work to all nodes.</li>
+</ul>
+
+<p>Alternatively, you can specify the Content Platform Engine
+Web Services (WSI) transport URL for one node instead of the load balancer URL. However, this method
+is not preferred.</p>
+
+</body>
+</html>

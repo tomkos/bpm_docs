@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>tchangingnsd</title>
+</head>
+<body>
+<h1>Changing the network shared directory</h1>
+
+<h2>Procedure</h2>
+
+<p>To change the network shared directory:</p>
+
+<ol>
+<li>Copy all folders and files from the previous network shared directory to the new network shared
+directory.</li>
+<li>Run the BPMConfig command with the -update
+option.</li>
+</ol>
+
+<p>BPMConfig -update -profile DmgrProfile [-de deName] -networkDirectory new_directory_path -component CaseManager</p>
+
+<p>Note: When you run the BPMConfig.sh -update -profile Dmgr01 -de De1
+-networkDirectory command to switch to a new path, you should use a different path rather
+than the Business Automation Workflow default path. If you mount it to an external file system that
+uses the default network shared directory
+BAW_INSTALL_ROOT/CaseManagement/properties/, it might result in loss of the
+original files.
+3. Restart your IBM Business Automation
+Workflow
+environment.
+4. Rerun all enabled tasks in the Case configuration tool.</p>
+
+</body>
+</html>

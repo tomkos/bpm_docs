@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdt056</title>
+</head>
+<body>
+<h1>Adding a case with a second project area user</h1>
+
+<h2>Procedure</h2>
+
+<p>To add a case with a second project area user in the Case Client, complete the following steps:</p>
+
+<ol>
+<li>Follow the instructions in Creating the DB2® database and table spaces for a Content Platform Engine object
+store.
+2 Create JDBC data sources in either of the following ways: Note: For the XA data source, you need only the webSphereDefaultIsolationLevel custom property. But for the non-XA data source, you need both properties.
+<ul>
+<li>Manually. For each object store, configure its two data sources (XA and non XA) under the
+Custom Properties panel in the WebSphere administrative console with the
+following custom
+properties:resultSetHoldability (value: 1)
+webSphereDefaultIsolationLevel (value: 2)</li>
+<li>Follow the instructions in Creating additional object store data sources by using the graphical user
+interface.</li>
+</ul></li>
+<li>Follow the instructions in Creating a database connection.</li>
+<li>Follow the instructions in Creating an object store.</li>
+<li>Following the instructions in Creating a workflow system.</li>
+<li>Follow the instructions in Creating a target object store.</li>
+</ol>
+
+</body>
+</html>

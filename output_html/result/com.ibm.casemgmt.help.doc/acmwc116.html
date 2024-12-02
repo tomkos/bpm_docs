@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc116</title>
+</head>
+<body>
+<h1>Process History widget incoming events</h1>
+
+<h2>Clear Content event</h2>
+
+<p>| Description   | Clear the content from the Process History widget.   |
+|---------------|------------------------------------------------------|
+| Event ID      | icm.ClearContent                                     |
+| Payload       | null                                                 |</p>
+
+<h2>Open work item event</h2>
+
+<p>| Description   | Display the process history for the work item that is contained in the event payload.                             |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                  |
+| Payload       | workItem An icm.model.WorkItem object that represents the work item for which process history is to be displayed. |</p>
+
+<h2>Receive task information event</h2>
+
+<p>| Description   | Display the process history for the task that is contained in the event payload.                                                              |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.TaskSelect                                                                                                                                |
+| Payload       | task An icm.model.Task object that represents the task for which process history is to be displayed.  Alternatively, the payload can be null. |</p>
+
+</body>
+</html>

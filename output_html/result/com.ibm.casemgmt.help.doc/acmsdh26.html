@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmsdh26</title>
+</head>
+<body>
+<h1>Adding attachments to an activity</h1>
+
+<h2>About this task</h2>
+
+<p>In Case Builder,
+an attachment is the designated location where users who work in Case Client can attach documents.</p>
+
+<p>For example, for the case worker to view the claim application document, a policy document, and
+damage photographs, each of these document types must be added to the activity as an attachment. The
+claim application document attachment and the damage photographs documents might be set to read and
+write so that the case worker can update them, while the policy document attachment is set to read
+only.</p>
+
+<p>If you define a
+precondition to start the activity when a new document is added to the repository, you can designate
+that document as the Initiating Attachment as described in the following
+steps. If an initiating document is specified, then the activity starts when that document is
+received and the corresponding attachment field is automatically set to that document. If no
+initiating attachment is specified, then the precondition will still start the activity, but the
+precondition document value will not be set in the attachment field.</p>
+
+<h2>Procedure</h2>
+
+<p>To add an attachment to an activity:</p>
+
+<ol>
+<li>Click the Attachments button.</li>
+<li>Click Add Attachment.</li>
+<li>Enter a name and prompt for the attachment.
+The
+prompt is displayed in the Case Client to
+provide a brief hint to the case worker about the document.</li>
+<li>Click OK.</li>
+<li>Optional: 
+If a document precondition
+is set, select the attachment from the Initiating Attachment dropdown
+menu.</li>
+<li>Click OK and then click Close.</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CaseMgmtObjectStore</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CaseMgmtObjectStore</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.CaseMgmtObjectStore</li>
+</ul></li>
+<li><p>public final class CaseMgmtObjectStore
+extends java.lang.Object
+Represents an object store that contains a deployed solution in the Case Management system.
+To obtain an instance of CaseMgmtObjectStore, use one of the factory methods, 
+getFetchlessInstance() or fetchInstance().</p>
+
+<p>If an instance is fetched by calling fetchInstance(), the method
+verifies that the identifier used to reference the object store represents a
+valid object store. An exception is thrown if the object store is invalid.
+If getFetchlessInstance() is called, no such verification occurs,
+but an exception may be thrown later if a method is called that requires that 
+the referenced object store is valid.</p>
+
+<p>All of the information returned by CaseMgmtObjectStore is managed by a 
+cache internal to the Case Java API. The same information can be obtained
+whether the instance was obtained in a fetched or a fetchless manner, but 
+calling fetchInstance() performs only an initial check to ensure
+that the referenced object store is valid.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== NESTED CLASS SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Nested Class Summary</li>
+</ul></li>
+</ul>
+
+<p>Nested Classes </p>
+
+<p>Modifier and Type
+Class and Description</p>
+
+<p>static class 
+CaseMgmtObjectStore.CM8HostConfiguration
+Represents information about the CM8 host configured for this
+ object store.
+    - Method Summary All Methods Static Methods Instance Methods Concrete Methods Modifier and Type Method and Description static CaseMgmtObjectStore fetchInstance (ObjectStoreReference objStoreRef) A factory method that returns an instance of CaseMgmtObjectStore . CaseMgmtObjectStore.CM8HostConfiguration getCM8HostConfiguration () Returns information about the CM8 host configured for this object store. java.lang.String getDisplayName () Returns the display name of the object store. static CaseMgmtObjectStore getFetchlessInstance (ObjectStoreReference objStoreRef) A factory method that returns an instance of CaseMgmtObjectStore . com.filenet.api.util.Id getId () Returns the Id of the object store. IntegrationType getIntegrationType () Returns the integration type of the object store. java.util.Date getLastConfiguredDate () Returns the last configured date of the object store. ObjectStoreReference getObjectStoreReference () Returns an ObjectStoreReference object that represents a reference to the Content Engine object store object. java.lang.String getSymbolicName () Returns the symbolic name of the object store. TargetEnvironmentType getTargetEnvironmentType () Returns the target environment type of the object store.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                        | Method and Description                                                                                                                   |
+|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| static CaseMgmtObjectStore               | fetchInstance(ObjectStoreReference objStoreRef) A factory method that returns an instance of CaseMgmtObjectStore.                        |
+| CaseMgmtObjectStore.CM8HostConfiguration | getCM8HostConfiguration() Returns information about the CM8 host configured for this  object store.                                      |
+| java.lang.String                         | getDisplayName() Returns the display name of the object store.                                                                           |
+| static CaseMgmtObjectStore               | getFetchlessInstance(ObjectStoreReference objStoreRef) A factory method that returns an instance of CaseMgmtObjectStore.                 |
+| com.filenet.api.util.Id                  | getId() Returns the Id of the object store.                                                                                              |
+| IntegrationType                          | getIntegrationType() Returns the integration type of the object store.                                                                   |
+| java.util.Date                           | getLastConfiguredDate() Returns the last configured date of the object store.                                                            |
+| ObjectStoreReference                     | getObjectStoreReference() Returns an ObjectStoreReference object that represents a reference to the  Content Engine object store object. |
+| java.lang.String                         | getSymbolicName() Returns the symbolic name of the object store.                                                                         |
+| TargetEnvironmentType                    | getTargetEnvironmentType() Returns the target environment type of the object store.                                                      |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>r_refdocverIDs</title>
+</head>
+<body>
+<h1>Can't refer to document version IDs in the target object store</h1>
+
+<h2>Procedure</h2>
+
+<p>To get the IDs for reference documents in the target object store, complete the
+following steps:</p>
+
+<ol>
+<li>Export the  as a .twx file from
+Workflow Center.</li>
+<li>Extract artifacts.sdx from the case folder inside the exported
+.twx file.</li>
+<li>Rename artifacts.sdx file to artifacts.zip.</li>
+<li>Log in to the workflow server environment and place the artifacts.zip in
+the /home folder.</li>
+<li>In the <bawserver-installation>/CaseManagement/configure folder, run the configuration tool
+command to generate a data map:</li>
+</ol>
+
+<p>.../configmgr_cl generateObjectStoreDataMap -solutionPackage /home/artifacts.zip -file /home/DataMap_ObjectStore.xml
+6. Place the DataMap_ObjectStore.xml inside the
+artifacts.sdx file and repackage the .twx file by using
+7-Zip.
+7. Import the repackaged .twx file into Workflow Center.
+8. Deploy the case solution from Workflow Center.</p>
+
+</body>
+</html>

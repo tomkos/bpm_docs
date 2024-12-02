@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtb050</title>
+</head>
+<body>
+<h1>Solution deployment fails if a value is not found for a required property</h1>
+
+<h2>Symptoms</h2>
+
+<p><code>
+11/17/17 4:21:48 AM PST FNRPA0180E The MULTI\_DocType1 document type cannot be 
+associated with the MyTest case type (unique identifier: MULTI\_MyTest) because 
+the case type has a required property that has no default value.
+</code></p>
+
+<h2>Causes</h2>
+
+<ul>
+<li>The property is not set as required in the document class.</li>
+<li>The property is multivalued, but the Map document class properties check
+box is not selected for the document class.</li>
+</ul>
+
+<h2>Resolving the problem</h2>
+
+<ul>
+<li>Select the Required check box.</li>
+<li>Select the Map document class properties check box.</li>
+</ul>
+
+</body>
+</html>

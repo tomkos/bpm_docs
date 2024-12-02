@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv125</title>
+</head>
+<body>
+<h1>GET method for the list of activity instances resource</h1>
+
+<h2>URI</h2>
+
+<p>/CASEREST/v1/case/{case folder
+id}/tasks</p>
+
+<p>| Name             | Type   | Description                                                                                   |
+|------------------|--------|-----------------------------------------------------------------------------------------------|
+| {case folder id} | String | The GUID that identifies the root folder of the case for which activities are to be returned. |</p>
+
+<p>| Name              | Type   | Required?   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|-------------------|--------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TargetObjectStore | String | Yes         | The symbolic name of the object store that contains the case.A symbolic name is called a unique identifier in IBM® Business Automation Workflow.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Grouping          | String | Yes         | The identifier that indicates grouping for the activities. You must set this parameter to ROD, which represents the following groups: Required This group includes activities for which the RequiredState property is set to REQUIRED_BY_USER or REQUIRED_BY_INCLUSIVE. Optional This group includes activities that are enabled and for which the RequiredState property is set to OPTIONAL. Disabled This group includes activities that are disabled and for which the DisabledState property is set to DISABLED_BY_USER, DISABLED_BY_EXCLUSIVE, or DISABLED_BY_ABORTED.  The GET method does not return groups that are empty. The groups can be returned in any order. Within each group, the activities are ordered first by the activity state and then by the activity name. |</p>
+
+<h2>Request content</h2>
+
+<p>The request for this method
+contains no JSON content.</p>
+
+<h2>Response content</h2>
+
+<ul>
+<li>The required state of the activity</li>
+<li>The disabled state of the activity</li>
+<li>The launch mode state of the activity</li>
+<li>The date the activity was created</li>
+<li>The activity identifier</li>
+<li>The activity name</li>
+<li>The activity symbolic name</li>
+<li>The activity number</li>
+<li>The date the activity was last modified</li>
+<li>Whether the activity is hidden</li>
+<li>Whether the activity is a container</li>
+<li>The process instance ID</li>
+<li>The date the activity was last restarted</li>
+<li>The restart count</li>
+<li>The roster name</li>
+</ul>
+
+<p>| Code                      | Description                                                                                                         |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------|
+| 200 OK                    | The method completed successfully and returned the requested list of activities.                                    |
+| 400 Bad Request           | The required TargetObjectStore parameter or Grouping parameter was not specified, or a parameter value was invalid. |
+| 404 Not Found             | The case folder that was specified in the request URI was not found.                                                |
+| 500 Internal Server Error | A server error occurred. For information about the error, see the userMessage element in the JSON response.         |</p>
+
+<h2>Example: GET method request</h2>
+
+<p><code>
+GET http://example.com:9080/CaseManager/CASEREST/v1/case
+/9E45A997-0E42-406E-AAC4-EE55D8BCF2ED/tasks
+?TargetObjectStore=MyExampleObjectStore&amp;Grouping=ROD
+HTTP/1.1
+Host: www.CaseMgmtExample.net
+</code></p>
+
+<h2>Example: GET method response</h2>
+
+<p>```</p>
+
+<h1>Response</h1>
+
+<p>HTTP/1.1 200 OK
+Content-Type: application/json;charset-UTF-8
+{
+  "Optional":
+  [
+    {
+      "RequiredState": 0, "TaskState": 3, "DisabledState": 0,
+      "LaunchMode": 0, "DateCreated": "2010-07-16T21:50:36Z",
+      "TaskId": "{3B5C8E64-43FE-4188-AC72-457A4B8E374C}",
+      "TaskName": "ETECase2 Task number 2",
+      "DateLastModified": "2010-07-16T21:50:36Z",
+      "IsHidden": false,
+      "IsContainer": false,
+      "ProcessInstanceId": "0907E35E7DC03B4FA03F6B6767633FB2",
+      "LastRestartDate": "2010-07-16T21:50:36Z",
+      "RestartCount": "1",
+      "RosterName": "MySolution1"
+    }
+  ],
+  "Required":
+  [
+    {
+      "RequiredState": 1, "TaskState": 1, "DisabledState": 0,
+      "LaunchMode": 4, "DateCreated":"2010-07-16T21:50:36Z",
+      "TaskId": "{CB3F1916-8D03-44C8-9598-23589D9ED78F}",
+      "TaskName": "ETECase2 Task number 1",
+      "DateLastModified": "2010-07-16T21:50:36Z"
+      "IsHidden": false,
+      "IsContainer": false,
+      "ProcessInstanceId": "0907E35E7DC03B4FA03F6B6767633FB1",
+      "LastRestartDate": null,
+      "RestartCount": "0",
+      "RosterName": "MySolution1"
+    }
+  ]
+}
+```</p>
+
+</body>
+</html>

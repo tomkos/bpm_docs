@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmrth16</title>
+</head>
+<body>
+<h1>Configuring EDS for Case Client</h1>
+
+<h2>Procedure</h2>
+
+<p>To configure EDS:</p>
+
+<ol>
+<li>Import the EDS Solution. Say, “EDS_001”.</li>
+<li>From  Business Automation Studio, select the
+solution and click Advanced context menu.</li>
+<li>Select the solution and click Actions→ Register External Data
+Service.</li>
+<li>Register External Data Service with the URL:
+https://edshost.com:9443/ExternalDataService/ICMEDREST.</li>
+<li>Click Next.</li>
+<li>Review the External Data Services to register and click
+Finish.</li>
+<li>After the EDS is successfully registered, import the EDS Server certificate.
+Run the steps in Importing the certificate of an external
+service.</li>
+<li>Run the EDS Solution, you are able to see the external data successfully.
+9 Optional: If the EDS application is configured with asecured login, then do the following configuration:
+<ol>
+<li>From the WebSphere, select the EDS application
+→ Security role to user/group mapping and map the All
+Authenticated role to the special subject All Authenticated in Application's
+Realm.</li>
+<li>Restart the EDS application.</li>
+</ol></li>
+</ol>
+
+</body>
+</html>

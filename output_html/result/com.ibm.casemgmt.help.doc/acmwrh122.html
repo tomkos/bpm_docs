@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwrh122</title>
+</head>
+<body>
+<h1>Inserting logic to transform or validate event data</h1>
+
+<h2>Procedure</h2>
+
+<p>To insert logic into event communication on a page:</p>
+
+<ol>
+<li>In Case Builder,
+add the Script Adapter widget to the page.</li>
+<li>Add a wire to the Script Adapter widget from the source
+widget that will publish the event whose payload is to be transformed
+or validated.</li>
+<li>Add a wire from the Script Adapter widget to the target
+widget that is to receive the transformed or validated payload.</li>
+<li>Click the Display menu icon for the Script Adapter widget
+and then click Edit Settings.</li>
+<li>In the JavaScript field, type the
+code that you want to use to transform or validate the event data.
+End the script with a Return statement.</li>
+</ol>
+
+<p>The script you
+enter is limited to basic JavaScript and should be viewed as the body
+of one single function. You cannot use Dojo commands such as console.debug();
+you must use the alert() statement to display information about the
+values in the script.
+Tip: You can use the Script Adapter
+widget to debug your code while you are developing the script. When
+it is acting as a debugger, the Script Adapter displays the source
+event payload so that you can see the data that the script needs to
+transform.
+6. Optional: 
+Hide the Script Adapter widget so
+that it is not visible to the user.
+7. Click OK.</p>
+
+<h2>Example</h2>
+
+<ol>
+<li>Open the Cases page for the solution in Page
+Designer.</li>
+<li>Drag the Script Adapter widget onto the Cases page.
+3 From the Case Search widget menu, select Edit Wiring towire the Case Search widget to the Script Adapter widget..
+<ol>
+<li>In the Script Adapter Incoming Events section,
+select Case Search from the Source
+widget list.</li>
+<li>Select Search cases from the Outgoing
+event list.</li>
+<li>Select Receive event payload from the Incoming
+event list.</li>
+<li>Click Add Wire and then click OK.</li>
+</ol></li>
+<li>From the Script Adapter widget menu, select Edit Settings and
+then enter the following script in the JavaScript field:payload.CaseType=\"Homeowner Policy\"; 
+alert(\"Updated Case Type to - \" + payload.CaseType); 
+return payload;This script updates the CaseType property
+in the payload from the Case Search event.</li>
+<li>Save the settings and then save and close the page.</li>
+<li>Deploy the solution.</li>
+</ol>
+
+<p>In Case Client,
+a search will return only cases of the Homeowner Policy case type.</p>
+
+</body>
+</html>

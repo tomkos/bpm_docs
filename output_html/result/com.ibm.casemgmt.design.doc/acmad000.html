@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmad000</title>
+</head>
+<body>
+<h1>Starting and shutting down the system</h1>
+
+<h2>About this task</h2>
+
+<p>Components in your IBM® Business Automation
+Workflow environment on an AIX®, Linux®, or Linux for System z
+server must be started manually. You need to restart or shutdown your system for server maintenance
+or software updates.</p>
+
+<ul>
+<li>Starting the system</li>
+<li>Shutting down the system</li>
+</ul>
+
+<p>If you have a single server Business Automation Workflow environment that is
+installed on a Windows server, all of your components and
+applications restart automatically. You must have the passwords for your components and applications
+to complete the steps.</p>
+
+<h2>Starting the system</h2>
+
+<p>System restarts are necessary for server maintenance or software updates. Any changes or
+updates can be properly implemented and integrated into the system. Restarting the system allows for
+a fresh start, boosting optimal performance and stability after the maintenance or
+updates.</p>
+
+<h3>Procedure</h3>
+
+<p>To start IBM Business Automation
+Workflow components:</p>
+
+<ol>
+<li>Log in as the root user.</li>
+<li><p>Start Db2® by
+entering the following command: su - dsrdbm01 -c db2start
+3 Start Security Directory Server :</p>
+
+<ol>
+<li>Change to the Security Directory Server directory by entering the
+following command: cd /install_root/ldap/V6.3/bin</li>
+<li>Start Security Directory Server
+by entering the following command: ./ibmdirctl -h localhost -D cn=root -w
+password start</li>
+<li>Make sure that Security Directory Server is running by entering the
+following command: ./ibmdirctl -h localhost -D cn=root -w password
+status
+4 Start the web application server.</li>
+</ol></li>
+<li><p>Change to the profile_root/bin directory.
+profile_root is the directory path that contains your profile, for example:
+/install_root/WebSphere/AppServer.</p></li>
+<li>Run the following command: 
+./startServer.sh server1</li>
+</ol>
+
+<h2>Shutting down the system</h2>
+
+<p>In addition to restarting, sometimes it is necessary to shutdown your system for server
+maintenance or software updates. This process involves temporarily powering off the entire system to
+run essential tasks such as hardware upgrades or system configuration adjustments. A system shutdown
+creates a clean and controlled environment for making changes, minimizing the risk of errors or data
+corruption.</p>
+
+<h3>Procedure</h3>
+
+<p>To shutdown Business Automation Workflow:</p>
+
+<ol>
+<li>Stop the web application server. In a distributed system architecture, first shutdown the
+nodes, and then shutdown the main server.</li>
+<li>Change to the profile_root/bin directory.
+profile_root is the directory that contains your profile, for example:
+/opt/ibm/WebSphere/AppServer.</li>
+<li>Run the command to shutdown the server:</li>
+</ol>
+
+<p>Server type
+Command</p>
+
+<p>Windows
+stopServer.bat server1</p>
+
+<p>AIX, Linux,
+or Linux for System z
+ </p>
+
+<p>If global security is enabled, you must specify a user name and password for authentication. You
+can wait to be prompted for the user name and password, or append the following options to the
+stopServer command:
+-username user_name -password password</p>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmsm003</title>
+</head>
+<body>
+<h1>Restarting components in a single-server environment</h1>
+
+<h2>About this task</h2>
+
+<p>If your single-server Business Automation Workflow environment is
+installed on a Windows server, all your components and
+applications restart automatically after a reboot.</p>
+
+<p>You must have the passwords for your components and applications in order to
+complete the restart steps.</p>
+
+<h2>Procedure</h2>
+
+<p>To start the workflow components:</p>
+
+<ol>
+<li>Log in as the root user.</li>
+<li><p>Restart the database.
+For example, restart Db2® by entering the
+following command: su - dsrdbm01 -c db2start
+3 Start the LDAP server. For example, to start Security Directory Server :</p>
+
+<ol>
+<li>Change to the Security Directory Server directory by entering the following
+command: cd /opt/ibm/ldap/V6.3/bin</li>
+<li>Start Security Directory Server by entering the following command:
+./ibmdirctl -h localhost -D cn=root -w password start</li>
+<li>Make sure that Security Directory Server is running by entering the
+following command: ./ibmdirctl -h localhost -D cn=root -w password
+status
+4 Start the web application server.</li>
+</ol></li>
+<li><p>Change to the profile_root/bin directory. profile_root is
+the directory path that contains your profile, for example: /opt/ibm/WebSphere/AppServer/profiles/AppSrv01.</p></li>
+<li>Run the following command:</li>
+</ol>
+
+<p>./startServer.sh server1</p>
+
+</body>
+</html>

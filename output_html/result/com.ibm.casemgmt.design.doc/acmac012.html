@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac012</title>
+</head>
+<body>
+<h1>Configuring the production environment by using the command line</h1>
+
+<h2>About this task</h2>
+
+<p>Configuring the production domain includes configuring Case Client.</p>
+
+<h2>Procedure</h2>
+
+<p>To configure the production environment:</p>
+
+<ol>
+<li>Run the BPMConfig command to create the profiles for your production
+environment.
+If you already created the dmgr and node profiles for your production environment, skip to the
+next step.</li>
+<li>Change the current directory to the
+dmgr_profile_root/CaseManagement_DE_name/profiles/ICM_prod
+directory.
+3 Referring to Production environment tasks and files , edit the property values in the configuration XML filesthat you generated:
+<ol>
+<li>Use a text editor or XML editor to open one of the configuration XML files that you
+generated.</li>
+<li>Replace each occurrence of <strong><em><em>INSERT VALUE</em></strong></em> with a value that is
+appropriate for your site. 
+To change the default value to a blank value, replace <value><strong><em><em>INSERT
+VALUE</em></strong></em></value> with <value />. For more information, see
+the descriptions in the file. Important: You are not required to store values for
+passwords in the file. You can run the storePasswords command later to add
+encrypted passwords to the file before you run the task.</li>
+<li>Replace empty values that have the format <value /> with a value
+appropriate for your site.
+Use the format
+<value>my_value</value>.</li>
+<li>Verify that the default values for the remaining properties are correct for your
+site.</li>
+<li>Verify that the task is enabled for each required task. Set the enabled
+attribute value in the <configuration> element to true in any
+configuration XML file that you edit if you want to run the configuration task.
+When a task is disabled, the execute command skips the task. For example,
+the registerexternaldatauri.xml file has the enabled
+attribute value in the <configuration> element set to false by default,
+and the task is skipped.</li>
+<li>Save your edits and close the XML file.</li>
+<li>Repeat as needed until you edit all the required files.</li>
+</ol></li>
+</ol>
+
+<p>Important: You must provide values for all the entries in the
+websphereapplicationserver.xml file, the
+contentengineserver.xml file, and the
+contentnavigatorserver.xml file before you can run any of the tasks.
+4. Optional: 
+Add encrypted passwords to the XML files by running the storePasswords
+command for the profile.</p>
+
+<p>Tip: If you do not add passwords to the XML files, you are prompted for the passwords
+when you run the task for each file.</p>
+
+<p>For example, the following command stores all the passwords in the profile named
+myprofile1: configmgr_cl storePasswords -profile myprofile1
+5. Change to the install_root/CaseManagement/configure
+directory and run the tasks in the development profile by using the following command:</p>
+
+<p>configmgr_cl execute -profile myprofile
+ [-silent] [-force] For more information about the syntax, see execute command.
+6. You can check the task status by running the checkStatus command. For
+example configmgr_cl checkStatus -profile myprofile For more
+information, see checkStatus
+command.
+7. Restart the application server.</p>
+
+<h2>What to do next</h2>
+
+<ul>
+<li>Production environment tasks and files</li>
+</ul>
+
+<p>The BPMConfig command creates a profile that consists of a set of files that contain information about your production environment. You can edit the component files and the task files to update or add information before you run the tasks.
+- Configuring additional object stores for the production environment by using the command line</p>
+
+<p>You must configure the case management object store for each object store in your production environment. You can create a new configuration XML file for each object store and use the command line to run the task.</p>
+
+</body>
+</html>

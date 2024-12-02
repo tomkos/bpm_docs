@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmad025</title>
+</head>
+<body>
+<h1>Indexing event logs for older case types to enable case health analysis of work items</h1>
+
+<h2>Procedure</h2>
+
+<p>To index the event log for a case type to support case health analysis:</p>
+
+<ol>
+<li>Log in to the Administration Console for Content Platform
+Engine.</li>
+<li>Expand Object Stores, open your target object store, and expand Administrative &gt; Workflow System &gt; Isolated Regions &gt; Event Logs.
+3 For each case type, add an index to the event log.
+<ol>
+<li>On the Indexes tab, click New.</li>
+<li>Enter a name for the index name.</li>
+<li>Select F_CaseFolder as the first key.</li>
+<li>Select F_EventType as the second key.</li>
+<li>Click OK and then save the index.</li>
+</ol></li>
+</ol>
+
+</body>
+</html>

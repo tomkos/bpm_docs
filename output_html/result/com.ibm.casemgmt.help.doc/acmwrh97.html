@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwrh97</title>
+</head>
+<body>
+<h1>Case List widget</h1>
+
+<ul>
+<li>The case identifier, which provides a link that the case worker
+can click to open the case</li>
+<li>The ID of the case worker who last modified the case</li>
+<li>The date that the case was last modified</li>
+<li>The case type</li>
+<li>The case status</li>
+<li><p>The case stage</p></li>
+<li><p>Specify the default view for the list and whether case workers
+can switch between views.</p></li>
+<li>Show the case health for each case in the list.</li>
+<li>Add a toolbar to the widget.</li>
+<li>Configure the pop-up menu for the widget.</li>
+</ul>
+
+<h2>IBM Business Automation</h2>
+
+<p>Workflow pages
+that include this widget by default</p>
+
+<ul>
+<li>Add Comment to Case</li>
+<li>Create Package</li>
+<li>Open Case</li>
+<li>Send Link to Case</li>
+<li>Show Link to Case</li>
+</ul>
+
+<h2>Customized Content Platform Engine SQL</h2>
+
+<p>queries</p>
+
+<p>The Case List widget search payload supports customized Content Platform Engine SQL queries.</p>
+
+<p>For
+example, you can construct the following Content Platform Engine query to search all cases
+that were created by admin users (user names that include "admin"):</p>
+
+<p>"SELECT
+[this], t.[FolderName], t.[LastModifier], t.[DateLastModified], t.[CmAcmCaseTypeFolder],
+t.[CmAcmCaseState], t.[CmAcmCaseIdentifier], t.[DateCreated], t.[Creator],
+t.[Id], t.[ClassDescription] FROM [CmAcmCaseFolder] t WHERE (((t.[creator]
+LIKE '%admin%' AND t.[CmAcmParentSolution] = Object({CF0CFF8C-CD8C-41D3-AC0A-1272E4F73991})
+AND t.[CmAcmCaseState] &gt; 0))) ORDER BY t.[CmAcmCaseIdentifier]";</p>
+
+<p>Custom
+Content Engine SQL queries must meet the following requirements:</p>
+
+<ul>
+<li>The SELECT statement must include the following properties: "FolderName",
+"LastModifier", "DateLastModified", "CmAcmCaseTypeFolder", "CmAcmCaseState",
+"CmAcmCaseIdentifier", "DateCreated", "Creator", "Id", "ContainerType",
+"LockToken", "LockTimeout", "ClassDescription",</li>
+<li>The query must search against a Case class, either the CmAcmCaseFolder
+class or its subclass.</li>
+</ul>
+
+<p>To create the search payload object, you can use the icm.util.SearchPayload utility
+class as shown in the following sample code:</p>
+
+<p>```
+//////////////////////////////////////////////////////////// 
+// This is running in a script adapter widget 
+var solution = this.getSolution(); 
+var repositoryId = solution.getTargetOS().id; 
+var solutionGUID = solution.solutionFolderId; 
+console.log("solutionFolderId is:" + solutionGUID); 
+var caseTypeName =""; 
+var ceQuery = "SELECT t.[FolderName], t.[LastModifier], 
+  t.[DateLastModified], t.[CmAcmCaseTypeFolder], 
+  t.[CmAcmCaseState], t.[CmAcmCaseIdentifier], t.[DateCreated], 
+  t.[Creator], t.[Id], t.[ClassDescription] FROM [CmAcmCaseFolder] 
+  t WHERE (((t.[creator] LIKE '%admin%' AND t.[CmAcmParentSolution] 
+  = Object(" + solutionGUID + ") AND t.[CmAcmCaseState] &gt; 0))) ORDER 
+  BY t.[CmAcmCaseIdentifier]"; 
+console.log("ceQuery is:" + ceQuery); </p>
+
+<p>var params = {}; 
+params.ObjectStore = repositoryId; 
+params.ceQuery = ceQuery; 
+params.CaseType = caseTypeName; 
+params.solution = solution; </p>
+
+<p>var p = new icm.util.SearchPayload(); 
+p.setModel(params); 
+var payload = p.getSearchPayload(); 
+console.log("Payload is: -----"); 
+console.dir(payload); </p>
+
+<p>return payload; 
+////////////////////////////////////////////////////////////
+```</p>
+
+<ul>
+<li>Case List widget events</li>
+</ul>
+
+<p>The Case List widget uses events to process the list of cases that are returned when a user searches for cases.</p>
+
+</body>
+</html>

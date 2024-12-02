@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc146</title>
+</head>
+<body>
+<h1>Chart widget incoming events</h1>
+
+<h2>Clear content event</h2>
+
+<p>| Description   | Clear the content in the Chart widget.   |
+|---------------|------------------------------------------|
+| Event ID      | icm.ClearContent                         |
+| Payload       | null                                     |</p>
+
+<h2>Open work item event</h2>
+
+<p>| Description   | Display task-related data from the payload in the chart that is configured for the Chart widget.                                                                                                                                         |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                                                                                                                                         |
+| Payload       | workItemEditable An icm.model.WorkItemEditable object that represents the work item for which case information is to be displayed. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+<h2>Send case information event</h2>
+
+<p>| Description   | Display case-related data from the payload in the chart that is configured for the Chart widget.                                                                                                      |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                                                                                                      |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be displayed. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+</body>
+</html>

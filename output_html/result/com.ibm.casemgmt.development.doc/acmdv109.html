@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv109</title>
+</head>
+<body>
+<h1>Client context for work items</h1>
+
+<p>For the workflow widgets, Case Client automatically includes the
+clientContext parameter in the request when a case worker opens a work item.</p>
+
+<p>| Key              | Data type of value   | Description                                                                                                                                                                                                                                                         |
+|------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| connectionPoint  | String               | The name of the isolated region in the workflow system database that contains the workflow definition for the activity.For a custom widget, you can obtain this value by querying the solution space attributes.                                                    |
+| stepId           | Integer              | The identifier of the step.                                                                                                                                                                                                                                         |
+| mapName          | String               | The name of map that the work item locates.                                                                                                                                                                                                                         |
+| workflowNumber   | String               | The unique identifier that is assigned to the workflow that is associated with the activity.                                                                                                                                                                        |
+| workflowName     | String               | The name of the workflow that is associated with the activity.                                                                                                                                                                                                      |
+| caseTaskId       | String               | The unique identifier that is assigned to the activity in this case.                                                                                                                                                                                                |
+| stepName         | String               | The name of current step.                                                                                                                                                                                                                                           |
+| workObjectNumber | String               | The unique identifier that is assigned to the work item.                                                                                                                                                                                                            |
+| authoredMapName  | String               | The map name according to the current locale of the user.                                                                                                                                                                                                           |
+| queueName        | String               | The name of the queue with which the work item is associated.For a custom widget, you can obtain this value by querying the in-basket attributes.                                                                                                                   |
+| originator       | String               | The identifier assigned to the case worker who launch the work flow.                                                                                                                                                                                                |
+| subject          | String               | The workflow subject of the current activity. For an automatic activity or a manual activity, the subject is the name assigned to the activity in Case Builder. For a user-created activity, the subject is the name that the case worker assigned to the activity. |
+| launchDate       | DateTime             | The date that the workflow was launched.                                                                                                                                                                                                                            |
+| role             | String               | The role that the case worker is currently using.For a custom widget, you can obtain this value by querying the in-basket attributes.                                                                                                                               |</p>
+
+</body>
+</html>

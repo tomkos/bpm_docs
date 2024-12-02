@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmad003</title>
+</head>
+<body>
+<h1>Backing up your system</h1>
+
+<h2>About this task</h2>
+
+<p>When you create a backup policy for your IBM Business Automation
+Workflow system, you must be familiar
+with the requirements of all the components. For example, the IBM
+FileNet® P8 contains both content and
+workflow elements for the system.</p>
+
+<ul>
+<li>Backing up FileNet P8 components</li>
+<li><p>Backing up IBM Business Automation Workflow components</p></li>
+<li><p>C:\IBM\FormsServer\installation path\ICM</p></li>
+<li>C:\IBM\FormsServer\installation path\API</li>
+</ul>
+
+<h2>Backing up FileNet P8</h2>
+
+<p>components</p>
+
+<p>Work with your backup administrator to prepare a plan for backing up the FileNet P8 data and assets that are
+associated with your IBM Business Automation
+Workflow
+system. Use the information from the FileNet P8 documentation to understand and
+plan for your backups of the FileNet P8 system.</p>
+
+<h3>About this task</h3>
+
+<p>Determine the location of IBM
+FileNet P8 data in the FileNet P8 domain that is used by IBM Business Automation
+Workflow. This data set includes the
+global configuration database, object stores, workflow systems, and solutions. Also determine the
+location for all IBM Content
+Navigator data that is
+related to IBM Business Automation
+Workflow,
+including desktops and plug-ins.</p>
+
+<p>See the following table for a list of FileNet P8 components to back up.</p>
+
+<p>| FileNet P8 components                                                                      | Backup instructions                  |
+|--------------------------------------------------------------------------------------------|--------------------------------------|
+| Global configuration database                                                              | Global configuration database backup |
+| Object stores (design, staging, and target), workflow system, and file stores storage area | Object store backup                  |
+| IBM Content Navigator                                                                      | Backing up IBM Content Navigator     |
+| Optional: Case Analyzer                                                                    | Case Analyzer store backup           |
+| Content Platform Engine server                                                             | Server configuration backup          |</p>
+
+<h2>Backing up IBM Business Automation</h2>
+
+<p>Workflow
+components</p>
+
+<p>Work with your backup administrator to prepare a plan for backing up workflow components.
+For the IBM Business Automation
+Workflow files and
+data, your backup plans can depend on how often files are used or changed.</p>
+
+<h3>Procedure</h3>
+
+<p>To back up the workflow components:</p>
+
+<ul>
+<li>Back up the IBM Business AutomationWorkflow network share that hosts runtime plug-ins, add-ons configuration, documents, and customized widgetpages (run time). To determine the location of the directory to back up:
+<ol>
+<li>In the workflow configuration tool, open your configuration profile.</li>
+<li>Right-click profile name and click Edit Profile
+Properties.</li>
+<li>Click Next twice, navigate to the Content Platform Engine
+definition page and locate the Network shared directory
+field.</li>
+</ol></li>
+<li>Back up the workflow server.</li>
+</ul>
+
+<ol>
+<li>Back up all files and sub directories in
+icm_installation_path\configure.</li>
+<li>Back up your application server profiles.</li>
+</ol>
+
+<ul>
+<li>Optional: Back up the IBM Business AutomationWorkflow rules repository directory.This backup step should be part of the Content Platform Engine file store backup policy. Todetermine the location of the directory to back up:</li>
+</ul>
+
+<ol>
+<li>In the workflow configuration tool, open your configuration profile.</li>
+<li>Right-click Configure Business Rules in the profile pane and click
+Edit Selected Task. Locate the Rules repository
+directory.</li>
+</ol>
+
+<ul>
+<li>Back up case management solutions (design time or run time) and customized widget pages (design
+time) by backing up the object store. See  Object store backup.</li>
+<li>Optional: If you are using a case history store to record extended case history, determine thelocation of the case history store database. Include your plans for backing up the case historystore as part of the backup of the IBMFileNet P8 domain.</li>
+</ul>
+
+<p>1 Determine the data source that was used for the case history database connection.
+    - In the workflow administration client, expand Object Stores in the Domain
+pane, then click the target object store.
+    - Click Case History Store and note the value for the data source in the
+Case history database connection field.
+2. In your application server console, view the information for the data source. For example, in
+WebSphere® Application
+Server, the information is
+listed in the JDBC data sources. The database information is indicated in the Comment and required
+data source properties.</p>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv155</title>
+</head>
+<body>
+<h1>GET method for deployment status</h1>
+
+<h2>URI</h2>
+
+<p>/CASEREST/v1/solution/{solutionName}/deploymentstatus</p>
+
+<p>| Name         | Type   | Required   | Description                    |
+|--------------|--------|------------|--------------------------------|
+| solutionName | String | Yes        | The name of the case solution. |</p>
+
+<p>| Name              | Type   | Required   | Description                                                                                                          |
+|-------------------|--------|------------|----------------------------------------------------------------------------------------------------------------------|
+| TargetObjectStore | String | Yes        | The name of the object store where the solution is deployed.Note: The value is optional for development environment. |</p>
+
+<h2>GET method request</h2>
+
+<p><code>
+https://example.com:9443/CaseManager/CASEREST/v1/solution/TestSolution/deploymentstatus?TargetObjectStore=tos
+</code></p>
+
+<h2>GET method response</h2>
+
+<p><code>
+{
+  "Status": "Completed",
+  "ConnectionDefinitionId": "{4007A18B-0300-CF89-87C7-0BAFACE030D8}",
+  "TestUrl": "https://example.com:9443/navigator/?desktop=baw&amp;feature=Cases&amp;tos=tos&amp;solution=TS",
+  "Synchronized": true,
+  "SolutionId": "{8043A18B-0000-CE25-8CD0-35DB258318CA}",
+  "PeConfigId": "{5047018B-0000-CC2B-A34A-BADFD99E54DE}",
+  "Name": "TestSolution",
+  "DateLastModified": "2023-11-05T20:55:08Z"
+}
+</code></p>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FolderReference</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class FolderReference</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.objectref.CEObjectReference<com.filenet.api.core.Folder,ObjectStoreReference>
+<ul>
+<li>com.ibm.casemgmt.api.objectref.FolderReference</li>
+</ul></li>
+</ul></li>
+<li><p>public class FolderReference
+extends CEObjectReference<com.filenet.api.core.Folder,ObjectStoreReference>
+Represents a reference to a Content Engine Java API Folder object.
+A FolderReference instance has a parent object reference of type ObjectStoreReference.</p>
+
+<p>A FolderReference can be constructed using a parent ObjectStoreReference and either
+an object ID or path. It can also be constructed with a Content Engine Java API
+ObjectStore object and a path or ID. It can also be constructed with a Content Engine Java API
+Folder object.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Constructor Summary</li>
+</ul></li>
+</ul>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>FolderReference(com.filenet.api.core.Folder folder)
+Constructs a FolderReference instance using a Content Engine Java API
+ Folder object.</p>
+
+<p>FolderReference(com.filenet.api.core.ObjectStore os,
+               com.filenet.api.util.Id folderId)
+Constructs a FolderReference using an existing Content Engine Java API ObjectStore
+ object and a folder ID.</p>
+
+<p>FolderReference(ObjectStoreReference osRef,
+               com.filenet.api.util.Id folderId)
+Constructs a FolderReference object using a parent ObjectStoreReference
+ object and a folder ID.</p>
+
+<p>FolderReference(ObjectStoreReference osRef,
+               java.lang.String folderPath)
+Constructs a FolderReference object using a parent ObjectStoreReference
+ object and a folder path.</p>
+
+<p>FolderReference(com.filenet.api.core.ObjectStore os,
+               java.lang.String folderPath)
+Constructs a FolderReference using an existing Content Engine Java API ObjectStore
+ object and a folder path.
+    - Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description com.filenet.api.core.Folder fetchCEObject (com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API Folder object. com.filenet.api.core.Folder getFetchlessCEObject () Obtains a fetchless instance of a Content Engine Java API Folder object.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type           | Method and Description                                                                                     |
+|-----------------------------|------------------------------------------------------------------------------------------------------------|
+| com.filenet.api.core.Folder | fetchCEObject(com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API Folder object. |
+| com.filenet.api.core.Folder | getFetchlessCEObject() Obtains a fetchless instance of a Content Engine Java API Folder object.            |</p>
+
+<pre><code>- Methods inherited from class com.ibm.casemgmt.api.objectref.CEObjectReference
+</code></pre>
+
+<p>fetchCEObject, fetchOptionalCEObject, fetchOptionalCEObject, getParentObjectReference
+    - Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</p>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CaseType</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CaseType</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.CaseType</li>
+</ul></li>
+<li><p>public final class CaseType
+extends java.lang.Object
+Represents a case type which is part of a deployed solution in the
+Case Management system.  To obtain an instance of CaseType, use one of the
+factory methods, getFetchlessInstance() or fetchInstance().</p>
+
+<p>If an instance is fetched by calling fetchInstance(), the method
+verifies that the referenced object store and case type symbolic name represent
+a valid case type in the system, and throws an exception if the case type 
+is invalid. If getFetchlessInstance() is called, no such verification occurs, but
+an exception may be thrown later if a method is called that requires that the
+identifiers used to reference the case type are valid.</p>
+
+<p>Much of the information returned by CaseType is managed by a cache internal
+to the Case Java API. All of the information can be obtained whether the
+instance was obtained in a fetched or a fetchless manner, but calling
+fetchInstance() performs only an initial check to ensure
+that the referenced case type is valid.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== NESTED CLASS SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Nested Class Summary</li>
+</ul></li>
+</ul>
+
+<p>Nested Classes </p>
+
+<p>Modifier and Type
+Class and Description</p>
+
+<p>static class 
+CaseType.FetchDynamicTasksResult
+Represents information returned from fetching dynamic tasks.
+    - Method Summary All Methods Static Methods Instance Methods Concrete Methods Modifier and Type Method and Description CaseType.FetchDynamicTasksResult fetchDynamicTasks (java.lang.String continuationToken, java.lang.String additionalFilter, java.lang.String orderByPropName, boolean isDescending) Fetches dynamic tasks by issuing a query with the specified criteria. CaseType.FetchDynamicTasksResult fetchDynamicTasks (java.lang.String continuationToken, java.lang.String additionalFilter, java.lang.String orderByPropName, boolean isDescending, int batchSize) Fetches dynamic tasks by issuing a query with the specified criteria. static CaseType fetchInstance (ObjectStoreReference objStoreRef, java.lang.String caseTypeName) A factory method that returns an instance of CaseType . com.ibm.json.java.JSONObject getCaseStages () Gets stages set on the case type. java.lang.String getCaseTitlePropertyName () Returns the symbolic name of the case title property configured for this case type. com.filenet.api.meta.ClassDescription getClassDescription () java.lang.String getDefaultView () Returns the default views reference name for the case type. java.lang.String getDescription () Returns the textual description of the case type. TaskType getDiscretionaryTaskType (java.lang.String taskTypeName) Returns a TaskType instance for a particular discretionary task type. java.util.List<TaskType &gt; getDiscretionaryTaskTypes () Returns a list of the discretionary task types in this case type. java.lang.String getDisplayName () Returns the display name of this case type. java.lang.String getDynamicTaskStepPageName () Returns the dynamic task step page name. static CaseType getFetchlessInstance (ObjectStoreReference objStoreRef, java.lang.String caseTypeName) A factory method that returns an instance of CaseType without verifying that the identifiers used to reference the object store and case type represent a valid deployed case type. static CaseType getFetchlessInstanceFromCache (ObjectStoreReference objStoreRef, java.lang.String caseTypeName, com.ibm.casemgmt.intgimpl.callcache.DeployedCaseTypeCallCache ctcache) A factory method that returns an instance of CaseType without verifying that the identifiers used to reference the object store and case type represent a valid deployed case type. FolderReference getFolderReference () Returns a FolderReference object that represents a reference to the deployed case type folder object. com.filenet.api.util.Id getId () Returns the Id of the case type. com.filenet.api.meta.MetadataCache getMetadataCache () java.lang.String getName () Returns the name of the case type. ObjectStoreReference getObjectStoreReference () Returns an ObjectStoreReference that represents a reference to the Content Engine object store where this case type is deployed. java.lang.String getPageId (CasePageType pageType, java.lang.String role) Returns a page ID for a particular case page type. java.lang.String getPageIdOrCSHSView (CasePageType pageType, java.lang.String role) Returns a page ID or view name for a particular case page type. java.util.List<PageView &gt; getPageViews () Returns the list of page views for the case type. java.lang.String getSolutionName () Returns the name of the deployed solution that this case type is a part of. java.lang.String getViewDisplayName () filenet.vw.api.VWSession getVWSession () A convenience method to obtain a VWSession that is appropriate for the solution this case type is part of. boolean hasAnnotateCreationRights () Indicates if the current authenticated user has the rights to annotate cases that are of this case type. boolean hasAnnotateCreationRights (com.filenet.api.core.Folder caseTypeFolder) Indicates if the current authenticated user has the rights to annotate cases that are of this case type. boolean hasCreateSubfolderRights () Indicates if the current authenticated user has the rights to create a subfolder of cases that are of this case type. boolean hasCreateSubfolderRights (com.filenet.api.core.Folder caseTypeFolder) Indicates if the current authenticated user has the rights to create a subfolder of cases that are of this case type. boolean hasDynamicTaskCreationRights () Indicates if the current authenticated user has the rights to create dynamic tasks. boolean hasExternalData () Indicates if this case type is integrated with an external data service. boolean hasInstanceCreationRights () Indicates if the current authenticated user has the rights to create cases that are of this case type. boolean isAutoLaunchCasesAllowed () Indicates if the case type is allowing the automatic launch of a case when a new case is created. boolean isBoxCollaborationAllowed () Indicates if the case type is allowing the collaboration with Box. boolean isCopyExternalDocumentTitleAllowed () Indicates if the case type is allowing the copy of external documents title. boolean isDynamicTaskAllowed () Indicates if the case type is allowing the creation of dynamic tasks. boolean isExternalDocumentsAllowed () Indicates if the case type is allowing the creation of external documents. boolean isQuickTaskAllowed () Indicates if the case type is allowing the creation of quick tasks.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                     | Method and Description                                                                                                                                                                                                                                                                                                                                                                                                |
+|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CaseType.FetchDynamicTasksResult      | fetchDynamicTasks(java.lang.String continuationToken,                  java.lang.String additionalFilter,                  java.lang.String orderByPropName,                  boolean isDescending) Fetches dynamic tasks by issuing a query with the specified criteria.                                                                                                                                             |
+| CaseType.FetchDynamicTasksResult      | fetchDynamicTasks(java.lang.String continuationToken,                  java.lang.String additionalFilter,                  java.lang.String orderByPropName,                  boolean isDescending,                  int batchSize) Fetches dynamic tasks by issuing a query with the specified criteria.                                                                                                             |
+| static CaseType                       | fetchInstance(ObjectStoreReference objStoreRef,              java.lang.String caseTypeName) A factory method that returns an instance of CaseType.                                                                                                                                                                                                                                                                    |
+| com.ibm.json.java.JSONObject          | getCaseStages() Gets stages set on the case type.                                                                                                                                                                                                                                                                                                                                                                     |
+| java.lang.String                      | getCaseTitlePropertyName() Returns the symbolic name of the case title property configured for  this case type.                                                                                                                                                                                                                                                                                                       |
+| com.filenet.api.meta.ClassDescription | getClassDescription()                                                                                                                                                                                                                                                                                                                                                                                                 |
+| java.lang.String                      | getDefaultView() Returns the default views reference name for the case type.                                                                                                                                                                                                                                                                                                                                          |
+| java.lang.String                      | getDescription() Returns the textual description of the case type.                                                                                                                                                                                                                                                                                                                                                    |
+| TaskType                              | getDiscretionaryTaskType(java.lang.String taskTypeName) Returns a TaskType instance for a particular discretionary task type.                                                                                                                                                                                                                                                                                         |
+| java.util.List<TaskType>              | getDiscretionaryTaskTypes() Returns a list of the discretionary task types in this case type.                                                                                                                                                                                                                                                                                                                         |
+| java.lang.String                      | getDisplayName() Returns the display name of this case type.                                                                                                                                                                                                                                                                                                                                                          |
+| java.lang.String                      | getDynamicTaskStepPageName() Returns the dynamic task step page name.                                                                                                                                                                                                                                                                                                                                                 |
+| static CaseType                       | getFetchlessInstance(ObjectStoreReference objStoreRef,                     java.lang.String caseTypeName) A factory method that returns an instance of CaseType  without verifying that the identifiers used to reference  the object store and case type represent a valid deployed case type.                                                                                                                       |
+| static CaseType                       | getFetchlessInstanceFromCache(ObjectStoreReference objStoreRef,                              java.lang.String caseTypeName,                              com.ibm.casemgmt.intgimpl.callcache.DeployedCaseTypeCallCache ctcache) A factory method that returns an instance of CaseType  without verifying that the identifiers used to reference  the object store and case type represent a valid deployed case type. |
+| FolderReference                       | getFolderReference() Returns a FolderReference object that represents a reference   to the deployed case type folder object.                                                                                                                                                                                                                                                                                          |
+| com.filenet.api.util.Id               | getId() Returns the Id of the case type.                                                                                                                                                                                                                                                                                                                                                                              |
+| com.filenet.api.meta.MetadataCache    | getMetadataCache()                                                                                                                                                                                                                                                                                                                                                                                                    |
+| java.lang.String                      | getName() Returns the name of the case type.                                                                                                                                                                                                                                                                                                                                                                          |
+| ObjectStoreReference                  | getObjectStoreReference() Returns an ObjectStoreReference that represents a reference to   the Content Engine object store where this case type is deployed.                                                                                                                                                                                                                                                          |
+| java.lang.String                      | getPageId(CasePageType pageType,          java.lang.String role) Returns a page ID for a particular case page type.                                                                                                                                                                                                                                                                                                   |
+| java.lang.String                      | getPageIdOrCSHSView(CasePageType pageType,                    java.lang.String role) Returns a page ID or view name for a particular case page type.                                                                                                                                                                                                                                                                  |
+| java.util.List<PageView>              | getPageViews() Returns the list of page views for the case type.                                                                                                                                                                                                                                                                                                                                                      |
+| java.lang.String                      | getSolutionName() Returns the name of the deployed solution that this case type  is a part of.                                                                                                                                                                                                                                                                                                                        |
+| java.lang.String                      | getViewDisplayName()                                                                                                                                                                                                                                                                                                                                                                                                  |
+| filenet.vw.api.VWSession              | getVWSession() A convenience method to obtain a VWSession that is appropriate for the solution this  case type is part of.                                                                                                                                                                                                                                                                                            |
+| boolean                               | hasAnnotateCreationRights() Indicates if the current authenticated user has the rights to annotate  cases that are of this case type.                                                                                                                                                                                                                                                                                 |
+| boolean                               | hasAnnotateCreationRights(com.filenet.api.core.Folder caseTypeFolder) Indicates if the current authenticated user has the rights to annotate  cases that are of this case type.                                                                                                                                                                                                                                       |
+| boolean                               | hasCreateSubfolderRights() Indicates if the current authenticated user has the rights to create  a subfolder of cases that are of this case type.                                                                                                                                                                                                                                                                     |
+| boolean                               | hasCreateSubfolderRights(com.filenet.api.core.Folder caseTypeFolder) Indicates if the current authenticated user has the rights to create  a subfolder of cases that are of this case type.                                                                                                                                                                                                                           |
+| boolean                               | hasDynamicTaskCreationRights() Indicates if the current authenticated user has the rights to create  dynamic tasks.                                                                                                                                                                                                                                                                                                   |
+| boolean                               | hasExternalData() Indicates if this case type is integrated with an external data service.                                                                                                                                                                                                                                                                                                                            |
+| boolean                               | hasInstanceCreationRights() Indicates if the current authenticated user has the rights to create  cases that are of this case type.                                                                                                                                                                                                                                                                                   |
+| boolean                               | isAutoLaunchCasesAllowed() Indicates if the case type is allowing the automatic launch of a case when a new  case is created.                                                                                                                                                                                                                                                                                         |
+| boolean                               | isBoxCollaborationAllowed() Indicates if the case type is allowing the collaboration with Box.                                                                                                                                                                                                                                                                                                                        |
+| boolean                               | isCopyExternalDocumentTitleAllowed() Indicates if the case type is allowing the copy of external documents title.                                                                                                                                                                                                                                                                                                     |
+| boolean                               | isDynamicTaskAllowed() Indicates if the case type is allowing the creation of dynamic tasks.                                                                                                                                                                                                                                                                                                                          |
+| boolean                               | isExternalDocumentsAllowed() Indicates if the case type is allowing the creation of external documents.                                                                                                                                                                                                                                                                                                               |
+| boolean                               | isQuickTaskAllowed() Indicates if the case type is allowing the creation of quick tasks.                                                                                                                                                                                                                                                                                                                              |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

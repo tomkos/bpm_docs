@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdr001</title>
+</head>
+<body>
+<h1>Saving user-defined assets before you reset the test environment</h1>
+
+<h2>About this task</h2>
+
+<h2>Procedure</h2>
+
+<p>To save user-defined assets before you reset the test
+environment:</p>
+
+<p>1 Create and save an export manifest of the assets that youwant to save from your target object store in the test environment:
+    1. Start FileNet Deployment
+Manager.
+    2. Click Environments &gt; environment definition for the environment definition that you want to export
+assets from.
+    3. Right-click Export Manifests and
+click New &gt; Export manifest.
+    4. Open the manifest, click the Add Assets to
+the export manifest editor icon, and select the assets
+that you want to save from the target object store.
+    5. Specify the export manifest file name, the output folder,
+and the deploy dataset name.
+    6. Click OK.
+The
+export starts.
+2 Add the exported deploy dataset to the DeployDataset setdocument object in the reinitialization folder for the case managementdesign object store:</p>
+
+<ol>
+<li>In IBM Administration Console for
+Content Platform Engine, select the case management design object
+store.</li>
+<li>Click Browse &gt; Root Folder &gt; IBM Business Automation
+Workflow &gt; Datasets &gt; DevEnvReinitInfo &gt; dev_env_connection_definition.</li>
+<li>On the dev_env_connection_definition page, click
+DeployDataset in the Containment Name column.</li>
+<li>On the DeployDataset page, click Actions &gt; Checkin, checkout, cancel &gt; Exclusive checkout, and then click Actions &gt; Checkin, checkout, cancel &gt; Checkin.
+5 In the Checkin document window, add the exported deploy dataset XML files.Click Add to navigate to the deploy dataset folder that you selected when youexported the manifest in FileNet DeploymentManager , such as…\IBM\FileNet\ContentEngine\tools\deploy\P8DeploymentData\Environments\environment namefolder \Assets\export manifest name folder , and attach the followingXML files: Restriction: Do not change the names of the Catalog.xml anddeployDataset1.xml files. If you change the names, then Case Builder cannot read the files.
+<ul>
+<li>Catalog.xml</li>
+<li>deployDataset1.xml</li>
+</ul></li>
+<li>Click Checkin.</li>
+</ol>
+
+<h2>What to do next</h2>
+
+</body>
+</html>

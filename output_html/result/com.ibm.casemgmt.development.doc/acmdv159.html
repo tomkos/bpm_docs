@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv159</title>
+</head>
+<body>
+<h1>Get method for associated object stores</h1>
+
+<h2>URI</h2>
+
+<p>/CaseManager/CASEREST/v1/solution/{solutionAcronym}/associatedobjectstores</p>
+
+<p>| Name            | Type   | Required   | Description                       |
+|-----------------|--------|------------|-----------------------------------|
+| solutionAcronym | String | Yes        | The acronym of the case solution. |</p>
+
+<h2>GET method request</h2>
+
+<p><code>
+https://example.com:9443/CaseManager/CASEREST/v1/solution/TS/associatedobjectstores
+</code></p>
+
+<h2>GET method response</h2>
+
+<p><code>
+{
+  "DesignObjectStore": "dos",
+  "TargetObjectStore": [
+    "tos"
+  ]
+}
+</code></p>
+
+</body>
+</html>

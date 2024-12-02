@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtc039</title>
+</head>
+<body>
+<h1>Some property values are empty for cases that are returned by a search that uses the</h1>
+
+<p>icm.util.SearchPayload class</p>
+
+<p><code>
+payload.searchTemplate.setClasses([new ecm.model.SearchClass(
+    caseType\_Identifier, caseType\_Identifier, "folder", true)]);
+</code></p>
+
+<p>```
+var solution = this.solution; // solution from the widget.
+var params = {};
+params.ObjectStore = solution.getTargetOS().id;</p>
+
+<p>var criterion = new ecm.model.SearchCriterion({"id":
+    "ICM_strField", "name": "ICM_strField", "selectedOperator": 
+    "EQUAL", "dataType": "xs:string", "defaultValue" : "1234", 
+    "value": "1234", "values": ["1234"]});
+params.criterions = [criterion];</p>
+
+<p>// params.ceQuery = "SELECT t.[FolderName], t.[LastModifier],
+    t.[DateLastModified], t.[CmAcmCaseTypeFolder], 
+    t.[CmAcmCaseState], t.[CmAcmCaseIdentifier], t.[DateCreated],
+    t.[Creator], t.[Id], t.[ContainerType], t.[LockToken], 
+    t.[LockTimeout],  t.[ClassDescription], t.[DateLastModified],
+    t.[FolderName] FROM [CmAcmCaseFolder] t WHERE 
+        ((((t.[CmAcmCaseIdentifier] LIKE '%%' or 
+        t.[CmAcmParentSolution] =<br />
+        Object({201323A3-271B-48CC-9C0D-7D0B20B1822C})) and 
+        t.[CmAcmCaseState] &gt; 1) )) ORDER BY 
+        t.[CmAcmCaseIdentifier]";</p>
+
+<p>params.CaseType = "ICM_CaseType1";
+params.solution = solution;</p>
+
+<p>var searchPayload = new icm.util.SearchPayload();
+searchPayload.setModel(params);</p>
+
+<p>var self=this;
+searchPayload.getSearchPayload(dojo.hitch(self, function(payload) {
+    payload.searchTemplate.setClasses([new ecm.model.SearchClass("ICM_CaseType1",
+    "ICM_CaseType1", "folder", true)]); 
+    self.onBroadcastEvent("icm.SearchCases", payload);
+}));
+```</p>
+
+</body>
+</html>

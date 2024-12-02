@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmsdh50</title>
+</head>
+<body>
+<h1>Activity preconditions</h1>
+
+<p>If the preconditions for an activity are not fully satisfied and the activity has a trigger, such
+as updating a case property or a filing a document. The activity remains in waiting state until the
+next trigger occurs to reevaluate the preconditions.</p>
+
+<p>An activity with preconditions is complete after all preconditions are met. However, the trigger
+you defined starts only if all its preconditions are met, such as when a second document is
+added.</p>
+
+<p>You can join the conditions by using the Boolean ALL or ANY
+operators.</p>
+
+<p>Depending on the property type, the operators in the expression
+change.</p>
+
+<p>Optionally, you can specify more property conditions. If you specify more property
+conditions, the property conditions must also be met for an activity to start.</p>
+
+<p>You can also
+mark the activity as repeatable when the precondition is satisfied.</p>
+
+<p>Optionally, you can specify more property
+conditions. If you specify more property conditions, the conditions must also be met for an activity
+to start.</p>
+
+<p>You can mark the activity to repeat when the precondition is satisfied. For example,
+if your activity is to review an accident claim estimate, you can define the activity to repeat. A
+new activity is created and work is added to the in-basket of the case worker. The claim estimate is
+reviewed each time that a repair estimate document is added to the case.</p>
+
+<p>For example, you can include
+several activities into an activity group, and use the completion of the activity group to trigger
+an activity. You can also mark the activity to repeat when the precondition is satisfied.</p>
+
+<p>You can update the preconditions for an activity at any time, including on deployed solutions. If
+you change the expression of a property condition for a deployed solution, for activity types that
+have the A property condition is met precondition, run the precondition
+checker utility after you redeploy the solution.</p>
+
+</body>
+</html>

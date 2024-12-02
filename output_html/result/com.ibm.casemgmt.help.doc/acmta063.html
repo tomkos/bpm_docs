@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta063</title>
+</head>
+<body>
+<h1>Configuring integration with IBM Business Automation</h1>
+
+<p>Workflow
+fails</p>
+
+<h2>Symptoms</h2>
+
+<p>Step 5: --error message: Define Target
+Environment * Configure Case Integration with IBM Business Automation Workflow <strong><em>*</strong><strong></em></strong>An error
+occurred while running Configure Case Integration with IBM Business Automation Workflow The task
+failed because of the following error: The value given for a property or list element lies outside
+the permitted range or value set, or exceeds the maximum length allowed. The length of the value
+(160) specified for property CmAcmUserName1 exceeds the maximum permitted length
+(128).</p>
+
+<h2>Resolving the problem</h2>
+
+<p>Alternatively, you can configure IBM® Business Automation
+Workflow to support long user name while running the
+Configure case integration with IBM Business Automation Workflow task:</p>
+
+<ol>
+<li>In the Administrative Console for Content Engine, go to the target object store.</li>
+<li>Go to Data Design &gt; Classes &gt; Custom Objects and select the OneBPM Integration Data custom object.</li>
+<li>Go to Property Definitions and select the User Name 1 property
+definition.</li>
+<li>On the More tab, change the maximum string length from 128 to 1056.</li>
+<li>Repeat this procedure for the User Name 2 property definition.</li>
+<li>Click Save.</li>
+</ol>
+
+</body>
+</html>

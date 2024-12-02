@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc103</title>
+</head>
+<body>
+<h1>Attachments widget outgoing events</h1>
+
+<h2>Document opened event</h2>
+
+<p>| Description   | The user opened a document or an initiating document was opened when the widget loaded.                                                                                           |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.OpenDocument                                                                                                                                                                  |
+| Type          | BroadcastNote: This event is only broadcast when there is a Viewer widget on the page and when the Open documents in a separate browser window setting on the widget is disabled. |
+| Payload       | contentItem An ecm.model.ContentItem object that represents the document that was opened. action An ecm.model.Action object that represents the Open action.                      |</p>
+
+<h2>Document selected event</h2>
+
+<p>| Description   | The user selected a document.                                                            |
+|---------------|------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectDocument                                                                       |
+| Type          | Wired                                                                                    |
+| Payload       | document An ecm.model.ContentItem object that represents the document that was selected. |</p>
+
+</body>
+</html>

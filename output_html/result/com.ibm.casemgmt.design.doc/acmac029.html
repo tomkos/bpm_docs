@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac029</title>
+</head>
+<body>
+<h1>Adding users to a project area by using the command line</h1>
+
+<h2>Before you begin</h2>
+
+<p>Be sure to have your completed configuration checklist available.</p>
+
+<h2>About this task</h2>
+
+<p>Each user can belong to only one project area in addition to the default project area. If you
+assign a user to a project area, the user is removed from the project area that they originally
+belonged to.</p>
+
+<p>You can add groups to the default project area only. You can only add users individually to your
+nondefault project areas.</p>
+
+<h2>Procedure</h2>
+
+<p>To add users to a project area:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.
+2 Optional: List the usersor groups that are already signed to the project area by running thefollowing command. Do not enter any line breaks when you enter thecommand. configmgr_cl listPrincipals -projectAreaName project_area_name -profile myprofile [-silent] [-force][-help] -projectAreaName project_area_name The name of the project area. The default project area is nameddev_env_connection_definition . The name can contain up to 255 characters. Ifthe name includes a space, put the name in double quotation marks, for example, "CreditDispute Area" . The name cannot contain any of the following characters: \ /: * ? " &lt;&gt; | -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -silent Optional: When you specify the -silent parameter, no prompts orinformational messages are shown in the console, but the errors are written to the log. Failuremessages and validation error messages are shown as needed, such as messages about missing passwordsor invalid port numbers. If you run the execute command to run all the activitiesin a profile and you specify the -silent parameter, you must also specify the-force parameter. -force Optional and applies only when the -silent parameter is used. When youspecify the -force parameter, the activity is run without pausing for requiredresponses to validation error messages, such as messages about missing passwords or invalid portnumbers. -help Optional and displays a brief message on the command syntax insteadof running the command.</li>
+</ol>
+
+<p><code>
+configmgr\_cl listPrincipals -projectAreaName project\_area\_name
+ -profile myprofile
+ [-silent] [-force][-help]
+</code></p>
+
+<pre><code>- The name of the profile, such as develop1. The profile is located in the
+</code></pre>
+
+<p>install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM® Business Automation
+Workflow is installed.
+    - The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.
+    - The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.
+3 Add users or groups by running the following command. Do not enter any line breaks when youenter the command. configmgr_cl addPrincipals -projectAreaName project_area_name -profile myprofile [-users user_name ] [-groups group_name ] [-silent] [-force][-help] -projectAreaName project_area_name Specifies the name of the project area to add users to. The default project area is nameddev_env_connection_definition. -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -users user_name Specifies the short name or display name of the user that you want to add. A user can belong tothe default project area and one other project area. If you add a user to a nondefault project area,that user is removed from any other nondefault project area. You can add multiple users at one time by adding more -usersuser_name entries on the same command. If you are adding only groups, you can omit this option. -groups group_name Specifies the short name or display name of the group that you want to add. Groups can be addedto the default project area only. You can add multiple groups at one time by adding more -groupsgroup_name entries on the same command. You can omit this option if you are adding only users. -silent Optional: When you specify the -silent parameter, no prompts orinformational messages are shown in the console, but the errors are written to the log. Failuremessages and validation error messages are shown as needed, such as messages about missing passwordsor invalid port numbers. If you run the execute command to run all the activitiesin a profile and you specify the -silent parameter, you must also specify the-force parameter. -force Optional and applies only when the -silent parameter is used. When youspecify the -force parameter, the activity is run without pausing for requiredresponses to validation error messages, such as messages about missing passwords or invalid portnumbers. -help Optional and displays a brief message on the command syntax instead of running the command.</p>
+
+<p><code>
+configmgr\_cl addPrincipals -projectAreaName project\_area\_name
+ -profile myprofile
+ [-users user\_name] [-groups group\_name]
+ [-silent] [-force][-help]
+</code></p>
+
+<ul>
+<li>The name of the profile, such as develop1. The profile is located in the
+install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM Business Automation
+Workflow is installed.</li>
+<li>The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.</li>
+<li>The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</li>
+</ul>
+
+<p>Specifies the short name or display name of the user that you want to add. A user can belong to
+the default project area and one other project area. If you add a user to a nondefault project area,
+that user is removed from any other nondefault project area.</p>
+
+<p>You can add multiple users at one time by adding more -users
+user_name entries on the same command.</p>
+
+<p>If you are adding only groups, you can omit this option.</p>
+
+<p>Specifies the short name or display name of the group that you want to add. Groups can be added
+to the default project area only.</p>
+
+<p>You can add multiple groups at one time by adding more -groups
+group_name entries on the same command.</p>
+
+<p>You can omit this option if you are adding only users.</p>
+
+<ol start="4">
+<li>Repeat the previous step to add more users or groups for
+the project area.</li>
+</ol>
+
+</body>
+</html>

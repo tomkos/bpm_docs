@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_EndpointLookupmediationprimitive</title>
+</head>
+<body>
+<h1>Endpoint Lookup mediation primitive</h1>
+
+<h2>Introduction</h2>
+
+<p>In
+order to use the Endpoint Lookup mediation primitive you might need
+to add service endpoint information to your WSRR registry. If you
+want to extract service endpoint information about web services, your
+WSRR registry must contain either the appropriate WSDL documents,
+or SCA modules that contain exports using web service bindings. If
+you want to extract service endpoint information about exports that
+use the other SCA bindings, your WSRR registry must contain the appropriate
+SCA modules. If you want to extract service endpoint information about
+services that are accessed using MQ, JMS or HTTP but are not defined
+in a SCA module, your WSRR registry must contain an appropriate Manual
+JMS/HTTP/MQ endpoint with associated Interface Business Object
+with the endpoint information and associated interface correctly set.</p>
+
+<ul>
+<li>Web services using SOAP/HTTP.</li>
+<li>Web services using SOAP/JMS.</li>
+<li>SCA module exports with web service bindings, using SOAP/HTTP.</li>
+<li>SCA module exports with web service bindings, using SOAP/JMS.</li>
+<li>SCA module exports with the default SCA binding.</li>
+<li>SCA module exports with the MQ binding.</li>
+<li>SCA module exports with the MQ JMS binding.</li>
+<li>SCA module exports with the JMS binding.</li>
+<li>SCA module exports with the Generic JMS binding.</li>
+<li>SCA module exports with the HTTP binding.</li>
+<li>Manually defined MQ endpoints with associated interfaces.</li>
+<li>Manually defined JMS endpoints with associated interfaces.</li>
+<li>Manually defined HTTP endpoints with associated interfaces.</li>
+</ul>
+
+<p>When the Endpoint Lookup mediation primitive receives
+a message it sends a search query to the registry. The search query
+is constructed using the Endpoint Lookup properties that you specify
+and the query might return nothing, or it might return one or more
+service endpoints. You can choose whether to be informed of all endpoints
+that match your query, or just one endpoint that matches your query.</p>
+
+<h2>Details</h2>
+
+<p>The Endpoint Lookup mediation primitive
+uses the Endpoint Reference structure defined by the WS-Addressing
+specification. For more information, see: http://schemas.xmlsoap.org/ws/2004/08/addressing.</p>
+
+<p>Updates
+made to the SMO by the Endpoint Lookup mediation primitive are dependant
+on the success of the registry query (matches are found during the
+registry query) and the match policy.</p>
+
+<ul>
+<li>/headers/SMOHeader/Target/address .
+<ul>
+<li>Can contain the address of a service to invoke dynamically (the
+dynamic callout address).</li>
+</ul></li>
+<li><p>/context/primitiveContext/EndpointLookupContext .</p></li>
+<li><p>Can contain the results of the WSRR query.</p></li>
+<li><p>/headers/SMOHeader/AlternateTarget</p></li>
+<li><p>Can contain a list of alternate service addresses. For more information
+on the retry function, see: Combining multiple services.</p></li>
+</ul>
+
+<h2>Usage</h2>
+
+<p>You can use the Endpoint Lookup mediation
+primitive to dynamically route messages based upon customer classification.
+For example, you might want messages for customers of type A routed
+to URL X, and messages for customers of type B routed to URL Y. If
+you set up your registry to key URLs against customer types, then
+you can dynamically route customer requests according to customer
+type.</p>
+
+<ol>
+<li>Wire the matching output terminal of the Endpoint Lookup mediation
+primitive to the input terminal of the Message Filter mediation primitive.</li>
+<li>Use the Message Filter mediation primitive to check whether the
+URL is internal or external, and route external messages to the Mapping
+mediation primitive (by wiring one of the Message Filter output terminals
+to the Mapping mediation primitive).</li>
+<li>Use the Mapping mediation primitive to remove private information
+from messages.</li>
+</ol>
+
+<h2>Matching latest compatible service versions</h2>
+
+<p>If
+you have created versioned SCA modules, and have loaded these SCA
+modules into WSRR, you might want to use the latest compatible version
+of the service provider that is available.</p>
+
+<p>| 1.0.0          |
+|----------------|
+| 1.0.1          |
+| 1.0.2          |
+| 1.0.3          |
+| 1.1.0          |
+| 1.1.3          |
+| 1.1.4          |
+| 1.3.0          |
+| 1.3.1          |
+| 1.3.4          |
+| 2.0.0          |
+| 2.1.0          |</p>
+
+<p>| Version property setting   | Latest Compatible Match   |
+|----------------------------|---------------------------|
+| 1.0.1                      | 1.0.3                     |
+| 1.0.4                      | NO MATCH                  |
+| 1.0 or 1.0.*               | 1.0.3                     |
+| 1.2 or 1.2.*               | NO MATCH                  |
+| 1 or 1.*                   | 1.3.4                     |</p>
+
+<h2>SOAP/HTTP example</h2>
+
+<p><code>
+http://&lt;host&gt;:&lt;port&gt;/&lt;moduleName&gt;/sca/&lt;exportName&gt;
+</code></p>
+
+<p><code>
+http://&lt;host&gt;:&lt;port&gt;/&lt;service&gt;
+</code></p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsdl:definitions name="SOAP\_HTTPExport\_BigEchoHttp\_Service" targetNamespace="http://big.com/Binding3" 
+        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+        xmlns:Port\_0="http://big.com" 
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+        xmlns:this="http://big.com/Binding3" 
+        xmlns="http://schemas.xmlsoap.org/wsdl/"&gt;
+  &lt;wsdl:import namespace="http://big.com" location="BigEcho.wsdl"/&gt;
+  &lt;wsdl:binding name="SOAP\_HTTPExport\_BigEchoHttpBinding" type="Port\_0:BigEcho"&gt;
+    &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+    &lt;wsdl:operation name="echo"&gt;
+      &lt;soap:operation/&gt;
+      &lt;wsdl:input name="echoRequest"&gt;
+        &lt;soap:body use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name="echoResponse"&gt;
+        &lt;soap:body use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="BadBoyException"&gt;
+        &lt;soap:fault name="BadBoyException" use="literal"/&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name="SOAP\_HTTPExport\_BigEchoHttpService"&gt;
+    &lt;wsdl:port name="SOAP\_HTTPExport\_BigEchoHttpPort" binding="this:SOAP\_HTTPExport\_BigEchoHttpBinding"&gt;
+      &lt;soap:address location="http://testhost:9080/RegistryWeb/sca/SOAP\_HTTPExport"/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+</code></p>
+
+<p>The port declaration contains a  soap:address location
+of http://testhost:9080/RegistryWeb/sca/SOAP_HTTPExport.
+This indicates that it is an export with a web service binding. To
+enable dynamic routing, update the /headers/SMOHeader/Target/address field
+in the message with the location value in the soap:address element.</p>
+
+<h2>SOAP/JMS example</h2>
+
+<p><code>
+jms:/queue?destination=jms/WSjmsExport&amp;connectionFactory=jms/WSjmsExportQCF&amp;targetService=WSjmsExport\_ServiceBJmsPort
+</code></p>
+
+<p><code>
+jms:/queue?destination=&lt;destName&gt;&amp;connectionFactory=&lt;factory&gt;&amp;targetservice=&lt;service&gt;
+</code></p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsdl:definitions name="SOAP\_JMSExport\_BigEchoJms\_Service" targetNamespace="http://big.com/Binding4" 
+        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+        xmlns:Port\_0="http://big.com" 
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+        xmlns:this="http://big.com/Binding4" 
+        xmlns="http://schemas.xmlsoap.org/wsdl/"&gt;
+  &lt;wsdl:import namespace="http://big.com" location="BigEcho.wsdl"/&gt;
+  &lt;wsdl:binding name="SOAP\_JMSExport\_BigEchoJmsBinding" type="Port\_0:BigEcho"&gt;
+    &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/jms"/&gt;
+    &lt;wsdl:operation name="echo"&gt;
+      &lt;soap:operation/&gt;
+      &lt;wsdl:input name="echoRequest"&gt;
+        &lt;soap:body use="literal"/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name="echoResponse"&gt;
+        &lt;soap:body use="literal"/&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="BadBoyException"&gt;
+        &lt;soap:fault name="BadBoyException" use="literal"/&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name="SOAP\_JMSExport\_BigEchoJmsService"&gt;
+    &lt;wsdl:port name="SOAP\_JMSExport\_BigEchoJmsPort" binding="this:SOAP\_JMSExport\_BigEchoJmsBinding"&gt;
+      &lt;soap:address location="jms:/queue?destination=jms/SOAP\_JMSExport&amp;;connectionFactory=jms/SOAP\_JMSExportQCF
+        &amp;;targetService=SOAP\_JMSExport\_BigEchoJmsPort"/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+</code></p>
+
+<h2>SCA default binding example</h2>
+
+<p><code>
+sca://&lt;moduleName&gt;/&lt;exportName&gt;
+</code></p>
+
+<p>For
+services that use the SCA binding, the URI is never physically present
+in the resources that define that service.</p>
+
+<p>If using an Endpoint
+Lookup mediation primitive to retrieve endpoint information about
+services using the SCA binding from a service registry, the Endpoint
+Lookup will derive this URI from the information returned by the registry.</p>
+
+<p><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;scdl:export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://big.com" 
+        xmlns:scdl="http://www.ibm.com/xmlns/prod/websphere/scdl/6.0.0" 
+        xmlns:wsdl="http://www.ibm.com/xmlns/prod/websphere/scdl/wsdl/6.0.0" 
+        displayName="SCAExport" name="SCAExport"&gt;
+  &lt;interfaces&gt;
+    &lt;interface xsi:type="wsdl:WSDLPortType" portType="ns1:BigEcho"&gt;
+      &lt;method name="echo"/&gt;
+    &lt;/interface&gt;
+  &lt;/interfaces&gt;
+&lt;/scdl:export&gt;
+</code></p>
+
+<ul>
+<li>Endpoint Lookup mediation primitive properties</li>
+</ul>
+
+<p>You can specify values for mediation primitive properties either by using the property fields in the IBM® Integration Designer user interface or by using an XML format. The property field names displayed in IBM Integration Designer are generally different from the property names used when building a mediation flow using XML code. In the following information, icons are used to identify each property name used in IBM Integration Designer and the corresponding XML name. (Where applicable, XML names that are required, but not shown in IBM Integration Designer, are also described.)</p>
+
+</body>
+</html>

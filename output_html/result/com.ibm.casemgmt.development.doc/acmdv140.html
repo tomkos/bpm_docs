@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv140</title>
+</head>
+<body>
+<h1>Defining a property for a page widget or an action</h1>
+
+<p>| Property         | Required or Optional   | Type                         | Description                                                                                                                                                                                                                                          |
+|------------------|------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| propertyType     | Required               | String                       | A value that indicates whether the property is a single property or a property group. property Specify this value if the property object contains a single property. group Specify this value if the property object contains a group of properties. |
+| type             | Required               | String                       | A value that indicates the type of the property. For more information, see Defining a property type.                                                                                                                                                 |
+| id               | Required               | String                       | A unique identifier for the property.                                                                                                                                                                                                                |
+| defaultValue     | Optional               | Depends on the property type | The default value for the property.                                                                                                                                                                                                                  |
+| required         | Required               | Boolean                      | A value that is set to true if the property is required. By default, the property is set to false.                                                                                                                                                   |
+| visibility       | Optional               | Boolean                      | A value that is set to true if the property is visible. By default, the property is set to true.                                                                                                                                                     |
+| title            | Required               | String                       | The label that is displayed for the property in Case Builder.                                                                                                                                                                                        |
+| remapNeeded      | Optional               | Boolean                      | A value that is set to true if the property value needs to be updated when the solution is imported and deployed to a production environment. This property applies only to a string property.                                                       |
+| propertiesMember | Optional               | Array                        | A definition of the properties within a property of type group.                                                                                                                                                                                      |</p>
+
+</body>
+</html>

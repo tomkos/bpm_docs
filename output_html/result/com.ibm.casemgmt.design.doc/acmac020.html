@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac020</title>
+</head>
+<body>
+<h1>execute_sa command</h1>
+
+<h2>Syntax</h2>
+
+<p><code>
+configmgr\_cl execute\_sa -operation operation\_type
+ -file input\_file\_name
+ [-silent] [-force] [-help]
+</code></p>
+
+<h2>Parameters</h2>
+
+<p>| Option             | Description                                                                        |
+|--------------------|------------------------------------------------------------------------------------|
+| copy               | Copies a solution.                                                                 |
+| createFromTemplate | Creates a solution from a template.                                                |
+| list               | Creates the CSV files with the properties and document classes in an object store. |
+| convertToTemplate  | Converts a solution to a template.                                                 |</p>
+
+<p>Specifies the full path to the input file that you created
+with the generate_input_sa command. The input file
+provides Content Platform Engine authentication
+information and other information for the selected operation. You
+must edit the property values in the input file before you run the execute_sa command.</p>
+
+<p>For
+example, use C:\propertylist\propertylist.txt.</p>
+
+<h2>Sample commands</h2>
+
+<p><code>
+configmgr\_cl execute\_sa -operation list
+ -file C:\propertylist\propertylist.txt
+</code></p>
+
+<p><code>
+configmgr\_cl execute\_sa -operation copy
+ -file C:\solutions\copy\_solution\_input.txt
+</code></p>
+
+<p><code>
+configmgr\_cl execute\_sa -operation createFromTemplate 
+ -file C:\solutions\from\_template\_input.txt
+</code></p>
+
+<p><code>
+configmgr\_cl execute\_sa -operation convertToTemplate 
+ -file C:\solutions\to\_template\_input.txt
+</code></p>
+
+<p><code>
+configmgr\_cl execute\_sa -help
+</code></p>
+
+</body>
+</html>

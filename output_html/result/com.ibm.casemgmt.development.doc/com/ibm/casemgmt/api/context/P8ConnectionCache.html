@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>P8ConnectionCache</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Interface P8ConnectionCache</h2>
+
+<ul>
+<li>All Known Implementing Classes:
+BaseP8ConnectionCache, SimpleP8ConnectionCache</li>
+</ul>
+
+<p>public interface P8ConnectionCache
+Interface that supplies P8 Connection objects out of a cache.</p>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary</li>
+</ul></li>
+</ul>
+
+<p>All Methods Instance Methods Abstract Methods </p>
+
+<p>Modifier and Type
+Method and Description</p>
+
+<p>com.filenet.api.core.Connection
+getP8Connection(java.lang.String ceURI)
+Retrieves a Connection object for a particular CE domain
+ URI out of the cache.</p>
+
+<ul>
+<li>============ METHOD DETAIL ==========
+<ul>
+<li>Method Detail</li>
+</ul></li>
+</ul>
+
+<h3>Method Detail</h3>
+
+<ul>
+<li>getP8Connection
+com.filenet.api.core.Connection getP8Connection(java.lang.String ceURI)
+Retrieves a Connection object for a particular CE domain
+URI out of the cache. If the object is not yet cached, a new
+Connection object will be created and cached as appropriate
+for the concrete implementation of P8ConnectionCache.</li>
+</ul>
+
+<p>Parameters:
+ceURI - a CE domain URI
+ID status:
+ID review by David Newhall</p>
+
+</body>
+</html>

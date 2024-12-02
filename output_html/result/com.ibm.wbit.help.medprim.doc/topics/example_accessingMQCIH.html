@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>example_accessingMQCIH</title>
+</head>
+<body>
+<h1>Example:</h1>
+
+<p>Accessing MQCIH header data</p>
+
+<h2>Context</h2>
+
+<h2>Requirements</h2>
+
+<h2>Basic flow of events</h2>
+
+<ol>
+<li>The
+MQExport receives an inbound MQ request message, or the MQImport receives
+an inbound MQ response message. The message contains an MQCIH header.</li>
+<li>The MQExport or MQImport uses the MQCIH header data binding to
+parse the
+message, and propagates the data into the SCA MQHeader.</li>
+<li>Within
+a mediation, the MQCIH header data can be obtained from the MQHeader.
+The MQHeader has a value field, containing the MQCIH structure.</li>
+</ol>
+
+<h2>Results</h2>
+
+</body>
+</html>

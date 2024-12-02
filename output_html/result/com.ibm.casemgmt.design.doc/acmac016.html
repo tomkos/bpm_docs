@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac016</title>
+</head>
+<body>
+<h1>generate_input_sa command</h1>
+
+<h2>Syntax</h2>
+
+<p><code>
+configmgr\_cl generate\_input\_sa -operation operation\_type
+ -file input\_file\_name
+ [-silent] [-force] [-help]
+</code></p>
+
+<h2>Parameters</h2>
+
+<p>| Option             | Description                                                                                |
+|--------------------|--------------------------------------------------------------------------------------------|
+| copy               | Creates the input file for copying a solution.                                             |
+| createFromTemplate | Creates the input file for creating a solution from a template.                            |
+| list               | Creates the input file for listing the properties and document classes in an object store. |
+| convertToTemplate  | Converts a solution to a template.                                                         |</p>
+
+<p>Specifies the full path to the input file to create. The directory
+structure in the path must already exist. You can use any valid file
+name, but the .txt extension is recommended.
+For example, use C:\propertylist\propertylist.txt.</p>
+
+<h2>Sample commands</h2>
+
+<p><code>
+configmgr\_cl generate\_input\_sa -operation list
+ -file C:\propertylist\propertylist.txt
+</code></p>
+
+<p><code>
+configmgr\_cl generate\_input\_sa -operation copy
+ -file C:\solutions\copy\_solution\_input.txt
+</code></p>
+
+<p><code>
+configmgr\_cl generate\_input\_sa -help
+</code></p>
+
+</body>
+</html>

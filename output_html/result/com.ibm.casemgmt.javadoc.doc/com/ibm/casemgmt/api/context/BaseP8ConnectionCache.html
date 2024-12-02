@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BaseP8ConnectionCache</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class BaseP8ConnectionCache</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.context.BaseP8ConnectionCache</li>
+</ul></li>
+<li><p>All Implemented Interfaces:
+P8ConnectionCache</p></li>
+</ul>
+
+<p>Direct Known Subclasses:
+SimpleP8ConnectionCache</p>
+
+<p>public abstract class BaseP8ConnectionCache
+extends java.lang.Object
+implements P8ConnectionCache
+Abstract base class implementation of the P8ConnectionCache interface.
+ This base class creates P8 Connection objects in a default way but calls
+ methods implemented by a subclass to cache the Connection objects or
+ retrieve the Connection objects out of cache in whatever way is appropriate
+ for that subclass. For example, a particular subclass may use 
+ an HTTP Session object to cache the Connection objects.</p>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Constructor Summary</li>
+</ul></li>
+</ul>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>BaseP8ConnectionCache()
+    - Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description com.filenet.api.core.Connection getP8Connection (java.lang.String ceURI) Obtains a P8 Connection object for a given Content Engine domain URI.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type               | Method and Description                                                                                         |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------|
+| com.filenet.api.core.Connection | getP8Connection(java.lang.String ceURI) Obtains a P8 Connection object for a given Content  Engine domain URI. |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtb047</title>
+</head>
+<body>
+<h1>Deploy dataset not found when the test environment is reset</h1>
+
+<h2>Symptoms</h2>
+
+<p>When you try to reset the test
+environment, you receive an error message similar to the following message:</p>
+
+<h2>Resolving the problem</h2>
+
+<p>1 Verify that the deployDataSet1.xml file is in the content element list forthe DeployDataset document.
+    1. In IBM® Administration Console for
+Content Platform Engine, select the case management design object
+store.
+    2. Click Browse &gt; Root Folder &gt; IBM Business Automation
+Workflow &gt; Datasets &gt; DevEnvReinitInfo &gt; dev_env_connection_definition.
+    3. On the dev_env_connection_definition page, click
+DeployDataset in the Containment Name column.
+    4. On the DeployDataset page, click the Content
+Elements tab and verify that the deployDataSet1.xml file is
+listed.
+    5 If the deployDataSet1.xml file is not listed, you must add it to theDeployDataset document.
+        1. Click Actions &gt; Checkin, checkout, cancel &gt; Exclusive checkout, and then click Actions &gt; Checkin, checkout, cancel &gt; Checkin.
+        2. In the Checkin Document window, click Add to
+navigate to the deploy dataset folder and attach the deployDataSet1.xml
+file.
+        3. Click Checkin.
+2. Ensure that the application server administrative user has full control privileges for the
+temporary directory in which the dataset content is saved. To determine the path to the temporary
+directory, look in the Case Builder status pane for a message such
+as FNRPA0439I The data set content is being saved to C:\Windows\TEMP.</p>
+
+</body>
+</html>

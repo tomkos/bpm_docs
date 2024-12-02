@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_SMOandSOAP</title>
+</head>
+<body>
+<h1>Accessing SOAP header information in the SMO</h1>
+
+<h2>Introduction</h2>
+
+<p>Messages received from a web
+services import or export might include
+SOAP headers from the original SOAP message. The SOAP headers are
+placed in the /headers/SOAPHeader element in
+the headers section of the service message object (SMO).</p>
+
+<p>A SOAPHeader element
+is a wrapper that contains the original SOAP header as its value element. The element can have zero or more occurrences. The
+XML namespace-qualified name of the SOAP header type appears in the name and nameSpace elements
+of the SOAPHeader .</p>
+
+<h2>SDO paths for accessing SOAP headers in custom mediations</h2>
+
+<ul>
+<li>To access all SOAP headers present in the SMO:import commonj.sdo.DataObject;
+import java.util.List;</li>
+</ul>
+
+<p>DataObject smo = ...
+List soapHeaders = smo.getList ("/headers/SOAPHeader");
+Iterator it = soapHeaders.iterator ();</p>
+
+<p>while (it.hasNext ())
+{
+    DataObject wrapper = (DataObject) it.next ();
+    Object header = wrapper.get ("value");</p>
+
+<pre><code>// do something with the header
+</code></pre>
+
+<p>}The list of SOAP headers might be an empty list.
+- To access a SOAP header with a particular name (global element
+or type name): import commonj.sdo.DataObject;
+import java.util.List;</p>
+
+<p>String headerName = ...
+DataObject smo = ...
+Object header = smo.get ("/headers/SOAPHeader[name='" + headerName + "']/value");</p>
+
+<h2>Conditions under which SOAP headers are present in</h2>
+
+<p>a request or response flow</p>
+
+<ul>
+<li>The message has been received from a web service import or export.</li>
+<li>The import or export has been configured to
+propagate protocol headers.</li>
+<li>The sending application included SOAP headers when creating the
+original request.</li>
+<li><p>An XML schema or WSDL description of the header structures is
+present in the mediation module or in the associated
+library.Note: The XML schema for WS-Addressing
+headers is automatically available.</p></li>
+<li><p>If the SOAP binding used by the client maps WSDL message parts
+to SOAP headers, the corresponding content appears in the SMO body
+rather than in the SOAPHeader element.</p></li>
+<li>WS-Addressing headers appear in the SMO
+WSAHeader and not the SOAPHeader. These headers are read-only and
+are not used when sending messages..</li>
+</ul>
+
+</body>
+</html>

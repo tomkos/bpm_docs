@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc029</title>
+</head>
+<body>
+<h1>Deploying a legacy case solution to a production target object store by using the command</h1>
+
+<p>line</p>
+
+<h2>Before you begin</h2>
+
+<p>Ensure that you exported the solution package from the
+development environment design object store and imported it to the
+production environment staging object store.</p>
+
+<p>Be sure to have
+your completed configuration checklists available.</p>
+
+<h2>About this task</h2>
+
+<p>The IBM® Business Automation
+Workflow Case
+configuration tool stores your settings for the case deployment profile in a set of XML
+configuration files that is called a profile. The XML files contain the properties and values that
+describe the associated configuration and deployment tasks. You must provide values for the profile
+properties that are specific to each configuration at your site, such as the application server
+name.</p>
+
+<p>| Configuration and task information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | XML file                                                                  |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| Settings for deploying an IBM Business Automation Workflow solution into a production target object store. You need one configuration file for each production environment target object store that you deploy a solution to. You can create additional task files in the same profile, or you can create a separate profile for the additional settings. When you generate a second solution deployment configuration file in a profile, it is named deploysolution.2.xml. The file name increments for each new file that you generate. You cannot change the file name, but you can edit the value in the file for the name of the task. | deploysolution.xml deploysolution.n.xml. n is an integer starting with 2. |</p>
+
+<h2>Procedure</h2>
+
+<p>To deploy a solution:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.
+2 If you want to create additionaldeployment configuration files in the same profile, generate an additional deploysolution.n .xml fileby running the following command. Do not type any line breaks whenyou enter the command: configmgr_cl generateConfig -task deploysolution -profile myprofile -profileType prodenv [-silent] [-force] -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -profileType prodenv Specifies the type of profile and must be prodenv for WebSphere® ApplicationServer . -silent Optional: When you specify the -silent parameter, no prompts orinformational messages are shown in the console, but the errors are written to the log. Failuremessages and validation error messages are shown as needed, such as messages about missing passwordsor invalid port numbers. If you run the execute command to run all the activitiesin a profile and you specify the -silent parameter, you must also specify the-force parameter. -force Optional and applies only when the -silent parameter is used. When youspecify the -force parameter, the activity is run without pausing for requiredresponses to validation error messages, such as messages about missing passwords or invalid portnumbers. For example, the following commandgenerates one deploysolution.n .xml filesfor the existing case deployment profile that is named deploy_solution: configmgr_cl generateConfig -task deploysolution -profile deploy_solution</li>
+</ol>
+
+<p><code>
+configmgr\_cl generateConfig 
+ -task deploysolution
+ -profile myprofile
+ -profileType prodenv
+ [-silent] [-force]
+</code></p>
+
+<pre><code>- The name of the profile, such as develop1. The profile is located in the
+</code></pre>
+
+<p>install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM Business Automation
+Workflow is installed.
+    - The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.
+    - The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</p>
+
+<p><code>
+configmgr\_cl generateConfig 
+ -task deploysolution
+ -profile deploy\_solution
+</code></p>
+
+<p>3 Edit the property values in the deploysolution.xml filesthat you generated in the case deployment profile:</p>
+
+<ol>
+<li>Use a text editor or XML editor
+to open one of the configuration XML files that you generated.</li>
+<li>Replace each occurrence of  <strong><em>*INSERT VALUE</em></strong>* with
+a value appropriate for your site. 
+See the descriptions
+in the file for more information and use your configuration checklists.</li>
+</ol>
+
+<p>Important: You are not required to store values
+for passwords in the file. You can run the storePasswords command
+later to add encrypted passwords to the file.
+3. Replace empty values that have the format <value
+/> with a value appropriate for your site.
+Use
+the format <value>my_value</value>.
+4. Verify that the default values for the remaining properties
+are correct for your site.
+5. Set the enabled attribute value
+in the <configuration> tag to true in
+any configuration XML file that you edit if you want to run the configuration
+task.
+When a task is disabled, the execute command
+skips the task.
+6. Save your edits and close the XML
+file.
+7. Repeat as needed until you edit all the deploysolution.n.xml files
+for your profile.
+4. Run the deploysolution tasks
+in the profile one at a time by running the following command. Do
+not type any line breaks when you enter the command:</p>
+
+<p>configmgr_cl execute -taskfile task_file_name
+ -profile myprofile [-silent] [-force]
+Where task_file_name is the name of the task
+file: deploysolution.xml or deploysolution.n.xml and n is
+a number larger than 2.
+5. Repeat 4 as
+needed for each deploy solution task file that you generated in this
+profile.
+6 Optional: Assign users to the roles for thiscase:</p>
+
+<ol>
+<li>Run the test command to assign users by running the
+following command. Do not type any line breaks when you enter the
+command:</li>
+</ol>
+
+<p>configmgr_cl test -taskfile task_file_name
+ -profile myprofile [-silent][-force][-help]
+Where task_file_name is
+the name of the task file: deploysolution.xml or deploysolution.n.xml and n is
+a number larger than 2.</p>
+
+<p>The Case Client opens for you to assign
+users to the roles for this solution.
+2. Add users to the roles.
+3. Repeat as needed for each deploy solution task file
+that you generated in this profile.</p>
+
+</body>
+</html>

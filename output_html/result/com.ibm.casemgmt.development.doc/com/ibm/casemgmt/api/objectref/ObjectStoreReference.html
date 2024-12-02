@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ObjectStoreReference</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class ObjectStoreReference</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.objectref.CEObjectReference<com.filenet.api.core.ObjectStore,DomainReference>
+<ul>
+<li>com.ibm.casemgmt.api.objectref.ObjectStoreReference</li>
+</ul></li>
+</ul></li>
+<li><p>public class ObjectStoreReference
+extends CEObjectReference<com.filenet.api.core.ObjectStore,DomainReference>
+Represents a reference to a Content Engine Java API ObjectStore object.
+An ObjectStore instance has a parent object reference of type DomainReference.</p>
+
+<p>An ObjectStoreReference can be constructed using a parent DomainReference and
+a name or ID. The name can be the object store symbolic name or display name.</p>
+
+<p>An ObjectStoreReference can also be constructed using an existing Content Engine 
+Java API ObjectStore object.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Constructor Summary</li>
+</ul></li>
+</ul>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>ObjectStoreReference(DomainReference domainRef,
+                    com.filenet.api.util.Id osId)
+Constructs an ObjectStoreReference instance using a parent DomainReference
+ object and an ID.</p>
+
+<p>ObjectStoreReference(DomainReference domainRef,
+                    java.lang.String osName)
+Constructs an ObjectStoreReference instance using a parent DomainReference
+ object and a name.</p>
+
+<p>ObjectStoreReference(com.filenet.api.core.ObjectStore os)
+Constructs an ObjectStoreReference instance using an existing Content Engine
+ Java API ObjectStore object.
+    - Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description com.filenet.api.core.ObjectStore fetchCEObject (com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API ObjectStore object. com.filenet.api.core.ObjectStore getFetchlessCEObject () Obtains a fetchless instance of a Content Engine Java API ObjectStore object. java.lang.String getObjectStoreIdentity () Returns the identity as either an ID or a name, however it is represented in the reference.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                | Method and Description                                                                                                 |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| com.filenet.api.core.ObjectStore | fetchCEObject(com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API ObjectStore object.        |
+| com.filenet.api.core.ObjectStore | getFetchlessCEObject() Obtains a fetchless instance of a Content Engine Java API ObjectStore object.                   |
+| java.lang.String                 | getObjectStoreIdentity() Returns the identity as either an ID or a name, however it is represented in   the reference. |</p>
+
+<pre><code>- Methods inherited from class com.ibm.casemgmt.api.objectref.CEObjectReference
+</code></pre>
+
+<p>fetchCEObject, fetchOptionalCEObject, fetchOptionalCEObject, getParentObjectReference
+    - Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</p>
+
+</body>
+</html>

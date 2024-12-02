@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc073</title>
+</head>
+<body>
+<h1>Exporting other FileNet P8 assets</h1>
+
+<p>by using the Process Configuration console</p>
+
+<h2>About this task</h2>
+
+<p>These
+assets are not managed by IBM Business Automation
+Workflow,
+but the solution might incorporate them or the business processes
+that are part of your solution application might use them. Examples
+of these assets might be component queues or workflow system configuration
+parameters.</p>
+
+<h2>Procedure</h2>
+
+<p>To export other FileNet P8 assets
+by using the Process Configuration console:</p>
+
+<ol>
+<li>In IBM Administration Console for
+Content Platform Engine,
+select the target object store and click Administrative &gt; Workflow System.</li>
+<li>On the Workflow System tab, click Actions &gt; Configure Workflow Settings.</li>
+<li>From the Workflow Systems list,
+select the connection point for the project area where the solution
+application resides. In the Action menu, click Connect to
+log on to the workflow system.</li>
+<li>In the Action menu, click Export
+to XML file to start the export wizard.
+5 Complete the steps in the wizard. Keepin mind the following export guidelines:
+<ul>
+<li>Select only assets that were created with tools other than Case Builder. Migrating assets such
+as work queues or event logs, which are created by the deploy solution
+operation, can cause conflicts. Such assets can often be recognized
+by the presence of the solution prefix in their name or when the asset
+name is the same as the solution name.</li>
+<li>Select the Include System Properties check
+box to export workflow system configuration information. Some configuration
+information is environment-specific. You might need to edit this information
+by using Process Configuration console on the destination system after
+the solution application is deployed.</li>
+<li>If you want to export only system properties, select Export
+selected components under Export Type.
+On the Select Export Components page, clear the
+check boxes for all components.</li>
+</ul></li>
+</ol>
+
+<h2>What to do next</h2>
+
+</body>
+</html>

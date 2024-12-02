@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtch03</title>
+</head>
+<body>
+<h1>Activities cannot communicate with a workflow process</h1>
+
+<h2>Symptoms</h2>
+
+<ul>
+<li>The activity is started, but the web service for the workflow process is not invoked.</li>
+<li>The activity does not receive a response from the web service, so the case properties are not
+updated as expected.</li>
+</ul>
+
+<p>On IBM® Business Automation
+Workflow, you can use
+the failed event manager to find failed events for your web service.</p>
+
+<h2>Causes</h2>
+
+<ul>
+<li>The response address that identifies where the web service is
+to send the response is not correct.</li>
+<li>The component manager for the isolated region where the activity is deployed is not started. The
+component manager must be started so that it can deliver events from Business Automation Workflow to the web
+service.</li>
+<li>The web service was not deployed or was not started. The web service must be available and
+running to receive events from Business Automation Workflow.</li>
+<li>The authentication credentials are not set correctly to permit communication between the
+activity and the web service.</li>
+<li>If the web service moved to a different server, the XPDL document that contains the activity
+might contain the wrong endpoints for the web service. The XPDL document, which is created by
+Business Automation Workflow, uses these
+endpoints to locate the web service that is associated with an activity.</li>
+</ul>
+
+<h2>Diagnosing the problem</h2>
+
+<ul>
+<li>Set filenet.ws.listener.tracefile to a valid path and file name.</li>
+<li>Set filenet.ws.listener.tracing to true.</li>
+<li>Set filenet.ws.request.tracefile to a valid path and file name.</li>
+<li>Set filenet.ws.request.tracing to true.</li>
+</ul>
+
+<ol>
+<li>Open the administrative console.</li>
+<li>Click Troubleshooting and then click Log and
+Trace.</li>
+<li>Click the server on which your web service is located.</li>
+<li>Click Change log detail levels and then click the Run
+time tab.</li>
+<li><p>Expand the tree and select SCA and
+com.ibm.ws.webservices to enable tracing.</p></li>
+<li><p>Open the administrative console.</p></li>
+<li>Click Integration Applications.</li>
+<li>Click Failed Event Manager.</li>
+</ol>
+
+<h2>Resolving the problem</h2>
+
+<ol>
+<li>In Process Task Manager, expand the Component Managers node and select
+the component manager for the isolated region where the deployed activity is running.</li>
+<li>Click Start on the toolbar.</li>
+</ol>
+
+<p>After you correct the problem, you must resubmit the activity request. To do so, use Process
+Administrator to locate the request in the Conductor queue and complete the Review step.</p>
+
+</body>
+</html>

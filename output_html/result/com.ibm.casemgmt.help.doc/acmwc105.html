@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc105</title>
+</head>
+<body>
+<h1>Case Information widget outgoing events</h1>
+
+<h2>Document opened event</h2>
+
+<p>| Description   | The user opened a document                                                                                                                                                                                       |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.OpenDocument                                                                                                                                                                                                 |
+| Type          | BroadcastNote: This event is only broadcast when there is a Viewer widget on the page and when the Open documents in a separate browser window setting on the widget is disabled.                                |
+| Payload       | contentItem An ecm.model.ContentItem that represents the document that was opened. action A string that indicates whether the document was opened for viewing or for editing. The valid values are view or edit. |</p>
+
+<h2>Document selected event</h2>
+
+<p>| Description   | The user selected a document.                                                        |
+|---------------|--------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectDocument                                                                   |
+| Type          | Wired                                                                                |
+| Payload       | contentItem An ecm.model.ContentItem that represents the document that was selected. |</p>
+
+<h2>Folder opened event</h2>
+
+<p>| Description   | The user opened a folder                                                         |
+|---------------|----------------------------------------------------------------------------------|
+| Event ID      | icm.OpenFolder                                                                   |
+| Type          | Wired                                                                            |
+| Payload       | contentItem An ecm.model.ContentItem that represents the folder that was opened. |</p>
+
+<h2>Folder selected event</h2>
+
+<p>| Description   | The user selected a folder.                                                        |
+|---------------|------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectFolder                                                                   |
+| Type          | Wired                                                                              |
+| Payload       | contentItem An ecm.model.ContentItem that represents the folder that was selected. |</p>
+
+<h2>Task selected event</h2>
+
+<p>| Description   | The user selected an activity from the Activities view. If the Case Information widget is wired to the Process History widget, the event payload includes the milestones for the selected activity.   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.TaskSelect                                                                                                                                                                                        |
+| Type          | Wired                                                                                                                                                                                                 |
+| Payload       | task An icm.model.Task object that represents the activity that the user selected.                                                                                                                    |</p>
+
+<h2>Send case history event</h2>
+
+<p>| Description   | The user selected a history item from the History view.                                                                                                                                                                                                                                                                                                      |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseHistory                                                                                                                                                                                                                                                                                                                                          |
+| Type          | Wired                                                                                                                                                                                                                                                                                                                                                        |
+| Payload       | caseHistory An object that represents the item the user selected in the History view. contentItem For a document history item only: An ecm.model.ContentItem that represents the document that was selected. action For a document history item only: A string containing the value open to indicate that the document is to be opened in the Viewer widget. |</p>
+
+<h2>Activity status updated event</h2>
+
+<p>| Description   | The activity status is updated.                                                                                                                                                                                                                            |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.TaskStatusUpdated                                                                                                                                                                                                                                      |
+| Type          | Wired                                                                                                                                                                                                                                                      |
+| Payload       | action A string that indicates the action that the user performed on the activity. For example, the action might be start, disable, enable, or so on. taskObj An icm.model.Task object that represents the activity on which the user performed an action. |</p>
+
+</body>
+</html>

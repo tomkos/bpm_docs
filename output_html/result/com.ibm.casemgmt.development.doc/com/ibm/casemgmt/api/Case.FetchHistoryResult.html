@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Case.FetchHistoryResult</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class Case.FetchHistoryResult</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.Case.FetchHistoryResult</li>
+</ul></li>
+<li><p>Enclosing class: Case public static final class Case.FetchHistoryResult extends java.lang.Object Represents information returned from fetching case history. An instance of this class provides two pieces of information: ID status: ID review by David Newhall</p></li>
+</ul>
+
+<p><code>
+public static final class Case.FetchHistoryResult
+extends java.lang.Object
+</code></p>
+
+<p>A list of objects implementing the Content Engine Java API
+        IndependentObject interface. These objects are obtained by 
+        performing a query for the history event objects that contain
+        the properties that were audited as part of the case 
+        history.
+An optional continuation token for requesting more results. 
+        Typically, the overall result set is large and only a partial
+        list of the overall history event objects is returned at
+        any time. A continuation token is returned that can then
+        be passed back when requesting the next set of results.</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description java.lang.String getContinuationToken () Returns a value that can be used to obtain additional results if the list returned from getResults() is incomplete. java.util.List<com.filenet.api.core.IndependentObject> getResults () Returns the list of history event objects that contain the properties that were audited as part of this case's history.</li>
+</ul></li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                                      | Method and Description                                                                                                                        |
+|--------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| java.lang.String                                       | getContinuationToken() Returns a value that can be used to obtain additional results  if the list returned from getResults() is   incomplete. |
+| java.util.List<com.filenet.api.core.IndependentObject> | getResults() Returns the list of history event objects that contain   the properties that were audited as part of this case's history.        |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

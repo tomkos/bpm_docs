@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv163</title>
+</head>
+<body>
+<h1>POST method for apply manifest</h1>
+
+<h2>URI</h2>
+
+<p>/CASEREST/v1/solution/{solutionAcronym}/applyManifest</p>
+
+<p>| Name            | Type   | Required   | Description                                                              |
+|-----------------|--------|------------|--------------------------------------------------------------------------|
+| solutionAcronym | String | Yes        | The acronym of the case solution for which manifest needs to be applied. |</p>
+
+<p>| Name                     | Type   | Required   | Description                                              |
+|--------------------------|--------|------------|----------------------------------------------------------|
+| ConnectionDefinitionName | String | Yes        | Name of the connection definition.                       |
+| manifestName             | String | Yes        | The name of the manifest to be applied.                  |
+| manifestType             | String | Yes        | The type of manifest. Possible values - Audit, Security. |</p>
+
+<h2>POST curl method request</h2>
+
+<p><code>
+curl -X 'POST' --user &lt;username&gt;:&lt;password&gt; 'https://&lt;hostname&gt;:
+&lt;port&gt;/CaseManager/CASEREST/v1/solution/S6O/applyManifest?
+ConnectionDefinitionName=dev\_env\_connection\_defintion&amp;manifestName=security1&amp;manifestType=security' -H 'accept: application/json'
+</code></p>
+
+<h2>POST method response</h2>
+
+<p><code>
+{ "Status": "The security1 security configuration was applied successfully." }
+</code></p>
+
+</body>
+</html>

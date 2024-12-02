@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc136</title>
+</head>
+<body>
+<h1>Timeline Visualizer widget outgoing events</h1>
+
+<h2>Select case event</h2>
+
+<p>| Description   | The user selected the case in the Timeline Visualizer widget.                                                                                                                                                                                                                                                                                                                                                           |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectTimelineCase                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Type          | Broadcast                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Payload       | timeline An icm.model.Timeline object that represents the Timeline            API that is used to retrieve case history data. case An icm.model.Case object that represents the case that is associated with the timeline that the user selected timelineOverview An icm.model.TimelineOverview object that contains general case history data, such as the case identifier, name, and status; and events density data. |</p>
+
+<h2>Select events event</h2>
+
+<p>| Description   | The user selected one or more events in the Timeline Visualizer widget.                                                                                                                                                                                                                                                                                         |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectTimelineEvents                                                                                                                                                                                                                                                                                                                                        |
+| Type          | Broadcast                                                                                                                                                                                                                                                                                                                                                       |
+| Payload       | timeline An icm.model.Timeline object that represents the timeline that is used to retrieve case history data. case An icm.model.Case object that represents the case that is            associated with the events that the user selected timelineEvents An array of icm.model.TimelineEvent objects that represents the events that are selected by the user. |</p>
+
+<h2>Select task event</h2>
+
+<p>| Description   | The user selected a task in the Timeline Visualizer widget.                                                                                                                                                                                                                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectTimelineTask                                                                                                                                                                                                                                                                                                                        |
+| Type          | Broadcast                                                                                                                                                                                                                                                                                                                                     |
+| Payload       | timeline An icm.model.Timeline object that represents the timeline that is used to retrieve case history data. case An icm.model.Case object that represents the case that is            associated with the task that the user selected timelineTask An icm.model.TimelineTask object that represents the task that is selected by the user. |</p>
+
+<h2>Select work item event</h2>
+
+<p>| Description   | The user selected a work item in the Timeline Visualizer widget.                                                                                                                                                                                                                                                                                                |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectTimelineWorkItem                                                                                                                                                                                                                                                                                                                                      |
+| Type          | Broadcast                                                                                                                                                                                                                                                                                                                                                       |
+| Payload       | timeline An icm.model.Timeline object that represents the timeline that is used to retrieve case history data. case An icm.model.Case object that represents the case that is            associated with the work item that the user selected timelineWorkItem An icm.model.TimelineWorkItem object that represents the work item that is selected by the user. |</p>
+
+</body>
+</html>

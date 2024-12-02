@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv108</title>
+</head>
+<body>
+<h1>Creation of the new case</h1>
+
+<ol>
+<li>The case worker finishes updating the case properties and clicks Add.</li>
+<li><p>Case Client submits the
+working property values to the workflow REST protocol by calling the POST method
+of the cases resource:POST /CaseManager/CASEREST/v1/cases
+{
+"TargetObjectStore": "CMTOSDH", 
+"CaseType": "DH2_MyCase", 
+"ExternalDataIdentifier": "1,1", 
+"Properties": [</p>
+
+<p>// Non-external data related properties</p>
+
+<p>{
+    "SymbolicName": "CmAcmCaseIdentifier", 
+    "Value": null
+  }, 
+  {
+    "SymbolicName": "CmAcmCaseState", 
+    "Value": 0
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "SymbolicName": "DH2_State", 
+    "Value": "CA"
+  }, 
+  {
+    "SymbolicName": "DH2_PropOne", 
+    "Value": 7
+  }, 
+  {
+    "SymbolicName": "DH2_City", 
+    "Value": "San Diego"
+  }, 
+  {
+    "SymbolicName": "DH2_MVInt", 
+    "Value": [
+      0, 
+      101, 
+      200, 
+      210
+    ]
+  }, 
+  {
+    "SymbolicName": "DH2_MVString", 
+    "Value": [
+      "One", 
+      "Three", 
+      "Thirty"
+    ]
+  }
+]
+}</p></li>
+<li><p>The workflow REST protocol submits the property values to the external data service by calling
+the POST method of the particular object type
+resource:POST /testservice/ICMEDREST/type/DH2_MyCase
+{
+"repositoryId": "CMTOSDH", 
+"requestMode": "finalNewObject", 
+"externalDataIdentifier": "1,1", 
+"properties": [</p>
+
+<p>// Non-external data related properties</p>
+
+<p>{
+    "symbolicName": "CmAcmCaseIdentifier", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "CmAcmCaseState", 
+    "value": 0
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "symbolicName": "DH2_State", 
+    "value": "CA"
+  }, 
+  {
+    "symbolicName": "DH2_PropOne", 
+    "value": 7
+  }, 
+  {
+    "symbolicName": "DH2_MVInt", 
+    "value": [
+      0, 
+      101, 
+      200, 
+      210
+    ]
+  }, 
+  {
+    "symbolicName": "DH2_MVString", 
+    "value": [
+      "One", 
+      "Three", 
+      "Thirty"
+    ]
+  }, 
+  {
+    "symbolicName": "DH2_City", 
+    "value": "San Diego"
+  }
+]
+}</p></li>
+<li>The external data service responds with values for the properties
+that it manages:{
+"externalDataIdentifier": "1,1", 
+"properties": [
+  {
+    "symbolicName": "DH2_State", 
+    "required": true, 
+    "maxLength": 2, 
+    "hasDependentProperties": true, 
+    "choiceList": {
+      "displayName": "StateChoiceList", 
+      "choices": [
+        {
+          "displayName": "New York", 
+          "value": "NY"
+        }, 
+        {
+          "displayName": "California", 
+          "value": "CA"
+        }, 
+        {
+          "displayName": "Nevada", 
+          "value": "NV"
+        }
+      ]
+    }
+  }, 
+  {
+    "symbolicName": "DH2_PropOne", 
+    "maxValue": 10, 
+    "minValue": 1, 
+    "hasDependentProperties": false
+  }, 
+  {
+    "symbolicName": "DH2_MVInt", 
+    "maxValue": 1000, 
+    "minValue": 0, 
+    "hasDependentProperties": true
+  }, 
+  {
+    "symbolicName": "DH2_MVString", 
+    "required": true, 
+    "maxLength": 24, 
+    "hasDependentProperties": false, 
+    "choiceList": {
+      "displayName": "MVStringChoiceList", 
+      "choices": [
+        {
+          "displayName": "One", 
+          "value": "One"
+        }, 
+        {
+          "displayName": "Two", 
+          "value": "Two"
+        }, 
+        {
+          "displayName": "Three", 
+          "value": "Three"
+        }, 
+        {
+          "displayName": "Twenty", 
+          "value": "Twenty"
+        }, 
+        {
+          "displayName": "Thirty", 
+          "value": "Thirty"
+        }, 
+        {
+          "displayName": "Fourty", 
+          "value": "Fourty"
+        }
+      ]
+    }
+  }, 
+  {
+    "symbolicName": "DH2_City", 
+    "hidden": false, 
+    "required": true, 
+    "hasDependentProperties": false, 
+    "choiceList": {
+      "displayName": "CityChoiceList", 
+      "choices": [
+        {
+          "displayName": "Los Angeles", 
+          "value": "Los Angeles"
+        }, 
+        {
+          "displayName": "San Diego", 
+          "value": "San Diego"
+        }, 
+        {
+          "displayName": "San Francisco", 
+          "value": "San Francisco"
+        }
+      ]
+    }
+  }
+]
+}</li>
+<li>The workflow REST protocol validates the values that are submitted by the Case Client with the final external data
+constraints. If no errors occur, the protocol creates the case and returns details for the new
+case:{
+"CaseTitle": "DH2_MyCase_000000100602", 
+"CaseIdentifier": "DH2_MyCase_000000100602", 
+"CaseFolderId": "{7F390468-7FAD-43EB-B373-675D2255BB61}"
+}</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv107</title>
+</head>
+<body>
+<h1>Update of a property that has dependencies</h1>
+
+<ol>
+<li>The user selects a value for the State property
+on which the City property depends.</li>
+<li><p>Case Client calls the
+POST method of the particular case type resource to submit the value to the
+workflow REST protocol. The request payload includes the working property values, including the
+value that is selected for the State
+property:POST /CaseManager/CASEREST/v1/casetype/DH2_MyCase
+{
+"TargetObjectStore": "CMTOSDH", 
+"ExternalDataIdentifier": "-1,0", 
+"Properties": [</p>
+
+<p>// Properties not related to external data</p>
+
+<p>{
+    "SymbolicName": "CmAcmCaseIdentifier", 
+    "Value": null
+  }, 
+  {
+    "SymbolicName": "CmAcmCaseState", 
+    "Value": 0
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "SymbolicName": "DH2_State", 
+    "Value": "CA"
+  }, 
+  {
+    "SymbolicName": "DH2_PropOne", 
+    "Value": null
+  }, 
+  {
+    "SymbolicName": "DH2_City", 
+    "Value": null
+  }, 
+  {
+    "SymbolicName": "DH2_MVInt", 
+    "Value": [
+      0, 
+      100
+    ]
+  }, 
+  {
+    "SymbolicName": "DH2_MVString", 
+    "Value": [ ]
+  }
+]
+}</p></li>
+<li><p>The workflow REST protocol passes the values to the external data service by calling the
+POST method for the particular object type
+resource:POST /testservice/ICMEDREST/type/DH2_MyCase
+{
+"repositoryId": "CMTOSDH", 
+"requestMode": "inProgressChanges", 
+"externalDataIdentifier": "-1,0", 
+"properties": [</p>
+
+<p>// Non-external data related properties</p>
+
+<p>{
+    "symbolicName": "CmAcmCaseIdentifier", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "CmAcmCaseState", 
+    "value": 0
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "symbolicName": "DH2_State", 
+    "value": "CA"
+  }, 
+  {
+    "symbolicName": "DH2_PropOne", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "DH2_MVInt", 
+    "value": [
+      0, 
+      100
+    ]
+  }, 
+  {
+    "symbolicName": "DH2_MVString", 
+    "value": [ ]
+  }, 
+  {
+    "symbolicName": "DH2_City", 
+    "value": null
+  }
+]
+}</p></li>
+<li>The external data service responds with the choice list options
+for the City property based on the selected state.
+The response also includes an updated value for the external data
+identifier:{
+"externalDataIdentifier": "1,0", 
+"properties": [
+  {
+    "symbolicName": "DH2_City", 
+    "hidden": false, 
+    "required": true, 
+    "hasDependentProperties": false, 
+    "choiceList": {
+      "displayName": "CityChoiceList", 
+      "choices": [
+        {
+          "displayName": "Los Angeles", 
+          "value": "Los Angeles"
+        }, 
+        {
+          "displayName": "San Diego", 
+          "value": "San Diego"
+        }, 
+        {
+          "displayName": "San Francisco", 
+          "value": "San Francisco"
+        }
+      ]
+    }
+  }
+]
+}</li>
+<li>The workflow REST protocol merges the changes from the external data service into the working
+values for the case and returns the updated values to the Case Client:{
+"Properties": [
+  {
+    "SymbolicName": "DH2_City", 
+    "DisplayName": "City", 
+    "Value": null, 
+    "DisplayMode": "readwrite", 
+    "Description": "City where home office is located", 
+    "PropertyType": "string", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": true, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": false, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxLength": 64, 
+    "ChoiceList": {
+      "DisplayName": "CityChoiceList", 
+      "Choices": [
+        {
+          "ChoiceName": "Los Angeles", 
+          "Value": "Los Angeles"
+        }, 
+        {
+          "ChoiceName": "San Diego", 
+          "Value": "San Diego"
+        }, 
+        {
+          "ChoiceName": "San Francisco", 
+          "Value": "San Francisco"
+        }
+      ]
+    }, 
+    "HasDependentProperties": false
+  }
+], 
+"CaseType": "DH2_MyCase", 
+"ExternalDataIdentifier": "1,0"
+}</li>
+</ol>
+
+</body>
+</html>

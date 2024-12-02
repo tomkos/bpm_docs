@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>cwesb_smo_context</title>
+</head>
+<body>
+<h1>SMO context</h1>
+
+<p>SMO context objects are either user-defined or system-defined.
+You define the structure of user-defined context objects, and WebSphere® Integration Designer defines
+the structure of system-defined context objects.</p>
+
+<h2>System-defined context objects</h2>
+
+<ul>
+<li>failInfo. The failInfo context object is used to hold exception
+information.</li>
+<li>primitiveContext. The primitiveContext object contains information
+used by specific mediation primitives.</li>
+<li>dynamicProperty. The dynamicProperty object contains mediation
+policy information that is used to override promoted properties.</li>
+</ul>
+
+<h2>User-defined context objects</h2>
+
+<p>Generally,
+you define the structure of a user-defined context object in a business
+object. Then you use the business object in the input node of the
+request flow. User-defined context objects can be used to store properties
+that mediation primitives use later in the flow.</p>
+
+<p>The userContext
+is slightly different to other user-defined context objects. It is
+used to pass data that is not part of the message payload, between
+multiple SCA components in the same module.</p>
+
+<ul>
+<li>correlation</li>
+<li>transient</li>
+<li>shared</li>
+<li>userContext</li>
+</ul>
+
+<h2>Accessing user-defined context data</h2>
+
+<ul>
+<li>Set a property value using a Database Lookup mediation primitive.</li>
+<li>Map between a context object and the message body, using a Mapping
+mediation primitive.</li>
+<li>Create a Custom Mediation primitive to get or set a property value.</li>
+</ul>
+
+<p><code>
+/context/transient/oldAddress
+</code></p>
+
+<h2>Correlation context</h2>
+
+<p>The correlation context
+is used when mediation primitives want to pass values from the request
+flow to the response flow. You can use the correlation context to
+link a specific request message with its response.</p>
+
+<h2>Transient context</h2>
+
+<p>The transient context
+is used for passing values between mediation primitives in the current
+flow: either the request flow or the response flow. The transient
+context cannot link requests and responses.</p>
+
+<p>For example, a
+Mapping mediation primitive might save an input message to the transient
+context, and create an input message for a Service Invoke mediation
+primitive. After the Service Invoke call, the next Mapping mediation
+primitive could create another message by combining the Service Invoke
+response, and the original message stored in the transient context.</p>
+
+<h2>Shared context</h2>
+
+<p>The shared context is a storage
+area you can use if you want to aggregate data: there is only one
+shared context per thread, per flow. Generally, there is one thread
+for the request flow and one thread for the response flow. Therefore,
+the request flow has one shared context and the response flow has
+another shared context. Theoretically, if you had a Service Invoke
+mediation primitive between a Fan Out and a Fan In, the Service Invoke
+could make an asynchronous call with callback. An asynchronous call
+with callback creates a thread and a request (or response) flow. However,
+the runtime environment does not allow this and forces Service Invoke
+calls, inside a Fan Out and Fan In, to be asynchronous with response.
+Therefore, there is no contention for the use of the shared context.</p>
+
+<p>If
+you use a Service Invoke mediation primitive outside of a Fan Out
+and Fan In aggregation sequence, and you use an invocation style of
+asynchronous with callback, then the shared context is empty after
+the service invocation.</p>
+
+<p>After you have defined the shared context,
+you can use it to store data during aggregation operations. You need
+to design the shared context business object carefully, to make sure
+that  it is suitable for all aggregation scenarios within a specific
+flow. The content of the shared context business object does not persist
+across a request and response flow through callout invocation: the
+shared context content is only available within the scope of a single
+request or response flow.</p>
+
+<ul>
+<li>The shared context is a thread-based storage area. Generally,
+one request flow has one thread, even if the path splits. Therefore,
+generally, one request flow shares the same shared context.</li>
+<li>The content of the shared context business object does not persist
+across a request and response flow, through callout invocation. Whatever
+data is in the shared context of the request flow cannot be reused
+during the response flow.</li>
+<li>The shared context can be used to aggregate data when using the
+Fan Out and Fan In mediation primitives: it is not intended for general
+data storage during a flow. The correlation context and transient
+context are available for general data storage.</li>
+<li>After a Service Invoke call, the shared context is empty underthe following conditions:
+<ul>
+<li>The Service Invoke mediation primitive is configured for an asynchronous
+call with callback.</li>
+<li>The Service Invoke mediation primitive is used outside of a Fan
+Out and Fan In aggregation sequence.</li>
+</ul></li>
+</ul>
+
+<h2>userContext</h2>
+
+<p>Generally, you might use a userContext
+object if you had a module that contained different types of SCA components,
+and you wanted to pass data between the components.</p>
+
+<p>For example,
+you could populate a userContext from a Java™ component,
+using the context service API. You could then access the userContext
+data from a mediation flow component, using the SMO.</p>
+
+<p>You can
+control whether a userContext object is created by using a qualifier
+on the export.</p>
+
+<h2>Using user-defined contexts</h2>
+
+<p>There can be
+multiple copies of an SMO within one mediation flow. Each instance
+of an SMO has its own correlation context and transient context. Therefore,
+if there are multiple copies of an SMO within one flow, there are
+multiple versions of the correlation context and transient context.</p>
+
+<p>However,
+there is only one shared context per thread, per flow. Therefore,
+you can have multiple instances of an SMO, but they can all use the
+same shared context. For example, a request flow path might split
+and rejoin, but the different paths would all have access to the same
+shared context.</p>
+
+<p>Figure 1. Mediation
+flow path split</p>
+
+<!-- image -->
+
+<ol>
+<li>The FanOut1 mediation primitive splits the path. The Fan Out mediation
+primitive is defined with the default mode, but the out terminal
+is wired to two Mapping mediation primitives.</li>
+<li>The first branch of the path goes through XSLT1 and has access
+to the original SMO (SMO1) and its correlation context and transient
+context. The first branch has access to the shared context. This branch
+continues until the FanIn1 mediation primitive. Then the second branch
+begins.</li>
+<li>The second branch of the path goes through XSLT2 and has access
+to a copy of the SMO (SMO2) and new correlation context and transient
+context. The second branch has access to the shared context.</li>
+<li>The FanIn1 mediation primitive brings the paths together. The
+message it outputs is the last message received on the input terminal
+(SMO2). The correlation context and transient context are associated
+with the last message received: in this example, the correlation context
+and transient context belonging to SMO2. The shared context is the
+same as has been used throughout both branches of the path.</li>
+</ol>
+
+</body>
+</html>

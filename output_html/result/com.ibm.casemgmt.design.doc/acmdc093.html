@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc093</title>
+</head>
+<body>
+<h1>Exporting solution assets from a version control system (VCS)</h1>
+
+<h2>About this task</h2>
+
+<p>Export only those solution assets and solution manifest that were created for the solution in
+Case Builder.</p>
+
+<h2>Procedure</h2>
+
+<p>To export solution assets from a VCS:</p>
+
+<ul>
+<li>Use the graphical user interface of your VCS, if one is provided, to export all the solution
+assets and the solution manifest that are associated with a specific delivery label.</li>
+<li>Create a script that uses the delivery label to export all the solution assets and the solution
+manifest from the VCS.</li>
+</ul>
+
+<h2>What to do next</h2>
+
+<ul>
+<li>If your solution contains assets that were created in FileNet® P8, use FileNet Deployment
+Manager to create a deploy package that contains the
+assets.</li>
+<li>If your solution is associated with a process application, you must export a snapshot of the process
+application. Before you import the solution
+package to the target environment, you must import the process
+application.</li>
+<li>If your solution includes pages that contain custom widgets, which might not exist in the target
+environment, you must migrate the widgets before you import the solution package. The pages are
+included in the Pages folder of the exported solution.</li>
+<li>If your solution uses properties that are associated with marking sets and you move the solution
+to a different environment, you must re-create the marking sets and any property templates that use
+the marking sets in the target environment. To re-create the marking sets, use the appropriate
+FileNet P8 tools. When you
+re-create the properties, you must use the same symbolic name that is used in the source
+environment.To migrate the marking sets, use FileNet Deployment
+Manager to export and import the
+marking sets but not any property templates, which are created when the solution is deployed by
+Business Automation Workflow.</li>
+</ul>
+
+</body>
+</html>

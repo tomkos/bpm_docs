@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtb019</title>
+</head>
+<body>
+<h1>Workgroups are not marked as required fields in the Properties</h1>
+
+<p>widget</p>
+
+<h2>Symptoms</h2>
+
+<h2>Resolving the problem</h2>
+
+<ul>
+<li>Create a custom properties layout view that sets the workgroup
+field to required. Use this view instead of the system-generated view
+on any page that is used for the task.</li>
+<li>Create a JavaScript to
+set the required state programmatically by using the following syntax:controller.getPropertyController("Workgroup1").set("required", true);This
+method marks the workgroup as required in the system-generated view
+and in any custom views.</li>
+</ul>
+
+</body>
+</html>

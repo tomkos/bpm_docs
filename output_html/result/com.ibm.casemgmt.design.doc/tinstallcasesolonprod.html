@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>tinstallcasesolonprod</title>
+</head>
+<body>
+<h1>Installing a case solution by using REST APIs</h1>
+
+<h2>Before you begin</h2>
+
+<ol>
+<li>In Workflow Center, click Case Solutions and then click the View
+details icon of the case solution you want to install.</li>
+<li>On the Snapshots tab, click the export link of the snapshot.</li>
+<li>Select the IBM® Business Automation
+Workflow Installation
+Package (.zip) option and then click Export.</li>
+</ol>
+
+<h2>Procedure</h2>
+
+<p>The following steps use the IBM BPM
+Explorer ops to run the installation by using REST APIs, although you can use any REST client to run
+the APIs:</p>
+
+<ol>
+<li>Go to IBM BPM Explorer ops on
+https://host_name:port_number/ops/explorer. The server address
+must be the URL of Workflow Server.</li>
+<li>Under System, run the POST /system/login REST API with the
+login_request parameter, using the example values.
+For more information, see the REST API reference.</li>
+<li>Click Try it out to run the REST API.
+4 Under Container, run the POST /std/bpm/containers/install REST API withthese parameters:
+<ul>
+<li>BPMCSRFToken - The value returned from the /system/login
+call.</li>
+<li>install_file - The .zip file you exported for your snapshot.</li>
+<li>inactive - Deactivates the snapshot after you install it. This parameter is
+false by default.</li>
+<li>caseDosName - The name of the case design object store. You can get this
+from your administrator.</li>
+<li>caseProjectArea - The target environment or project area for case
+artifacts. You can omit this value if the default project area is defined. You can get this from
+your administrator.</li>
+<li>caseOverwrite - Set this parameter to true.</li>
+</ul></li>
+<li>Click Try it out to run the REST API.
+6 To determine when the case solution has been installed, run the GET/std/bpm/containers/{container}/versions/{version} REST API with these parameters:</li>
+</ol>
+
+<ul>
+<li>BPMCSRFToken - The value returned from the /system/login call.</li>
+<li>container - The acronym for the case solution.</li>
+<li>version - The acronym for the snapshot being installed.</li>
+</ul>
+
+<ol start="7">
+<li>Click Try it out to run the REST API.</li>
+</ol>
+
+<h2>Results</h2>
+
+</body>
+</html>

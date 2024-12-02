@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc151</title>
+</head>
+<body>
+<h1>Calendar widget incoming events</h1>
+
+<h2>Clear content event</h2>
+
+<p>| Description   | Clear the content in the Calendar widget.   |
+|---------------|---------------------------------------------|
+| Event ID      | icm.ClearContent                            |
+| Payload       | null                                        |</p>
+
+<h2>Receive calendar information event</h2>
+
+<p>| Description   | Display the calendar using the data from the payload.                                                             |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                  |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the calendar is being displayed. |</p>
+
+<h2>Refresh Calendar event</h2>
+
+<p>| Description   | Refresh the calendar to update the events that are displayed.   |
+|---------------|-----------------------------------------------------------------|
+| Event ID      | icm.RefreshCalendar                                             |
+| Payload       | Any value                                                       |</p>
+
+</body>
+</html>

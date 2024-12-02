@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>package-summary</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Package</p></li>
+<li><p>Next Package</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+</ul>
+
+<h1>Package com.ibm.casemgmt.api.deletecase</h1>
+
+<p>See: Description</p>
+
+<ul>
+<li>Class Summary </li>
+</ul>
+
+<p>Class
+Description</p>
+
+<p>CaseInstancesDeleterFromES
+ </p>
+
+<p>CloseCase</p>
+
+<p>Represents the CloseCase class.</p>
+
+<p>DeleteCaseDocumentsFromES
+ </p>
+
+<p>ProcessInstancesDeleter</p>
+
+<h2>Package com.ibm.casemgmt.api.deletecase Description</h2>
+
+<p>The artifacts in case instances will be deleted in the following order,
+  Processes associated with the activities. 
+      If the process instance is active, It will be terminated before deletion.</p>
+
+<p>Activities. 
+      If the activity is associated with a P8 workflow, the P8 workflow is deleted before deleting the activity.
+      Activities in working state i.e the active activities will be promoted before deletion.</p>
+
+<p>Documents in the case folders. 
+      If the document is referenced else where apart from the current case, 
+      it will be unfiled and delete case result will contain the list of unfiled documents. 
+      The document referenced only with in the current case will be deleted.</p>
+
+<p>Case Folder. 
+      The case folders will be deleted from the Target Object store after the contents of the folder are deleted.</p>
+
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Package</p></li>
+<li><p>Next Package</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+</ul>
+
+</body>
+</html>

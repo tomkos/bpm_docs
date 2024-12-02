@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv106</title>
+</head>
+<body>
+<h1>Retrieval of initial information for a new case</h1>
+
+<ol>
+<li>The case worker clicks Add Case and selects
+the appropriate case type.</li>
+<li>Case Client submits a request
+to the REST API to obtain a complete list of case properties and their attributes, including their
+default values. The request is submitted by calling the GET method of the
+particular case type
+resource:GET /CaseManager/CASEREST/v1/casetype/DH2_MyCase</li>
+<li><p>The REST API passes the default case data to the external data service by calling the
+POST method particular object type
+resource:POST /testservice/ICMEDREST/type/DH2_MyCase
+{
+"repositoryId": "CMTOSDH", 
+"requestMode": "initialNewObject", 
+"properties": [</p>
+
+<p>// Payload may include additional properties 
+  // not meaningful to the external data service</p>
+
+<p>{
+    "symbolicName": "CmAcmCaseIdentifier", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "CmAcmCaseState", 
+    "value": 0
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "symbolicName": "DH2_State", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "DH2_PropOne", 
+    "value": null
+  }, 
+  {
+    "symbolicName": "DH2_MVInt", 
+    "value": [ ]
+  }, 
+  {
+    "symbolicName": "DH2_MVString", 
+    "value": [ ]
+  }, 
+  {
+    "symbolicName": "DH2_City", 
+    "value": null
+  }
+]
+}</p></li>
+<li>The external data service responds with the changes to the attributes
+for the properties that it manages. The response also includes the
+initial setting for the external data identifier.{
+"externalDataIdentifier": "-1,0", 
+"properties": [
+  {
+    "symbolicName": "DH2_State", 
+    "required": true, 
+    "maxLength": 2, 
+    "hasDependentProperties": true, 
+    "choiceList": {
+      "displayName": "StateChoiceList", 
+      "choices": [
+        {
+          "displayName": "New York", 
+          "value": "NY"
+        }, 
+        {
+          "displayName": "California", 
+          "value": "CA"
+        }, 
+        {
+          "displayName": "Nevada", 
+          "value": "NV"
+        }
+      ]
+    }
+  }, 
+  {
+    "symbolicName": "DH2_PropOne", 
+    "maxValue": 10, 
+    "minValue": 1, 
+    "hasDependentProperties": false
+  }, 
+  {
+    "symbolicName": "DH2_MVInt", 
+    "value": [
+      0, 
+      100
+    ], 
+    "maxValue": 1000, 
+    "minValue": 0, 
+    "hasDependentProperties": true
+  }, 
+  {
+    "symbolicName": "DH2_MVString", 
+    "required": true, 
+    "maxLength": 24, 
+    "hasDependentProperties": false, 
+    "choiceList": {
+      "displayName": "MVStringChoiceList", 
+      "choices": [
+        {
+          "displayName": "One", 
+          "value": "One"
+        }, 
+        {
+          "displayName": "Two", 
+          "value": "Two"
+        }, 
+        {
+          "displayName": "Three", 
+          "value": "Three"
+        }, 
+        {
+          "displayName": "Ten", 
+          "value": "Ten"
+        }, 
+        {
+          "displayName": "Eleven", 
+          "value": "Eleven"
+        }, 
+        {
+          "displayName": "Twelve", 
+          "value": "Twelve"
+        }
+      ]
+    }
+  }, 
+  {
+    "symbolicName": "DH2_City", 
+    "value": null, 
+    "displayMode": "readonly", 
+    "hidden": true, 
+    "required": true, 
+    "hasDependentProperties": false
+  }
+]
+}</li>
+<li><p>The REST API merges this information with the default case data and returns the updated values
+to Case Client:{
+"Properties": [</p>
+
+<p>// Non-external data related properties</p>
+
+<p>{
+    "SymbolicName": "CmAcmCaseIdentifier", 
+    "DisplayName": "Case Identifier", 
+    "Value": null, 
+    "DisplayMode": "readwrite", 
+    "Description": "A specially formatted identifier for Case Folder 
+       instances, consists of Case Folder subclass symbolic class name,
+       \"_\" and then a 12 digit sequence number with leading zeros.", 
+    "PropertyType": "string", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": false, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": false, 
+    "Inherited": true, 
+    "DefaultValue": null, 
+    "MaxLength": 85, 
+    "HasDependentProperties": false
+  }, 
+  {
+    "SymbolicName": "CmAcmCaseState", 
+    "DisplayName": "Case State", 
+    "Value": 0, 
+    "DisplayMode": "readwrite", 
+    "Description": "An integer choice property that defines 
+       the possible states of Case Folder instance.", 
+    "PropertyType": "integer", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": true, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": false, 
+    "Inherited": true, 
+    "DefaultValue": 0, 
+    "MaxValue": null, 
+    "MinValue": null, 
+    "ChoiceList": {
+      "DisplayName": "CmAcmCaseStateChoiceList", 
+      "Choices": [
+        {
+          "ChoiceName": "New", 
+          "Value": 0
+        }, 
+        {
+          "ChoiceName": "Initializing", 
+          "Value": 1
+        }, 
+        {
+          "ChoiceName": "Working", 
+          "Value": 2
+        }, 
+        {
+          "ChoiceName": "Complete", 
+          "Value": 3
+        }, 
+        {
+          "ChoiceName": "Failed", 
+          "Value": 4
+        }
+      ]
+    }, 
+    "HasDependentProperties": false
+  }, </p>
+
+<p>// ...</p>
+
+<p>{
+    "SymbolicName": "DH2_State", 
+    "DisplayName": "State", 
+    "Value": null, 
+    "DisplayMode": "readwrite", 
+    "Description": "State where home office is located", 
+    "PropertyType": "string", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": true, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": false, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxLength": 2, 
+    "ChoiceList": {
+      "DisplayName": "StateChoiceList", 
+      "Choices": [
+        {
+          "ChoiceName": "New York", 
+          "Value": "NY"
+        }, 
+        {
+          "ChoiceName": "California", 
+          "Value": "CA"
+        }, 
+        {
+          "ChoiceName": "Nevada", 
+          "Value": "NV"
+        }
+      ]
+    }, 
+    "HasDependentProperties": true
+  }, 
+  {
+    "SymbolicName": "DH2_PropOne", 
+    "DisplayName": "Prop One", 
+    "Value": null, 
+    "DisplayMode": "readwrite", 
+    "Description": "An integer property", 
+    "PropertyType": "integer", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": false, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": false, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxValue": 10, 
+    "MinValue": 1, 
+    "HasDependentProperties": false
+  }, 
+  {
+    "SymbolicName": "DH2_MVInt", 
+    "DisplayName": "MVInt", 
+    "Value": [
+      0, 
+      100
+    ], 
+    "DisplayMode": "readwrite", 
+    "Description": "Multi-value integer property", 
+    "PropertyType": "integer", 
+    "Cardinality": "multi", 
+    "RequiresUniqueElements": false, 
+    "Updatability": "readwrite", 
+    "Required": false, 
+    "Queryable": true, 
+    "Orderable": false, 
+    "Hidden": false, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxValue": 1000, 
+    "MinValue": 0, 
+    "HasDependentProperties": true
+  }, 
+  {
+    "SymbolicName": "DH2_MVString", 
+    "DisplayName": "MVString", 
+    "Value": [ ], 
+    "DisplayMode": "readwrite", 
+    "Description": "Multi-value string property", 
+    "PropertyType": "string", 
+    "Cardinality": "multi", 
+    "RequiresUniqueElements": false, 
+    "Updatability": "readwrite", 
+    "Required": true, 
+    "Queryable": true, 
+    "Orderable": false, 
+    "Hidden": false, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxLength": 24, 
+    "ChoiceList": {
+      "DisplayName": "MVStringChoiceList", 
+      "Choices": [
+        {
+          "ChoiceName": "One", 
+          "Value": "One"
+        }, 
+        {
+          "ChoiceName": "Two", 
+          "Value": "Two"
+        }, 
+        {
+          "ChoiceName": "Three", 
+          "Value": "Three"
+        }, 
+        {
+          "ChoiceName": "Ten", 
+          "Value": "Ten"
+        }, 
+        {
+          "ChoiceName": "Eleven", 
+          "Value": "Eleven"
+        }, 
+        {
+          "ChoiceName": "Twelve", 
+          "Value": "Twelve"
+        }
+      ]
+    }, 
+    "HasDependentProperties": false
+  }, 
+  {
+    "SymbolicName": "DH2_City", 
+    "DisplayName": "City", 
+    "Value": null, 
+    "DisplayMode": "readonly", 
+    "Description": "City where home office is located", 
+    "PropertyType": "string", 
+    "Cardinality": "single", 
+    "Updatability": "readwrite", 
+    "Required": true, 
+    "Queryable": true, 
+    "Orderable": true, 
+    "Hidden": true, 
+    "Inherited": false, 
+    "DefaultValue": null, 
+    "MaxLength": 64, 
+    "HasDependentProperties": false
+  }
+], 
+"CaseType": "DH2_MyCase", 
+"Description": "A simple case type", 
+"CaseTitleProperty": "CmAcmCaseIdentifier", 
+"DisplayName": "My Case", 
+"ExternalDataIdentifier": "-1,0"
+}</p></li>
+</ol>
+
+</body>
+</html>

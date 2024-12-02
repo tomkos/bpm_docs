@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtbh00</title>
+</head>
+<body>
+<h1>Responding to validation errors in the Step Designer</h1>
+
+<h2>Symptoms</h2>
+
+<p>```
+FNRPB6202E: An error occurred during validation.</p>
+
+<p>FNRPB1005E: A network operation was stopped while trying to complete
+ the Load Task action.
+```</p>
+
+<p>```
+Step: [ ERROR ] Step cannot be reached from the launch step.</p>
+
+<p>Step: [ ERROR ] No and-join step found for and-split step</p>
+
+<p>: [ ERROR ] Route from Step to Step is incorrectly nested.</p>
+
+<p>WFC: [ ERROR ] WaitForCondition instruction references work 
+class, ACM-SalaryInfo, but no work class of that name 
+was found with the transfer flag set in the workflow collection 
+or on the server.</p>
+
+<p>WFC: [ WARNING ] WaitForCondition instruction references work 
+class, ACM-class_name, but no work class of that name 
+was found with the transfer flag set in the workflow collection. 
+Using the definition previously transferred to the server.</p>
+
+<p>WFC 2: [ ERROR ] WaitForCondition instruction references work 
+class, ACM-class_name, but no work class of that name 
+was found with the transfer flag set in the workflow collection 
+or on the server.</p>
+
+<p>WFC 2: [ WARNING ] WaitForCondition instruction references work 
+class, ACM-class_name, but no work class of that name 
+was found with the transfer flag set in the workflow collection. 
+Using the definition previously transferred to the server.
+```</p>
+
+<h2>Causes</h2>
+
+<ul>
+<li>Editing or deleting a role or property that is used in the task
+from the solution. If you save the solution and then later edit or
+remove a role or property that is used in a Task, you receive a validation
+error when you validate the task again in the Step Designer. Restriction: For best results, do not edit or remove a role
+or property that is used in a solution until after you edit the Task
+in the Step Designer.</li>
+<li>Creating a step that cannot be reached.</li>
+<li>Defining a step as an AND-split without defining a step as the
+AND-join.</li>
+<li>Creating routes that are invalid.</li>
+<li>Creating a task that is dependent on another XPDL file.</li>
+</ul>
+
+<h2>Resolving the problem</h2>
+
+<ol>
+<li>Click the error text in the status bar
+to view the associated message.</li>
+<li>Complete one of the following steps to resolve the problem:</li>
+</ol>
+
+<ul>
+<li>If you must edit or delete a role or property that is used in
+the task, first edit the task in the Step Designer to remove the property
+or role. Then, edit the role or property at the solution level. Open
+the task again in the Step Designer if you must use the modified role
+or property.</li>
+<li>Ensure that each step in the map can be reached.</li>
+<li>Define an AND-join step for each AND-split step.</li>
+<li>Ensure that the connectors and steps that you defined meet the
+requirements for valid workflow routes.</li>
+<li>If your workflow includes a step that is dependent on a step in
+another XPDL file, then open the workflow in Process Editor and run
+the validation there. If the WCF errors in the Step
+Designer are warnings in the Process Editor instead of errors, you
+can ignore the errors in the Step Designer. Otherwise, use the Process
+Editor validation correction feature to correct the problem.</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmjs014</title>
+</head>
+<body>
+<h1>Example: Working with case Management business objects in JavaScript</h1>
+
+<p>```
+/* Sample script */</p>
+
+<p>require(["icm/base/Constants", "icm/model/properties/controller/ControllerManager"],
+function(Constants, ControllerManager) {
+   /* Get the coordination and editable objects from the event payload: */
+   var solutionPrefix = payload.caseType.getSolution().getPrefix();
+   var coordination = payload.coordination;
+   var editable = payload.caseEditable;</p>
+
+<p>/* Use the LOADWIDGET coordination topic handler to obtain the controller binding <em>/
+   /</em> for the editable object and to update the properties: <em>/
+   coordination.participate(Constants.CoordTopic.LOADWIDGET, function(context, complete, abort) {
+      /</em> Obtain the controller binding for the editable object: */
+      var collectionController = ControllerManager.bind(editable);</p>
+
+<pre><code>  /* Start a batch of changes: */
+  collectionController.beginChangeSet();
+</code></pre>
+
+<p>/* Build the values for the business object members. <em>/
+/</em> Assume all members will contain data for all rows.     <em>/
+/</em> In the view, output two rows like the following rows: <em>/
+/</em> 10, Baker Street, Costa Mesa, Oasis, California, USA<em>/
+/</em> 20, Ebay Street, Costa Mesa, Lotus, California, USA */
+      var propValues = {};
+      propValues.SAT_HouseNumber = ["10","20"];
+      propValues.SAT_StreetName = ["Baker Street","Ebay Street"];
+      propValues.SAT_CityName = ["Costa Mesa","Costa Mesa"];
+      propValues.SAT_PropertyName = ["Oasis","Lotus"];
+      propValues.SAT_StateName = ["California","California"];
+      propValues.SAT_CountryName = ["USA","USA"];</p>
+
+<p>/* Get the property controller of the business object. For instance, SAT_Residence: */
+      var residenceController = collectionController.getPropertyController(solutionPrefix + "_Residence");</p>
+
+<p>/* Get the members of the business object: */
+      var children = residenceController.getAttribute("boChildren").get();</p>
+
+<p>/* Set the individual value arrays to the child controllers: <em>/
+/</em> This helps in displaying the changes on Add Case:  */
+        for(var j=0;j &lt; children.length; j++) {
+       var childController = collectionController.getPropertyController(children[j]);
+var propname = solutionPrefix + "_" +  childController.getAttribute("name").get();
+childController.set("value",propValues[propname]);
+        }</p>
+
+<pre><code>  var num\_values = propValues.SAT\_HouseNumber.length;
+</code></pre>
+
+<p>/* Loop through the values and set them to the business object controller: */
+var values = [];
+      for(var i=0;i &lt; num_values; i++) {
+          var updateJson = {};
+          updateJson.id = null;
+          var props = [];
+          updateJson.properties = props;
+          for(var j=0;j &lt; children.length; j++) {
+var prop = {};
+var childController = collectionController.getPropertyController(children[j]);
+prop.name = solutionPrefix + "_" +  childController.getAttribute("name").get();
+prop.dataType = childController.type;
+prop.cardinality = childController.cardinality;
+prop.value = propValues[prop.name][i] ;
+props.push(prop);
+          }
+          values.push(updateJson);
+      }</p>
+
+<pre><code>  residenceController.set("value", values);
+
+  /* Complete a batch of changes. This tells all subscribed widgets to refresh. */
+  collectionController.endChangeSet();
+
+  /* Call the coordination completion method: */
+  complete();
+</code></pre>
+
+<p>});</p>
+
+<p>/* Use the AFTERLOADWIDGET coordination topic handler to release the controller binding for the  <em>/
+   /</em> editable object: <em>/
+   coordination.participate(Constants.CoordTopic.AFTERLOADWIDGET, function(context, complete, abort) {
+      /</em> Release the controller binding for the editable: */
+      ControllerManager.unbind(editable);</p>
+
+<pre><code>  /* Call the coordination completion method: */
+  complete();
+</code></pre>
+
+<p>});
+});
+```</p>
+
+</body>
+</html>

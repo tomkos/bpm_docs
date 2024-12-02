@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtb033</title>
+</head>
+<body>
+<h1>Changing the type of a property that is used in in-baskets, in-basket filters, or activities</h1>
+
+<h2>Before you begin</h2>
+
+<p>For information about the effects of changing a property data type, see Redeployment restrictions for modifying a solution.</p>
+
+<h2>About this task</h2>
+
+<ul>
+<li>Role In-basket General</li>
+<li>Role In-basket Filters</li>
+<li>Personal In-basket General</li>
+<li>Personal In-basket Filters</li>
+</ul>
+
+<h2>Procedure</h2>
+
+<p>To apply property type changes in Role In-basket General and In-basket Filters tabs and
+case type activities:</p>
+
+<ol>
+<li>Open the solution in Case Builder.</li>
+<li>Click the In-baskets tab
+3 Delete the property for each role and personal in-basket.
+<ol>
+<li>Select an in-basket.</li>
+<li>Click the In-basket Filters tab.</li>
+<li>Click the Remove icon next to the property name that is changing to
+delete the reference from the list.</li>
+<li>Click the In-basket General tab.</li>
+<li>Click the Remove icon next to the property name that is changing to
+delete the reference from the list.</li>
+</ol></li>
+<li>Click OK.</li>
+<li><p>Click Save.
+6 Change the data type of the property.</p></li>
+<li><p>Click the Properties tab, and then click the name of the property whose
+data type you want to change.</p></li>
+<li>Select a new type for the property.</li>
+<li>In the Confirmation window, click Yes.</li>
+<li><p>Click OK.
+7 Repeat these steps for each case type in the solution:</p></li>
+<li><p>Click the Case Types tab, click the Case Type
+name, and then click Activities.
+2 If the activity precondition uses the changed property, edit the precondition.</p>
+
+<ol>
+<li>Click the activity name.</li>
+<li>Click the Preconditions tab.</li>
+<li>Select the property, update the operator value, and then click OK.</li>
+</ol></li>
+<li>Click the Edit Steps icon for the activity.</li>
+<li>Repeat steps 7b - 7c for all the activities that use the property in the precondition or in the
+step properties parameters.</li>
+<li>For each activity that does not use the property in the step properties, open the activity in
+Step Editor, and then click Apply, click Validate, and
+click Close.</li>
+<li><p>Add the changed property to the role in-basket and filter and personal in-basket and filters as
+needed.
+10 Repeat these steps for each case type in the solution:</p></li>
+<li><p>Click the Case Types tab.</p></li>
+<li>Click the Case Type name.</li>
+<li>Click Activities, then click the Edit Steps icon
+for the activity.</li>
+<li>Click Apply, click Validate, and click
+Close.</li>
+<li>Click Validate, click Save, and then click
+Close.</li>
+</ol>
+
+</body>
+</html>

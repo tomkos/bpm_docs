@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UnmodifiableProperty</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Interface UnmodifiableProperty</h2>
+
+<ul>
+<li><p>public interface UnmodifiableProperty
+Represents a non-modifiable interface to a property.  This interface
+allows the value and other attributes of the property to be accessed
+but the value cannot be modified.</p>
+
+<p>This interface can be obtained from a Case Manager Java API object,
+such as a Case object, when there is no intent to modify the properties
+of the object. In that scenario some communication to the server can be 
+optimized. In particular, communication with an external data service
+can be deferred until there is an intent to modify the object.</p>
+
+<p>Most of the methods on this interface correspond to non-modifying methods
+on the CaseMgmtProperty class. Some methods on that class
+are only applicable when communication with an external data service
+has occurred, such as the hasDependentProperties method.<br />
+Such communication does not occur until there is an 
+intent to modify the properties of the object. Therefore those methods
+are not included on this interface.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary</li>
+</ul></li>
+</ul>
+
+<p>All Methods Instance Methods Abstract Methods </p>
+
+<p>Modifier and Type
+Method and Description</p>
+
+<p>com.filenet.api.constants.Cardinality
+getCardinality()
+Corresponds to the getCardinality method on
+ CaseMgmtProperty.</p>
+
+<p>CaseMgmtChoiceList
+getChoiceList()
+Corresponds to the getChoiceList method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Object
+getDefaultValue()
+Corresponds to the getDefaultValue method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.String
+getDescription()
+Corresponds to the getDescription method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.String
+getDisplayName()
+Corresponds to the getDisplayName method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Integer
+getMaximumLength()
+Corresponds to the getMaximumLength method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Object
+getMaximumValue()
+Corresponds to the getMaximumValue method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Object
+getMinimumValue()
+Corresponds to the getMinimumValue method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Object
+getOriginalValue()
+Corresponds to the getOriginalValue method on
+ CaseMgmtProperty.</p>
+
+<p>CaseMgmtPropertyState
+getOriginalValueState()
+Corresponds to the getOriginalValueState method on
+ CaseMgmtProperty.</p>
+
+<p>com.filenet.api.constants.TypeID
+getPropertyType()
+Corresponds to the getPropertyType method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+getRequiresUniqueElements()
+Corresponds to the getRequiresUniqueElements method on
+ CaseMgmtProperty.</p>
+
+<p>com.filenet.api.constants.PropertySettability
+getSettability()
+Corresponds to the getSettability method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.String
+getSymbolicName()
+Corresponds to the getSymbolicName method on
+ CaseMgmtProperty.</p>
+
+<p>java.lang.Object
+getValue()
+Corresponds to the getValue method on
+ CaseMgmtProperty.</p>
+
+<p>CaseMgmtPropertyState
+getValueState()
+Corresponds to the getValueState method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isHidden()
+Corresponds to the isHidden method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isInherited()
+Corresponds to the isInherited method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isOrderable()
+Corresponds to the isOrderable method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isQueryable()
+Corresponds to the isQueryable method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isRequired()
+Corresponds to the isRequired method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isSelectable()
+Corresponds to the isSelectable method on
+ CaseMgmtProperty.</p>
+
+<p>boolean
+isSystemOwned()
+Corresponds to the isSystemOwned method on
+ CaseMgmtProperty.</p>
+
+<ul>
+<li>============ METHOD DETAIL ==========
+<ul>
+<li>Method Detail</li>
+</ul></li>
+</ul>
+
+<h3>Method Detail</h3>
+
+<ul>
+<li>getSymbolicName
+java.lang.String getSymbolicName()
+Corresponds to the getSymbolicName method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getValue
+java.lang.Object getValue()
+Corresponds to the getValue method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getValueState
+CaseMgmtPropertyState getValueState()
+Corresponds to the getValueState method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getOriginalValue
+java.lang.Object getOriginalValue()
+Corresponds to the getOriginalValue method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getOriginalValueState
+CaseMgmtPropertyState getOriginalValueState()
+Corresponds to the getOriginalValueState method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getDisplayName
+java.lang.String getDisplayName()
+Corresponds to the getDisplayName method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getDescription
+java.lang.String getDescription()
+Corresponds to the getDescription method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getPropertyType
+com.filenet.api.constants.TypeID getPropertyType()
+Corresponds to the getPropertyType method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getCardinality
+com.filenet.api.constants.Cardinality getCardinality()
+Corresponds to the getCardinality method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getRequiresUniqueElements
+boolean getRequiresUniqueElements()
+Corresponds to the getRequiresUniqueElements method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getSettability
+com.filenet.api.constants.PropertySettability getSettability()
+Corresponds to the getSettability method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isRequired
+boolean isRequired()
+Corresponds to the isRequired method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isQueryable
+boolean isQueryable()
+Corresponds to the isQueryable method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isSelectable
+boolean isSelectable()
+Corresponds to the isSelectable method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isOrderable
+boolean isOrderable()
+Corresponds to the isOrderable method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isHidden
+boolean isHidden()
+Corresponds to the isHidden method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isInherited
+boolean isInherited()
+Corresponds to the isInherited method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>isSystemOwned
+boolean isSystemOwned()
+Corresponds to the isSystemOwned method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getDefaultValue
+java.lang.Object getDefaultValue()
+Corresponds to the getDefaultValue method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getMaximumValue
+java.lang.Object getMaximumValue()
+Corresponds to the getMaximumValue method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getMinimumValue
+java.lang.Object getMinimumValue()
+Corresponds to the getMinimumValue method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getMaximumLength
+java.lang.Integer getMaximumLength()
+Corresponds to the getMaximumLength method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>getChoiceList
+CaseMgmtChoiceList getChoiceList()
+Corresponds to the getChoiceList method on
+CaseMgmtProperty.</li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+</body>
+</html>

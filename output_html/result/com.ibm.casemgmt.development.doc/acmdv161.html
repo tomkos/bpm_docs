@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv161</title>
+</head>
+<body>
+<h1>POST method for import manifest</h1>
+
+<h2>URI</h2>
+
+<p>/CaseManager/CASEREST/v1/solution/importManifest</p>
+
+<p>| Name     | Type   | Required   | Description                               |
+|----------|--------|------------|-------------------------------------------|
+| manifest | File   | Yes        | The manifest file that is to be imported. |</p>
+
+<h2>POST curl request</h2>
+
+<p><code>
+curl -v -X 'POST' --user &lt;username&gt;:&lt;password&gt; 'https://&lt;hostname&gt;:&lt;port&gt;/CaseManager/CASEREST/v1/solution/importManifest' -H 'Content-Type: multipart/form-data' -F 'manifest=@C:\Solution\_securityManifest.zip;type=application/x-zip-compressed'
+</code></p>
+
+<h2>POST method response</h2>
+
+<p><code>
+{
+  "Status": "The manifest was imported successfully."
+}
+</code></p>
+
+</body>
+</html>

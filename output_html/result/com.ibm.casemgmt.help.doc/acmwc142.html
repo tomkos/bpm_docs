@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc142</title>
+</head>
+<body>
+<h1>To-Do List widget incoming events</h1>
+
+<h2>Create Quick Task event</h2>
+
+<p>| Description   | Create a quick task and display in the To-Do List widget.                                                                                                                                                                                                                                                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.QuickTaskCreate                                                                                                                                                                                                                                                                                                                                                         |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the quick task is to be created. quickTaskName A string that contains the name of the quick task. description A string that contains a description for the quick task. dueDate A string that contains the date that the quick task must be complete. The date is in the format MM/DD/YYYY. |</p>
+
+<h2>Receive work item event</h2>
+
+<p>| Description   | Displays the to-do list associated with the case containing the work         item that is contained in the event payload.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Payload       | workItemEditable An icm.model.WorkItemEditable object that represents the work item            to be opened. coordination An icm.util.Coordination object that is used internally by the            widgets in the same page. UIState A Dojo Stateful object that is used internally by the widgets. This            object can contain the following properties: GetNext This property determines whether the next work item is to be opened               automatically. workitemReadonly This property determines whether the work item is to be opened in view mode. GetNextCfg This property determines the configuration of the Open Next Work Item action. |</p>
+
+<h2>Receive case event</h2>
+
+<p>| Description   | Displays the to-do list associated with the case that is contained in         the event payload.                                                                                                                            |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                                                                                                                            |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is            to be displayed. coordination An icm.util.Coordination object that is used internally by the            widgets in the same page. |</p>
+
+<h2>Select case event</h2>
+
+<p>| Description   | Displays the to-do list associated with the case that is                 contained in the event payload.              |
+|---------------|-----------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectCase                                                                                                        |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case                       that is to be displayed. |</p>
+
+<h2>To-do task added event</h2>
+
+<p>| Description   | Adds the to-do task to display in the To-Do List widget.                                           |
+|---------------|----------------------------------------------------------------------------------------------------|
+| Event ID      | icm.ToDoTaskAdded                                                                                  |
+| Payload       | ToDoTaskEditable A TaskEditable object that represents the added to-do                       task. |</p>
+
+<h2>Refresh to-do list event</h2>
+
+<p>| Description        | Refreshes the list of to-do tasks in the To-Do List widget.                                                                                                                                                                 |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID           | icm.RefreshToDoTaskList                                                                                                                                                                                                     |
+| Payload (optional) | caseEditable An icm.model.CaseEditable object that represents the case that is            to be displayed. coordination An icm.util.Coordination object that is used internally by the            widgets in the same page. |</p>
+
+<h2>Optional payloads</h2>
+
+<p>The following
+payloads are optional for all To-Do List widget incoming events:</p>
+
+</body>
+</html>

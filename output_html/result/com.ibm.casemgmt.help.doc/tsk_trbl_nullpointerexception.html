@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>tsk_trbl_nullpointerexception</title>
+</head>
+<body>
+<h1>Deploying case solution fails with NullPointerException</h1>
+
+<h2>Symptoms</h2>
+
+<p>When you deploy the case solution snapshot using REST API, the following error occurs:
+FNRPA0949E An attempt to reindex case instances to Elasticsearch after a deployment has
+failed.</p>
+
+<h2>Resolving the problem</h2>
+
+<ol>
+<li>Using ACCE, go to Search &gt; New object store search</li>
+<li>Search by using the assignment base class. The list of users that match your search criteria
+appears.</li>
+<li>Verify the user deleted from LDAP.</li>
+<li>Select the user and delete by using bulk actions.</li>
+</ol>
+
+</body>
+</html>

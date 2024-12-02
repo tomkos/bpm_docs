@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtch04</title>
+</head>
+<body>
+<h1>Reducing the time needed for advanced searches</h1>
+
+<h2>Symptoms</h2>
+
+<h2>Resolving the problem</h2>
+
+<p>To
+optimize performance of searches, ensure that you have an index that
+corresponds to each of the most important searches that are run during
+working hours. However, too many indexes can degrade performance.
+Therefore, if you have many different ORDER BY conditions
+or search conditions, create only those indexes that will improve
+performance for most searches.</p>
+
+<p><code>
+SELECT * FROM ECMPerfCase1 WHERE (CmAcmCaseState = 2 AND 
+  cmis:createdBy = 'user\_2')
+ORDER BY CmAcmCaseIdentifier ASC.
+</code></p>
+
+<ul>
+<li>If the search returns only a few results, use the following index: create index I_CREATOR_STATE on Container (creator, 
+u<xy>_CmAcmCaseState)</li>
+<li>If the search returns a large number of matches, sorting by the ORDER
+BY CmAcmCaseIdentifier element might take too much time.
+In this situation, use the following index:create index I_CREATOR_STATE_ID on Container (creator, 
+u<xy>_CmAcmCaseState, u<xy>_CmAcmCaseIdentifier)</li>
+</ul>
+
+<p><code>
+SELECT * FROM &lt;case type&gt; WHERE (CmAcmCaseState = 2 AND 
+   cmis:lastModifiedBy = &lt;user\_name&gt;) 
+ORDER BY CmAcmCaseIdentifier ASC
+</code></p>
+
+<p><code>
+create index I\_ModifyUser\_STATE\_ID on Container (modify\_user,
+u&lt;xy&gt;\_CmAcmCaseState, u&lt;xy&gt;\_CmAcmCaseIdentifier)
+</code></p>
+
+<p><code>
+SELECT * FROM ECMPerfCase1 WHERE (CmAcmCaseState = 2 AND 
+   cmis:createdBy = 'user\_2' 
+AND CCDM\_customername= 'value1') 
+ORDER BY CmAcmCaseIdentifier ASC
+</code></p>
+
+<ul>
+<li>An index such as the I_CREATOR_STATE_ID index
+shown in Example 2 is not used in the query plan for this search.</li>
+<li>An index such as the I_CREATOR_STATE_ID index
+is used, but the index scans are still taking a long time.</li>
+</ul>
+
+<p><code>
+create index I\_CNAME on container (u&lt;xy&gt;\_CCDM\_customername, creator, 
+u&lt;xy&gt;\_CmAcmCaseState, u&lt;xy&gt;\_CmAcmCaseIdentifier)
+</code></p>
+
+</body>
+</html>

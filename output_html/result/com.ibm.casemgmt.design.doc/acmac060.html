@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac060</title>
+</head>
+<body>
+<h1>Generating the object store data map by using the command line</h1>
+
+<h2>About this task</h2>
+
+<p>The object store data map XML file is in the same XML
+format that IBM®
+FileNet® Deployment Manager creates
+and reads. You can change the destination object stores by using a
+text editor.</p>
+
+<h2>Procedure</h2>
+
+<p>To generate the object store data map:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.</li>
+<li>Generate the object store data map
+by running the following command. Do not enter any line breaks when
+you enter the command.</li>
+</ol>
+
+<p>configmgr_cl generateObjectStoreDataMap
+ -solutionPackage package_file
+ -file datamap_file
+  [-help]</p>
+
+<p>-solutionPackage package_file
+Specifies the full path and file name of the solution package for which you are creating the
+data map. If the path includes spaces, put the entire path in double quotation marks. For example,
+enter "C:\Solution Packages\Credit Dispute Solution.zip".
+-file datamap_file
+Specifies the full path and file name for the data map file to create. The directory structure
+in the path exists. You can use any valid file name, but the .xml extension is recommended. If the
+path includes a directory name with spaces, put the entire path in double quotation marks. For
+example, enter "C:\Solution Packages\datamap.xml".
+-help
+Optional and displays a brief message on the command syntax instead
+of running the command.</p>
+
+</body>
+</html>

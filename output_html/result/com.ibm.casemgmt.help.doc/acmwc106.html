@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc106</title>
+</head>
+<body>
+<h1>Case Information widget incoming events</h1>
+
+<h2>Clear content event</h2>
+
+<p>| Description   | Clear the content in the Case Information widget.   |
+|---------------|-----------------------------------------------------|
+| Event ID      | icm.ClearContent                                    |
+| Payload       | null                                                |</p>
+
+<h2>Filter History event</h2>
+
+<p>| Description   | Filter the entries on the History tab based on the criteria that is specified in the event payload.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.FilterHistory                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Payload       | show A string that contains the label for the filter that determines how much information is displayed in the History tab. By default, the values are Summary and All. showValue A string that contains the value for the filter that determines how much information is displayed in the History tab. The valid values areSummary and All. forEntry A string that contains the label for the filter that determines the category of items to be displayed in the History tab. The valid values are All, Case, Comments, Documents, Activities, and Folders. forValue A string that contains the filter that determines the category of items to be displayed in the History tab. The valid values are All, Case, Comments, Documents, Activities, and Folders. |</p>
+
+<h2>Receive new task event</h2>
+
+<p>| Description   | Display the case information for the case that is related to the activity in the event payload.                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendNewTaskInfo                                                                                                                                                                                   |
+| Payload       | taskEditable An icm.model.TaskEditable object that represents the activity that is to be added. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+<h2>Receive work item event</h2>
+
+<p>| Description   | Display the case information for the case that is related to the work item in the event payload.                                   |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                                   |
+| Payload       | workItemEditable An icm.model.WorkItemEditable object that represents the work item for which case information is to be displayed. |</p>
+
+<h2>Refresh event</h2>
+
+<p>| Description   | Refresh the tab that is specified in the event payload.                                                                                         |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.RefreshTab                                                                                                                                  |
+| Payload       | tabId A string containing the identifier of the tab that is to be refreshed. The valid values are: Documents, History, Summary, and Activities. |</p>
+
+<h2>Select Case event</h2>
+
+<p>| Description   | Display the case information for the case that is contained in the event payload.               |
+|---------------|-------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectCase                                                                                  |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be displayed. |</p>
+
+<h2>Select folder event</h2>
+
+<p>| Description   | Open the case subfolder that is specified in the event payload.         |
+|---------------|-------------------------------------------------------------------------|
+| Event ID      | icm.SelectInitialFolder                                                 |
+| Payload       | folderPath A string containing the path to the selected case subfolder. |</p>
+
+<h2>Select tab event</h2>
+
+<p>| Description   | Open the tab that is specified in the event payload.                                                                                         |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectTab                                                                                                                                |
+| Payload       | tabId A string containing the identifier of the tab that is to be opened. The valid values are: Documents, History, Summary, and Activities. |</p>
+
+<h2>Send Case Information event</h2>
+
+<p>| Description   | Display the case that is specified in the event payload.                                                                                                                                              |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                                                                                                      |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be displayed. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DomainReference</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class DomainReference</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.objectref.CEObjectReference<com.filenet.api.core.Domain,CEObjectReference<?,?>&gt;
+<ul>
+<li>com.ibm.casemgmt.api.objectref.DomainReference</li>
+</ul></li>
+</ul></li>
+<li><p>public class DomainReference
+extends CEObjectReference<com.filenet.api.core.Domain,CEObjectReference<?,?>&gt;
+Represents a reference to a Content Engine Java API Domain object.
+A DomainReference instance does not have a parent object reference.
+The getParentObjectReference method returns null.</p>
+
+<p>A DomainReference can be constructed using a domain connection URI
+in which case a Content Engine Java API Connection object is obtained
+from the execution context configured using CaseMgmtContext and
+P8ConnectionCache.</p>
+
+<p>A DomainReference can also be constructed using an existing Domain
+object.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Constructor Summary</li>
+</ul></li>
+</ul>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>DomainReference(com.filenet.api.core.Domain domain)
+Constructs a DomainReference instance using an existing
+ Content Engine Java API Domain object.</p>
+
+<p>DomainReference(java.lang.String ceUri)
+Constructs a DomainReference instance using a Content Engine
+ domain connection URI.
+    - Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description com.filenet.api.core.Domain fetchCEObject (com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API Domain object. com.filenet.api.core.Connection getConnection () Returns the Connection object that was obtained when this instance was constructed. com.filenet.api.core.Domain getFetchlessCEObject () Obtains a fetchless instance of a Content Engine Java API Domain object.</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type               | Method and Description                                                                                     |
+|---------------------------------|------------------------------------------------------------------------------------------------------------|
+| com.filenet.api.core.Domain     | fetchCEObject(com.filenet.api.property.PropertyFilter pf) Fetches a Content Engine Java API Domain object. |
+| com.filenet.api.core.Connection | getConnection() Returns the Connection object that was obtained when this  instance was constructed.       |
+| com.filenet.api.core.Domain     | getFetchlessCEObject() Obtains a fetchless instance of a Content Engine Java API Domain object.            |</p>
+
+<pre><code>- Methods inherited from class com.ibm.casemgmt.api.objectref.CEObjectReference
+</code></pre>
+
+<p>fetchCEObject, fetchOptionalCEObject, fetchOptionalCEObject, getParentObjectReference
+    - Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</p>
+
+</body>
+</html>

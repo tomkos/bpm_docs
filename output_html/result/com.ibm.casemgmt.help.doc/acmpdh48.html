@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmpdh48</title>
+</head>
+<body>
+<h1>createCasePackage operation</h1>
+
+<p>| Parameter             | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| caseId                | String   | The identifier of the case. You must set the expression for the caseID parameter to the F_CaseFolder business object field in the Expression Builder window.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| casePackageName       | String   | The name of the case package.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| locale                | String   | The two-letter language code. The createCasePackage operation also supports the following four-letter language codes: en_US English (United States) nb_NO Norwegian (Bokmål) pt_BR Portuguese (Brazilian) zh_CN Chinese (Simplified) zh_TW Chinese (Traditional)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| packagingOptionNames  | String[] | The list of artifacts that are to be included in the case package.The list can include the following values: includeAllCaseProperties Set to True to include all case properties in the package. includeAllSystemProperties Set to True to include all system properties in the package. includeAllCaseDocuments Set to True to include all case documents in the package. includeAllCaseRelationships Set to True to include all case relationships in the package. includeAllComments Set to True to include all case, document, work item, and task comments in the package. includeCaseComments Set to True to include all case comments in the package. includeDocumentComments Set to True to include all document comments in the package. includeWorkItemComments Set to True to include all work item comments in the package. includeTaskComments Set to True to include all task comments in the package. includeCaseHistory Set to True to include the case history in the package. includeCaseEvents Set to True to include the case events in the package. Author A string that specifies the name of the case package author. Title A string that specifies a title for the case package. Keywords A set of keywords for the case package. Use commas to separate the keywords. Subject A string that specifies the subject for the case package.   Enclose the option names in quotation marks and separate the names with commas. |
+| packagingOptionValues | String[] | The list of values corresponding to the options that are specified for the packagingOptionNames parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |</p>
+
+<h2>Adding support for non-English output</h2>
+
+<ol>
+<li>Install the appropriate language pack or fonts necessary to support the particular locale.
+2 Update the casepackage_font.properties file to include the locale information:
+<ol>
+<li>Take a backup of the casepackage_font.properties file.
+2 Add a new line to the file to specify the locale and the font for that language. For example, tohave a Czech locale use the DejaVu Sans font, you would usecs=DejaVu Sans There are 2 locations where this file resides and must be updated:</li>
+</ol></li>
+</ol>
+
+<p><code>
+cs=DejaVu Sans
+</code></p>
+
+<pre><code>    - Installation location. \CaseManagement\configure\AddOns\casePackage
+    - Network shared directory location. The location varies depending on what is defined for the
+</code></pre>
+
+<p>network shared directory. The default is
+\CaseManagement\configure\properties\AddOns\casePackage.
+3 For Linux only: Update the userConfig.xml file.</p>
+
+<!-- image -->
+
+<ol>
+<li>Take a backup of the userConfig.xml file. By default, this file is in the
+network shared directory location, which by default is
+\CaseManagement\configure\properties\AddOns\casePackage.</li>
+<li>Update the <directory> parameter line in the
+userConfig.xml file. Ensure the specified font directory is correct for your
+server. Remove font references to C:\Windows\Fonts from the file. For example,
+<fonts>
+<directory>/usr/share/fonts</directory><br />
+<directory>C:\Windows\Fonts</directory><br />
+<auto-detect/>
+</fonts></li>
+</ol>
+
+<p>For information on how to configure the same for Container environments, refer, Adding support to Case Package for non-English locales for Containers</p>
+
+<ul>
+<li>Adding support to Case Package for non-English locales for Containers</li>
+</ul>
+
+<h2>Related information</h2>
+
+<ul>
+<li>Text in case package PDF file is not displayed correctly</li>
+</ul>
+
+</body>
+</html>

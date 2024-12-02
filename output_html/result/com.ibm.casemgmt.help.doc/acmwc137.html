@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc137</title>
+</head>
+<body>
+<h1>Timeline Visualizer widget incoming events</h1>
+
+<h2>Clear content event</h2>
+
+<p>| Description   | Clear the content of the Timeline Visualizer widget.   |
+|---------------|--------------------------------------------------------|
+| Event ID      | icm.ClearContent                                       |
+| Payload       | null                                                   |</p>
+
+<h2>Open work item event</h2>
+
+<p>| Description   | Display the extended history                                                   in the Timeline Visualizer for the case that is                                                   contained in the event payload.  This event is                                                   used when the Timeline Visualizer widget is                                                   included on a Work Details                                                   page.                                  |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Payload       | workItemEditable An icm.model.WorkItemEditable                                                    object that represents the work item                                                   for which the case history is to be                                                   displayed. coordination An icm.util.Coordination                                                   object that is used internally by the widgets in                                                   the same page. |</p>
+
+<h2>Select case event</h2>
+
+<p>| Description   | Display the extended history in the Timeline Visualizer for the case that is         contained in the event payload. This event is used when the Timeline Visualizer widget is         included on a Case Details page.   |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectCase                                                                                                                                                                                                            |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the extended history is to be displayed.                                                                                                 |</p>
+
+<h2>Send case information event</h2>
+
+<p>| Description   | Display the extended history in the Timeline Visualizer for the case that is contained in the event payload. This event is used when the Timeline Visualizer widget is included on a Case Details page.                                    |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                                                                                                                                           |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the extended history is to be displayed. coordination An icm.util.Coordination object that is used internally by the widgets in the            same page. |</p>
+
+</body>
+</html>

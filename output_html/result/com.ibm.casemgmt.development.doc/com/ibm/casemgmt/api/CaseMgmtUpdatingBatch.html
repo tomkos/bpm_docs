@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CaseMgmtUpdatingBatch</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CaseMgmtUpdatingBatch</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.CaseMgmtUpdatingBatch</li>
+</ul></li>
+<li><p>public class CaseMgmtUpdatingBatch
+extends java.lang.Object
+Submits changes to Case Management objects in a batch.  One round-trip to the server
+is made to submit the changes for multiple objects.  This class directly handles the
+changes for Case, Task and ExternalDocumentReference Case Java API objects.</p>
+
+<p>Internally, an UpdatingBatch instance from the IBM Content Engine Java
+API is managed, collecting each change to be submitted to the server.</p></li>
+<li><p>========== METHOD SUMMARY ===========</p>
+
+<ul>
+<li>Method Summary All Methods Static Methods Instance Methods Concrete Methods Modifier and Type Method and Description com.filenet.api.core.BatchItemHandle add (Case c) Adds the changes for a Case object to the batch. com.filenet.api.core.BatchItemHandle add (ExternalDocumentReference extDoc) Adds the changes for an ExternalDocumentReference object to the batch. com.filenet.api.core.BatchItemHandle add (Task t) Adds the changes for a Task object to the batch. static CaseMgmtUpdatingBatch createUpdatingBatchInstance (DomainReference domain, com.filenet.api.constants.RefreshMode refresh) Factory method that creates a new CaseMgmtUpdatingBatch instance. boolean hasPendingExecute () Indicates if the batch has yet to be executed. void updateBatch () Executes the changes for all of the objects added to the batch.</li>
+</ul></li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                    | Method and Description                                                                                                                                                                          |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| com.filenet.api.core.BatchItemHandle | add(Case c) Adds the changes for a Case object to the batch.                                                                                                                                    |
+| com.filenet.api.core.BatchItemHandle | add(ExternalDocumentReference extDoc) Adds the changes for an ExternalDocumentReference object to the batch.                                                                                    |
+| com.filenet.api.core.BatchItemHandle | add(Task t) Adds the changes for a Task object to the batch.                                                                                                                                    |
+| static CaseMgmtUpdatingBatch         | createUpdatingBatchInstance(DomainReference domain,                            com.filenet.api.constants.RefreshMode refresh) Factory method that creates a new CaseMgmtUpdatingBatch instance. |
+| boolean                              | hasPendingExecute() Indicates if the batch has yet to be executed.                                                                                                                              |
+| void                                 | updateBatch() Executes the changes for all of the objects added to the batch.                                                                                                                   |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

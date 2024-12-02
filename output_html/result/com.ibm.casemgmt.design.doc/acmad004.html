@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmad004</title>
+</head>
+<body>
+<h1>Restoring your system</h1>
+
+<h2>About this task</h2>
+
+<ul>
+<li>Restoring FileNet P8 components</li>
+<li>Restoring workflow components</li>
+</ul>
+
+<h2>Restoring FileNet P8</h2>
+
+<p>components</p>
+
+<p>Start your restore with the foundation components in the IBM
+FileNet P8 domain. For each high-level step
+in your restore process, work with the backup administrator and use the appropriate product
+documentation to determine the specific steps that are required.</p>
+
+<h3>About this task</h3>
+
+<p>See the following table for a list of FileNet P8 components to restore.</p>
+
+<p>| FileNet P8 components                                                                      | Recovery instructions                                             |
+|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| Global configuration database                                                              | Recovering the data in your FileNet P8 domain                     |
+| Object stores (design, staging, and target), workflow system, and file stores storage area | Recovering the data in your FileNet P8 domain                     |
+| IBM Content Navigator                                                                      | Refer to the backup information: Backing up IBM Content Navigator |
+| Optional: Case Analyzer                                                                    | Recovering the data in your FileNet P8 domain                     |
+| Content Platform Engine server                                                             | Refer to the backup information: Server configuration backup      |</p>
+
+<h2>Restoring workflow components</h2>
+
+<p>You can restore Business Automation Workflow components by using
+your latest backups. Work with your backup administrator to understand the backup policy and the
+best way to perform the restore.</p>
+
+<h3>Procedure</h3>
+
+<p>To restore the workflow components:</p>
+
+<ul>
+<li>Restore the workflow servers.
+<ol>
+<li>Reinstall the Business Automation Workflow software as
+needed.</li>
+<li>Reconfigure the software or restore the workflow configuration files from a
+backup.</li>
+</ol></li>
+<li>Restore the Business Automation Workflow network share that hosts runtime plug-ins, add-ons configuration, documents, and customized
+widget pages (run time) from the latest backup.</li>
+<li>Restore the case management solutions (design time or run time) and customized widget pages
+(design time) by recovering the object store. See Recovering the data in your FileNet P8 domain.</li>
+<li>Optional: Restore the case history store database from the database server.</li>
+<li>Optional: Restore the business rules repository. Restore and overwrite the network shared
+directory from the latest backup.</li>
+</ul>
+
+</body>
+</html>

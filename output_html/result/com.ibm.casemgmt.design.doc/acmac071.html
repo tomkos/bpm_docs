@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac071</title>
+</head>
+<body>
+<h1>importSolutionAuditManifest command</h1>
+
+<h2>Syntax</h2>
+
+<p><code>
+configmgr\_cl importSolutionAuditManifest -profile myprofile 
+ -manifestPackage manifest\_package\_file 
+ [-silent] [-force] [-help]
+</code></p>
+
+<h2>Parameters</h2>
+
+<ul>
+<li>The name of the profile, such as develop1. The profile is located in the
+install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM® Business Automation
+Workflow is installed.</li>
+<li>The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.</li>
+<li>The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</li>
+</ul>
+
+<h2>Sample commands</h2>
+
+<p><code>
+configmgr\_cl importSolutionAuditManifest -profile Profile1
+ -manifestPackage Audit1.zip
+ [-silent] [-force] [-help]
+</code></p>
+
+<p><code>
+configmgr\_cl importSolutionAuditManifest -help
+</code></p>
+
+</body>
+</html>

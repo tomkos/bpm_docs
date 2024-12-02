@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac070</title>
+</head>
+<body>
+<h1>Importing an audit configuration by using the command line</h1>
+
+<h2>Before you begin</h2>
+
+<p>The solution that the audit configurations are associated with must already be in the design
+    object store.</p>
+
+<h2>About this task</h2>
+
+<h2>Procedure</h2>
+
+<p>To import the audit configuration package:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.
+2 Import the audit configuration package by running the following command. Do not enter any line breaks when you enter the command. configmgr_cl importSolutionAuditManifest -profile myprofile -manifestPackage manifest_package_file [-silent] [-force] [-help] -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -manifestPackage manifest_package_file Specifies the full path and file name of the audit configuration package ZIP file. If the path includes spaces, put the entire path in double quotation marks. For example, enter "C:\Audit Packages\Audit1.zip" . -silent Optional: When you specify the -silent parameter, no prompts orinformational messages are shown in the console, but the errors are written to the log. Failuremessages and validation error messages are shown as needed, such as messages about missing passwordsor invalid port numbers. If you run the execute command to run all the activitiesin a profile and you specify the -silent parameter, you must also specify the-force parameter. -force Optional and applies only when the -silent parameter is used. When youspecify the -force parameter, the activity is run without pausing for requiredresponses to validation error messages, such as messages about missing passwords or invalid portnumbers. -help Optional: Shows a brief message on the command syntax instead of running the command.</li>
+</ol>
+
+<p><code>
+configmgr\_cl importSolutionAuditManifest -profile myprofile 
+ -manifestPackage manifest\_package\_file 
+ [-silent] [-force] [-help]
+</code></p>
+
+<pre><code>- The name of the profile, such as develop1. The profile is located in the
+</code></pre>
+
+<p>install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM® Business Automation
+Workflow is installed.
+    - The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.
+    - The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</p>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RESTHttpsURLConnection</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class RESTHttpsURLConnection</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.icnrest.RESTURLConnection
+<ul>
+<li>com.ibm.casemgmt.api.icnrest.RESTHttpsURLConnection</li>
+</ul></li>
+</ul></li>
+<li><p>public class RESTHttpsURLConnection
+extends RESTURLConnection
+This code was adapted from the RESTHttpURLConnection from the RESTAPITEST
+component. It is used to handle the method invocation with the REST APIs.</p>
+
+<p>This is the SSL version of RESTHttpURLConnection</p></li>
+<li><p>=========== FIELD SUMMARY =========== ======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========</p>
+
+<ul>
+<li>Field Summary</li>
+</ul></li>
+</ul>
+
+<h3>Field Summary</h3>
+
+<pre><code>- Fields inherited from class com.ibm.casemgmt.api.icnrest.RESTURLConnection
+</code></pre>
+
+<p>ACCE_DESKTOP_APPNAME, ACCE_DESKTOP_DESC, ACCE_DESKTOP_ID, ACCE_DESKTOP_NAME, ACCE_PLUGIN_ID, ADMIN_PLUGIN_ID, BOX_EVENT_LISTENER_PLUGIN_ID, BPM_PLUGIN_ID, CC_PLUGIN_ID, customDocumentContextMenuBPM, ICM_ADMIN_DESKTOP_APPNAME, ICM_ADMIN_DESKTOP_DESC, ICM_ADMIN_DESKTOP_ID, ICM_ADMIN_DESKTOP_NAME, ICM_API_PLUGIN_ID, ICM_DESKTOP_APPNAME, ICM_DESKTOP_DESC, ICM_DESKTOP_ID, ICM_DESKTOP_NAME, ICM_MONITOR_DESKTOP_APPNAME, ICM_MONITOR_DESKTOP_DESC, ICM_MONITOR_DESKTOP_ID, ICM_MONITOR_DESKTOP_NAME, ICM_MONITOR_PLUGIN_ID, MOBILE_PLUGIN_ID, NAVIGATOR_ADMIN_DESKTOP_ID, NAVIGATOR_ADMIN_DESKTOP_NAME, PD_PLUGIN_ID, XT_PLUGIN_ID</p>
+
+<ul>
+<li>Constructor Summary</li>
+</ul>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>RESTHttpsURLConnection(java.lang.String username,
+                      java.lang.String password)</p>
+
+<ul>
+<li>Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description void disconnect () java.lang.String getBearerToken (java.lang.String umsURL) java.lang.String getBearerToken (java.lang.String openIDTokenURL, java.lang.String preAuthURL) org.apache.commons.json.JSONObject getNavigatorSecurityToken (java.lang.String navigatorURL, java.lang.String bearerToken) boolean invoke (java.lang.String resourceURL, java.lang.String requestMethod, java.util.HashMap<java.lang.String,java.util.List<java.lang.String>&gt; requestHeaders, java.lang.String content) Invokes the desired CASE REST API on the specified URL.</li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                  | Method and Description                                                                                                                                                                                                                                        |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| void                               | disconnect()                                                                                                                                                                                                                                                  |
+| java.lang.String                   | getBearerToken(java.lang.String umsURL)                                                                                                                                                                                                                       |
+| java.lang.String                   | getBearerToken(java.lang.String openIDTokenURL,               java.lang.String preAuthURL)                                                                                                                                                                    |
+| org.apache.commons.json.JSONObject | getNavigatorSecurityToken(java.lang.String navigatorURL,                          java.lang.String bearerToken)                                                                                                                                               |
+| boolean                            | invoke(java.lang.String resourceURL,       java.lang.String requestMethod,       java.util.HashMap<java.lang.String,java.util.List<java.lang.String>&gt; requestHeaders,       java.lang.String content) Invokes the desired CASE REST API on the specified URL. |</p>
+
+<pre><code>- Methods inherited from class com.ibm.casemgmt.api.icnrest.RESTURLConnection
+</code></pre>
+
+<p>createURLConnection, formatJSON, formatNexusError, getErrorStream, getHeaderField, getInputStream, getLastResponse, getP8TOSRepoId, getParamString, getResponse, getResponseCode, getResponseMessage, getSecurityToken, getUmsURL, isSSL, listRepositories, setSecurityToken, testLogin, testNavigatorlogin, testUMSNavigatorlogin, useUmsOrZen
+    - Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</p>
+
+</body>
+</html>

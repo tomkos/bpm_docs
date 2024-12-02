@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CaseMgmtChoice</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CaseMgmtChoice</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.properties.CaseMgmtChoice</li>
+</ul></li>
+<li><p>public final class CaseMgmtChoice
+extends java.lang.Object
+Represents a single choice item in a choice list assigned to a property,
+or represents a group node for a nested collection of choice items within
+a choice list.  A single choice item can be of two possible types: integer or string.
+An integer type choice item holds a single integer value and is assigned only to 
+an integer-valued property. A string type choice item holds a single value and can
+be assigned only to a string-valued property.</p>
+
+<p>A choice object that represents a group node of nested choice items contains
+choice items that are all integer or string type choice items depending on the
+data type of the overall choice list.</p>
+
+<p>The type of this choice object is indicated by the getChoiceType
+method and returns a Content Engine Java API ChoiceType value.
+The choice type indicates the data type of the choice object, either string
+or integer, and also whether the choice object represents a single choice item
+or a group node containing a nested collection of choice items. The choice
+type determines what method should be called to get the value of a
+choice object, one of getIntegerChoice, getStringChoice, 
+or getChoices.</p></li>
+</ul>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary All Methods Instance Methods Concrete Methods Modifier and Type Method and Description java.util.List<CaseMgmtChoice &gt; getChoices () Returns the collection of nested choice objects if this choice object represents a group node of additional choices. com.filenet.api.constants.ChoiceType getChoiceType () Indicates the type of this choice. java.lang.String getDisplayName () Returns the display name of this choice. java.lang.Integer getIntegerChoice () Returns the single integer value if this choice object represents a single choice item for an integer type property. java.lang.String getStringChoice () Returns the single string value if this choice object represents a single choice item for a string type property.</li>
+</ul></li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                    | Method and Description                                                                                                                   |
+|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| java.util.List<CaseMgmtChoice>       | getChoices() Returns the collection of nested choice objects if this choice  object represents a group node of additional choices.       |
+| com.filenet.api.constants.ChoiceType | getChoiceType() Indicates the type of this choice.                                                                                       |
+| java.lang.String                     | getDisplayName() Returns the display name of this choice.                                                                                |
+| java.lang.Integer                    | getIntegerChoice() Returns the single integer value if this choice object  represents a single choice item for an integer type property. |
+| java.lang.String                     | getStringChoice() Returns the single string value if this choice object represents  a single choice item for a string type property.     |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

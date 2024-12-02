@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac018</title>
+</head>
+<body>
+<h1>Creating a solution from a template by using the command line</h1>
+
+<h2>About this task</h2>
+
+<p>If you are a business analyst and want to create a basic
+solution from a template, you can use Case Builder. However, if you create
+a solution in Case Builder,
+you do not have the option to preserve the unique identifiers of any
+of the objects in the solution.</p>
+
+<p>Creating a solution from a template
+applies only in the development environment.</p>
+
+<h2>Procedure</h2>
+
+<p>To create a solution from a template:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.</li>
+<li>Generate the text input file by running the following command.
+Do not enter any line breaks when you enter the command:</li>
+</ol>
+
+<p>configmgr_cl generate_input_sa -operation createFromTemplate 
+ -file input_file_name
+[-help]</p>
+
+<p>-file input_file_name
+Specifies the full path to the text input file to create. The
+directory structure in the path must exist. You can use any valid
+file name, but the .txt extension is recommended.
+For example, use -file C:\solutions\from_template_input.txt.</p>
+
+<p>-help 
+Optional: Shows a brief message on the command syntax instead of running the command.</p>
+
+<p>For example, the following command
+creates the C:\solutions\from_template_input.txt input
+file:configmgr_cl generate_input_sa -operation createFromTemplate 
+ -file C:\solutions\from_template_input.txt
+3 Edit the property values in the input_file_name file.
+    1. Open the input_file_name file
+in a text editor.
+    2. Provide a value for each property in the file.
+For
+example, enter the Content Platform Engine server
+WSI URL value: </p>
+
+<p>CEWS_URI=http://myserver:9080/wsi/FNCEWS40MTOMYou
+can specify whether unique identifiers are preserved when solutions
+are created from the template later on by providing a value for the
+preserveIdentifier property. </p>
+
+<p>Important: Ensure that the
+preserveIdentifier value is set to the same value that is set in the
+template unless you have a specific business reason to override the
+template. If you enter preserveIdentifier=true,
+do not deploy more than one solution that is made from this template
+to the same target object store.
+    3. Save and close the input file.
+4. Apply the values in the text input file by running the
+following command. Do not enter any line breaks when you enter the
+command:</p>
+
+<p>configmgr_cl execute_sa -operation createFromTemplate 
+ -file input_file_name</p>
+
+</body>
+</html>

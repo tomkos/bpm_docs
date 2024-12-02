@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_Failmediationprimitive</title>
+</head>
+<body>
+<h1>Fail mediation primitive</h1>
+
+<h2>Introduction</h2>
+
+<p>You can use the Fail mediation
+primitive to halt a mediation flow and raise an exception at a point
+you choose in the flow. You can also add information about a failure.</p>
+
+<p>The
+Fail mediation primitive has one input terminal (in).
+The input terminal is wired to accept a message that triggers a FailFlowException.
+A FailFlowException is a specific runtime exception
+that causes the flow instance to fail. You can wire the output terminal
+of another mediation primitive to the in terminal
+of a Fail mediation primitive, to cause a FailFlowException.</p>
+
+<h2>Usage</h2>
+
+<p>You can use the Fail mediation primitive
+to define your own error conditions, based on the business logic of
+the flow.</p>
+
+<p>You can use the Error message property
+to provide an additional error message that is specific to your business
+logic or domain. The Error message you create is
+added to the automatically generated exception.</p>
+
+<ul>
+<li>{0} would be substituted with the Time Stamp value</li>
+<li>{1} would be substituted with the SMO Message ID value</li>
+<li>{2} would be substituted with the Mediation Name value</li>
+<li>{3} would be substituted with the Module Name value</li>
+<li>{4} would be substituted with the SMO part defined by the Root
+property XPath. By default this is /context/failInfo</li>
+<li>{5} would be substituted with the SMO Version value</li>
+</ul>
+
+<p><code>
+'29/04/09 15:11, 9A85B1D2-0119-4000-E000-13E4091443BC, Fail1, MyModule, &lt;failInfo&gt;...&lt;/failInfo&gt;, 6'
+</code></p>
+
+<p>You
+can use the Fail mediation primitive to roll back a global transaction
+under certain conditions. For example, if you wire an output terminal
+of a Message Filter mediation primitive to a Fail mediation primitive,
+the transaction is rolled back if the filter condition occurs.</p>
+
+<ul>
+<li>Fail mediation primitive properties</li>
+</ul>
+
+<p>You can specify values for mediation primitive properties either by using the property fields in the IBM® Integration Designer user interface or by using an XML format. The property field names displayed in IBM Integration Designer are generally different from the property names used when building a mediation flow using XML code. In the following information, icons are used to identify each property name used in IBM Integration Designer and the corresponding XML name. (Where applicable, XML names that are required, but not shown in IBM Integration Designer, are also described.)</p>
+
+</body>
+</html>

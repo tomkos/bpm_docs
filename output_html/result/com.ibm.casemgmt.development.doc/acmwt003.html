@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwt003</title>
+</head>
+<body>
+<h1>Adding a script action to a widget toolbar or menu</h1>
+
+<h2>About this task</h2>
+
+<p>To add a script action to a widget toolbar or menu:</p>
+
+<h2>Procedure</h2>
+
+<ol>
+<li>In Case Builder, open the page that contains the
+widget in Page Designer.</li>
+<li>Click the Edit Settings icon for the widget that you want to add the
+script action to.</li>
+<li>Click the Menus or Toolbars tab and, if
+necessary, select the specific menu or toolbar that you want to add the script action to.</li>
+<li>Click the Add Menu Item icon or the Add Button
+icon.</li>
+<li>From the Action list, select Script Action.</li>
+<li>If you are adding a script action to a toolbar, select a position from the
+Alignment list.</li>
+<li>For Label, enter the display name for the script action.</li>
+<li>For Execute, enter the script to run when this script action is selected
+from the toolbar or menu.</li>
+<li>Optional: 
+For Show this script action, enter a script that
+is run to determine whether the button or menu item for this script action is visible. If you do not
+enter a script, the button or menu item is always visible.</li>
+<li>Optional: 
+For Enable this script action, enter a script that
+is run to determine whether the button or menu item for this script action is enabled. If you do not
+enter a script, the button or menu item is always enabled.</li>
+<li>Click OK.</li>
+<li>Save and redeploy your solution.</li>
+</ol>
+
+<h2>Example</h2>
+
+<p>The following example script action is intended to run in the context of the action
+implementation. For more information, see Class icm.action.Action.</p>
+
+<p><code>
+var selectedDocuments = this.getActionContext("Document");
+if (dojo.isArray(selectedDocuments))
+{
+   var i;
+   for (i=0; i&lt;selectedDocuments.length; i++)
+   {
+      // attach selected document: selectedDocuments[i]
+      ...
+   }
+}
+else
+{
+    // attach selected document: selectedDocuments
+    ...
+}
+</code></p>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmsdh39</title>
+</head>
+<body>
+<h1>Adding workflows that are not associated with activities</h1>
+
+<h2>About this task</h2>
+
+<p>You can include system functions such as WaitForCondition in which one workflow
+calls another workflow that contains information that the first workflow requires for processing
+steps. The workflow called or created must not be created in the solution collection. You cannot add
+or edit such a workflow by using Case Builder. Instead,
+you add or edit this workflow by using IBM®
+FileNet® Process Designer.</p>
+
+<h2>Procedure</h2>
+
+<p>To add a workflow that is not associated with an activity:</p>
+
+<ol>
+<li>In IBM
+FileNet Process Designer,
+add a new workflow by clicking File &gt; Insert &gt; New Workflow.</li>
+<li>Specify a name for the workflow on the General page
+under the Workflow tab.</li>
+<li>Define the new workflow according to your business requirements.
+For example, add a system step that creates the new workflow in the calling workflow, specify
+the new workflow as the base workflow in another workflow, or have an activity create and then wait
+for the new workflow.</li>
+<li>Validate the workflow collection.</li>
+<li>Insert the workflow into the solution by clicking File &gt; Solution &gt; Edit. Then, select the solution definition.</li>
+<li>Select the case type.</li>
+</ol>
+
+<p>Important: Do
+not select the solution workflow collection.
+7. Click File &gt; Insert &gt; Workflow from Repository.
+8. Do not select to update the base workflow class.
+9. Edit the activity and workflows according to your business requirements.
+10. Validate and save the solution.</p>
+
+</body>
+</html>

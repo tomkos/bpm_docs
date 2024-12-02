@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc041</title>
+</head>
+<body>
+<h1>Translating custom strings</h1>
+
+<h2>Before you begin</h2>
+
+<p>Deploy the solution before you translate the customized
+string. When you deploy the solution, the nls/Resources.js file
+is created or modified in the IBM® Business Automation
+Workflow/Solutions/solution_name folder
+in the design object store or staging object store.</p>
+
+<p>The recommended best practice is to treat all translated custom
+string resources like other solution assets. Those assets should be
+tested and maintained in a design object store in the development
+environment first. Then, you move those assets to a production environment,
+which means that all available translated custom string resources
+are moved to the staging object store in the test environment. Finally,
+you move the complete translated solution to a production environment,
+which uses the design object store.</p>
+
+<p>Although this procedure
+takes longer for the translated strings to be available in a production
+environment, it is the best way to  maintain the solution definition,
+the generated default language resources, and any other manually translated
+custom string resources.</p>
+
+<h2>About this task</h2>
+
+<ul>
+<li>Page titles</li>
+<li>Action labels and menu labels in widgets</li>
+<li>Title for the tabbed layout, title for the titled layout, custom
+property label, and property hint in views.</li>
+</ul>
+
+<h2>Procedure</h2>
+
+<p>To translate a custom string:</p>
+
+<ol>
+<li>Using IBM Content
+Navigator, browse to the
+design_or_staging_object_store_name/IBM Business Automation
+Workflow/Solutions/solution_name/nls
+folder.</li>
+<li>Download the Resources.js file.</li>
+<li>Create your target locale directory in the original directory.
+For example, if your target locale is French, create the
+following directory: design_or_staging_object_store_name/IBM Business Automation
+Workflow/Solutions/solution_name/nls/fr.
+The locale values are case sensitive. Use hyphen separators instead of underscores in the
+locale values. For example, specify en-us instead of
+en_us. If your solution locale is French and you want to translate the
+solution to English, use locale en.</li>
+<li>Edit the downloaded Resources.js file.
+Change the value for the custom string to the translated value for
+your locale.
+For example, change the English value for
+a customized page title: "New Work": "New Work" to
+a localized title: "New Work":"Nouveau Travail"</li>
+</ol>
+
+<p>Attention: The encoding of the Resources.js file
+must be set to UTF-8 or UTF-8 without BOM.
+5. Make the same changes for any other customized strings
+that you want to translate.
+6. Add the translated Resources.js file
+to the design_or_staging_object_store_name/IBM Business Automation
+Workflow/Solutions/solution_name/nls/fr folder
+as a document of Document class and as a major version. The document
+title must be Resources.js.
+7. Repeat these steps for each language you want to translate
+to.
+8. Redeploy the solution.</p>
+
+<h2>Results</h2>
+
+</body>
+</html>

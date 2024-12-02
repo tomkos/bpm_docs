@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdt046</title>
+</head>
+<body>
+<h1>Defining and registering target environments</h1>
+
+<h2>Before you begin</h2>
+
+<h2>About this task</h2>
+
+<p>The first time that you run the Case configuration tool to configure the
+production environment after you install IBM® Business Automation
+Workflow, you must define at least one
+target environment. Later, you can use the Case administration client to define more target
+environments as needed to support your solutions.</p>
+
+<p>A target environment definition specifies the target environment to which a solution
+is deployed. It contains information about the connection point and a logical to physical page
+mapping. By using the connection point, the target object store is discovered and the region number
+isolated.</p>
+
+<p>When you define a target environment, you select the connection point for the target object
+store. Multiple connection points for the same target object store can exist. If required to support
+solutions that you upgrade to Case Manager 5.2, multiple target environments can share the same
+connection point.</p>
+
+<p>When you register a target environment, you select the Case Client desktop that you want to use
+to access solutions that are hosted in the target environment. You also specify credentials for the
+user ID that you want to use to run workflows for case operations.</p>
+
+<h2>Procedure</h2>
+
+<p>To define and register a new target environment by using the Case configuration tool:</p>
+
+<p>1 Enter the appropriate command for your environment: Option Description AIX®Linux®Linux for System z® Windows Perform one of the following actions:</p>
+
+<p>| Option                            | Description                                                                                                                                                                                                                                                                                    |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AIX®  Linux®  Linux for System z® | Change to the install_root/configure/CaseManagement/ directory. install_root is the location where IBM Business Automation Workflow is installed. Run the following command:./configmgr                                                                                                        |
+| Windows                           | Perform one of the following actions: Click Start  &gt; All Programs &gt; IBM Business Automation Workflow &gt; Case configuration tool. Run the following command:install_root\configure\CaseManagement\configmgr.exeinstall_root is the location where IBM Business Automation Workflow is installed. |</p>
+
+<ol start="2">
+<li>Click File &gt; Open
+profile and select a production environment
+profile.
+3 After the list of configuration tasks is displayed, edit,save, and run the following tasks:</li>
+</ol>
+
+<ul>
+<li>Define Target Environment</li>
+<li>Register Target Environment</li>
+</ul>
+
+<p>To define and register a new target environment by using the Case administration client:</p>
+
+<ol>
+<li>Start the Case administration client.
+Enter the following URL in a browser:
+http://server:port/navigator/?desktop=bawadmin
+where
+server is the IBM Content
+Navigator IP address or
+fully qualified server name, and 
+port is the
+IBM Content
+Navigator port
+number.</li>
+<li>From the list of object stores in the navigation tree in
+the left pane, select a staging object store to open it. Click Target
+Environments.</li>
+<li>On the Target Environments page in
+the right pane, click Define and complete the
+wizard steps.
+4 Register the target environment:
+<ol>
+<li>On the Target Environments page
+in the right pane, select the target environment that you want to
+register.</li>
+<li>Click Actions &gt; Register and complete the wizard
+steps.</li>
+</ol></li>
+</ol>
+
+<h2>What to do next</h2>
+
+<ul>
+<li>Configure IBM Business Automation
+Workflow</li>
+<li>Configure Business Rules</li>
+<li>Register the External Data Service</li>
+</ul>
+
+</body>
+</html>

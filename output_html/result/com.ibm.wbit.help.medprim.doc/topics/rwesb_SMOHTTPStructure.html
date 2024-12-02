@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_SMOHTTPStructure</title>
+</head>
+<body>
+<h1>SMO: HTTP schema</h1>
+
+<h2>Introduction</h2>
+
+<p>The HTTP schema specifies the
+overall structure of the HTTP header.</p>
+
+<h2>HTTP header schema</h2>
+
+<p>```
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:httpsca="http://www.ibm.com/xmlns/prod/websphere/http/sca/6.1.0"
+        xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+        ecore:package="com.ibm.websphere.http.headers"
+        ecore:nsPrefix="httpsca"
+        elementFormDefault="qualified"
+        targetNamespace="http://www.ibm.com/xmlns/prod/websphere/http/sca/6.1.0"></p>
+
+<p><element name="HTTPMessageHeader" type="httpsca:HTTPMessageParameters"/></p>
+
+<p><complexType name="HTTPMessageParameters">
+    <sequence>
+      <element minOccurs="0" nillable="true" name="HTTPControl" type="httpsca:HTTPControl"/>
+      <element minOccurs="0" nillable="true" name="HTTPHeaders" type="httpsca:HTTPHeaders"/>
+    </sequence>
+  </complexType></p>
+
+<p><complexType name="HTTPControl">
+    <sequence>
+      <element minOccurs="0" nillable="true" name="URL" type="anyURI"/>
+      <element minOccurs="0" nillable="true" name="Version" type="httpsca:HTTPVersion"/>
+      <element minOccurs="0" nillable="true" name="Method" type="string"/>
+      <element minOccurs="0" nillable="true" name="DynamicOverrideURL" type="anyURI"/>
+      <element minOccurs="0" nillable="true" name="DynamicOverrideVersion" type="httpsca:HTTPVersion"/>
+      <element minOccurs="0" nillable="true" name="DynamicOverrideMethod" type="string"/>
+      <element minOccurs="0" nillable="true" name="MediaType" type="string"/>
+      <element minOccurs="0" nillable="true" name="Charset" type="string"/>
+      <element minOccurs="0" nillable="true" name="TransferEncoding" type="string"/>
+      <element minOccurs="0" nillable="true" name="ContentEncoding" type="string"/>
+      <element minOccurs="0" name="StatusCode" type="int"/>
+      <element minOccurs="0" nillable="true" name="ReasonPhrase" type="string"/>
+      <element minOccurs="0" nillable="true" name="Authentication" type="httpsca:HTTPAuthentication"/>
+      <element minOccurs="0" nillable="true" name="SSLSettings" type="httpsca:HTTPSSLSettings"/>
+      <element minOccurs="0" maxOccurs="2" nillable="true" name="ProxySettings" type="httpsca:HTTPProxySettings"/>
+    </sequence>
+  </complexType></p>
+
+<p><complexType name="HTTPHeader">
+    <sequence>
+      <element name="name" type="string"/>
+      <element name="value" type="string"/>
+    </sequence>
+  </complexType></p>
+
+<p><complexType name="HTTPHeaders">
+    <sequence>
+      <element name="header" minOccurs="0" maxOccurs="unbounded" type="httpsca:HTTPHeader"/>
+    </sequence>
+  </complexType></p>
+
+<p><!--SSL Settings -->
+  <complexType name="HTTPSSLSettings">
+    <sequence>
+      <element default="SSL" nillable="true" name="SSLVersion" type="string"/>
+      <element default="false" nillable="true" name="SSLDebug" type="boolean"/>
+      <element default="JKS" nillable="true" name="KeyStoreType" type="string"/>
+      <element default="JKS" nillable="true" name="TrustStoreType" type="string"/>
+      <element nillable="true" name="KeyStore" type="string"/>
+      <element nillable="true" name="KeyStoreAlias" type="string"/>
+      <element nillable="true" name="KeyStorePassword" type="string"/>
+      <element nillable="true" name="TrustStore" type="string"/>
+      <element nillable="true" name="TrustStorePassword" type="string"/>
+      <element default="false" nillable="true" name="UseClientAuth" type="boolean"/>
+    </sequence>
+  </complexType></p>
+
+<p><!--Proxy Settings -->
+  <complexType name="HTTPProxySettings">
+    <sequence>
+      <element nillable="true" name="proxyHost" type="string"/>
+      <element nillable="true" name="proxyPort" type="int"/>
+      <element nillable="true" name="proxyType" type="httpsca:HTTPProxyType"/>
+      <element nillable="true" minOccurs="0" name="proxyCredentials" type="httpsca:HTTPCredentials"/>
+      <element nillable="true" minOccurs="0" maxOccurs="unbounded" name="nonProxyHost" type="string"/>
+    </sequence>
+  </complexType></p>
+
+<p><!--HTTP Authentication -->
+  <complexType name="HTTPAuthentication">
+    <sequence>
+      <element nillable="true" name="credentials" type="httpsca:HTTPCredentials"/>
+      <element nillable="true" name="authenticationType" type="httpsca:HTTPAuthenticationType"/>
+    </sequence>
+  </complexType></p>
+
+<p><!--HTTP Credentials -->
+  <complexType name="HTTPCredentials">
+    <sequence>
+      <element nillable="true" name="userId" type="string"/>
+      <element nillable="true" name="password" type="string"/>
+    </sequence>
+  </complexType></p>
+
+<p><!-- Authentication Type. Supports: Basic Auth -->
+  <simpleType name="HTTPAuthenticationType">
+    <restriction base="string">
+      <enumeration value="Basic"/>
+    </restriction>
+  </simpleType></p>
+
+<p><!-- Proxy protocol type. Supports: http and https -->
+  <simpleType name="HTTPProxyType">
+    <restriction base="string">
+      <enumeration value="http"/>
+      <enumeration value="https"/>
+    </restriction>
+  </simpleType> </p>
+
+<p><!-- HTTP Version type.-->
+  <simpleType name="HTTPVersion">
+    <restriction base="string">
+      <enumeration value="1.0"/>
+      <enumeration value="1.1"/>
+    </restriction>
+  </simpleType> 
+</schema>
+```</p>
+
+<h2>Schema field descriptions</h2>
+
+</body>
+</html>

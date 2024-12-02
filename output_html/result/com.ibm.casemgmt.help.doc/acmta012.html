@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta012</title>
+</head>
+<body>
+<h1>Deleting a case</h1>
+
+<h2>Symptoms</h2>
+
+<p>You delete the case folder but activity processes are not completely removed. The activity
+processes might be orphaned.</p>
+
+<h2>Resolving the problem</h2>
+
+<p>There are two ways to delete a case:</p>
+
+<ul>
+<li>Using the Case Manager REST API for deleting a case. See Deleting a particular case resource.</li>
+<li>Deleting the case manually using the following procedures.</li>
+</ul>
+
+<ol>
+<li>Terminating and deleting work items in case activity processes for a case</li>
+<li>Preparing to reuse documents from cases to be deleted</li>
+<li>Deleting the case folder</li>
+</ol>
+
+<h2>Terminating and deleting work items in case activity processes for a case</h2>
+
+<ol>
+<li>In IBM® Administration Console for
+Content Platform Engine,
+navigate to the appropriate domain, expand Object Stores, and click the name
+of the IBM Business Automation
+Workflow target
+object store that contains the case that you want to delete.</li>
+<li>Expand the folders in the target object store, then go to
+Browse &gt; Root folder &gt; IBM Business Automation
+Workflow &gt; Solution Deployments &gt; My
+Solution &gt; Case
+Types &gt; Cases.</li>
+<li>Go to the case sequence folder:
+Year &gt; Month &gt; Day &gt; number &gt; case_sequence.
+For performance reasons, cases created on the same day are filed under a folder with a random
+number between 0001 and 0300. For example,
+2013 &gt; 07 &gt; 19 &gt; 0166 &gt; 000000100003.
+If a large number of cases are filed on the same day, you might need to use the search function of
+the IBM Administration Console for
+Content Platform Engine and search
+the target object store to find the case.</li>
+<li>Click the case_sequence. In the right pane, click the
+Tasks tab.
+5 In the State column, complete the following actions for tasks that are ina Failed or Working state:
+<ol>
+<li>Click the task, then click its Properties tab.</li>
+<li>If the task is in a Failed state, and the value of the Disabled state property is
+3, ignore this step and continue with step 6.</li>
+<li>For failed or working tasks that are not disabled, scroll down to the
+ID field and record its value. You will need the task ID in a later step when
+you remove the corresponding workflow.</li>
+<li>Return to the case_sequence tab and close the task
+tab.</li>
+<li>If a task is in a Working state, click Promote. Verify that the task
+state is Complete.</li>
+</ol></li>
+<li>On the Tasks tab, select each task that is in a
+Waiting or Ready state, and then click Delete. Do not delete any tasks in a
+Failed state.</li>
+<li>Close the window.</li>
+<li>Open the Process Administrator by going to IBM Business Automation
+Workflow_target object
+store &gt; Administrative &gt; Workflow
+System &gt; Connection
+Points &gt; connection_point.
+Right-click the connection point and select Administer Work Items. The
+administration connection_point window is displayed.</li>
+<li>Under Look for, select Workflows.</li>
+<li>Under In, select Workflow Roster, which is the
+same name as the solution.</li>
+<li>Under Search mode, select Edit (all fields).</li>
+<li>Click Find Now.</li>
+<li>Click View &gt; Show/Hide
+Columns.</li>
+<li>In the Column Selection window, add F_CaseTask to
+Selected Columns, then click OK. Verify that
+F_CaseTask is displayed in the Results window.</li>
+<li>Use the task ID from step 5.c to
+identify the workflow that is associated with each of the tasks that you promoted earlier.
+Right-click the workflow and then click Tasks &gt; Delete
+Work.</li>
+<li>Confirm that you want to delete the work items.</li>
+<li>When the work items are deleted, you can go back to the case folder in step 3 and delete the folder and all its child objects.</li>
+</ol>
+
+<h2>Preparing to reuse documents from cases to be deleted</h2>
+
+<ol>
+<li>In Administration Console for Content Platform
+Engine,
+go to the activity sequence folder: Year &gt; Month &gt; Day &gt; number &gt; activity_sequence. For example, 2013 &gt; 07 &gt; 19 &gt; 0166 &gt; 000000100003.</li>
+<li>Click the activity_sequence then, in the right pane,
+click the Contents tab and go to the supporting document folder, for example,
+Correspondence.</li>
+<li>Click the document and then click Properties in the new middle tab.</li>
+<li>Scroll down, click the arrow next to the Associated Case property value
+and select Unset Value, and then click Save.</li>
+<li>In Administration Console for Content Platform
+Engine,
+right-click the activity_sequence (for example, 000000100003), and then click
+Delete.</li>
+</ol>
+
+<h2>Deleting the case folder</h2>
+
+<ol>
+<li>In Administration Console for Content Platform
+Engine,
+navigate to the activity sequence folder: Year &gt; Month &gt; Day &gt; number &gt; activity_sequence. For example, 2013 &gt; 07 &gt; 19 &gt; 0166 &gt; 000000100003.</li>
+<li>Right-click activity_sequence and then click
+Delete.</li>
+<li>Select Delete all objects and their content elements from all folders and
+click OK.</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc023</title>
+</head>
+<body>
+<h1>Deploying a solution with Business Automation Workflow</h1>
+
+<p>You use different ways to deploy a solution depending on the type of
+server to which you are deploying the solution.</p>
+
+<ul>
+<li>If you are using a Workflow Center
+development profile environment, deploy promoted case solution projects by using Workflow Center.
+You can deploy legacy case solutions by using legacy Case Builder or Case administration client.</li>
+<li><p>If you are using a Workflow Server production profile
+environment, you can install a solution by using Workflow Center or the command line for offline installation. You can deploy legacy case
+solutions by using Case administration client.</p></li>
+<li><p>Deploying a solution by using Workflow Center or legacy Case Builder</p></li>
+<li>Installing a solution using Workflow Center or the command line</li>
+<li>Deploying a legacy case solution using Case administration client</li>
+</ul>
+
+<h2>Deploying a solution by using Workflow Center or</h2>
+
+<p>legacy Case Builder</p>
+
+<h3>Procedure</h3>
+
+<p>To deploy a case solution by using Workflow Center or
+legacy Case Builder:</p>
+
+<ol>
+<li>Start Workflow Center or Case Builder.</li>
+<li>Enter the following URL in a browser: 
+http://server:port/WorkflowCenteror
+http://server:port/CaseBuilder where
+server is the Business Automation Workflow IP address or the fully
+qualified server name, and port is the Business Automation Workflow port
+number.</li>
+<li>Open a solution by clicking a solution card.</li>
+<li>To deploy the solution, click the deploy button from the solution
+details.</li>
+</ol>
+
+<h2>Installing a solution using Workflow Center or</h2>
+
+<p>the command line</p>
+
+<h2>Deploying a legacy case solution using Case administration client</h2>
+
+<h3>Procedure</h3>
+
+<p>To deploy a legacy case solution by using Case administration client:</p>
+
+<ol>
+<li>Start the Case administration client.</li>
+<li>Enter the following URL in a
+browser: http://server:port/navigator/?desktop=bawadmin
+where server is the IBM® Content
+Navigator IP address or
+the fully qualified server name, and port is the IBM Content
+Navigator port
+number.</li>
+<li>In the navigation tree, select a design object store and click
+Solutions.</li>
+<li>In the Solutions page, select the solution that you want to
+deploy.
+5 ClickActions &gt; Deploy and completethe wizard steps. You can deploy a solution from either a design object store indevelopment environment or a staging object store in production environment.
+<ul>
+<li>If you deploy from a design object store in development environment, the target environment name
+field is automatically populated by the wizard.</li>
+<li>If you deploy from a staging object store in production environment, you must select the target
+environment name from the Target Environments list. This list contains the
+target environments in the object store in production environment staging that have the same
+integration type as the solution.</li>
+</ul></li>
+</ol>
+
+</body>
+</html>

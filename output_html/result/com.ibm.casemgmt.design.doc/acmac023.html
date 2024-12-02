@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac023</title>
+</head>
+<body>
+<h1>Adding users to the default project area by using the command</h1>
+
+<p>line</p>
+
+<h2>Before you begin</h2>
+
+<p>Be sure to have your completed configuration checklist available.</p>
+
+<h2>About this task</h2>
+
+<p>A project area groups solutions within the design object
+store to limit the effects of resetting the test environment. When
+you reset the test environment from Case Builder, only a single project
+area is reset. Each development environment has a default project
+area, and you can create more project areas as needed to provide isolated
+work areas for developing and testing solutions in Case Builder. The default project
+area is named dev_env_connection_definition.</p>
+
+<p>Before you add
+users to the project area, add them to the master group that you configured
+for access to your object store.</p>
+
+<p>You can assign specific solutions
+and users to each project area. Each user can belong only to one project
+area and the default project area. If you assigned a user to another
+project area who is already assigned to any nondefault project area,
+that user is automatically removed from the original nondefault project
+area. You can add groups to the default project area only.</p>
+
+<p>Adding
+a user to a project area gives the user access to the solutions in
+the project area in the design object store. If the user is not an
+administrator for the target object store, then you must set the security
+for the user.</p>
+
+<p>By default, all new solutions
+are created in the default project area unless you define additional
+project areas.</p>
+
+<h2>Procedure</h2>
+
+<p>To add users to the default project area:</p>
+
+<ol>
+<li>Change the current directory to the
+install_root/CaseManagement/configure directory, where
+install_root is the location where Business Automation Workflow is
+installed.
+2 Add a single user or group by runningthe following command. Do not enter any line breaks when you enterthe command. configmgr_cl addPrincipals -projectAreaName dev_env_connection_definition -profile myprofile -user user_name -groups group_name [-help] -projectAreaName dev_env_connection_definition The name of the project area to modify. The default project area is nameddev_env_connection_definitition. -profile myprofile Specifies the profile to use. The myprofile value can be one of the following items: -user user_name Specifies the short name or display name of the user to add. A user can belong to the defaultproject area and one other project area. -groups group_name Specifies the short name or display name of the group to add. Groups can be added to the defaultproject area only. -help Optional and displays a brief message on the command syntax instead of running the command.</li>
+</ol>
+
+<p><code>
+configmgr\_cl addPrincipals -projectAreaName dev\_env\_connection\_definition
+ -profile myprofile
+ -user user\_name -groups group\_name
+ [-help]
+</code></p>
+
+<pre><code>- The name of the profile, such as develop1. The profile is located in the
+</code></pre>
+
+<p>install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM® Business Automation
+Workflow is installed.
+    - The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.
+    - The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.
+3. Repeat 2 as
+needed to add all the users or groups for the default project area.
+You will assign solutions to the default project area later,
+after you create the solutions. You also can create additional project
+areas and assign users and solutions later.</p>
+
+</body>
+</html>

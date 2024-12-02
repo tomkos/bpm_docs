@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmpdh20</title>
+</head>
+<body>
+<h1>Adding case operations to a</h1>
+
+<p>FileNet</p>
+
+<p>process</p>
+
+<h2>Before you begin</h2>
+
+<p>Define the activity in Case Builder.</p>
+
+<h2>About this task</h2>
+
+<p>To add case operations, you open the activity in IBM®
+FileNet Process Designer. You then add a component step to the workflow with
+which you associate the case operations. You can associate more than one operation to a component
+step. For example, you can configure case operations to create a case and add a comment with a
+single component step.</p>
+
+<ul>
+<li>Create a case by using a specified case type.</li>
+<li>Add a comment to the current case.</li>
+<li>Create a discretionary activity in a case.</li>
+<li>File attachments to a case into a subfolder</li>
+<li>Relate the current case to another case.</li>
+</ul>
+
+<h2>Procedure</h2>
+
+<p>To add case operations to a workflow step:</p>
+
+<ol>
+<li>In a stand-alone IBM
+FileNet Process Designer, open the solution
+for editing the FileNet P8 activity workflow, which you want to add the case operation.</li>
+<li>In IBM
+FileNet Process Designer, drag the
+Component icon to drop at the place in the activity that you want the
+operation to be performed.</li>
+<li>On the Component tab, click the Add
+icon.</li>
+<li>From the Component list, select
+ICM_Operations.</li>
+<li><p>Select the operation that you want to insert and then click
+OK.
+6 In the Operation Parameters area, enter an expression for each operationparameter:</p>
+
+<ol>
+<li>Click in the Expression field for the parameter.</li>
+<li>From the Expression list, select Build
+Expression.</li>
+<li>For the caseID parameter, in the Business Object
+Fields list, you must select F_CaseFolder and click
+Insert.</li>
+<li>For the taskID parameter, in the Business Object
+Fields list, you must select F_CaseTask and click
+Insert.</li>
+<li>Use other case properties for the expression. In the Business Object
+Fields list, select F_CaseFolder, then select the case property
+and click Insert.</li>
+</ol>
+
+<p>If the expression contains a hardcoded string, enclose the string in double quotation marks.</p></li>
+</ol>
+
+<ul>
+<li>addCaseOwners operation</li>
+</ul>
+
+<p>Assigns users to a case team as owners of the current case.
+- addCaseRoleMembers operation</p>
+
+<p>Assigns users to the case team as members of a role in the current case.
+- addCommentToCurrentCase operation</p>
+
+<p>Adds a comment to the current case. You can specify the comment or use Expression Builder to assign a string case property as the comment.
+- addCommentToCurrentDocument operation</p>
+
+<p>Adds a new comment to the specified case document or attachment. To add a comment, the document or attachment must be filed in the current case.
+- addCommentToCurrentTask operation</p>
+
+<p>Adds a comment to the current task. You can specify the comment or use Expression Builder to assign a string case property as the comment.
+- addDependentObject operation</p>
+
+<p>This operation adds a new object at the specified location in a list of dependent objects for a case property of type Business Object.
+- completeCurrentCaseStage operation</p>
+
+<p>Completes the current case stage and advances to the next case stage if there is a next case stage.
+- createCasePackage operation</p>
+
+<p>Creates a package that contains the case artifacts that are specified by the parameters for this operation and stores the package in the case folder.
+- createCaseUsingSameCaseType operation</p>
+
+<p>Creates a new instance of case using the same case type.
+- createCaseUsingSpecifiedCaseType operation</p>
+
+<p>Creates a new instance of a case for the specified case type.
+- createDefaultCasePackage operation</p>
+
+<p>Creates a package that contains all case-related artifacts and stores the package in the case folder.
+- createDiscretionaryTaskInCurrentCase operation</p>
+
+<p>Creates a new activity instance of a discretionary activity type. The discretionary activity must be defined in the same solution.
+- createDiscretionaryTaskInCurrentCaseWithWorkflowParams operation</p>
+
+<p>Creates a new activity instance of a discretionary activity type with the specified workflow parameters.
+- createDiscretionaryTaskWithProps operation</p>
+
+<p>Creates a new activity instance of a discretionary activity type with the specified properties.
+- createNewDependentObject operation</p>
+
+<p>Creates a pending instance of the specified dependent object class to use as the starting value for a new case property. If you want, you can then use addDependentObject operation to add more values. You assign the collected values as the value of a business object property when you create a case.
+- createSubfolderUnderCurrentCase operation</p>
+
+<p>Creates a subfolder under the current case folder.
+- disableSpecifiedCaseStage operation</p>
+
+<p>Disables a specified stage from the list of existing case stages.
+- enableSpecifiedCaseStage operation</p>
+
+<p>Enables a specified case stage back to the list of existing case stages.
+- fileAttachmentsToCurrentCase operation</p>
+
+<p>Files attachments to a specified subfolder under the current case folder. Attachments can originate in the case management object stores or in other repositories that are configured for the case management environment.
+- findDependentObjects operation</p>
+
+<p>Finds the indexes of objects that match the specified criteria in a list of dependent objects for a case property of type Business Object.
+- getCasePropertyNames operation</p>
+
+<p>Returns a list of the names of the properties in a case. This operation is a prerequisite for the createCase operations.
+- getCasePropertyValues operation</p>
+
+<p>Returns a list of the property values of a specified case. This operation is a prerequisite for the createCase operations.
+- getCaseStructure operation</p>
+
+<p>Returns the case structure for a given case. The structure is returned as a list of folder names and document series IDs, but excludes any empty folders. Typically, this operation is called to obtain the case structure prior to calling the createCase operations.
+- getTaskPropertyNames operation</p>
+
+<p>Returns the custom property names of a task.
+- getTaskPropertyValues operation</p>
+
+<p>Returns task property values for a given list of task properties.
+- placeCurrentCaseStageOnHold operation</p>
+
+<p>Puts the current case stage on hold.
+- relateCurrentCase operation</p>
+
+<p>Creates a relationship between the current working case and the targeted case.
+- releaseCurrentOnHoldCaseStage operation</p>
+
+<p>Releases the hold on the current case stage.
+- removeCaseOwners operation</p>
+
+<p>Removes users as owners of the current case.
+- removeCaseRoleMembers operation</p>
+
+<p>Removes users as members of a role in the current case.
+- removeDependentObject operation</p>
+
+<p>Removes the object at the specified index from a list of dependent objects for a case property of type Business Object.
+- replaceCaseOwners operation</p>
+
+<p>Replaces the users currently assigned as owners of the current case with a new set of users.
+- replaceCaseRoleMembers operation</p>
+
+<p>Replaces the users currently assigned as members of a role in the current case with a new set of users.
+- restartPreviousCaseStage operation</p>
+
+<p>Restarts the previous case stage.
+- searchTasks operation</p>
+
+<p>Searches for tasks in a particular case by using the provided conditions.
+- setCasePropertyValues operation</p>
+
+<p>Sets the values for the specified properties in a case.
+- setDependentObjectProperties operation</p>
+
+<p>Updates the property values for the object at the specified index in the list of dependent objects for a case property of type Business Object.
+- setTaskPropertyValues operation</p>
+
+<p>Sets the task property values for a particular task. This method typically applies when updating the task properties on a task other than the current one. For the current task, you can use step parameters to set the task properties.
+- terminateTasksInCurrentCase operation</p>
+
+<p>Terminates all workflows (tasks) in the current case. Tasks are terminated only if they have not completed and have not failed. Tasks that are in Waiting state will not be terminated.
+- unfileAttachmentFromCurrentCase operation</p>
+
+<p>Unfiles an attachment from a case folder.
+- unfileDocAttachmentFromCurrentCase operation</p>
+
+<p>Unfiles the specified document attachment from the folder or subfolder of the specified case. Upon successful completion of this method, the document is no longer filed in the folder.
+- unrelateCurrentCase operation</p>
+
+<p>Removes the specified relationship to the current case.</p>
+
+</body>
+</html>

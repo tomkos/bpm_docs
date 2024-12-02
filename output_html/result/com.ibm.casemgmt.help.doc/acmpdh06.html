@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmpdh06</title>
+</head>
+<body>
+<h1>Defining a custom role</h1>
+
+<h2>About this task</h2>
+
+<h2>Procedure</h2>
+
+<p>To define a custom role, queue, and inbasket:</p>
+
+<ol>
+<li>In a stand-alone IBM
+FileNet Process Designer, open the solution for
+editing the FileNet P8 activity workflow.</li>
+<li>In IBM
+FileNet Process Designer go
+to View &gt; Configuration &gt; Work Queue &gt; New and name the new queue.
+For example,
+name the queue Processing.</li>
+<li>Expose the system fields and properties or data fields
+that you want displayed in this queue.
+Only single value
+properties are available for selection.</li>
+<li>On the In-baskets page, create an in-basket and assign the properties that you want
+displayed for this view.
+Only exposed fields for the queue are available to be used as in-basket columns and
+filters.
+Name the in-basket, for example, My Inbox.</li>
+<li><p>Create a role by going to View &gt; Roles and clicking the Add icon.
+For example, name the role Adjuster.
+6 Associate the role with the in-basket.</p>
+
+<ol>
+<li>Select the role and click the Modify icon
+on the Select In-baskets and Members page.</li>
+<li>Select the new in-basket and click OK.
+7 Optional: If you want to create a swimlanefor this role in the Step Designer, add the CB_PrimaryQueue attributeto the role:</li>
+</ol></li>
+<li><p>Select the role, and then go to the Custom Attributes
+page.</p></li>
+<li>Enter CB_PrimaryQueue for the
+attribute name, select string as the attribute
+type, and enter Processing for the value.</li>
+<li>Click File &gt; Solution &gt; Save and Close to save and close
+the solution.</li>
+</ol>
+
+<h2>Results</h2>
+
+</body>
+</html>

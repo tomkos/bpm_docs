@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmjd005</title>
+</head>
+<body>
+<h1>Case class</h1>
+
+<ul>
+<li>createPendingInstance</li>
+<li>fetchInstance</li>
+</ul>
+
+<p>A factory method such as fetchInstance obtains
+an instance that represents an existing Case object.
+State information about the object, such as its list of properties,
+is fetched from the repository and maintained in the returned instance.
+A Case instance can also be obtained without a fetch
+operation by calling the getFetchlessInstance method.
+With this method, no call is made to the server to verify that the
+object exists in the repository, allows certain operations to be run
+in a more efficient manner, since the original fetch of the object
+is bypassed.</p>
+
+<p>Once a Case instance is obtained,
+other methods can be called to run various operations on the object,
+such as modifying its properties, fetching the history of the case,
+or adding comments.</p>
+
+<h2>Related reference</h2>
+
+<ul>
+<li>CaseMgmtObjectStore class</li>
+<li>CaseType class</li>
+<li>DeployedSolution class</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta065</title>
+</head>
+<body>
+<h1>Auto stage completion fails in Case Builder with WSIloginModule</h1>
+
+<h2>About this task</h2>
+
+<p>The following error is seen in Case Builder:</p>
+
+<p>The bus BPM.De1.Bus could not authenticate the user deadmin.</p>
+
+<p>000001c0 SystemOut O JMS exception: javax.jms.JMSSecurityException: CWSIA0004E: The
+authentication for the supplied user name deadmin and the associated password was not
+successful.</p>
+
+<h2>Procedure</h2>
+
+<p>To resolve the problem remove WSILoginModule for the node on
+Case Builder. Complete the
+following steps:</p>
+
+<ol>
+<li>Go to Servers -> SingleClusterMember1 ->
+Server Infrastructure -> Java and Process Management
+-> Process Definition -> Java Virtual
+Machine</li>
+<li>Under the generic JVM arguments, remove the following line:
+-Djava.security.auth.login.config=<pathofJAASfile></li>
+<li>Restart Case Builder.</li>
+</ol>
+
+</body>
+</html>

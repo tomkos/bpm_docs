@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta056</title>
+</head>
+<body>
+<h1>Re-creating an IBM Business Automation</h1>
+
+<p>Workflow target object store in a
+development environment</p>
+
+<h2>Symptoms</h2>
+
+<p>The target object store might become corrupted or left
+in an uncertain state during development activities.</p>
+
+<h2>Resolving the problem</h2>
+
+<ul>
+<li>IBM Administration Console for
+Content Platform Engine</li>
+<li>General installation steps for Business Automation Workflow</li>
+<li>General installation and administration skills for the Content Platform Engine, Business Automation Workflow, and integrating
+components that are configured on your system (such as Case History, Case Analyzer)</li>
+</ul>
+
+<ol>
+<li>Back up your design object store database.</li>
+<li>Use IBM
+FileNet® Deployment Manager to export the
+external solutions artifacts you want to keep. For more information, see Saving user-defined assets before you reset the test environment.
+3 Note the properties of the target object store and the other components of the contentmanagement system that reference it. You need these property values to clean up resources andre-create components. For example, the following properties are important:
+<ul>
+<li>The names of servers, database instances, and database schemas.</li>
+<li>The names of database connections and data sources.</li>
+<li>Storage locations for tables, indexes, and large objects (LOBs) for the target object store and
+workflow system data.</li>
+<li>For the target object store, note the:
+<ul>
+<li>Symbolic name</li>
+<li>user groups to which you grant administrative and basic access</li>
+<li>Project area name</li>
+<li>IBM Content
+Navigator
+desktop name</li>
+<li>Case operations username and password</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<ul>
+<li>Any add-ons that are added to the target object store. To determine the add-ons, log in to
+IBM Administration Console for
+Content Platform Engine, select the
+target object store, click Actions, then click Install Add-on
+Features. Note what add-ons are in the Installed add-on features list, then click
+Cancel.</li>
+<li>For workflow systems, note the default locale, date/time mask, XSL/XSD base directory, workflow
+system administration and configuration groups, process orchestration broker servlet URL, public
+listener URLs, connection point name, and isolated region name.</li>
+<li><p>For Case Analyzer stores, note the event pruning schedule and publishing interval.</p></li>
+<li><p>For the target object store, note the:</p>
+
+<ul>
+<li>Symbolic name</li>
+<li>user groups to which you grant administrative and basic access</li>
+<li>Project area name</li>
+<li>IBM Content Navigator desktop name</li>
+<li>Case operations username and password
+4 Set the application server timeout values to at least 600 seconds.</li>
+</ul></li>
+</ul>
+
+<p>1 Traditional on-premise: The following sample settings are for WebSphere® ApplicationServer Version 8.5.2:
+    - Servers &gt; Server
+Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; Transaction service &gt; Total transaction lifetime
+timeout
+    - Servers &gt; Server
+Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; Transaction service &gt; Maximum transaction
+lifetime timeout
+    - Servers &gt; Server
+Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; ORB service &gt; Request
+timeout
+    - Servers &gt; Server
+Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; ORB service &gt; Locate request
+timeoutNote: For WebSphere Application
+Server Version 8.5.2, the maximum
+value for the locate request timeout is 300.
+    - Resources &gt; JDBC &gt; data sources &gt;  [Content Engine or Case Manager data source name]  &gt; Connection Pool properties &gt; Connection timeout
+    - Resources &gt; JDBC &gt; data sources &gt;  [Content Engine or Case Manager XA data source name] &gt; Connection Pool properties &gt; Connection timeout
+2. Containers: If you are running in IBM Cloud Pak for Business
+Automation, tune this Liberty container setting:</p>
+
+<ul>
+<li><server>
+<transaction
+clientInactivityTimeout=1800s 
+propogatedOrBMTTranLifetimeTimeout=1800s 
+totalTranLifetimeTimeout=1800s
+/>
+</server>
+Related information: Tuning IBM
+WebSphere Liberty for FileNet Content
+Manager
+components
+5 Stop all but one Content Platform Engine node or replica</li>
+</ul>
+
+<p>Stop all but one Content Platform Engine
+node or replica</p>
+
+<ul>
+<li>Traditional on-premise - If the Content Platform Engine is running in an application
+server cluster, stop all but one of the nodes.</li>
+<li><p>Containers - If multiple pods of Content Platform Engine are running, then reduce the
+number of replicas to one.
+6 In IBM Administration Console forContent Platform Engine , firstdelete all components that reference the target object store, including the connection points andworkflow systems, then delete the target object store. For information, see: Deleting an object store .Note the following information:</p></li>
+<li><p>The Deleting an object store topic does not provide a complete list of all the integrating
+components that can reference an object store, such as Case Analyzer stores. If components exist
+that reference the target object store, those components must be deleted before you can delete the
+target object store.</p></li>
+<li><p>When you delete the case history store, you might get an error similar to the following error:
+The case history store could not be deleted because of the following error: 
+com.filenet.api.exception.EngineRuntimeException: FNCRE0066E: 
+E_UNEXPECTED_EXCEPTION: An unexpected exception occurred. The unexpected 
+exception is chained to this exception. Message was: null FNRAM9022
+In this error
+occurs, log in to IBM Administration Console for
+Content Platform Engine, then select [ECM Domain Name] &gt; Global
+Configuration &gt; Administration &gt; Database
+Connections &gt; [target object store database
+connection] . On the Properties tab, scroll to the
+Event export Stores property. Verify that this value does not reference an event export store. The
+property value must be either Event Export Stores, or <No items
+found>.
+7 In IBM Administration Console forContent Platform Engine , performthe following tasks:</p></li>
+<li><p>Navigate to the connection definition in the design object store that is associated with the
+target object store: Object Stores &gt;  [design object store name] &gt; BrowseRoot Folder &gt; IBM Case Manager &gt; data sets &gt; DevEnvReinitInfo &gt; [connection definition name].</p></li>
+<li>Delete all the documents except DeployDataset. Do not change the DeployDataset document. Delete
+the following documents (if they exist): CodeModules, DevEnvReinitManifest, DevEnvReinitStatus.</li>
+</ul>
+
+<ol start="8">
+<li>Log out of IBM Administration Console for
+Content Platform Engine,
+then stop IBM Administration Console for
+Content Platform Engine and
+any custom applications that might be accessing the target object store.
+9 Stop Content Platform Engine</li>
+</ol>
+
+<p>Stop Content Platform Engine</p>
+
+<ul>
+<li>Traditional on-premise - Stop the last Content Platform Engine node.</li>
+<li>Containers - For the Content Platform Engine pods, reduce the number of
+replicas to zero.</li>
+</ul>
+
+<ol start="10">
+<li>For each of the deleted components that use a database, log in to the database administration
+console and delete all the user tables in their schemas, leaving the system tables only. These
+components include the workflow system and target object store. If any other deleted components have
+database tables, delete those tables as well. For example, the Case Analyzer store is a component
+that has database tables.Note: After you delete the target object store tables, you must also delete
+the sequences that are associated with the target object store database schema. For more
+information, see Deleting an object store.
+11 Restart Content Platform Engine</li>
+</ol>
+
+<p>Restart Content Platform Engine</p>
+
+<ul>
+<li>Traditional on-premise - Start the Content Platform Engine. In a clustered environment,
+start all the nodes.</li>
+<li><p>Containers - For the Content Platform Engine pods, change the number of
+replicas of your choice to one or greater.
+12 To add an object, log in to IBM Administration Console forContent Platform Engine , select the ObjectStores node, and click New store.</p></li>
+<li><p>Use the same symbolic name as the original target object store.</p></li>
+<li>Reuse the database connection a targetd schema of the original target object store.</li>
+<li>The user group that you grant administrative access to must have Full Control access. The new
+target object accesses the connection definition that is associated with the project area. The user
+group that you grant basic access to must have View properties access to the connection definition.</li>
+<li>In the Select Add-ons window, click Default Application
+Configuration. Do not select any more add-ons.
+13 In IBM Administration Console forContent Platform Engine ,navigate to the connection definition Security tab:</li>
+</ul>
+
+<ol>
+<li>Object Stores &gt; [target object store name] &gt; Browse &gt; Root Folder &gt; IBM Case Manager &gt; data sets &gt; DevEnvReinitInfo &gt; [connection definition name] &gt; Security</li>
+<li>Verify that the target object store administrative and general (basic access) user groups have
+security access (as described in the previous step). The user group that you grant administrative
+access to must have Full Control. This object accesses only the connection definition that is
+associated with the project area. The user group that you grant basic access to must have View
+properties access to the connection definition.</li>
+<li>In IBM Administration Console for
+Content Platform Engine,
+navigate to Object Stores &gt; [target object store
+name] &gt; Administrative &gt; Workflow
+System. Click New to add a workflow
+system.Note: You can reuse the same properties in the original workflow system, such as the database
+storage locations (tables, index, LOB), connection point name, and region name.
+15 Reconfigure the target object store by using one of the following methods:</li>
+</ol>
+
+<ul>
+<li>Case configuration tool - Traditional on-premise
+<ul>
+<li>For Development environment, see Preparing to run the case configuration tasks.</li>
+<li>For Production environment, see Preparing to run the configuration tasks.</li>
+<li>Run the following tasks:
+<ol>
+<li>Configure the Case Management Object Stores. This step adds the target object store and
+analytics add-ons.</li>
+<li>Register Project Area.</li>
+<li>Configure Business Rules.</li>
+</ol></li>
+</ul></li>
+<li>Case administration client</li>
+</ul>
+
+<ol>
+<li>Convert to Target Object store.</li>
+<li>Register Project Area.</li>
+</ol>
+
+<ul>
+<li>Container environments:
+<ol>
+<li>Re-run {{case-init }}jobNote: This only applies to the default project area.
+For additional project areas, use Case administration client.</li>
+</ol></li>
+</ul>
+
+<ol start="16">
+<li>In IBM Administration Console for
+Content Platform Engine, add any
+add-ons from the original target object store that still need to be added.</li>
+<li>Deploy your workflow projects or case solutions.</li>
+<li>Use FileNet Deployment
+Manager to import
+external solution artifacts that you want to keep.</li>
+<li>Re-create any other integrating components that were deleted.</li>
+</ol>
+
+</body>
+</html>

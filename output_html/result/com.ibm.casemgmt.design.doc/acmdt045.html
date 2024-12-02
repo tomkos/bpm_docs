@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdt045</title>
+</head>
+<body>
+<h1>Creating or upgrading a target object store for test or production</h1>
+
+<p>environments</p>
+
+<h2>Before you begin</h2>
+
+<h2>About this task</h2>
+
+<ul>
+<li>Deployed solution folder: A folder structure for a deployed solution
+in the target object store. Case instances are created under this
+structure.</li>
+<li>Case class:  A representation for a case type in a solution.</li>
+<li>Document class: A representation for a type of document in a solution.</li>
+<li>Property template: A definition of a property type.</li>
+<li>Activity class: A definition of an activity type.</li>
+<li>Subscription: A case or activity event condition to corresponding Content Platform Engine event actions.</li>
+</ul>
+
+<h2>Procedure</h2>
+
+<p>To create or upgrade a target object store for your test
+or production environment:</p>
+
+<ol>
+<li>For a new target environment, if you did not previously
+create an object store, create one in IBM®
+FileNet® P8.
+For information, see Defining object stores and Creating an object store.</li>
+<li>For a new target environment, if you did not previously
+create a workflow system, create one now.
+For information,
+see Creating a workflow system.
+3 For a new target environment or an upgraded target environment,convert the object store to a case management target object store.
+<ol>
+<li>Start the IBM Business Automation
+Workflow
+Case administration client .
+Enter the following URL in a
+browser:
+http://server:port/navigator/?desktop=bawadmin
+server
+is the IBM Content
+Navigator
+server name or IP address.
+port is the
+IBM Content
+Navigator port
+number.</li>
+<li>In the navigation tree in the left pane, right-click
+the object store, select Convert to Target Object Store,
+and complete the wizard steps.</li>
+</ol></li>
+</ol>
+
+<h2>What to do next</h2>
+
+<ol>
+<li>Define and register the target environment. See Defining and registering target environments.</li>
+<li>Optional: If you plan to use the Timeline Visualizer widget to view case history in the
+solutions that you deploy to this target environment, set up a case history store before you migrate
+and deploy the solutions. See Preparing a database for the case history store and Timeline Visualizer widget.</li>
+<li>Optional: If you plan to use the IBM Case Monitor Dashboard to view business activity data for
+cases and activities in the solutions that you deploy to this target environment, set up a Case Analyzer store before you migrate and deploy the solutions.</li>
+<li>Configure indexes for the target object store indexes. See Configuring production target object store indexes.</li>
+</ol>
+
+</body>
+</html>

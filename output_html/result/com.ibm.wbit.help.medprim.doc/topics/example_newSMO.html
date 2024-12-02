@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>example_newSMO</title>
+</head>
+<body>
+<h1>Example: Creating</h1>
+
+<p>a ServiceMessageObject object</p>
+
+<h2>Context</h2>
+
+<h2>Requirements</h2>
+
+<h2>Java</h2>
+
+<p>imports</p>
+
+<p><code>
+import javax.xml.namespace.QName; 
+import com.ibm.websphere.sibx.smobo.ServiceMessageObject; 
+import com.ibm.websphere.sibx.smobo.ServiceMessageObjectFactory;
+</code></p>
+
+<h2>Code sample</h2>
+
+<p><code>
+. 
+. 
+. 
+QName qName = new QName("http://Examples/Interface", "Operation1RequestMsg"); 
+ServiceMessageObjectFactory smoFactory = ServiceMessageObjectFactory.eINSTANCE; 
+ServiceMessageObject smo = smoFactory.createServiceMessageObject(qName);
+</code></p>
+
+<h2>Further information</h2>
+
+</body>
+</html>

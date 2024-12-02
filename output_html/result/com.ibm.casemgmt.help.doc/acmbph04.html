@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmbph04</title>
+</head>
+<body>
+<h1>Updating case property values in a reused process</h1>
+
+<h2>About this task</h2>
+
+<h2>Procedure</h2>
+
+<p>To update case property values:</p>
+
+<ol>
+<li>Insert submap steps into the global workflow definition
+at points where you want to update the case properties.</li>
+<li>Create submaps in the global workflow definition.
+Any
+of the submap steps can call the same submap, or each one can call
+a different submap, or both.</li>
+<li>In any of the task workflows that inherit or extend this global workflow definition,
+override the submaps and add Assignment instructions to update the case or task
+properties.</li>
+</ol>
+
+</body>
+</html>

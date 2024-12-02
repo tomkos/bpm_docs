@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtb015</title>
+</head>
+<body>
+<h1>Cannot add a column to display the case type for a work item</h1>
+
+<p>in an in-basket</p>
+
+<h2>Symptoms</h2>
+
+<h2>Resolving the problem</h2>
+
+<ol>
+<li>On the Manage Solutions page in Case Builder, click More Actions &gt; Open IBM
+FileNet Process Designer for
+your solution.</li>
+<li>In the Case Type Selection window, select
+any case type from your solution and click OK.</li>
+<li>Click View &gt; Configuration.</li>
+<li>Expand Work Queues, right-click the role
+queue for which the in-basket is used, and click Properties.
+5 Click the In-baskets tab and add case typesas a column:
+<ol>
+<li>Click the Add icon and select CmAcmCaseTypeID
+(Guid) in the Available Fields list.
+Then, click OK.</li>
+<li>Change the label for the column.Important: Do not enable the case type column for sorting. If
+you do enable sorting, the results are inconsistent because sorting
+is sometimes done in the browser and sometimes on the server. Sorting
+on the server uses the internal names of the case types. Sorting in
+the browser uses the display names of the case types.</li>
+<li>Click OK &gt; File &gt; Solution &gt; Save And Close.</li>
+</ol></li>
+<li>In Case Builder, commit
+your changes.</li>
+</ol>
+
+</body>
+</html>

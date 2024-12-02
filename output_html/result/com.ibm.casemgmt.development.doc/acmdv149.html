@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv149</title>
+</head>
+<body>
+<h1>POST method for Case stage</h1>
+
+<h2>URI</h2>
+
+<p>/CaseManager/CASEREST/v1/case/{CaseInstanceId}/stages</p>
+
+<p>The URI for the POST method includes the following path element:</p>
+
+<p>| Name             | Type   | Description                                                                             |
+|------------------|--------|-----------------------------------------------------------------------------------------|
+| {CaseInstanceId} | String | The ID that identifies the root folder of the case that is used to retrieve all stages. |</p>
+
+<p>| Name              | Type   | Required?   | Description                                                                                              |
+|-------------------|--------|-------------|----------------------------------------------------------------------------------------------------------|
+| TargetObjectStore | String | Yes         | This is a symbolic name of the object store that contains the case instances.                            |
+| Operation         | String | Yes         | Operations:  completeCurrentStage placeCurrentStageOnHold releaseCurrentOnHoldStage restartPreviousStage |</p>
+
+<h2>POST method request</h2>
+
+<p>This sample code requests
+to perform stage action for the case with the ID ending in EE55D8BCF2ED.</p>
+
+<h2>Request to get the list of case stages for the given case instance</h2>
+
+<p><code>
+/CaseManager/CASEREST/v1/case/9E45A997-0E42-406E-AAC4-EE55D8BCF2ED/stages?TargetObjectStore=MyTOS&amp;Operation=releaseCurrentOnHoldStage
+</code></p>
+
+<h2>POST method response</h2>
+
+<p><code>
+{"removeStageOnHoldResult":true}
+</code></p>
+
+</body>
+</html>

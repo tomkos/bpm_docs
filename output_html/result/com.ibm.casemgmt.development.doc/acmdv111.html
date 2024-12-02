@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv111</title>
+</head>
+<body>
+<h1>GET method for the list of document classes resource</h1>
+
+<h2>URI</h2>
+
+<p>/CASEREST/v1/solution/{solution
+name}/documenttypes</p>
+
+<p>| Name            | Type   | Required?   | Description                                                                        |
+|-----------------|--------|-------------|------------------------------------------------------------------------------------|
+| {solution name} | String | No          | The name of the solution for which the list of document classes is to be returned. |</p>
+
+<p>| Name              | Type   | Required?   | Description                                                        |
+|-------------------|--------|-------------|--------------------------------------------------------------------|
+| TargetObjectStore | String | Yes         | The symbolic name of the object store that contains the case type. |</p>
+
+<h2>Request content</h2>
+
+<p>The request for this method
+contains no JSON content.</p>
+
+<h2>Response content</h2>
+
+<ul>
+<li>The name of the document class or item type.</li>
+<li>The identifier of the item type. No identifier is returned for a document class.</li>
+<li>The name that is displayed for the document class or item type.</li>
+<li>The description of the document class or item type.</li>
+<li>A Boolean value that is set to true if the case worker has permission to create a document of
+this document class or item type. This value is always set to true for an item type.</li>
+</ul>
+
+<p>| Code                      | Description                                                                                                                                                                |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200 OK                    | The method completed successfully. The requested list of document classes was returned.                                                                                    |
+| 400 Bad Request           | The required TargetObjectStore parameter was not specified or a parameter value was invalid.                                                                               |
+| 404 Not Found             | No document classes were found for the solution or the specified solution was not found.For information about the error, see the userMessage element in the JSON response. |
+| 500 Internal Server Error | A server error occurred. For information about the error, see the userMessage element in the JSON response.                                                                |</p>
+
+<h2>Example: GET method request</h2>
+
+<p>This sample code requests a list of all document classes that are defined for the Auto Claims
+solution:</p>
+
+<p>```</p>
+
+<h1>Request to get the document classes of a deployed solution</h1>
+
+<p>GET /CASEREST/v1/solution/Auto+Claims/documenttypes
+?TargetObjectStore=MyTOS HTTP/1.1
+Host: www.example.net
+```</p>
+
+<h2>Example: GET method response for</h2>
+
+<p>a Content Platform Engine object store</p>
+
+<p>```</p>
+
+<h1>Response</h1>
+
+<p>HTTP/1.1 200 OK
+Content-Type: application/json;charset-UTF-8
+{
+    "DocumentTypes":
+    [
+        {
+            "DocumentType": "AUTO_CollisionClaim",
+            "DisplayName": "Collision Claim",
+            "Description": "collision claim",
+            "HasInstanceCreationRights": true
+        },
+        {
+            "DocumentType": "Correspondence",
+            "DisplayName": "Correspondence",
+            "Description": "client correspondence",
+            "HasInstanceCreationRights": true
+        },
+        ...
+    ]
+}
+```</p>
+
+</body>
+</html>

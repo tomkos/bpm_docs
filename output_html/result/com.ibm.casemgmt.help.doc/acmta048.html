@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta048</title>
+</head>
+<body>
+<h1>Removing proxy documents that are associated with external documents</h1>
+
+<h2>Procedure</h2>
+
+<p>To remove one or more proxy documents:</p>
+
+<ol>
+<li>Open the target object store in IBM Administration Console for
+Content Platform Engine.</li>
+<li>Select the Search node, then open a new search.</li>
+<li>Click Simple View, then select External Document
+class.</li>
+<li>Under SQL View, add the following WHERE condition
+before the OPTIONS condition:<br />
+WHERE [CmAcmAssociatedCase]IS NULL</li>
+<li>Run the search.</li>
+<li>Click Search Results and select all the unreferenced proxy documents,
+and then select Batch Operations.</li>
+<li>Select the Delete option, click OK, and then
+confirm the deletion.</li>
+</ol>
+
+</body>
+</html>

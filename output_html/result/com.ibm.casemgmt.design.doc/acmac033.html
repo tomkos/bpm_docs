@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac033</title>
+</head>
+<body>
+<h1>defineProjectArea command</h1>
+
+<h2>Syntax</h2>
+
+<p><code>
+configmgr\_cl defineProjectArea 
+ -profile myprofile
+ -projectAreaName project\_area\_name
+ -projectAreaDesc project\_area\_description
+ -peConnPt connection\_point\_name
+  [-silent] [-force] [-help]
+</code></p>
+
+<h2>Parameters</h2>
+
+<ul>
+<li>The name of the profile, such as develop1. The profile is located in the
+install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM Business Automation
+Workflow is installed.</li>
+<li>The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.</li>
+<li>The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</li>
+</ul>
+
+<h2>Sample commands</h2>
+
+<p><code>
+configmgr\_cl defineProjectArea 
+ -profile myDevelop1
+ -projectAreaName dev\_env\_connection\_definition
+ -projectAreaDesc "Default project area for myDevelop1"
+ -peConnPt connpoint1
+  [-silent] [-force]
+</code></p>
+
+<p><code>
+configmgr\_cl defineProjectArea 
+ -profile myDevelop1
+ -projectAreaName CreditDisputeArea
+ -projectAreaDesc "Credit card dispute project area for myDevelop1"
+ -peConnPt connpoint1
+  [-silent] [-force]
+</code></p>
+
+<p><code>
+configmgr\_cl defineProjectArea -help
+</code></p>
+
+</body>
+</html>

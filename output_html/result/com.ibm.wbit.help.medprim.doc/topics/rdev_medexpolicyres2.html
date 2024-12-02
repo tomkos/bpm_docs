@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rdev_medexpolicyres2</title>
+</head>
+<body>
+<h1>Example: mediation policy conditions</h1>
+
+<h2>Introduction</h2>
+
+<p>In order to implement the correct
+mediation policy at run time, you need to understand how the properties
+specified by the Policy Resolution mediation primitive interact with
+the values of a particular message and the objects in the registry.</p>
+
+<h2>Policy Resolution conditions</h2>
+
+<p>You can specify
+mediation policy conditions in the Policy Resolution mediation primitive.
+You specify where the mediation policy condition values are found
+in the message, by providing XPath expressions.</p>
+
+<p>| Mediation policy condition name   | XPath                     |
+|-----------------------------------|---------------------------|
+| InsuranceType                     | /body/input/insuranceType |
+| Continents                        | /body/input/continents    |
+| Days                              | /body/input/numberOfDays  |</p>
+
+<h2>Registry conditions</h2>
+
+<p>In the registry, you
+can load objects such as SCA modules and mediation policy documents.
+When a mediation policy document specifies the objects to which it
+applies (in this case an SCA module) WSRR creates a policy attachment
+document. After a policy attachment document has been created you
+can add user properties to it, and the runtime environment interprets
+some of the user properties as necessary conditions. Only user properties
+that begin with the string medGate_ are used as conditions.</p>
+
+<p>Figure 1. Example registry
+conditions</p>
+
+<!-- image -->
+
+<h2>Runtime conditions</h2>
+
+<p>| Policy condition name   | XPath                     | Value in message   |
+|-------------------------|---------------------------|--------------------|
+| InsuranceType           | /body/input/insuranceType | Gold               |
+| Continents              | /body/input/continents    | Europe             |
+| Days                    | /body/input/numberOfDays  | 28                 |</p>
+
+<p>| Mediation policy name   | Mediation policy condition   | Mediation policy condition met by the example message?   | All mediation policy conditions met by message?   |
+|-------------------------|------------------------------|----------------------------------------------------------|---------------------------------------------------|
+| P1                      | Continents = Asia            | No                                                       | No                                                |
+| P1                      | Days &gt; 14                    | Yes                                                      | No                                                |
+| P2                      | Continents = Europe          | Yes                                                      | Yes                                               |
+| P2                      | Days &gt; 14                    | Yes                                                      | Yes                                               |
+| P3                      | InsuranceType = Gold         | Yes                                                      | Yes                                               |</p>
+
+</body>
+</html>

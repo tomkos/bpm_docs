@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc108</title>
+</head>
+<body>
+<h1>Case Toolbar widget incoming events</h1>
+
+<h2>Create case event</h2>
+
+<p>| Description   | Display the properties for the specified case type so the user can create a case.                                                                                                                                                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendNewCaseInfo                                                                                                                                                                                                                                                                                |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be created. caseType An icm.model.CaseType object that represents the type of case that is to be created.  coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+<h2>Open case event</h2>
+
+<p>| Description   | Open the case that is specified in the event payload.                                                                                                                                              |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.handleSendCaseInfoEvent                                                                                                                                                                        |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be opened. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+<h2>Split case event</h2>
+
+<p>| Description   | Display the information for the original case that is being split to create a new case.                                                                                                           |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendSplitCaseInfo                                                                                                                                                                             |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case that is to be split. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+</body>
+</html>

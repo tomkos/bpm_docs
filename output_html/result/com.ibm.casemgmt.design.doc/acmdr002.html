@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdr002</title>
+</head>
+<body>
+<h1>Validating preconditions</h1>
+
+<p>Using commands, you can run the precondition checker utility to validate preconditions
+after changing property preconditions for an existing activity. The precondition checker looks for
+activities that were created before the precondition changed and evaluates the updated activity. If
+the new precondition is met, the activity status changes to working status.</p>
+
+<p>Alternatively, you can use the Case Manager REST
+protocol to run the precondition checker rather than using commands to run it.</p>
+
+<h2>Precondition checker utility</h2>
+
+<ul>
+<li>The criteria changes for an activity with a A property condition is met
+precondition.</li>
+<li>The precondition changes from A document is filed in the case or
+A case property is updated to A property condition is
+met.</li>
+<li>Or, any precondition changes to No precondition.</li>
+</ul>
+
+<p>| Platform           | File name               | Location                                                                                                        |
+|--------------------|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| AIX®               | preconditionChecker.sh  | /opt/IBM/CaseManagement                                                                                         |
+| Linux®             | preconditionChecker.sh  | /opt/IBM/CaseManagement                                                                                         |
+| Linux for System z | preconditionChecker.sh  | /opt/IBM/CaseManagement                                                                                         |
+| Windows            | preconditionChecker.bat | C:\Program Files\IBM\CaseManagement for a fresh installC:\Program Files (x86)\IBM\CaseManagement for an upgrade |</p>
+
+<h2>Syntax</h2>
+
+<p>preconditionChecker
+command
+parameter
+value</p>
+
+<h2>Commands</h2>
+
+<h2>Parameters</h2>
+
+<p><code>
+preconditionChecker launch -cews\_uri http://myserver:9080/wsi/FNCEWS40MTOM 
+-username administrator -password mypassword 
+-target\_os MyTargetOS -solution 'credit card dispute'
+</code></p>
+
+<h2>Case Manager REST protocol for the precondition</h2>
+
+<p>checker</p>
+
+<p>You can use the Case Manager REST protocol to run the precondition checker. The following example
+is a URI for the POST method:</p>
+
+<p><code>
+https://host\_name:port\_number/CaseManager/CASEREST/v1/preconditionchecker
+</code></p>
+
+<h2>Request content</h2>
+
+<p>The request for the POST method contains the following parameters in JSON in the body:</p>
+
+<p><code>
+{
+  "command" : "launch -Start the precondition checker utility. Required."
+              "suspend -Stop the precondition checker utility.",
+   "cews\_uri" : "The web services URI used to connect to Content Platform Engine. Required. For example: https: //myserver:9080/wsi/FNCEWS40MTOM",
+   "username" : "The user ID used to connect to Content Platform Engine. Required.",
+   "password" : "The password for the specified user ID used to connect to Content Platform Engine. Required.",
+   "target\_os" : "The target object store. Required.",     
+   "solution" : "The name of the solution that the precondition checker will check. Optional. If no solution is specified, the precondition checker API checks all deployed solutions." 
+   "batchSize" : "The number of items to retrieve and process at one time. Optional. If not specified, the default batch size is 1000 items.",  
+   "threadPoolSize" : "The number of active threads when processing activities. Optional. The default value is four threads."
+}
+</code></p>
+
+<p>The value of preconditioncheckerresult in the response JSON
+indicates whether the precondition checker ran successfully.</p>
+
+</body>
+</html>

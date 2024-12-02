@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>covw_medpolicymodel</title>
+</head>
+<body>
+<h1>Mediation policy processing model</h1>
+
+<h2>Introduction</h2>
+
+<p>The mediation
+policy model describes how the runtime environment calculates the effective mediation
+policy for a particular scope, and when the runtime environment applies
+intersection rules. For a summary of the Web Services Policy
+1.5 Framework terminology, see the end of this topic.</p>
+
+<ol>
+<li>If the Policy Resolution primitive has a Policy Scope property
+of Module or Intersection,
+the runtime environment calculates the effective policy for the SCA
+module. To calculate the effective policy, the runtime environment
+must merge the mediation policies that belong to the
+module.
+2 If the Policy Resolution primitive has a Policy Scope propertyof Target Service or Intersection ,the runtime environment calculates the effective policy for the targetservice. To calculate the effective policy, the runtime environmentmust merge the mediation policies that belong to thetarget service.Note: If you want to use more than one WSRR objecttype to represent the target service, you should always attach mediationpolicies to the most granular scope point. For example, because aportType can apply to more than one binding, any mediation policiesyou attach to the portType should contain assertions that are bindingindependent. Be aware that by using more than one WSRR object typeto represent the target service, you can significantly increase thelevel of complexity. The Web Services Policy 1.5 framework statesthat an effective policy is calculated for each policy subject ,and the effective policies are then merged. Therefore, if you definemediation policies for all the target service scope points that aresupported, the runtime environment would take the following actions:
+<ol>
+<li>Calculate the effective policy for the endpoint policy subject,
+by merging the mediation policies attached to the port, binding, and
+portType objects.</li>
+<li>Calculate the effective policy for the service policy subject,
+by merging the mediation policies attached to the service object.</li>
+<li>Merge the effective policy of the endpoint policy subject with
+the effective policy of the service policy subject. If property values
+conflict, the effective policy of the endpoint policy subject takes
+precedence.</li>
+</ol></li>
+<li>If the Policy Resolution primitive has a Policy Scope property
+of Intersection, the runtime environment applies
+policy intersection rules to determine if the two effective policies
+are compatible (according to the Web Services Policy 1.5 framework).</li>
+</ol>
+
+<h2>Hierarchy of mediation policies</h2>
+
+<ol>
+<li>Mediation policies with gate conditions have the highest precedence.
+Therefore, property values defined by these mediation policies have
+the highest precedence. Note: Before a mediation policy with gate
+conditions can be further evaluated, all of the gate conditions must
+be met.</li>
+<li>Mediation policies without gate conditions have a lower precedence.
+Therefore, property values defined by these mediation policies have
+a lower precedence.</li>
+</ol>
+
+<p>Administrative console values are used if there is no
+suitable property in a mediation policy.</p>
+
+<h2>Merging mediation policies</h2>
+
+<p>If multiple mediation
+policies (at the same precedence) contain the same dynamic property,
+the mediation policies are merged. In this case, the value of the
+property must be the same in all the merged mediation policies. Any
+mismatch is termed a policy error, which means that there is no mediation
+policy for that policy merge.</p>
+
+<p>1 Process the highest-precedence mediation policies.
+    1. Merge the mediation policies.
+    2 If any property occurs in multiple mediation policies, the valueof the property must be the same in all mediation policies.
+        - If there are no property mismatches, the values of the properties
+are stored in the service message object (SMO).
+        - If there are property mismatches, no properties from this precedence-level
+are used. Note: Policy processing continues to the lower-precedence
+mediation policies, but when that processing is complete the output
+will be sent to the policyError terminal.
+2 Process the lower-precedence mediation policies.</p>
+
+<ol>
+<li>Merge the mediation policies.
+2 If any property occurs in multiple mediation policies, the valueof the property must be the same in all mediation policies.
+<ul>
+<li>If there are no property mismatches, the values of the properties
+are stored in the SMO, unless they have already been set by the highest-precedence
+mediation policies.</li>
+<li>If there are property mismatches, no properties from this precedence-level
+are used. Note: If a property has been successfully set in the highest-precedence
+policies, but it causes a mismatch in the lower-precedence policies,
+the normal rules apply. Because there has been a policy merge error,
+no mediation policies from the lower-precedence level are used; the
+output will be sent to the policyError terminal.
+The value from the highest-precedence policies is used.</li>
+</ul></li>
+</ol>
+
+<p>Any dynamic property that has not been assigned a value
+from a mediation policy document, is assigned the value shown by the
+administrative console.</p>
+
+<h2>Example: Successful merge</h2>
+
+<p>The following
+example shows a successful merge of mediation policies, attached to
+an SCA module.</p>
+
+<ul>
+<li>Property_1</li>
+<li>Property_2</li>
+<li>Property_3</li>
+<li>Property_4</li>
+<li><p>Property_5</p></li>
+<li><p>Policy_X, with associated conditions</p></li>
+<li>Policy_XX, with associated conditions</li>
+<li>Policy_Y, with no associated conditions</li>
+</ul>
+
+<p>| Mediation policy precedence                | Mediation policy name                      | Promoted property: alias name   | Promoted property: value   | Use this promoted property value   | Merged mediation policy values   | Properties used for message flow   |
+|--------------------------------------------|--------------------------------------------|---------------------------------|----------------------------|------------------------------------|----------------------------------|------------------------------------|
+| Highest precedence: with conditions        | Policy_X                                   | Property_1                      | A                          | Yes                                | Property_1 = A                   | Property_1 = A                     |
+| Highest precedence: with conditions        | Policy_X                                   | Property_2                      | B                          | Yes                                | Property_2 = B                   | Property_2 = B                     |
+| Highest precedence: with conditions        | Policy_XX                                  | Property_3                      | C                          | Yes                                | Property_3 = C                   | Property_3 = C                     |
+| Lower precedence: without conditions       | Policy_Y                                   | Property_1                      | D                          | No                                 |                                  |                                    |
+| Lower precedence: without conditions       | Policy_Y                                   | Property_4                      | E                          | Yes                                | Property_4 = E                   | Property_4 = E                     |
+| Administrative console promoted properties | Administrative console promoted properties | Property_1                      | F                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_2                      | G                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_3                      | H                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_4                      | I                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_5                      | J                          | Yes                                |                                  | Property_5 = J                     |</p>
+
+<h2>Example: Unsuccessful merge</h2>
+
+<p>The following
+example shows an unsuccessful merge of mediation policies, attached
+to an SCA module.</p>
+
+<ul>
+<li>Property_1</li>
+<li>Property_2</li>
+<li>Property_3</li>
+<li>Property_4</li>
+<li><p>Property_5</p></li>
+<li><p>Policy_X, with associated conditions</p></li>
+<li>Policy_XX, with associated conditions</li>
+<li>Policy_XXX, with associated conditions</li>
+<li>Policy_Y, with no associated conditions</li>
+</ul>
+
+<p>| Mediation policy precedence                | Mediation policy name                      | Promoted property: alias name   | Promoted property: value   | Use this promoted property value   | Merged mediation policy values   | Properties used for message flow   |
+|--------------------------------------------|--------------------------------------------|---------------------------------|----------------------------|------------------------------------|----------------------------------|------------------------------------|
+| Highest precedence: with conditions        | Policy_X                                   | Property_1                      | A                          | No                                 |                                  |                                    |
+| Highest precedence: with conditions        | Policy_X                                   | Property_2                      | B                          | No                                 |                                  |                                    |
+| Highest precedence: with conditions        | Policy_XX                                  | Property_1                      | C                          | No                                 |                                  |                                    |
+| Highest precedence: with conditions        | Policy_XXX                                 | Property_3                      | D                          | No                                 |                                  |                                    |
+| Lower precedence: without conditions       | Policy_Y                                   | Property_1                      | D                          | Yes                                | Property_1 = D                   | Property_1 = D                     |
+| Lower precedence: without conditions       | Policy_Y                                   | Property_4                      | E                          | Yes                                | Property_4 = E                   | Property_4 = E                     |
+| Administrative console promoted properties | Administrative console promoted properties | Property_1                      | F                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_2                      | G                          | Yes                                |                                  | Property_2 = G                     |
+| Administrative console promoted properties | Administrative console promoted properties | Property_3                      | H                          | Yes                                |                                  | Property_3 = H                     |
+| Administrative console promoted properties | Administrative console promoted properties | Property_4                      | I                          | No                                 |                                  |                                    |
+| Administrative console promoted properties | Administrative console promoted properties | Property_5                      | J                          | Yes                                |                                  | Property_5 = J                     |</p>
+
+<h2>Terminology</h2>
+
+<p>Web services
+policy terminology is described in the Web Services Policy 1.5
+Framework and in the Web Services Policy 1.5 Attachment;
+in addition, the mediation policy model uses some further terms.</p>
+
+<ul>
+<li>Module</li>
+<li>Service</li>
+<li>Port</li>
+<li>Binding</li>
+<li>PortType</li>
+</ul>
+
+</body>
+</html>

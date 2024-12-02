@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmlg008</title>
+</head>
+<body>
+<h1>Log data for the Business Automation Workflow configuration</h1>
+
+<p>tool</p>
+
+<p>| Operating system                  | Default file path                                                                                                                                                              |
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AIX®  Linux®  Linux for System z® | /opt/IBM/CaseManagement/logs/IBM_Case_Manager_5.2.1.0_CMCT.log /opt/IBM/CaseManagement/logs/IBM_Case_Manager_5.2.1.0_CMCT_trace.log.                                           |
+| Windows                           | drive:\Program Files (x86)\IBM\CaseManagement\logs\IBM_Case_Manager_5.2.1.0_CMCT.logdrive:\Program Files (x86)\IBM\CaseManagement\logs\IBM_Case_Manager_5.2.1.0_CMCT_trace.log |</p>
+
+<p>| Operating system               | Default file path                                                                    |
+|--------------------------------|--------------------------------------------------------------------------------------|
+| AIX  Linux  Linux for System z | /opt/IBM/CaseManagement/configure/configuration/cmlogging.properties                 |
+| Windows                        | drive:\Program Files\IBM\CaseManagement\configure\configuration\cmlogging.properties |</p>
+
+<p>```</p>
+
+<h1>Only setup logging to files -- no Console Handling</h1>
+
+<h1>handlers are attached to root logger and inherited by all others</h1>
+
+<p>handlers = java.util.logging.FileHandler</p>
+
+<h1>need it set to ALL, don't change. adjust tracing via Eclipse .options file</h1>
+
+<p>java.util.logging.FileHandler.level=ALL
+com.ibm.ecm.configmr.level=ALL</p>
+
+<h1>the next line does not actually seem to work -- formatter is also applied programmatically.</h1>
+
+<p>java.util.logging.FileHandler.formatter=com.ibm.ecm.configmgr.engine.util.CMLogFormatter</p>
+
+<h1>set file handler to limit to 1Mb per log file, rotating 3 log files, store in user.home dir</h1>
+
+<p>java.util.logging.FileHandler.limit=10000000
+java.util.logging.FileHandler.count=5
+java.util.logging.FileHandler.pattern=C:/IBM/CaseManagement/logs/IBM_Case_Manager_5.2.1.0_CMCT%g.log
+```</p>
+
+<p>| Operating system               | Default file path                                                   |
+|--------------------------------|---------------------------------------------------------------------|
+| AIX  Linux  Linux for System z | /opt/IBM/CaseManagement/configure/tmp/task_name.log                 |
+| Windows                        | drive:\Program Files\IBM\CaseManagement\configure\tmp\task_name.log |</p>
+
+</body>
+</html>

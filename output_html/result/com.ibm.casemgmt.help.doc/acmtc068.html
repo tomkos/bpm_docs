@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtc068</title>
+</head>
+<body>
+<h1>Content security policy directive frame-ancestors self errors in the Case Client</h1>
+
+<h2>Symptoms</h2>
+
+<p>The browser window does not render when you go to the IBM Business Automation
+Workflow desktop. The error is seen on
+the Network tab in the browser developer tool. For example,</p>
+
+<h2>Causes</h2>
+
+<p>The IBM Content
+Navigator
+server is external and it might be located in a different domain than the workflow server. The
+browser does not render the page because strict Content Security Policy settings prevent it.</p>
+
+<h2>Environment</h2>
+
+<h2>Resolving the problem</h2>
+
+<p>You can configure Content Security Policy settings in two locations:</p>
+
+<ul>
+<li>IBM Content
+Navigator
+server;</li>
+<li>IBM Business Automation
+Workflow server.</li>
+</ul>
+
+<p>Configuring the IBM Content
+Navigator server IBM
+Documentation reference: How to configure the Content Security Policy header in IBM Content
+Navigator</p>
+
+<ol>
+<li>Follow the directions in the configuration scenario to allow embedding external resources. The
+relevant part of the CSP string is this section:
+frame-ancestors 'self' xxx;</li>
+<li>The following strings are examples that work:
+frame-ancestors 'self' https://[external ICN server]:[port] https://[BAW server]:[port];
+frame-ancestors 'self' http://[external ICN server]:[port] https://[BAW server]:[port];
+frame-ancestors 'self' https: http:;
+3 For quick testing, you can edit the ESAPIWafPolicy.xml file in the deployedlocation. Then, you do not have to rebuild and redeploy IBM ContentNavigator . However, ifyou do this, the changes in the ESAPIWafPolicy.xml file are lost the next timethat you rebuild and redeploy IBM ContentNavigator .
+<ul>
+<li>For example,
+ContentNavigator.ear/navigator.war/WEB-INF/ESAPIWafPolicy.xml</li>
+</ul></li>
+</ol>
+
+<p>For configuring the IBM Business Automation
+Workflow server, see  Security-hardening properties</p>
+
+<ol>
+<li>The Security.ContentSecurityPolicyHeaderValue property value has the CSP
+string.</li>
+<li>Sample command to get the current CSP string to check its current value: wsadmin>print
+AdminTask.getBPMProperty(['-name', 'Security.ContentSecurityPolicyHeaderValue'])</li>
+<li>Out of the box, the Security.ContentSecurityPolicyHeaderValue property
+value is empty.</li>
+<li>Sample command to set the current CSP string: wsadmin>print
+AdminTask.setBPMProperty(['-name', 'Security.ContentSecurityPolicyHeaderValue', '-value',
+"frame-ancestors 'self' https://[external ICN server]:[port] https://[BAW
+server]:[port];"])</li>
+<li>Remember to run the save command after running the command above:
+wsadmin>AdminConfig.save()</li>
+<li>Synchronize the nodes and restart servers.</li>
+<li>The CSP string in the command mentioned in the step 2 and 4 shows the frame-ancestors 'self'
+policy. Your environment might require other policies as well.</li>
+</ol>
+
+<p>More Resources</p>
+
+<ul>
+<li>The MSDN documentation has a clear explanation of how the browser Content
+Security Policy works: Content Security Policy (CSP) - CSP: frame-ancestors</li>
+<li>This web page can be used to test browser Content Security Policy settings: https://cspvalidator.org/</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>icm.model.Case</title>
+</head>
+<body>
+<h2>Classes</h2>
+
+<ul>
+<li>_global_</li>
+<li>icm.action.Action</li>
+<li>icm.action.Add</li>
+<li>icm.action.AddFromLocal</li>
+<li>icm.action.AddFromRepository</li>
+<li>icm.action.attachment.AddAttachment</li>
+<li>icm.action.attachment.AddAttachmentFromCase</li>
+<li>icm.action.attachment.AddAttachmentFromCaseNew</li>
+<li>icm.action.attachment.AddAttachmentFromLocal</li>
+<li>icm.action.attachment.AddAttachmentFromRepository</li>
+<li>icm.action.attachment.AddAttachmentUsingTemplate</li>
+<li>icm.action.attachment.Remove</li>
+<li>icm.action.case.AddCaseAndClosePage</li>
+<li>icm.action.case.AddCustomTask</li>
+<li>icm.action.case.AddCustomTaskFromExisting</li>
+<li>icm.action.case.CasePackage</li>
+<li>icm.action.case.CasePackageNoWizard</li>
+<li>icm.action.case.CloseCasePage</li>
+<li>icm.action.case.ManageCaseMembership</li>
+<li>icm.action.case.OpenAddPredefinedTaskPage</li>
+<li>icm.action.case.OpenAddToDoTask</li>
+<li>icm.action.case.OpenCasePage</li>
+<li>icm.action.case.OpenSplitCasePage</li>
+<li>icm.action.case.RefreshToDoTaskList</li>
+<li>icm.action.case.SaveCaseOnPage</li>
+<li>icm.action.case.SendLink</li>
+<li>icm.action.case.ShowCalendar</li>
+<li>icm.action.case.ShowLink</li>
+<li>icm.action.comment.AddCaseComment</li>
+<li>icm.action.comment.AddDocumentComment</li>
+<li>icm.action.comment.AddTaskComment</li>
+<li>icm.action.comment.AddWorkItemComment</li>
+<li>icm.action.contentitem.AddCaseDocToQuickTask</li>
+<li>icm.action.contentitem.Cut</li>
+<li>icm.action.contentitem.Export</li>
+<li>icm.action.contentitem.Open</li>
+<li>icm.action.contentitem.Paste</li>
+<li>icm.action.contentitem.RemoveFromFolder</li>
+<li>icm.action.document.AddDocumentFromLocal</li>
+<li>icm.action.document.AddDocumentFromOtherApplication</li>
+<li>icm.action.document.AddDocumentFromRepository</li>
+<li>icm.action.document.AddDocumentUsingTemplate</li>
+<li>icm.action.document.BoxCopy</li>
+<li>icm.action.document.DocumentShare</li>
+<li>icm.action.document.MoveCaseDocuments</li>
+<li>icm.action.document.Open</li>
+<li>icm.action.document.Refresh</li>
+<li>icm.action.document.ViewLink</li>
+<li>icm.action.folder.AddBoxCollaborationFolder</li>
+<li>icm.action.folder.AddBoxCollaborators</li>
+<li>icm.action.folder.AddFolder</li>
+<li>icm.action.folder.Open</li>
+<li>icm.action.folder.RemoveBoxCollaborationFolder</li>
+<li>icm.action.folder.SendBoxCollaborators</li>
+<li>icm.action.quicktask.DeleteQuickTask</li>
+<li>icm.action.quicktask.OpenQuickTaskUpdate</li>
+<li>icm.action.solution.EditProcessPreferences</li>
+<li>icm.action.solution.ManageRoles</li>
+<li>icm.action.solution.OpenAddCasePage</li>
+<li>icm.action.stage.CompleteStage</li>
+<li>icm.action.stage.RestartStage</li>
+<li>icm.action.stage.ToggleOnHoldStage</li>
+<li>icm.action.task.AddTaskAndClosePage</li>
+<li>icm.action.task.CancelAddTaskPage</li>
+<li>icm.action.task.CloseToDoTaskView</li>
+<li>icm.action.task.CompleteToDoTask</li>
+<li>icm.action.task.EnableToDoTask</li>
+<li>icm.action.task.RestartToDoTask</li>
+<li>icm.action.task.SaveToDoTask</li>
+<li>icm.action.task.StartToDoTask</li>
+<li>icm.action.task.StopToDoTask</li>
+<li>icm.action.utility.EventAction</li>
+<li>icm.action.utility.OpenWebPage</li>
+<li>icm.action.utility.ScriptAction</li>
+<li>icm.action.workitem.AuditHistory</li>
+<li>icm.action.workitem.BpmAction</li>
+<li>icm.action.workitem.CloseWorkItemPage</li>
+<li>icm.action.workitem.DispatchWorkItemAndClosePage</li>
+<li>icm.action.workitem.ModifyInstance</li>
+<li>icm.action.workitem.ModifyTask</li>
+<li>icm.action.workitem.MoveToInbox</li>
+<li>icm.action.workitem.OpenNextWorkItemInPage</li>
+<li>icm.action.workitem.OpenNextWorkItemInPageBySequence</li>
+<li>icm.action.workitem.OpenWorkItemPage</li>
+<li>icm.action.workitem.PushInbasket</li>
+<li>icm.action.workitem.Reassign</li>
+<li>icm.action.workitem.ReturnToSender</li>
+<li>icm.action.workitem.SaveWorkItemOnPage</li>
+<li>icm.action.workitem.ViewInstance</li>
+<li>icm.action.workitem.ViewProcessDiagram</li>
+<li>icm.action.workitem.ViewProcessInspector</li>
+<li>icm.base._EventStub</li>
+<li>icm.base.BaseActionContext</li>
+<li>icm.base.BasePageWidget</li>
+<li>icm.base.Constants</li>
+<li>icm.base.WidgetAttributes</li>
+<li>icm.container.ICMContentPane</li>
+<li>icm.container.ICMContextSelector</li>
+<li>icm.container.ICMPagesCollection</li>
+<li>icm.container.ICMSolutionSelectorListener</li>
+<li>icm.container.ICMSolutionSelectorPane</li>
+<li>icm.dialog.addboxfolderdialog.AddBoxFolderDialog</li>
+<li>icm.dialog.addcommentdialog.AddCommentDialog</li>
+<li>icm.dialog.addcommentdialog.CommentHistoryMagazineView</li>
+<li>icm.dialog.addcommentdialog.dijit.CommentContentPane</li>
+<li>icm.dialog.addtaskdialog.AddTaskDialog</li>
+<li>icm.dialog.boxcollaborationdialog.ManageCollaboratorsDialog</li>
+<li>icm.dialog.boxcollaborationdialog.UserGroupSelectorPane</li>
+<li>icm.dialog.casepackagedialog.CasePackageDialog</li>
+<li>icm.dialog.casepackagedialog.casepropsandinfo.dijit.CaseProperties</li>
+<li>icm.dialog.casepackagedialog.casepropsandinfo.dijit.RelatedCases</li>
+<li>icm.dialog.casepackagedialog.documentList.CaseDocsInfo</li>
+<li>icm.dialog.casepackagedialog.documentList.CaseDocsInfoContentPane</li>
+<li>icm.dialog.casepackagedialog.pdfviewer.PDFViewerContentPane</li>
+<li>icm.dialog.casepackagedialog.reviewPackage.ReviewPackage</li>
+<li>icm.dialog.dynamictaskeditor.DynamicTaskEditorDialog</li>
+<li>icm.dialog.iframedialog.IFrameDialog</li>
+<li>icm.dialog.managecasemembershipdialog.ManageCaseMembershipDialog</li>
+<li>icm.dialog.managerolesdialog.ManageRolesDialog</li>
+<li>icm.dialog.openformdialog.OpenFormDialog</li>
+<li>icm.dialog.reassigndialog.ReassignDialog</li>
+<li>icm.dialog.selectcopydialog.AddOptionsPane</li>
+<li>icm.dialog.selectcopydialog.SelectCopyDialog</li>
+<li>icm.dialog.sendcollaborationdialog.SendCollaborationDialog</li>
+<li>icm.dialog.showcalendardialog.ShowCalendarDialog</li>
+<li>icm.dialog.showctxinfodialog.ShowCtxInfoDialog</li>
+<li>icm.dialog.showlinkdialog.ShowLinkDialog</li>
+<li>icm.model._AttachmentContentItemMixin</li>
+<li>icm.model._AttributeDefinitionMixin</li>
+<li>icm.model._DesktopMixin</li>
+<li>icm.model.BawProcessAppSpace</li>
+<li>icm.model.Case</li>
+<li>icm.model.CaseComment</li>
+<li>icm.model.CaseEditable</li>
+<li>icm.model.CaseRelationship</li>
+<li>icm.model.CaseType</li>
+<li>icm.model.DependentObject</li>
+<li>icm.model.DocumentType</li>
+<li>icm.model.ExternalDocumentReferenceEditable</li>
+<li>icm.model.HistoryEvent</li>
+<li>icm.model.InbasketDynamicFilter</li>
+<li>icm.model.InbasketFilter</li>
+<li>icm.model.LaunchStep</li>
+<li>icm.model.MergedInBasket</li>
+<li>icm.model.properties.controller.ControllerManager</li>
+<li>icm.model.properties.controller.PropertyCollectionController</li>
+<li>icm.model.properties.controller.types.AttachmentPropertyController</li>
+<li>icm.model.properties.controller.types.BooleanPropertyController</li>
+<li>icm.model.properties.controller.types.DatetimePropertyController</li>
+<li>icm.model.properties.controller.types.FloatPropertyController</li>
+<li>icm.model.properties.controller.types.GroupPropertyController</li>
+<li>icm.model.properties.controller.types.IntegerPropertyController</li>
+<li>icm.model.properties.controller.types.ObjectPropertyController</li>
+<li>icm.model.properties.controller.types.StringPropertyController</li>
+<li>icm.model.PropertyEditable</li>
+<li>icm.model.ResultSet</li>
+<li>icm.model.Solution</li>
+<li>icm.model.SolutionRolesMembersCache</li>
+<li>icm.model.Stage</li>
+<li>icm.model.Task</li>
+<li>icm.model.TaskEditable</li>
+<li>icm.model.TaskType</li>
+<li>icm.model.Timeline</li>
+<li>icm.model.TimelineEvent</li>
+<li>icm.model.TimelineOverview</li>
+<li>icm.model.TimelineTask</li>
+<li>icm.model.TimelineWorkitem</li>
+<li>icm.model.UpdatingBatch</li>
+<li>icm.model.WorkItem</li>
+<li>icm.model.WorkItemEditable</li>
+<li>icm.pgwidget.attachment.Attachment</li>
+<li>icm.pgwidget.attachment.dijit.AddCaseAttachments</li>
+<li>icm.pgwidget.calendar.Calendar</li>
+<li>icm.pgwidget.calendar.dijit.AddCalendarDialog</li>
+<li>icm.pgwidget.calendar.dijit.EditCalendarDialog</li>
+<li>icm.pgwidget.calendar.dijit.ManageCalendarsDialog</li>
+<li>icm.pgwidget.calendar.dijit.Util</li>
+<li>icm.pgwidget.caseform.CaseForm</li>
+<li>icm.pgwidget.caseform.CaseFormContentPane</li>
+<li>icm.pgwidget.caseinfo.CaseInfo</li>
+<li>icm.pgwidget.caseinfo.CaseInfoComponent</li>
+<li>icm.pgwidget.caseinfo.dijit.activities.CaseInfoActivitiesMagazineView</li>
+<li>icm.pgwidget.caseinfo.dijit.CaseInfoComponentContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.CaseInfoContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.documents.CaseInfoDocumentsContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.header.CaseInfoHeader</li>
+<li>icm.pgwidget.caseinfo.dijit.history.CaseInfoHistoryMagazineView</li>
+<li>icm.pgwidget.caselist.CaseList</li>
+<li>icm.pgwidget.caselist.CaseListViewDetails</li>
+<li>icm.pgwidget.caselist.CaseListViewMagazine</li>
+<li>icm.pgwidget.caselist.model.CaseListModel</li>
+<li>icm.pgwidget.caselist.test.CaseListWrapper</li>
+<li>icm.pgwidget.casesearch.CaseSearch</li>
+<li>icm.pgwidget.caseselectdocument.CaseSelectDocument</li>
+<li>icm.pgwidget.caseselectdocument.dijit.CaseSelectDocumentContentPane</li>
+<li>icm.pgwidget.caseselectdocument.test.CaseSelectDocumentWrapper</li>
+<li>icm.pgwidget.casestage.CaseStage</li>
+<li>icm.pgwidget.casetoolbar.CaseToolbar</li>
+<li>icm.pgwidget.casetoolbar.dijit.CaseToolbarContentPane</li>
+<li>icm.pgwidget.casevisualizer.CaseVisualizer</li>
+<li>icm.pgwidget.casevisualizer.core.data.TimelineStore</li>
+<li>icm.pgwidget.casevisualizer.dijit.GraphView</li>
+<li>icm.pgwidget.casevisualizer.dijit.HistogramView</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.EventMark</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.Mark</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.SeriesMark</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineComponent</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineRule</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineRuleSlider</li>
+<li>icm.pgwidget.casevisualizer.snapshot.dijit.SnapshotRuler</li>
+<li>icm.pgwidget.chartwidget.ChartWidget</li>
+<li>icm.pgwidget.chartwidget.dijit.Util</li>
+<li>icm.pgwidget.contentlist.ContentList</li>
+<li>icm.pgwidget.contentlist.test.ContentListWrapper</li>
+<li>icm.pgwidget.cshsviewer.CSHSViewer</li>
+<li>icm.pgwidget.inbasket.dijit.InbasketContentPane</li>
+<li>icm.pgwidget.inbasket.Inbasket</li>
+<li>icm.pgwidget.instruction.dijit.InstructionContentPane</li>
+<li>icm.pgwidget.instruction.Instruction</li>
+<li>icm.pgwidget.markup.Markup</li>
+<li>icm.pgwidget.originalcase.OriginalCase</li>
+<li>icm.pgwidget.processhistory.dijit.ProcessHistoryContentPane</li>
+<li>icm.pgwidget.processhistory.Processhistory</li>
+<li>icm.pgwidget.properties.dijit._Properties</li>
+<li>icm.pgwidget.properties.Properties</li>
+<li>icm.pgwidget.scriptadapter.ScriptAdapter</li>
+<li>icm.pgwidget.splitcase.SplitCase</li>
+<li>icm.pgwidget.tasktoolbar.dijit.TaskToolbarContentPane</li>
+<li>icm.pgwidget.tasktoolbar.TaskToolbar</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.FilteringSelect</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QTMoveFileDialog</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskAttachments</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskCommentMagazineView</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskDialog</li>
+<li>icm.pgwidget.todolist.ToDoList</li>
+<li>icm.pgwidget.toolbar.dijit.ToolbarContentPane</li>
+<li>icm.pgwidget.toolbar.Toolbar</li>
+<li>icm.pgwidget.viewer.Viewer</li>
+<li>icm.pgwidget.websitedisplayer.WebSiteDisplayer</li>
+<li>icm.pgwidget.workitemtoolbar.dijit.WorkitemToolbarContentPane</li>
+<li>icm.pgwidget.workitemtoolbar.WorkitemToolbar</li>
+<li>icm.util.Coordination</li>
+<li>icm.util.SearchPayload</li>
+<li>icm.util.SearchUtil</li>
+<li>icm.util.Util</li>
+<li>icm.util.WorkItemHandler</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.model.BaseFlowModel</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.transform.FlowMaker</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.transform.MapJsonAttributes</li>
+<li>icm.widget.dynamictaskeditor.freedom.widget.common.environment.FreedomNlsMixin</li>
+<li>icm.widget.form.FilenetForm</li>
+<li>icm.widget.listView.ContentList</li>
+<li>icm.widget.menu.ContextualMenu</li>
+<li>icm.widget.menu.Menu</li>
+<li>icm.widget.menu.MenuManager</li>
+<li>icm.widget.menu.Toolbar</li>
+<li>icm.widget.properties.editors.model.CaseTeamModel</li>
+<li>icm.widget.properties.editors.model.RoleUserModel</li>
+<li>icm.widget.properties.editors.RoleUserSelector</li>
+<li>icm.widget.properties.registry.RegistryManager</li>
+</ul>
+
+<h1>Class icm.model.Case</h1>
+
+<p>Extends
+                    ecm.model.Item.</p>
+
+<pre><code>            Represents a Case.
+</code></pre>
+
+<p>Defined in:  <icm\model\Case.js>.</p>
+
+<p>| Constructor Attributes   | Constructor Name and Description                             |
+|--------------------------|--------------------------------------------------------------|
+|                          | icm.model.Case(properties)                              Constructs a Case object. |</p>
+
+<p>| Field Attributes   | Field Name and Description                                                                                                                     |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|                    | attributeDefinitions  Holds AttributeDefinition objects corresponding to the current attributes loaded into the attributes property.           |
+|                    | attributeRequiredClasses  The required classes of any object-valued properties (data type of "xs:object") that are capable of holding objects. |
+|                    | caseFolder  The ContentItem for the Case folder in the Case Manager repository.                                                                |
+|                    | caseIdentifier  The case identifier for this Case object.                                                                                      |
+|                    | caseTitle  The case title for this Case object.                                                                                                |
+|                    | caseType  The icm.model.CaseType object for this Case object.                                                                                  |
+|                    | cm8CaseFolder  The ContentItem for the proxy case folder in the CM8 repository.                                                                |
+|                    | externalDataIdentifier  Will be non-null if integrating with an external data service                                                          |
+|                    | originalAttributes  Holds the original values of the attributes corresponding to the current attributes loaded into the attributes property.   |
+|                    | tasks  The array of icm.model.Task objects associated with this Case.                                                                          |</p>
+
+<p>| Method Attributes   | Method Name and Description                                                                                                                                                                                |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                     | addCaseComment(commentContext, commentText, callback, errCallback, backgroundRequest)                                Adds a comment to this Case.                                                                                |
+|                     | addDocumentComment(commentContext, commentText, itemId, documentTitle, callback, errCallback, backgroundRequest)                                 Adds a comment to a document associated with this Case.                          |
+|                     | addTaskComment(commentContext, commentText, itemId, callback, errCallback, backgroundRequest)                                Adds a comment to a Task associated with this Case.                                                 |
+|                     | addWorkItemComment(commentContext, commentText, workItem, callback, errCallback, backgroundRequest)                                  Adds a comment to a work item associated with this Case.                                      |
+|                     | completeCurrentStage(callback, errCallback, backgroundRequest)                               Completes the current stage and starts the next stage if one exists.                                                               |
+|                     | createDynamicTask(name, valid, flowData, callback, errCallback, backgroundRequest)                               Creates a dynamic task.                                                                                        |
+|                     | createEditable()                                 Obtains an Editable object in order to make scratchpad changes to the case and possibly save those changes.                                                                      |
+|                     | createNewSplitCaseEditable(caseType, callback, errCallback, backgroundRequest)                               Initiates a split case operation and returns a CaseEditable object for filling in the split case before saving it. |
+|                     | createNewTaskEditable(taskType, callback, errCallback, backgroundRequest)                                Initializes an Editable object that represents a new task that is not yet persisted to the repository.                  |
+| <static>            | icm.model.Case.fromContentItem(contentItem, resolutionCallback)                                  A factory method that obtains a Case object corresponding to a ContentItem object.                                                |
+|                     | getCaseFolder()                                  Returns the ecm.model.ContentItem object corresponding to the case folder.                                                                                                        |
+|                     | getDateLastModified()                                Returns the case last modified date.                                                                                                                                        |
+|                     | getGroupedTasks()                                Returns the tasks for this case, grouped by taskGrouping.                                                                                                                       |
+|                     | onRefresh()                                  Called when the entire state of the object is refreshed, primarily when the attributes have been updated based on updated information from the server.                                |
+|                     | placeCurrentStageOnHold(callback, errCallback, backgroundRequest)                                Places the current stage on hold.                                                                                               |
+|                     | relateCase(targetCase, operationDescription, relationshipCategory, twoWayRelationship, callback, errCallback, backgroundRequest)                                 Relates this Case to another Case.                               |
+|                     | releaseCurrentOnHoldStage(callback, errCallback, backgroundRequest)                                  Releases the hold on the current stage.                                                                                       |
+|                     | restartPreviousStage(callback, errCallback, backgroundRequest)                               Restarts the previously completed stage.                                                                                           |
+|                     | retrieveAttributes(callback, errCallback, backgroundRequest)                                 Retrieves all attributes for this Case object.                                                                                       |
+|                     | retrieveCachedAttributes(callback, errCallback, backgroundRequest)                               Ensures that the full set of attributes has been retrieved.                                                                    |
+|                     | retrieveCaseComments(callback, errCallback, backgroundRequest)                               Retrieves the comments associated with this Case.                                                                                  |
+|                     | retrieveCaseFolder(callback, errCallback, backgroundRequest)                                 Retrieves the case folder if it has not already been retrieved.                                                                      |
+|                     | retrieveCurrentStage(callback, errCallback, backgroundRequest)                               Retrieves the current stage.                                                                                                       |
+|                     | retrieveDocumentComments(itemId, callback, errCallback, backgroundRequest)                               Retrieves the comments associated with a document that is associated with this Case.                                   |
+|                     | retrieveHealthConditions(callback, errCallback, backgroundRequest)                               Retrieves the health conditions that are associated with this case.                                                            |
+|                     | retrieveMembership(callback, errCallback, backgroundRequest)                                 Retrieves a CaseMembership object that represents the current membership of the case.                                                |
+|                     | retrieveMembershipStatus(callback, errCallback, backgroundRequest)                               Returns the membership status of the current user in this case based on the role under which that user is   logged in.         |
+|                     | retrievePage(pageType, role, callback, errCallback, backgroundRequest)                               Retrieves the page appropriate for a particular type and optional role.                                                    |
+|                     | retrieveRelatedCases(relationshipType, relationshipCategory, callback, errCallback, backgroundRequest)                               Retrieves the cases that are related to this case                                          |
+|                     | retrieveStages(callback, errCallback, backgroundRequest)                                 Retrieves all stages for this case.                                                                                                      |
+|                     | retrieveTaskComments(itemId, callback, errCallback, backgroundRequest)                               Retrieves the comments associated with a Task that is associated with this Case.                                           |
+|                     | retrieveTasks(callback, errCallback, backgroundRequest, retrieveProperties)                                  Retrieves the tasks for this case.                                                                                    |
+|                     | retrieveWorkItemComments(itemId, workflowNumber, callback, errCallback, backgroundRequest)                               Retrieves the comments associated with a work item that is associated with this Case.                  |
+|                     | searchHistory(batchSize, objectTypes, eventTypes, additionalProperties, additionalFilter, callback, errback, backgroundRequest)                                  Executes a query for case history events.                         |
+|                     | searchTasks(taskTypes, properties, propertyFilter, resultsDisplay, includeHidden, callback, errCallback, backgroundRequest)                                  Runs a search query for task instances.                               |
+|                     | unrelateCase(relationshipId, operationDescription, callback, errCallback, backgroundRequest)                                 Unrelates this Case from another Case that was previously related.                                   |</p>
+
+<p>The object-valued properties that are currently supported are application-defined properties containing
+dependent objects.  Besides a data type of "xs:object" these properties have a cardinality of "LIST".
+The value of such a property holds an array that contains instances of icm.model.DependentObject.</p>
+
+<p>This variable will be null if the case folder object has not yet been 
+retrieved.  Call retrieveCaseFolder() to ensure this object has been
+retrieved.</p>
+
+<p>This variable will be null if the case folder object has not yet been 
+retrieved.  Call retrieveCaseFolder() to ensure this object has been
+retrieved.</p>
+
+<p>Typically the full set of attributes should be retrieved before obtaining a CaseEditable
+although a CaseEditable can be obtained up front.  When the full set of attributes are
+eventually retrieved (using retrieveAttributes() or retrieveCachedAttributes()) the
+CaseEditable will be refreshed to reflect the full set of attributes.</p>
+
+<p>Currently only discretionary tasks can be created by a user.</p>
+
+<ul>
+<li>"CmAcmCaseComment"</li>
+<li>"CmAcmCaseFolder"</li>
+<li>"CmAcmCaseSubfolder"</li>
+<li>"CmAcmCaseTask"</li>
+<li>"Document"</li>
+<li>"CmAcmTaskComment"</li>
+<li>"CmAcmVersionSeriesComment"</li>
+<li><p>"CmAcmWorkItemComment"</p></li>
+<li><p>"CancelCheckoutEvent"</p></li>
+<li>"CmAcmCaseFileEvent"</li>
+<li>"CmAcmCaseRelatedEvent"</li>
+<li>"CmAcmCaseUnfileEvent"</li>
+<li>"ChangeClassEvent"</li>
+<li>"ChangeStateEvent"</li>
+<li>"CheckinEvent"</li>
+<li>"CheckoutEvent"</li>
+<li>"ClassifyCompleteEvent"</li>
+<li>"CreationEvent"</li>
+<li>"DeletionEvent"</li>
+<li>"DemoteVersionEvent"</li>
+<li>"FileEvent"</li>
+<li>"FreezeEvent"</li>
+<li>"LockEvent"</li>
+<li>"CmMoveContentEvent"</li>
+<li>"PromoteVersionEvent"</li>
+<li>"PublishCompleteEvent"</li>
+<li>"PublishRequestEvent"</li>
+<li>"TakeFederatedOwnershipEvent"</li>
+<li>"UnfileEvent"</li>
+<li>"UnlockEvent"</li>
+<li>"UpdateEvent"</li>
+<li>"UpdateSecurityEvent"</li>
+</ul>
+
+<p><code>
+{sortBy: "DateCreated", sortAsc: false}
+</code></p>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>icm.util.SearchPayload</title>
+</head>
+<body>
+<h2>Classes</h2>
+
+<ul>
+<li>_global_</li>
+<li>icm.action.Action</li>
+<li>icm.action.Add</li>
+<li>icm.action.AddFromLocal</li>
+<li>icm.action.AddFromRepository</li>
+<li>icm.action.attachment.AddAttachment</li>
+<li>icm.action.attachment.AddAttachmentFromCase</li>
+<li>icm.action.attachment.AddAttachmentFromCaseNew</li>
+<li>icm.action.attachment.AddAttachmentFromLocal</li>
+<li>icm.action.attachment.AddAttachmentFromRepository</li>
+<li>icm.action.attachment.AddAttachmentUsingTemplate</li>
+<li>icm.action.attachment.Remove</li>
+<li>icm.action.case.AddCaseAndClosePage</li>
+<li>icm.action.case.AddCustomTask</li>
+<li>icm.action.case.AddCustomTaskFromExisting</li>
+<li>icm.action.case.CasePackage</li>
+<li>icm.action.case.CasePackageNoWizard</li>
+<li>icm.action.case.CloseCasePage</li>
+<li>icm.action.case.ManageCaseMembership</li>
+<li>icm.action.case.OpenAddPredefinedTaskPage</li>
+<li>icm.action.case.OpenAddToDoTask</li>
+<li>icm.action.case.OpenCasePage</li>
+<li>icm.action.case.OpenSplitCasePage</li>
+<li>icm.action.case.RefreshToDoTaskList</li>
+<li>icm.action.case.SaveCaseOnPage</li>
+<li>icm.action.case.SendLink</li>
+<li>icm.action.case.ShowCalendar</li>
+<li>icm.action.case.ShowLink</li>
+<li>icm.action.comment.AddCaseComment</li>
+<li>icm.action.comment.AddDocumentComment</li>
+<li>icm.action.comment.AddTaskComment</li>
+<li>icm.action.comment.AddWorkItemComment</li>
+<li>icm.action.contentitem.AddCaseDocToQuickTask</li>
+<li>icm.action.contentitem.Cut</li>
+<li>icm.action.contentitem.Export</li>
+<li>icm.action.contentitem.Open</li>
+<li>icm.action.contentitem.Paste</li>
+<li>icm.action.contentitem.RemoveFromFolder</li>
+<li>icm.action.document.AddDocumentFromLocal</li>
+<li>icm.action.document.AddDocumentFromOtherApplication</li>
+<li>icm.action.document.AddDocumentFromRepository</li>
+<li>icm.action.document.AddDocumentUsingTemplate</li>
+<li>icm.action.document.BoxCopy</li>
+<li>icm.action.document.DocumentShare</li>
+<li>icm.action.document.MoveCaseDocuments</li>
+<li>icm.action.document.Open</li>
+<li>icm.action.document.Refresh</li>
+<li>icm.action.document.ViewLink</li>
+<li>icm.action.folder.AddBoxCollaborationFolder</li>
+<li>icm.action.folder.AddBoxCollaborators</li>
+<li>icm.action.folder.AddFolder</li>
+<li>icm.action.folder.Open</li>
+<li>icm.action.folder.RemoveBoxCollaborationFolder</li>
+<li>icm.action.folder.SendBoxCollaborators</li>
+<li>icm.action.quicktask.DeleteQuickTask</li>
+<li>icm.action.quicktask.OpenQuickTaskUpdate</li>
+<li>icm.action.solution.EditProcessPreferences</li>
+<li>icm.action.solution.ManageRoles</li>
+<li>icm.action.solution.OpenAddCasePage</li>
+<li>icm.action.stage.CompleteStage</li>
+<li>icm.action.stage.RestartStage</li>
+<li>icm.action.stage.ToggleOnHoldStage</li>
+<li>icm.action.task.AddTaskAndClosePage</li>
+<li>icm.action.task.CancelAddTaskPage</li>
+<li>icm.action.task.CloseToDoTaskView</li>
+<li>icm.action.task.CompleteToDoTask</li>
+<li>icm.action.task.EnableToDoTask</li>
+<li>icm.action.task.RestartToDoTask</li>
+<li>icm.action.task.SaveToDoTask</li>
+<li>icm.action.task.StartToDoTask</li>
+<li>icm.action.task.StopToDoTask</li>
+<li>icm.action.utility.EventAction</li>
+<li>icm.action.utility.OpenWebPage</li>
+<li>icm.action.utility.ScriptAction</li>
+<li>icm.action.workitem.AuditHistory</li>
+<li>icm.action.workitem.BpmAction</li>
+<li>icm.action.workitem.CloseWorkItemPage</li>
+<li>icm.action.workitem.DispatchWorkItemAndClosePage</li>
+<li>icm.action.workitem.ModifyInstance</li>
+<li>icm.action.workitem.ModifyTask</li>
+<li>icm.action.workitem.MoveToInbox</li>
+<li>icm.action.workitem.OpenNextWorkItemInPage</li>
+<li>icm.action.workitem.OpenNextWorkItemInPageBySequence</li>
+<li>icm.action.workitem.OpenWorkItemPage</li>
+<li>icm.action.workitem.PushInbasket</li>
+<li>icm.action.workitem.Reassign</li>
+<li>icm.action.workitem.ReturnToSender</li>
+<li>icm.action.workitem.SaveWorkItemOnPage</li>
+<li>icm.action.workitem.ViewInstance</li>
+<li>icm.action.workitem.ViewProcessDiagram</li>
+<li>icm.action.workitem.ViewProcessInspector</li>
+<li>icm.base._EventStub</li>
+<li>icm.base.BaseActionContext</li>
+<li>icm.base.BasePageWidget</li>
+<li>icm.base.Constants</li>
+<li>icm.base.WidgetAttributes</li>
+<li>icm.container.ICMContentPane</li>
+<li>icm.container.ICMContextSelector</li>
+<li>icm.container.ICMPagesCollection</li>
+<li>icm.container.ICMSolutionSelectorListener</li>
+<li>icm.container.ICMSolutionSelectorPane</li>
+<li>icm.dialog.addboxfolderdialog.AddBoxFolderDialog</li>
+<li>icm.dialog.addcommentdialog.AddCommentDialog</li>
+<li>icm.dialog.addcommentdialog.CommentHistoryMagazineView</li>
+<li>icm.dialog.addcommentdialog.dijit.CommentContentPane</li>
+<li>icm.dialog.addtaskdialog.AddTaskDialog</li>
+<li>icm.dialog.boxcollaborationdialog.ManageCollaboratorsDialog</li>
+<li>icm.dialog.boxcollaborationdialog.UserGroupSelectorPane</li>
+<li>icm.dialog.casepackagedialog.CasePackageDialog</li>
+<li>icm.dialog.casepackagedialog.casepropsandinfo.dijit.CaseProperties</li>
+<li>icm.dialog.casepackagedialog.casepropsandinfo.dijit.RelatedCases</li>
+<li>icm.dialog.casepackagedialog.documentList.CaseDocsInfo</li>
+<li>icm.dialog.casepackagedialog.documentList.CaseDocsInfoContentPane</li>
+<li>icm.dialog.casepackagedialog.pdfviewer.PDFViewerContentPane</li>
+<li>icm.dialog.casepackagedialog.reviewPackage.ReviewPackage</li>
+<li>icm.dialog.dynamictaskeditor.DynamicTaskEditorDialog</li>
+<li>icm.dialog.iframedialog.IFrameDialog</li>
+<li>icm.dialog.managecasemembershipdialog.ManageCaseMembershipDialog</li>
+<li>icm.dialog.managerolesdialog.ManageRolesDialog</li>
+<li>icm.dialog.openformdialog.OpenFormDialog</li>
+<li>icm.dialog.reassigndialog.ReassignDialog</li>
+<li>icm.dialog.selectcopydialog.AddOptionsPane</li>
+<li>icm.dialog.selectcopydialog.SelectCopyDialog</li>
+<li>icm.dialog.sendcollaborationdialog.SendCollaborationDialog</li>
+<li>icm.dialog.showcalendardialog.ShowCalendarDialog</li>
+<li>icm.dialog.showctxinfodialog.ShowCtxInfoDialog</li>
+<li>icm.dialog.showlinkdialog.ShowLinkDialog</li>
+<li>icm.model._AttachmentContentItemMixin</li>
+<li>icm.model._AttributeDefinitionMixin</li>
+<li>icm.model._DesktopMixin</li>
+<li>icm.model.BawProcessAppSpace</li>
+<li>icm.model.Case</li>
+<li>icm.model.CaseComment</li>
+<li>icm.model.CaseEditable</li>
+<li>icm.model.CaseRelationship</li>
+<li>icm.model.CaseType</li>
+<li>icm.model.DependentObject</li>
+<li>icm.model.DocumentType</li>
+<li>icm.model.ExternalDocumentReferenceEditable</li>
+<li>icm.model.HistoryEvent</li>
+<li>icm.model.InbasketDynamicFilter</li>
+<li>icm.model.InbasketFilter</li>
+<li>icm.model.LaunchStep</li>
+<li>icm.model.MergedInBasket</li>
+<li>icm.model.properties.controller.ControllerManager</li>
+<li>icm.model.properties.controller.PropertyCollectionController</li>
+<li>icm.model.properties.controller.types.AttachmentPropertyController</li>
+<li>icm.model.properties.controller.types.BooleanPropertyController</li>
+<li>icm.model.properties.controller.types.DatetimePropertyController</li>
+<li>icm.model.properties.controller.types.FloatPropertyController</li>
+<li>icm.model.properties.controller.types.GroupPropertyController</li>
+<li>icm.model.properties.controller.types.IntegerPropertyController</li>
+<li>icm.model.properties.controller.types.ObjectPropertyController</li>
+<li>icm.model.properties.controller.types.StringPropertyController</li>
+<li>icm.model.PropertyEditable</li>
+<li>icm.model.ResultSet</li>
+<li>icm.model.Solution</li>
+<li>icm.model.SolutionRolesMembersCache</li>
+<li>icm.model.Stage</li>
+<li>icm.model.Task</li>
+<li>icm.model.TaskEditable</li>
+<li>icm.model.TaskType</li>
+<li>icm.model.Timeline</li>
+<li>icm.model.TimelineEvent</li>
+<li>icm.model.TimelineOverview</li>
+<li>icm.model.TimelineTask</li>
+<li>icm.model.TimelineWorkitem</li>
+<li>icm.model.UpdatingBatch</li>
+<li>icm.model.WorkItem</li>
+<li>icm.model.WorkItemEditable</li>
+<li>icm.pgwidget.attachment.Attachment</li>
+<li>icm.pgwidget.attachment.dijit.AddCaseAttachments</li>
+<li>icm.pgwidget.calendar.Calendar</li>
+<li>icm.pgwidget.calendar.dijit.AddCalendarDialog</li>
+<li>icm.pgwidget.calendar.dijit.EditCalendarDialog</li>
+<li>icm.pgwidget.calendar.dijit.ManageCalendarsDialog</li>
+<li>icm.pgwidget.calendar.dijit.Util</li>
+<li>icm.pgwidget.caseform.CaseForm</li>
+<li>icm.pgwidget.caseform.CaseFormContentPane</li>
+<li>icm.pgwidget.caseinfo.CaseInfo</li>
+<li>icm.pgwidget.caseinfo.CaseInfoComponent</li>
+<li>icm.pgwidget.caseinfo.dijit.activities.CaseInfoActivitiesMagazineView</li>
+<li>icm.pgwidget.caseinfo.dijit.CaseInfoComponentContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.CaseInfoContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.documents.CaseInfoDocumentsContentPane</li>
+<li>icm.pgwidget.caseinfo.dijit.header.CaseInfoHeader</li>
+<li>icm.pgwidget.caseinfo.dijit.history.CaseInfoHistoryMagazineView</li>
+<li>icm.pgwidget.caselist.CaseList</li>
+<li>icm.pgwidget.caselist.CaseListViewDetails</li>
+<li>icm.pgwidget.caselist.CaseListViewMagazine</li>
+<li>icm.pgwidget.caselist.model.CaseListModel</li>
+<li>icm.pgwidget.caselist.test.CaseListWrapper</li>
+<li>icm.pgwidget.casesearch.CaseSearch</li>
+<li>icm.pgwidget.caseselectdocument.CaseSelectDocument</li>
+<li>icm.pgwidget.caseselectdocument.dijit.CaseSelectDocumentContentPane</li>
+<li>icm.pgwidget.caseselectdocument.test.CaseSelectDocumentWrapper</li>
+<li>icm.pgwidget.casestage.CaseStage</li>
+<li>icm.pgwidget.casetoolbar.CaseToolbar</li>
+<li>icm.pgwidget.casetoolbar.dijit.CaseToolbarContentPane</li>
+<li>icm.pgwidget.casevisualizer.CaseVisualizer</li>
+<li>icm.pgwidget.casevisualizer.core.data.TimelineStore</li>
+<li>icm.pgwidget.casevisualizer.dijit.GraphView</li>
+<li>icm.pgwidget.casevisualizer.dijit.HistogramView</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.EventMark</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.Mark</li>
+<li>icm.pgwidget.casevisualizer.dijit.mark.SeriesMark</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineComponent</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineRule</li>
+<li>icm.pgwidget.casevisualizer.dijit.TimelineRuleSlider</li>
+<li>icm.pgwidget.casevisualizer.snapshot.dijit.SnapshotRuler</li>
+<li>icm.pgwidget.chartwidget.ChartWidget</li>
+<li>icm.pgwidget.chartwidget.dijit.Util</li>
+<li>icm.pgwidget.contentlist.ContentList</li>
+<li>icm.pgwidget.contentlist.test.ContentListWrapper</li>
+<li>icm.pgwidget.cshsviewer.CSHSViewer</li>
+<li>icm.pgwidget.inbasket.dijit.InbasketContentPane</li>
+<li>icm.pgwidget.inbasket.Inbasket</li>
+<li>icm.pgwidget.instruction.dijit.InstructionContentPane</li>
+<li>icm.pgwidget.instruction.Instruction</li>
+<li>icm.pgwidget.markup.Markup</li>
+<li>icm.pgwidget.originalcase.OriginalCase</li>
+<li>icm.pgwidget.processhistory.dijit.ProcessHistoryContentPane</li>
+<li>icm.pgwidget.processhistory.Processhistory</li>
+<li>icm.pgwidget.properties.dijit._Properties</li>
+<li>icm.pgwidget.properties.Properties</li>
+<li>icm.pgwidget.scriptadapter.ScriptAdapter</li>
+<li>icm.pgwidget.splitcase.SplitCase</li>
+<li>icm.pgwidget.tasktoolbar.dijit.TaskToolbarContentPane</li>
+<li>icm.pgwidget.tasktoolbar.TaskToolbar</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.FilteringSelect</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QTMoveFileDialog</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskAttachments</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskCommentMagazineView</li>
+<li>icm.pgwidget.todolist.dijit.quicktask.QuickTaskDialog</li>
+<li>icm.pgwidget.todolist.ToDoList</li>
+<li>icm.pgwidget.toolbar.dijit.ToolbarContentPane</li>
+<li>icm.pgwidget.toolbar.Toolbar</li>
+<li>icm.pgwidget.viewer.Viewer</li>
+<li>icm.pgwidget.websitedisplayer.WebSiteDisplayer</li>
+<li>icm.pgwidget.workitemtoolbar.dijit.WorkitemToolbarContentPane</li>
+<li>icm.pgwidget.workitemtoolbar.WorkitemToolbar</li>
+<li>icm.util.Coordination</li>
+<li>icm.util.SearchPayload</li>
+<li>icm.util.SearchUtil</li>
+<li>icm.util.Util</li>
+<li>icm.util.WorkItemHandler</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.model.BaseFlowModel</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.transform.FlowMaker</li>
+<li>icm.widget.dynamictaskeditor.flowsCommon.transform.MapJsonAttributes</li>
+<li>icm.widget.dynamictaskeditor.freedom.widget.common.environment.FreedomNlsMixin</li>
+<li>icm.widget.form.FilenetForm</li>
+<li>icm.widget.listView.ContentList</li>
+<li>icm.widget.menu.ContextualMenu</li>
+<li>icm.widget.menu.Menu</li>
+<li>icm.widget.menu.MenuManager</li>
+<li>icm.widget.menu.Toolbar</li>
+<li>icm.widget.properties.editors.model.CaseTeamModel</li>
+<li>icm.widget.properties.editors.model.RoleUserModel</li>
+<li>icm.widget.properties.editors.RoleUserSelector</li>
+<li>icm.widget.properties.registry.RegistryManager</li>
+</ul>
+
+<h1>Class icm.util.SearchPayload</h1>
+
+<p>Provides a helper class that is used to create the search payload that defines the search criteria for the Search widget and the Case List widget.
+The following example shows how this class is used:</p>
+
+<pre><code>var solution = this.solution; // solution from the widget.
+var params = {};
+params.ObjectStore = solution.getTargetOS().id;
+</code></pre>
+
+<p>var criterion = new ecm.model.SearchCriterion({"id": "ICM_strField",
+      "selectedOperator": "EQUAL", "dataType": "xs:string", "defaultValue" : "1234", 
+      "value": "1234", "values": ["1234"]});
+ params.criterions = [criterion];</p>
+
+<pre><code>// params.ceQuery = "SELECT t.[FolderName], t.[LastModifier], t.[DateLastModified], t.[CmAcmCaseTypeFolder], 
+ t.[CmAcmCaseState], t.[CmAcmCaseIdentifier], t.[DateCreated], t.[Creator], t.[Id], t.[ContainerType], t.[LockToken], t.[LockTimeout],  t.[ClassDescription], t.[DateLastModified], t.[FolderName] FROM [CmAcmCaseFolder] t WHERE ((((t.[CmAcmCaseIdentifier] LIKE '%%' or t.[CmAcmParentSolution] = Object({201323A3-271B-48CC-9C0D-7D0B20B1822C})) and t.[CmAcmCaseState] &gt; 1) )) ORDER BY t.[CmAcmCaseIdentifier]";
+params.CaseType = "ICM\_CaseType1";
+params.solution = solution;
+
+var searchPayload = new icm.util.SearchPayload();
+searchPayload.setModel(params);
+
+var payload = searchPayload.getSearchPayload();
+</code></pre>
+
+<p>this.onBroadcastEvent("icm.SearchCases", payload); //The generated payload can then be passed to the icm.SearchCases event</p>
+
+<p>Defined in:  <icm\util\SearchPayload.js>.</p>
+
+<p>Class Summary</p>
+
+<p>Constructor Attributes
+Constructor Name and Description</p>
+
+<p> </p>
+
+<p>icm.util.SearchPayload()</p>
+
+<p>Field Summary</p>
+
+<p>Field Attributes
+Field Name and Description</p>
+
+<p> </p>
+
+<p>ceQuery</p>
+
+<p>Content Platform Engine SQL that is used for searching cases.</p>
+
+<p> </p>
+
+<p>searchTemplate</p>
+
+<p>An instance of ecm.model.SearchTemplate</p>
+
+<p>Method Summary</p>
+
+<p>Method Attributes
+Method Name and Description</p>
+
+<p> </p>
+
+<p>constructor()</p>
+
+<p> </p>
+
+<p>getSearchPayload(callback)</p>
+
+<p>Gets the search payload that is to be sent.</p>
+
+<p> </p>
+
+<p>setModel(model)</p>
+
+<p>Set the schema and data structures that are associated with the current search.</p>
+
+<pre><code>                Class Detail
+</code></pre>
+
+<p>icm.util.SearchPayload()</p>
+
+<pre><code>                Field Detail
+</code></pre>
+
+<p>ceQuery</p>
+
+<pre><code>                    Content Platform Engine SQL that is used for searching cases. If this value is set, the criterions parameter is ignored.
+</code></pre>
+
+<p>Notes:</p>
+
+<p>The SQL has to search on either the case base class or a subclass of the case base class.
+ You need to use this Content Platform Engine query only for queries that combine AND conditions and OR conditions.
+ If you have query that uses either a simple AND condition or OR condition, use the criterions parameter to construct the query.</p>
+
+<p>searchTemplate</p>
+
+<pre><code>                    An instance of ecm.model.SearchTemplate
+
+
+
+
+                Method Detail
+</code></pre>
+
+<p>constructor()</p>
+
+<p>getSearchPayload(callback)</p>
+
+<pre><code>                    Gets the search payload that is to be sent.
+</code></pre>
+
+<p>This method is called when a case search action is performed and before the query is executed.</p>
+
+<p>Parameters:</p>
+
+<p>callback</p>
+
+<p>a function called with the payload.</p>
+
+<p>setModel(model)</p>
+
+<pre><code>                    Set the schema and data structures that are associated with the current search.
+</code></pre>
+
+<p>This method is called when a case search action is performed and before the query is executed.</p>
+
+<p>Parameters:</p>
+
+<p>model</p>
+
+<p>The search parameters that are used to construct the setModel payload:</p>
+
+<p>criterions: The search criteria to be used in the search template.
+                 objectStore: The object store that is to be searched.
+                 caseType: The case type for a search against a single case type.
+                 solution: The solution that is to be searched.
+                 isShowSummaryViewProperties: A boolean type that is used to decide whether to include properties from the Summary view in a search across case types
+                 ceQuery: {optional} A user-provided Content Platform Engine query that is used to search on cases.
+                        When this ceQuery parameter is set, the criterions parameter is ignored.
+                     Otherwise, use the criterions parameter.</p>
+
+</body>
+</html>

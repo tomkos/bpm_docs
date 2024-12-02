@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta004</title>
+</head>
+<body>
+<h1>Configuring WebSphere Application</h1>
+
+<p>Server
+logging for Case Builder and the
+Business Automation Workflow API
+application</p>
+
+<h2>About this task</h2>
+
+<p>You can use the logging settings in the WebSphere Application
+Server administrative console to
+redirect the logs to the Business Automation Workflow log location.</p>
+
+<p>To access the settings in the administrative console, click
+Troubleshooting &gt; Logs and
+trace, and select your server name.</p>
+
+<h2>Procedure</h2>
+
+<p>To configure logging options for Case Builder and the Business Automation Workflow API
+application:</p>
+
+<ul>
+<li>Redirect the log:
+<ol>
+<li>Click Diagnostic Trace and click the Runtime
+tab.</li>
+<li>In the File Name field, change the value to
+installation_path/IBM/CaseManagement/logs.</li>
+</ol></li>
+<li>Redirect the main application server logs:</li>
+</ul>
+
+<ol>
+<li>Click JVM logs and click the Runtime
+tab.</li>
+<li>In the File Name fields, change the path before the /SystemOut.log and
+/SystemErr.log file names to the Business Automation Workflow log location.
+For example, use
+installation_path/IBM/CaseManagement/logs/SystemOut.log and
+installation_path/IBM/CaseManagement/logs/SystemErr.log.</li>
+</ol>
+
+<ul>
+<li>Change the logging level: Case Builder components havethe Message and Trace Levels set to info by default. Reset these componentsto audit or warning to prevent filling log files tooquickly. Under the com.ibm.acm.* component, select the com.ibm.acm.sold.* node to set theMessage and Trace Levels settings for all the Case Builder components.</li>
+</ul>
+
+<ol>
+<li>From the WebSphere Application
+Server
+administrative console, click Logging and
+Tracing &gt; server &gt; Change log detail
+levels.</li>
+<li>Change the logging levels as needed.</li>
+</ol>
+
+</body>
+</html>

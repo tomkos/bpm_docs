@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmjd008</title>
+</head>
+<body>
+<h1>DeployedSolution class</h1>
+
+<ul>
+<li>fetchInstance</li>
+<li>getFetchlessInstance</li>
+</ul>
+
+<p>If
+a DeployedSolution instance is obtained by calling fetchInstance,
+the method verifies that the referenced object store is valid and
+that the solution name refers to a valid solution. If the object store
+or solution is invalid, then the method throws an exception. If getFetchlessInstance is
+called, no such verification occurs. However, an exception might be
+thrown later if another method is called that requires that the identifiers
+used to reference the object store is valid.</p>
+
+<p>Much of the information contained in a DeployedSolution instance is managed by a
+cache that is internal to the workflow Java™ API. All of the
+information can be retrieved whether the object was obtained with or without a fetch, but the
+fetchInstance method runs only an initial check to ensure that the referenced
+solution is valid.</p>
+
+<h2>Related reference</h2>
+
+<ul>
+<li>Case class</li>
+<li>CaseMgmtObjectStore class</li>
+<li>CaseType class</li>
+</ul>
+
+</body>
+</html>

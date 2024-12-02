@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta059</title>
+</head>
+<body>
+<h1>Configuring the object stores failed</h1>
+
+<h2>Symptoms</h2>
+
+<p>An
+error occurs while running Configure the Case Management Object Stores.
+The task fails because of the following error:</p>
+
+<p>The
+case management add-ons cannot be installed in Content Engine. The
+installation of the AddOn 5.3.2 Case Manager Target Object Store Extensions
+into the object store TOS failed. The installation report follows:
+PostImportScriptMethod failed with exception: There was an error running
+the script. Message was: Wrapped com.filenet.api.exception.EngineRuntimeException:
+FNRCE0075E: E_TRANSACTION_FAILURE: A transaction failure has occurred
+due to an invalid state or timeout. The current transaction state
+is STATUS_MARKED_ROLLBACK and it was expected to be active failedBatchItem=0
+(#256).</p>
+
+<h2>Causes</h2>
+
+<h2>Resolving the problem</h2>
+
+<ul>
+<li>Servers &gt; Server Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; Transaction service &gt; Total transaction lifetime timeout</li>
+<li>Servers &gt; Server Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; Transaction service &gt; Maximum transaction lifetime timeout</li>
+<li>Servers &gt; Server Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; ORB service &gt; Request
+timeout</li>
+<li>Servers &gt; Server Types &gt; WebSphere application servers &gt; Configuration
+tab &gt; Container Settings &gt; Container
+Services &gt; ORB service &gt; Locate
+request timeoutNote: For WebSphere Application
+Server Version 8.5.2,
+the maximum value for the locate request timeout is 300.</li>
+<li>Resources &gt; JDBC &gt; Data sources &gt;  [Content Engine or
+Case Manager data source name]  &gt; Connection Pool
+properties &gt; Connection timeout</li>
+<li>Resources &gt; JDBC &gt; Data sources &gt;  [Content Engine or
+Case Manager XA data source name] &gt; Connection
+Pool properties &gt; Connection timeout</li>
+</ul>
+
+</body>
+</html>

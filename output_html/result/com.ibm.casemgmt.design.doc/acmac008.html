@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac008</title>
+</head>
+<body>
+<h1>storePasswords command</h1>
+
+<h2>Syntax</h2>
+
+<p><code>
+There are no missing passwords to store.
+</code></p>
+
+<p><code>
+configmgr\_cl storePasswords [-task task\_type | -taskfile task\_file\_name]
+ -profile myprofile [-help]
+</code></p>
+
+<h2>Parameters</h2>
+
+<p>The -task task_type parameter
+specifies a specific task to encrypt the passwords for. You can omit
+the -task task_type parameter
+if you want to store passwords for all the tasks or if you specify
+the -taskfile task_file_name parameter.</p>
+
+<p>| Password description                          | Property name and XML file name                                                                                                                      |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Application server administrator password     | ApplicationServerAdminPassword property in the websphereapplicationserver.xml file.                                                                  |
+| IBM® Content Navigator administrator password | NexusPassword property in the contentnavigatorserver.xml file                                                                                        |
+| Content Platform Engine domain user password  | CEPassword property in the contentengineserver.xml file                                                                                              |
+| Directory service bind user password          | LDAPBindPassword property in the configureldap.xml file                                                                                              |
+| Case operations password                      | CaseOperationsPassword property in the registerprojectarea.xml file (development environment) or registertargetenv.xml file (production environment) |
+| LTPA key password                             | LTPAKeyPassword property in the importltpakey.xml file                                                                                               |</p>
+
+<p>When you specify a specific task for the storePasswords command, encrypted
+passwords are added to the task file, the websphereapplicationserver.xml file,
+the contentnavigatorserver.xml file, and the
+contentengineserver.xml file. The following table describes the valid
+task_type and task_file_name values, the password property
+names, and the task configuration XML file names that are affected by the task options.</p>
+
+<p>|  task_type values      |  task_file_name values   | Description                                                                                                                                                                                                                                                                |
+|------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| No value is specified. | No value is specified.   | Encrypts the passwords for all the tasks in the profile, as listed in Table 1.                                                                                                                                                                                             |
+| configbox              | configbox.xml            | Encrypts the password configuring the Box host properties.                                                                                                                                                                                                                 |
+| configibmbpm           | configibmbpm.xml         | Encrypts the password configuring the IBM Business Automation Workflow host properties.                                                                                                                                                                                    |
+| configrules            | configrules.xml          | Lists the task that configures business rules in your solution.                                                                                                                                                                                                            |
+| registerprojectarea    | registerprojectarea.xml  | Encrypts the case operations user password that is stored in CaseOperationsPassword property in the registerprojectarea.xml file and the IBM Content Navigator administrator password that is stored in the NexusPassword property in the contentnavigatorserver.xml file. |
+| registertargetenv      | registertargetenv.xml    | Encrypts the case operations user password that is stored in CaseOperationsPassword property in the registertargetenv.xml file and the IBM Content Navigator administrator password that is stored in the NexusPassword property in the contentnavigatorserver.xml file.   |</p>
+
+<p>Specifies the configuration XML file to encrypt the passwords
+for. You can omit the -taskfile task_file_name parameter
+if you want to store passwords for all the tasks or if you specify
+the -task task_type parameter.</p>
+
+<p>If
+you omit the -task task_type parameter
+and the -taskfile task_file_name parameter,
+you are prompted to enter the passwords for each configuration XML
+file in the profile. Each password is encrypted before it is added
+to the XML file. The passwords that you enter depend on the type of
+profile, which is described in Table 1.</p>
+
+<p>See Table 2 for the valid task_file_name values
+and passwords.</p>
+
+<ul>
+<li>The name of the profile, such as develop1. The profile is located in the
+install_root/CaseManagement/configure/profiles directory.
+install_root is the location where IBM Business Automation
+Workflow is installed.</li>
+<li>The full path to the profile directory, such as
+"install_root\CaseManagement\configure\profiles\develop1" or
+/install_root/CaseManagement/configure/profiles/develop1.</li>
+<li>The full path to the profile input file, such as
+"install_root\CaseManagement\configure\profiles\develop1\develop1.cfgp"
+or
+/install_root/CaseManagement/configure/profiles/develop1/develop1.cfgp.</li>
+</ul>
+
+<h2>Sample commands</h2>
+
+<p><code>
+configmgr\_cl storePasswords -profile develop1
+</code></p>
+
+<p><code>
+configmgr\_cl storePasswords -help
+</code></p>
+
+</body>
+</html>

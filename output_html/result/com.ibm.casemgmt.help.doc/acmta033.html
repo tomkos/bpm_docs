@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta033</title>
+</head>
+<body>
+<h1>Changing the saved solution locale after solution deployment</h1>
+
+<h2>Symptoms</h2>
+
+<p>The display names, such as case properties, case types,
+tasks, and other solution artifacts are not preserved and are not
+displayed correctly in the Case Client.
+You can lose your translated display names.</p>
+
+<h2>Causes</h2>
+
+<p>The solution was deployed to a target environment under
+a locale that does not match the solution locale.</p>
+
+<p>When you design and create a solution, you must decide what the solution locale
+is. The solution locale refers to the locale of display names, such as case properties, case types,
+activities, and other solution artifacts that you create with Case Builder. When you deploy the solution to a target environment
+for the first time, you must deploy the solution under the same locale to ensure that the display
+names are preserved.</p>
+
+<p>The locale that
+is used the first time that you deploy a solution persists in the
+target object store for that solution. Future redeployments always
+use the saved solution locale regardless the locale that you use for
+redeployment.</p>
+
+<h2>Resolving the problem</h2>
+
+<p>To prevent this problem, ensure that you deploy the
+solution under the designated solution locale.</p>
+
+<ol>
+<li>In the IBM® Administration Console for
+Content Platform Engine,
+browse to Target Object Store &gt; Solution Deployments, right-click
+your solution, and select Properties.</li>
+<li>On the Properties tab, view the Configuration properties.
+Change the value of the deploymentLocale property
+to your locale code. For example, for German, change the default value,
+deploymentLocale=en_US, to deploymentLocale=de.</li>
+<li>Deploy the solution again.</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_SMOandMQ</title>
+</head>
+<body>
+<h1>Accessing WebSphere MQ header information in the SMO</h1>
+
+<h2>Introduction</h2>
+
+<p>You can access and update the content
+in the WebSphere MQ
+header structures using mediation primitives. Most mediation primitives let
+you navigate messages using XPath expressions. If you do this, you must make
+sure that the XPath identifies the particular header that the primitive is
+interested in. If you implement your own custom mediation primitive, you can
+access message information from Java™ code.</p>
+
+<h2>XPath examples</h2>
+
+<p><code>
+/headers/MQHeader/header/rfh2/folder[name="usr"]/property[name="prop"]/value
+</code></p>
+
+<p><code>
+/headers/MQHeader/header[format="MYHDR"]/value/mydata
+</code></p>
+
+<p><code>
+/headers/MQHeader/header[2]/value/mydata
+</code></p>
+
+</body>
+</html>

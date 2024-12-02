@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmtc060</title>
+</head>
+<body>
+<h1>Case packaging action is not displayed on Case Details or Cases page for existing</h1>
+
+<p>solutions</p>
+
+<h2>Symptoms</h2>
+
+<h2>Resolving the problem</h2>
+
+<p>For solutions that are created in version 5.2.1 Fix Pack 4 or later, the case packaging action is
+displayed by default on the Case Details and Cases pages. For solutions that were created before Fix
+Pack 4, the case packaging action must be manually added by editing the solution in Case Builder.</p>
+
+<p>To add the case packaging action to a solution that was created prior to version 5.2.1 Fix Pack
+4:</p>
+
+<ol>
+<li><p>Open the solution in Case Builder.
+2 Add the Create Package button to the Case Toolbar widget on theCase Details page.</p>
+
+<ol>
+<li>On the Pages tab, open the Case Details page.</li>
+<li>In Page Designer, click the Edit Settings icon for the Case Toolbar
+widget.</li>
+<li>On the Toolbar tab, select the Editing a case
+toolbar.</li>
+<li>Click the Add Button icon and select the Create
+Package action.
+3 Add the Create Package menu action to the Case List widget on theCases page.</li>
+</ol></li>
+<li><p>On the Pages tab, open the Cases page.</p></li>
+<li>In Page Designer, click the Edit Settings icon for the Case List
+widget.</li>
+<li>On the Menu tab, click the Add Menu Item icon and
+select the Create Package action.</li>
+<li>Save and redeploy the solution.</li>
+</ol>
+
+<p>To add support for non-English locales, see the last section in createCasePackage operation.</p>
+
+</body>
+</html>

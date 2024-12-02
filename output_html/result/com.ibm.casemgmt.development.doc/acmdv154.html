@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv154</title>
+</head>
+<body>
+<h1>POST method for deploying case solutions</h1>
+
+<h2>URI</h2>
+
+<p>/CASEREST/v1/solutions</p>
+
+<p>| Name                     | Type   | Required?   | Description                                                                                                                                                                 |
+|--------------------------|--------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| solutionName             | String | Yes         | The name of the case solution.                                                                                                                                              |
+| ConnectionDefinitionName | String | Yes         | Operations: The name of the connection definition.Note: The value is optional for development environment.                                                                  |
+| IgnoreLocks              | String | Optional    | Value that helps to determine whether the locks in the solution need to be ignored or not. Possible values: True False  The default value is false                          |
+| DeployIncrementally      | String | Optional    | Value that helps determine whether only the changed artifacts of solution or complete solution need to be deployed. Possible values: True False  The default value is false |</p>
+
+<h2>POST method request</h2>
+
+<p><code>
+https://example.com:9443/CaseManager/CASEREST/v1/solutions?solutionName=TestSolution&amp;ConnectionDefinitionName=dev\_env\_connection\_definition&amp;IgnoreLocks=false&amp;DeployIncrementally=false
+</code></p>
+
+<h2>POST method response</h2>
+
+<p><code>
+{
+  "Status": "Initiated",
+  "Error Info": "NONE",
+  "SolutionName": "TestSolution"
+}
+</code></p>
+
+</body>
+</html>

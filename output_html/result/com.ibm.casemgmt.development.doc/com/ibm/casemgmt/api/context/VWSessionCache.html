@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>VWSessionCache</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Interface VWSessionCache</h2>
+
+<ul>
+<li>All Known Implementing Classes:
+BaseVWSessionCache, SimpleVWSessionCache</li>
+</ul>
+
+<p>public interface VWSessionCache
+Interface that supplies VWSession objects out of a cache.</p>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary</li>
+</ul></li>
+</ul>
+
+<p>All Methods Instance Methods Abstract Methods </p>
+
+<p>Modifier and Type
+Method and Description</p>
+
+<p>filenet.vw.api.VWSession
+getVWSession(java.lang.String ceURI,
+            java.lang.String connPt)
+Retrieves a cached VWSession object for the given CE domain URI
+ and connection point name.</p>
+
+<ul>
+<li>============ METHOD DETAIL ==========
+<ul>
+<li>Method Detail</li>
+</ul></li>
+</ul>
+
+<h3>Method Detail</h3>
+
+<ul>
+<li>getVWSession
+filenet.vw.api.VWSession getVWSession(java.lang.String ceURI,
+                                     java.lang.String connPt)
+Retrieves a cached VWSession object for the given CE domain URI
+and connection point name. If no VWSession was cached previously,
+a new VWSession object is created and cached as appropriate
+for the concrete implementation of VWSessionCache.</li>
+</ul>
+
+<p>Parameters:
+ceURI - a CE domain URI
+connPt - a PE connection point name
+ID status:
+ID review by David Newhall</p>
+
+</body>
+</html>

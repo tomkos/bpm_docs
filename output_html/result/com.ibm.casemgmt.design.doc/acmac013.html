@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmac013</title>
+</head>
+<body>
+<h1>Configuring the case development environment by using the command line</h1>
+
+<h2>About this task</h2>
+
+<p>Configuring the development domain includes configuring Case Builder and Case Client. You must
+create a profile for each development environment instance that you are configuring.</p>
+
+<h2>Procedure</h2>
+
+<p>To configure the development environment:</p>
+
+<ol>
+<li>Run the BPMConfig command to create the profiles for your development
+environment.
+If you have already created the dmgr and node profiles for your development environment, skip
+to the next step.</li>
+<li>Change the current directory to the
+dmgr_profile_root/CaseManagement/DE_name/profiles/ICM_dev
+directory.
+3 Referring to Development environment tasks and files , edit the property values in the configuration XML filesthat you generated:
+<ol>
+<li>Use a text editor or XML editor to open one of the configuration XML files that you
+generated.</li>
+<li>Replace each occurrence of <strong><em><em>INSERT VALUE</em></strong></em> with a value that is
+appropriate for your site. 
+To change the default value to a blank value, replace <value><strong><em><em>INSERT
+VALUE</em></strong></em></value> with <value />. See the descriptions in the
+file for more information. Important: You are not required to store values for passwords
+in the file. You can run the storePasswords command later to add encrypted
+passwords to the file before you run the task.</li>
+<li>Replace empty values that have the format <value /> with a value that is
+appropriate for your site.
+Use the format
+<value>my_value</value>.</li>
+<li>Verify that the default values for the remaining properties are correct for your site.</li>
+<li>Verify that the task is enabled for each required task. Set the enabled
+attribute value in the <configuration> element to true in any
+configuration XML file that you edit if you want to run the configuration task.
+When a task is disabled, the execute command skips the task. For example,
+the registerexternaldataurl.xml file has the enabled
+attribute value in the <configuration> element set to false by default,
+and the task will be skipped.</li>
+<li>Save your edits and close the XML file.</li>
+<li>Repeat as needed until you edit all the required files.</li>
+</ol></li>
+</ol>
+
+<p>Important: You must provide values for all of the entries in the
+websphereapplicationserver.xml file, the
+contentengineserver.xml file, and the
+contentnavigatorserver.xml file before you can run any of the tasks.
+4. If you are running Linux on POWER Little Endian (LE), modify the
+install_root/CaseManagement/configure/comfigmgr.ini file to
+point to JDK 1.8 by making the following change:</p>
+
+<p>-vm
+/opt/install_root/java_1.8_64/bin
+5. Optional: 
+Add encrypted passwords to the XML files by running the storePasswords
+command for the profile.</p>
+
+<p>Tip: If you do not add passwords to the XML files, you are prompted for the passwords
+when you run the task for each file.</p>
+
+<p>For example, the following command stores all the passwords in the profile named
+myprofile1: 
+configmgr_cl storepasswords -profile myprofile1
+6. Change to the install_root/CaseManagement/configure
+directory and run all of the tasks in the development profile by using the following command:</p>
+
+<p>configmgr_cl execute -profile myprofile
+ [-silent] [-force] For more information about the syntax, see execute command.Note: On AIX, if IBM SDK is updated to version 8.0.6.25 or later, the Eclipse launcher might be
+unable to load libjgskit.so and libjgsk8iccs_64.so. You must
+export the LIBPATH variable before you run the configmgr_cl
+command. To export LIBPATH, use the following command, where
+<baw\_install\_root> is your Business Automation Workflow installation path:
+export
+LIBPATH=$LIBPATH:<baw\_install\_root>/java/jre/lib/ppc64:<baw\_install\_root>/java/jre/lib/icc.
+7. You can check the task status by running the checkStatus command. For
+example configmgr_cl checkStatus -profile myprofile For more
+information, see checkStatus
+command.
+8. Restart the application server.</p>
+
+<h2>What to do next</h2>
+
+<ul>
+<li>Development environment tasks and files</li>
+</ul>
+
+<p>The BPMConfig command creates a profile that consists of a set of files that contain information about your development environment. You can edit the component files and the task files to update or add information before you run the tasks.</p>
+
+</body>
+</html>

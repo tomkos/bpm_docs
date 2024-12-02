@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>rwesb_SMOandJMS</title>
+</head>
+<body>
+<h1>Accessing</h1>
+
+<p>JMS information in the SMO</p>
+
+<h2>Introduction</h2>
+
+<p>If you invoke a mediation module
+by sending a JMS message to an export with a JMS binding, you can
+access and update the JMS message using mediation primitives. Most
+mediation primitives let you navigate messages using XPath expressions.
+If you implement your own custom mediation primitive, you can access
+message information from Java™ code.</p>
+
+<h2>XPath examples</h2>
+
+<p><code>
+/body
+</code></p>
+
+<p><code>
+/headers/JMSHeader/JMSMessageID
+</code></p>
+
+<p><code>
+/headers/properties[name='JMSXGroupID']
+</code></p>
+
+<p><code>
+/headers/properties[name='MyProperty']
+</code></p>
+
+</body>
+</html>

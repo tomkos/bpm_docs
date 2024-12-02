@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmta043</title>
+</head>
+<body>
+<h1>Cannot deploy a solution with business rules if transaction</h1>
+
+<p>timeout value is too low</p>
+
+<h2>Symptoms</h2>
+
+<p>When you deploy a solution that contains rules, the
+following error message is returned:</p>
+
+<p>FNRPA0624E The
+rules could not be deployed because of the following error: A transaction
+problem has occurred. Message was: ; nested exception is: com.ibm.websphere.csi.CSITransactionRolledbackException:
+Transaction marked rollbackonly 7/19/13 11:14:06 PM PDT FNRPA0093E
+The previous error was caused by: A transaction problem has occurred.
+Message was: ; nested exception is: com.ibm.websphere.csi.CSITransactionRolledbackException:
+Transaction marked rollbackonly</p>
+
+<h2>Causes</h2>
+
+<h2>Resolving the problem</h2>
+
+<ol>
+<li>Go to the Application servers &gt; server1 &gt; Transaction service page in the WebSphere® Application
+Server administrative console.</li>
+<li>Increase the value of the Total transaction lifetime timeout setting to a
+higher value, such as 300 seconds.</li>
+</ol>
+
+<p>After the solution is successfully deployed, change the value
+of the transaction timeout setting back to the previous value.</p>
+
+</body>
+</html>

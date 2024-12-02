@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmpdh04</title>
+</head>
+<body>
+<h1>Assigning a primary queue to more than one role</h1>
+
+<h2>About this task</h2>
+
+<p>The CB_PrimaryQueue attribute for a role is automatically
+defined when you create a role for a solution in Case Builder. Renaming the role does
+not affect the queue name that was created when the role was first
+created in Case Builder.</p>
+
+<p>Step Designer displays role swimlanes, but the steps that are defined in each role swimlane are
+assigned to a primary queue of a role. By defining the same primary queue to more than one role, you
+are enabling multiple roles to use the same work queue. In other words, all steps that are defined
+in a role swimlane where the primary queue is being shared can be processed by any role that has
+that same CB_PrimaryQueue attribute value.</p>
+
+<h2>Procedure</h2>
+
+<p>To assign the same primary queue to more than one role:</p>
+
+<ol>
+<li>In Case Builder create two roles, for example,
+Role 1 and Role 2.</li>
+<li>After you create a case type, open the Activity page
+and click Activity &gt; New Activity to create a new activity for the solution.</li>
+<li>Save and close the solution.</li>
+<li>In a stand-alone IBM
+FileNet Process Designer, open the solution for
+editing the FileNet P8 activity workflow.</li>
+<li>Select the case type.
+6 Assign the primary queue attribute for Role 1 to Role2 . Role 2 now has the same primary queue as Role 1.
+<ol>
+<li>Click Views &gt; Roles.</li>
+<li>Select Role 1 and open the Custom
+Attributes tab to view the value set for the CB_PrimaryQueue
+attribute.</li>
+<li>Select Role 2, open the Custom
+Attributes tab, update the value for the CB_PrimaryQueue
+attribute to the value that is set for Role 1.</li>
+</ol></li>
+<li>Go to File &gt; Solution, and then save and close the solution in IBM
+FileNet Process Designer.</li>
+<li>In Case Builder,
+open the solution, or ensure that the solution is in edit mode.</li>
+<li>In the Activity page of Case Builder
+click the Edit steps icon for the new activity to open the Step Designer so
+that you can design the activity process map.
+Only one of the roles is an option as a role swimlane, but all steps that are assigned to that
+swimlane are available to view by both Role 1 and Role 2 in
+the Case Client.</li>
+</ol>
+
+</body>
+</html>

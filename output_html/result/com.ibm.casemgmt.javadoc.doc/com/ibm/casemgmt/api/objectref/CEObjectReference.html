@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CEObjectReference</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class CEObjectReference<T extends com.filenet.api.core.IndependentObject,P extends CEObjectReference<?,?>&gt;</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.objectref.CEObjectReference<T,P></li>
+</ul></li>
+<li><p>Type Parameters:
+T - the class of Content Engine Java API object that this reference
+         class refers to. For example, Folder for a folder reference.
+P - the object reference class that refers to the parent of the
+         type of object this reference class refers to. For example, 
+         for a Folder object, the parent object reference would be
+         ObjectStoreReference. If the type of object has no parent,
+         the Object is used for this parameter.</p></li>
+</ul>
+
+<p>Direct Known Subclasses:
+DomainReference, FolderReference, ObjectStoreReference, TaskReference</p>
+
+<p>public abstract class CEObjectReference<T extends com.filenet.api.core.IndependentObject,P extends CEObjectReference<?,?>&gt;
+extends java.lang.Object
+Base class that all object reference classes extend. This is a parameterized
+ class with parameters for the type of Content Engine Java API object the
+ class references as well as the type of reference class that refers 
+ to a parent of the object. For example, the parent of a Folder object is
+ an ObjectStore object so the parent is identified with an ObjectStoreReference
+ object.</p>
+
+<p>ID status:
+ID review by David Newhall</p>
+
+<ul>
+<li>========== METHOD SUMMARY ===========
+<ul>
+<li>Method Summary All Methods Instance Methods Abstract Methods Concrete Methods Modifier and Type Method and Description T fetchCEObject () Fetches the Content Engine Java API object this reference object refers to using null for the default property filter. abstract T fetchCEObject (com.filenet.api.property.PropertyFilter propFilt) Fetches the Content Engine Java API object this reference object refers to using a specific property filter. T fetchOptionalCEObject () Fetches the Content Engine Java API object this reference object refers to, but if the object does not exist in the repository, no exception is thrown and null is returned. T fetchOptionalCEObject (com.filenet.api.property.PropertyFilter pf) Fetches the Content Engine Java API object this reference object refers to, but if the object does not exist in the repository, no exception is thrown and null is returned. abstract T getFetchlessCEObject () Obtains a fetchless instance for the Content Engine Java API object this reference object refers to. P getParentObjectReference () Gets the object reference object that refers to the parent of the object this instance refers to.</li>
+</ul></li>
+</ul>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type   | Method and Description                                                                                                                                                                                                                            |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| T                   | fetchCEObject() Fetches the Content Engine Java API object this reference object  refers to using null for the default property filter.                                                                                                           |
+| abstract T          | fetchCEObject(com.filenet.api.property.PropertyFilter propFilt) Fetches the Content Engine Java API object this reference object  refers to using a specific property filter.                                                                     |
+| T                   | fetchOptionalCEObject() Fetches the Content Engine Java API object this reference object  refers to, but if the object does not exist in the repository,   no exception is thrown and null is returned.                                           |
+| T                   | fetchOptionalCEObject(com.filenet.api.property.PropertyFilter pf) Fetches the Content Engine Java API object this reference object  refers to, but if the object does not exist in the repository,   no exception is thrown and null is returned. |
+| abstract T          | getFetchlessCEObject() Obtains a fetchless instance for the Content Engine Java API object  this reference object refers to.                                                                                                                      |
+| P                   | getParentObjectReference() Gets the object reference object that refers to the parent of the  object this instance refers to.                                                                                                                     |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

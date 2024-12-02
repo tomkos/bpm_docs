@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RESTURLConnection</title>
+</head>
+<body>
+<ul>
+<li>Overview</li>
+<li>Package</li>
+<li>Class</li>
+<li>Tree</li>
+<li>Deprecated</li>
+<li>Index</li>
+<li><p>Help</p></li>
+<li><p>Prev Class</p></li>
+<li><p>Next Class</p></li>
+<li><p>Frames</p></li>
+<li><p>No Frames</p></li>
+<li><p>All Classes</p></li>
+<li><p>Summary:</p></li>
+<li>Nested |</li>
+<li>Field |</li>
+<li>Constr |</li>
+<li><p>Method</p></li>
+<li><p>Detail:</p></li>
+<li>Field |</li>
+<li>Constr |</li>
+<li>Method</li>
+</ul>
+
+<h2>Class RESTURLConnection</h2>
+
+<ul>
+<li><p>java.lang.Object</p>
+
+<ul>
+<li>com.ibm.casemgmt.api.icnrest.RESTURLConnection</li>
+</ul></li>
+<li><p>Direct Known Subclasses:
+RESTHttpsURLConnection, RESTHttpURLConnection</p></li>
+</ul>
+
+<p>public abstract class RESTURLConnection
+extends java.lang.Object
+Abstract class for any class that uses URL Connections, so that we can
+ use the same variables for HTTP or HTTPS</p>
+
+<ul>
+<li>=========== FIELD SUMMARY =========== ======== CONSTRUCTOR SUMMARY ======== ========== METHOD SUMMARY ===========
+<ul>
+<li>Field Summary</li>
+</ul></li>
+</ul>
+
+<p>Fields </p>
+
+<p>Modifier and Type
+Field and Description</p>
+
+<p>static java.lang.String
+ACCE_DESKTOP_APPNAME </p>
+
+<p>static java.lang.String
+ACCE_DESKTOP_DESC </p>
+
+<p>static java.lang.String
+ACCE_DESKTOP_ID </p>
+
+<p>static java.lang.String
+ACCE_DESKTOP_NAME </p>
+
+<p>static java.lang.String
+ACCE_PLUGIN_ID </p>
+
+<p>static java.lang.String
+ADMIN_PLUGIN_ID </p>
+
+<p>static java.lang.String
+BOX_EVENT_LISTENER_PLUGIN_ID </p>
+
+<p>static java.lang.String
+BPM_PLUGIN_ID </p>
+
+<p>static java.lang.String
+CC_PLUGIN_ID </p>
+
+<p>static java.lang.String
+customDocumentContextMenuBPM </p>
+
+<p>static java.lang.String
+ICM_ADMIN_DESKTOP_APPNAME </p>
+
+<p>static java.lang.String
+ICM_ADMIN_DESKTOP_DESC </p>
+
+<p>static java.lang.String
+ICM_ADMIN_DESKTOP_ID </p>
+
+<p>static java.lang.String
+ICM_ADMIN_DESKTOP_NAME </p>
+
+<p>static java.lang.String
+ICM_API_PLUGIN_ID </p>
+
+<p>static java.lang.String
+ICM_DESKTOP_APPNAME </p>
+
+<p>static java.lang.String
+ICM_DESKTOP_DESC </p>
+
+<p>static java.lang.String
+ICM_DESKTOP_ID </p>
+
+<p>static java.lang.String
+ICM_DESKTOP_NAME </p>
+
+<p>static java.lang.String
+ICM_MONITOR_DESKTOP_APPNAME </p>
+
+<p>static java.lang.String
+ICM_MONITOR_DESKTOP_DESC </p>
+
+<p>static java.lang.String
+ICM_MONITOR_DESKTOP_ID </p>
+
+<p>static java.lang.String
+ICM_MONITOR_DESKTOP_NAME </p>
+
+<p>static java.lang.String
+ICM_MONITOR_PLUGIN_ID </p>
+
+<p>static java.lang.String
+MOBILE_PLUGIN_ID </p>
+
+<p>static java.lang.String
+NAVIGATOR_ADMIN_DESKTOP_ID </p>
+
+<p>static java.lang.String
+NAVIGATOR_ADMIN_DESKTOP_NAME </p>
+
+<p>static java.lang.String
+PD_PLUGIN_ID </p>
+
+<p>static java.lang.String
+XT_PLUGIN_ID
+    - Constructor Summary</p>
+
+<p>Constructors </p>
+
+<p>Constructor and Description</p>
+
+<p>RESTURLConnection()
+    - Method Summary All Methods Static Methods Instance Methods Abstract Methods Concrete Methods Modifier and Type Method and Description static RESTURLConnection createURLConnection (java.lang.String url, java.lang.String username, java.lang.String password) Factory Method for creating a RESTURLConnection, based on the intended URL to be used. abstract void disconnect () static java.lang.String formatJSON (java.lang.String jsonText, int numIndents) Formats the input JSON text in a visually pleasing manner. static java.lang.String formatNexusError (java.lang.String nexusError) Formats the returned Nexus error into something human readable. abstract java.lang.String getBearerToken (java.lang.String umsURL) abstract java.lang.String getBearerToken (java.lang.String iam_external_hostname, java.lang.String preAuthURL) java.io.InputStream getErrorStream () java.util.List<java.lang.String> getHeaderField (java.lang.String name) java.io.InputStream getInputStream () static java.lang.String getLastResponse () abstract org.apache.commons.json.JSONObject getNavigatorSecurityToken (java.lang.String navigatorURL, java.lang.String bearerToken) org.apache.commons.json.JSONObject getP8TOSRepoId (java.lang.String url, java.lang.String osSymbolicName) Get the properties for a P8 repository for an object store static java.lang.String getParamString (java.util.Map<java.lang.String,java.lang.String> params) Takes a list of HTTP parameters (String key/value pairs) and formats them into the URL parameter string static java.lang.String getResponse (java.io.InputStream in) Helper for getting the response of the HTTP connection int getResponseCode () java.lang.String getResponseMessage () java.lang.String getSecurityToken () java.lang.String getUmsURL (java.lang.String umsClientID) abstract boolean invoke (java.lang.String resourceURL, java.lang.String requestMethod, java.util.HashMap<java.lang.String,java.util.List<java.lang.String>&gt; requestHeaders, java.lang.String content) Invokes the desired CASE REST API on the specified URL. static boolean isSSL (java.lang.String url) Determine if the URL needs to use SSL java.util.List<org.apache.commons.json.JSONObject> listRepositories (java.lang.String url) List existing repositories, including name and id void setSecurityToken (java.lang.String securityToken) Sets the Security token to use for Nexus transactions boolean testLogin (java.lang.String url) Test connection to the Nexus server boolean testNavigatorlogin (java.lang.String nexusURL) boolean testUMSNavigatorlogin (java.lang.String umsURL, java.lang.String nexusURL) boolean useUmsOrZen ()</p>
+
+<h3>Method Summary</h3>
+
+<p>| Modifier and Type                                  | Method and Description                                                                                                                                                                                                                                        |
+|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| static RESTURLConnection                           | createURLConnection(java.lang.String url,                    java.lang.String username,                    java.lang.String password) Factory Method for creating a RESTURLConnection, based on the intended  URL to be used.                                 |
+| abstract void                                      | disconnect()                                                                                                                                                                                                                                                  |
+| static java.lang.String                            | formatJSON(java.lang.String jsonText,           int numIndents) Formats the input JSON text in a visually pleasing manner.                                                                                                                                    |
+| static java.lang.String                            | formatNexusError(java.lang.String nexusError) Formats the returned Nexus error into something human readable.                                                                                                                                                 |
+| abstract java.lang.String                          | getBearerToken(java.lang.String umsURL)                                                                                                                                                                                                                       |
+| abstract java.lang.String                          | getBearerToken(java.lang.String iam_external_hostname,               java.lang.String preAuthURL)                                                                                                                                                             |
+| java.io.InputStream                                | getErrorStream()                                                                                                                                                                                                                                              |
+| java.util.List<java.lang.String>                   | getHeaderField(java.lang.String name)                                                                                                                                                                                                                         |
+| java.io.InputStream                                | getInputStream()                                                                                                                                                                                                                                              |
+| static java.lang.String                            | getLastResponse()                                                                                                                                                                                                                                             |
+| abstract org.apache.commons.json.JSONObject        | getNavigatorSecurityToken(java.lang.String navigatorURL,                          java.lang.String bearerToken)                                                                                                                                               |
+| org.apache.commons.json.JSONObject                 | getP8TOSRepoId(java.lang.String url,               java.lang.String osSymbolicName) Get the properties for a P8 repository for an object store                                                                                                                |
+| static java.lang.String                            | getParamString(java.util.Map<java.lang.String,java.lang.String> params) Takes a list of HTTP parameters (String key/value pairs) and formats  them into the URL parameter string                                                                              |
+| static java.lang.String                            | getResponse(java.io.InputStream in) Helper for getting the response of the HTTP connection                                                                                                                                                                    |
+| int                                                | getResponseCode()                                                                                                                                                                                                                                             |
+| java.lang.String                                   | getResponseMessage()                                                                                                                                                                                                                                          |
+| java.lang.String                                   | getSecurityToken()                                                                                                                                                                                                                                            |
+| java.lang.String                                   | getUmsURL(java.lang.String umsClientID)                                                                                                                                                                                                                       |
+| abstract boolean                                   | invoke(java.lang.String resourceURL,       java.lang.String requestMethod,       java.util.HashMap<java.lang.String,java.util.List<java.lang.String>&gt; requestHeaders,       java.lang.String content) Invokes the desired CASE REST API on the specified URL. |
+| static boolean                                     | isSSL(java.lang.String url) Determine if the URL needs to use SSL                                                                                                                                                                                             |
+| java.util.List<org.apache.commons.json.JSONObject> | listRepositories(java.lang.String url) List existing repositories, including name and id                                                                                                                                                                      |
+| void                                               | setSecurityToken(java.lang.String securityToken) Sets the Security token to use for Nexus transactions                                                                                                                                                        |
+| boolean                                            | testLogin(java.lang.String url) Test connection to the Nexus server                                                                                                                                                                                           |
+| boolean                                            | testNavigatorlogin(java.lang.String nexusURL)                                                                                                                                                                                                                 |
+| boolean                                            | testUMSNavigatorlogin(java.lang.String umsURL,                      java.lang.String nexusURL)                                                                                                                                                                |
+| boolean                                            | useUmsOrZen()                                                                                                                                                                                                                                                 |</p>
+
+<ul>
+<li>Methods inherited from class java.lang.Object
+equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</li>
+</ul>
+
+</body>
+</html>

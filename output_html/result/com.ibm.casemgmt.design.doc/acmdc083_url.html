@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdc083_url</title>
+</head>
+<body>
+<h1>Opening pages using URLs</h1>
+
+<h2>About this task</h2>
+
+<p>By using a URL, you can open a solution page or the task details page that was created in
+Case Builder in the respective
+section of the Pages tab. For work items that use a workflow process, the URL
+can open the process task details adapter page.</p>
+
+<ul>
+<li>Opening a specific solution page</li>
+<li>Opening a FileNet P8 process task page</li>
+<li>Opening a workflow process task page</li>
+</ul>
+
+<h2>Opening a specific solution page</h2>
+
+<p>You can create a URL that opens a specific solution page after you log in to Case Client.</p>
+
+<h3>About this task</h3>
+
+<p>The URL can open a solution page that was created in Case Builder in the Solution
+Pages section of the Pages tab. The URL can open only a static
+solution page that can be assigned to a role. The URL cannot open a dynamic solution page, such as a
+page that was created in the Case Details Pages section of the
+Pages tab.</p>
+
+<p><code>
+http://server\_name:port\_number/navigator/?desktop=baw&amp;feature=Cases&amp;tos=TOS03\_ccp00010&amp;solution=solution\_prefix&amp;page=page\_ID&amp;pageType=staticPage
+</code></p>
+
+<h3>Procedure</h3>
+
+<p>To create a URL that opens a specific solution page:</p>
+
+<ol>
+<li>Determine the base URL of a solution by clicking the Test link in
+Case Builder. To find the
+Test link, hover the cursor over the solution on the Manage
+Solutions page.</li>
+</ol>
+
+<p>For example, the base URL of a solution with a prefix of ABC123 has the
+following
+format:http://MyServer:Port/navigator/?desktop=baw&amp;feature=Cases&amp;tos=TOS03_ccp00010&amp;solution=ABC123
+2. Add the following page information to the base URL:
+&amp;page=page_ID&amp;pageType=staticPage</p>
+
+<p>To find the page ID, open the solution in Case Builder. The page ID is displayed in
+the Unique Identifier box in the Solution Pages
+section of the Pages tab.</p>
+
+<p>For example, if you want a solution page with the MyWork page ID to open
+when users log in to Case Client,
+use the following URL:
+http://MyServer:Port/navigator/?desktop=baw&amp;feature=Cases&amp;tos=TOS03_ccp00010&amp;solution=ABC123&amp;page=MyWork&amp;pageType=staticPage</p>
+
+<h2>Opening a FileNet P8 process task page</h2>
+
+<p>You can create a URL that opens a specific FileNet P8 process task page after you log in
+to Case Client.</p>
+
+<h3>About this task</h3>
+
+<p>The URL can open a FileNet P8 task details page that was created in Case Builder in the Task Details
+Pages section of Pages tab.</p>
+
+<p><code>
+http://server\_name:port\_number/navigator/?desktop=baw&amp;feature=Cases&amp;tos=TOS03\_ccp00010&amp;solution=solution\_prefix&amp;queueName=queue\_Name&amp;wobNum=wob\_Num
+</code></p>
+
+<h2>Opening a workflow process task page</h2>
+
+<p>You can create a URL that opens a details adapter page for a workflow process task after
+you log in to Case Client.</p>
+
+<h3>About this task</h3>
+
+<p>The URL can open a specific details adapter page that was created in Case Builder in the Task Details
+Pages section of Pages tab and configured for an activity with a
+workflow process.</p>
+
+<p><code>
+http://server\_name:port\_number/navigator/?desktop=baw&amp;feature=Cases&amp;tos=TOS03\_ccp00010&amp;solution=solution\_prefix&amp;taskId=task\_Id
+</code></p>
+
+</body>
+</html>

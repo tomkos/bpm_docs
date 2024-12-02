@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmdv121delcase</title>
+</head>
+<body>
+<h1>POST method for deleting a case</h1>
+
+<h2>URI</h2>
+
+<p><code>
+/CASEREST/v1/deletecase
+</code></p>
+
+<h2>Request content for deleting a case</h2>
+
+<p>The request for the POST method contains the following parameters in JSON in the body. One of the
+casetype or caseid parameters must be passed.</p>
+
+<p><code>
+{
+    connectionpoint:"Name of the process engine connection point",
+    casetype:"Symbolic name of the case type for which the cases are to be deleted. ",
+     caseid : "The guid of the case instance which is to be deleted",
+    tos:"Name of the target object store"
+}
+</code></p>
+
+<h2>Request parameters</h2>
+
+<p>| Name            | Type   | Required?   | Description                                                           |
+|-----------------|--------|-------------|-----------------------------------------------------------------------|
+| connectionpoint | String | Yes         | Name of the  FileNet®  process engine connection point.               |
+| casetype        | String | Yes         | Symbolic name of the case type for which the cases are to be deleted. |
+| caseid          | String | Yes         | The GUID of the case instance, which is to be deleted.                |
+| tos             | String | Yes         | Name of the target object store that contains the case to be deleted. |</p>
+
+<ol>
+<li>Use the Administration Console for Content Platform
+Engine.</li>
+<li>Go to
+TargetObjectstore &gt; Administrative &gt; WorkflowSystem &gt; Connection
+Points.</li>
+</ol>
+
+<ul>
+<li>This case REST method deletes the case and all associated activity processes. Documents
+associated with the case are not removed, only the references to the case folders are removed. If
+the documents are not referenced in any other folders, then the documents end up in the 'Unfiled
+Documents' folder in the object store.</li>
+</ul>
+
+</body>
+</html>

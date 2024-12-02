@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>acmwc153</title>
+</head>
+<body>
+<h1>Case Stages widget incoming events</h1>
+
+<h2>Complete stage event</h2>
+
+<p>| Description   | Complete the current stage.   |
+|---------------|-------------------------------|
+| Event ID      | icm.CompleteStage             |
+| Payload       | null                          |</p>
+
+<h2>Open case event</h2>
+
+<p>| Description   | Display the stages for the case that is being opened.                                                                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendCaseInfo                                                                                                                                                                                                       |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the stages are to be displayed. coordination An icm.util.Coordination object that is used internally by the widgets in the same page. |</p>
+
+<h2>Receive work item event</h2>
+
+<p>| Description   | Display the stages for the case that is related to the work item in the event payload.                                                                    |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SendWorkItem                                                                                                                                          |
+| Payload       | WorkItemEditable An icm.model.WorkItemEditable object that represents the work item that is related to the case for which the stages are to be displayed. |</p>
+
+<h2>Refresh stages event</h2>
+
+<p>| Description   | Refresh and redisplay the stages from the current case.   |
+|---------------|-----------------------------------------------------------|
+| Event ID      | icm.RefreshStage                                          |
+| Payload       | Any value                                                 |</p>
+
+<h2>Restart stage event</h2>
+
+<p>| Description   | Restart the previous stage.   |
+|---------------|-------------------------------|
+| Event ID      | icm.RestartStage              |
+| Payload       | null                          |</p>
+
+<h2>Select case event</h2>
+
+<p>| Description   | Display the stages for the case that is currently selected.                                                      |
+|---------------|------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.SelectCase                                                                                                   |
+| Payload       | caseEditable An icm.model.CaseEditable object that represents the case for which the stages are to be displayed. |</p>
+
+<h2>Stage changed event</h2>
+
+<p>| Description   | The current stage has been changed.   |
+|---------------|---------------------------------------|
+| Event ID      | icm.StageChanged                      |
+| Payload       | null                                  |</p>
+
+<h2>Toggle the current stage event</h2>
+
+<p>| Description   | Place the stage to the on-hold state if the stage is currently working. Place the stage to the working state if the state is currently on hold.   |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event ID      | icm.ToggleOnHoldStage                                                                                                                             |
+| Payload       | null                                                                                                                                              |</p>
+
+</body>
+</html>
